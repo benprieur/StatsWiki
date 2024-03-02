@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LP7HKWG7XQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-LP7HKWG7XQ');
+    </script>
+    <!-- End Google Tag Manager -->  
+    <script src="{{ url_for('static', filename='js/number.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    
+    <nav class="nav-title">
+        <a href='/'>StatsWiki</a>
+        <div>{{title}} - {{current_month}} <a href="/{{lang}}/{{year}}">{{year}}</a></div>
+    </nav>
+    <nav style="font-size: 24px;"><a ref='https://{{lang}}.wikipedia.org/'>{{lang}}.wikipedia.org {{imgs|safe}}</a></nav>
+    <nav>
+        <a href="{{month_before_link}}" class="nav-link">{{month_before}}</a>    
+        <b>{{current_month}} <a href="/{{lang}}/{{year}}">{{year}}</a></b>
+        <a href="{{month_after_link}}" class="nav-link">{{month_after}}</a>
+    </nav>
+    <nav style="justify-content: justify-content-start;">
+        {{byday}}
+    </nav>    
+    <nav>    
+        {% for day in list_days_str %}
+            <a href="{{day}}">{{ '%02d'|format(loop.index) }}</a>
+            &nbsp;
+        {% endfor %}
+    </nav>
+    <main>
+        <section>
+            <table>
+                {% for article in articles %}
+                <tr>
+                    <td style="text-align: left;"><a href='http://{{lang}}.wikipedia.org/wiki/{{article[0]}}'>{{article[1]}}</a></td>
+                    <td class="number" style="text-align: right;">{{article[2]}}</td>
+                </tr>    
+                {% endfor %}
+            </table>
+        </section>
+        
+    </main>
+    
+</body>
+</html>

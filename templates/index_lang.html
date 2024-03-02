@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LP7HKWG7XQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-LP7HKWG7XQ');
+    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="nav-title"><a href='/'>StatsWiki</a></div>
+    </header>
+    <main>
+        <section>
+            <table>
+                <tr><td>{{title}} <a href='https://{{lang}}.wikipedia.org'>{{lang}}.wikipedia.org</a>
+                    &nbsp;{{imgs|safe}}
+                </td></tr>
+                <tr>
+                    <td>
+                        {% for year in years %}
+                        <a href='/{{lang}}/{{year}}'>{{year}}</a>
+                        &nbsp;
+                        {% endfor %}
+                    </td>
+                </tr>
+            </table>
+        </section>
+        
+        <aside>
+            <a class="twitter-timeline" href="https://twitter.com/StatsWiki" data-height="600">StatsWiki</a> 
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </aside>    
+    </main>
+    
+</body>
+</html>

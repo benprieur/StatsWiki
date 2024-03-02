@@ -1,0 +1,288 @@
+DB_NAME = 'StatsWiki00.db'
+CURRENT_YEAR = 2024
+SUPPORTED_YEARS = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+SUPPORTED_LANGUAGES = ['ar', 'de', 'en', 'eo', 'es', 'fr', 'ja', 'he', 'hy', 'it', 'ko', 'nl', 'pt', 'uk']
+
+MONTHS_BY_LANG = { 
+    'ar':
+    ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'],
+    'de' : 
+    ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+    'en' : 
+    ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    'eo':
+    ['Januaro', 'Februaro', 'Marto', 'Aprilo', 'Majo', 'Junio', 'Julio', 'Aŭgusto', 'Septembro', 'Oktobro', 'Novembro', 'Decembro'],
+    'es' : 
+    ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+    'fr' : 
+    ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+    'he' : 
+    ['ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'],
+    'hy' : 
+    ['Հունվար', 'Փետրվար', 'Մարտ', 'Ապրիլ', 'Մայիս', 'Հունիս', 'Հուլիս', 'Օգոստոս', 'Սեպտեմբեր', 'Հոկտեմբեր', 'Նոյեմբեր', 'Դեկտեմբեր'],
+    'it' : 
+    ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+    'ja' :
+    ['1月 (いちがつ)', '2月 (にがつ)', '3月 (さんがつ)', '4月 (しがつ)', '5月 (ごがつ)', '6月 (ろくがつ)', '7月 (しちがつ)', '8月 (はちがつ)', '9月 (くがつ)', '10月 (じゅうがつ)', '11月 (じゅういちがつ)', '12月 (じゅうにがつ)'],
+    'nl' : 
+    ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'],
+    'pt' : 
+    ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+    'uk' : 
+    ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень']
+}
+
+FILTERS_BY_LANG = {
+    'ar' :
+        ('Special:', 'خاص:', 'Template:', 'ويكيبيديا:', 'ويكيبيديا:', '�', 'الصفحة_الرئيسية', 'Main_Page', 'xss'),
+    'de' : 
+        ('Kategorie:', 'Hauptseite', 'Wikipedia:', 'Spezial:', 'Special:', 'Template:', 'Benutzer:', 'Datei:'),
+    'en' : 
+        ('User:', 'Template:', 'HTTP_cookie', 'Portal:', 'Main_Page', 'Special:', 'File:', 'Help:', 'Category:', 'Wikipedia:'),
+    'eo' :
+        ('Portalo:', 'Helpo:', 'Template:', 'Vikipedio:', 'Speciala', 'Special:', 'Uzanto:'),    
+    'es' : 
+        ('Wikipedia:', 'Especial:', 'Special:', 'Template:'),
+    'fr' : 
+        ('Accueil', 'Template:', 'Wikip�', 'Sp?cial:', 'Special:', 'Cookie_(informatique)', 'Spécial:', 'Fichier:', 'Aide:', 'Catégorie:', 'Wikipédia:'),
+    'he' : 
+        ('משתמש:', 'קובץ:', 'עמוד_ראשי', '�', 'מיוחד:', 'ויקיפדיה:', 'Template:', 'Special:'),
+    'hy' : 
+        ('Template:', '�', 'Special:','Վիքիպեդիա:', 'Կատեգորիա:', 'Գլխավոր_էջ', 'Պարույր_Սևակ', 'Հովհաննես_Թումանյան', 'Ստորոգութիւն:', 'Սպասարկող:'),
+    'it' :
+        ('Special:', 'Wikipedia:', 'Pagina', 'Template:', 'Speciale:'),
+    'ja' :
+        ('�', 'Template:', 'メインページ', '特別:', 'Re:', 'Special:'),
+    'nl' : 
+        ('Hoofdpagina', 'Speciaal:', 'Special:', 'Template:', 'User:'),
+    'pt' : 
+        ('Usuário(a) Discussão:', 'Template:', 'Wikip�', 'Special:', 'Wikipedia:', 'Wikipédia:', 'Especial:', 'Ficheiro:', 'Predefinição:'),
+    'uk' : 
+        ('Special:', 'Template:', '�', 'Дюна:', 'Ukr.net', 'Файл:', 'Куки', 'Спеціальна:', 'Вікіпедія:', 'Головна_сторінка')
+}
+
+GlOBAL_PAGE_STUFF = {
+    'ar':
+        {
+            'title': 'ويكيبيديا بالعربية',
+            'title_article': 'مقالة',
+            'title_views': 'المشاهدات'
+        },
+    'de' :
+        {
+            'title': 'Wikipedia auf Deutsch',
+            'title_article': 'Artikel',
+            'title_views': 'Aufrufe'
+        },
+    'en' : 
+        {
+            'title': 'Wikipédia in English', 
+            'title_article': 'Article', 
+            'title_views': 'Views'
+        },
+    'eo' : 
+        {
+            'title': 'Vikipedio en Esperanto',
+            'title_article': 'Artikolo',
+            'title_views': 'Vidoj'
+        },
+    'es' :
+        {
+        "title": "Wikipedia en Español",
+        "title_article": "Artículo",
+        "title_views": "Vistas"
+        },    
+    'fr' : 
+        {
+            'title': 'Wikipédia en français', 
+            'title_article': 'Article', 
+            'title_views': 'Vues'
+        },
+    'he' :
+        {
+            'title': 'ויקיפדיה בעברית',
+            'title_article': 'מאמר',
+            'title_views': 'צפיות'
+        },
+    'hy' :
+        {
+            'title': 'Վիքիպեդիան հայերենով', 
+            'title_article': 'Հոդված', 
+            'title_views': 'Դիտումներ'
+        },
+    'it' :
+        {    
+            'title': 'Wikipedia in italiano',
+            'title_article': 'Articolo',
+            'title_views': 'Visualizzazioni'
+        },
+    'ja' :
+        {
+            "title": "日本語のウィキペディア",
+            "title_article": "記事",
+            "title_views": "閲覧数"
+        },        
+    'nl' :
+        {
+            'title': 'Wikipedia in het Nederlands',
+            'title_article': 'Artikel',
+            'title_views': 'Weergaven'
+        },
+    'pt' : 
+        {
+            'title': 'Wikipédia em português',
+            'title_article': 'Artigo',
+            'title_views': 'Visualizações'
+        },    
+    'uk' :
+        {
+            'title': 'Вікіпедія українською', 
+            'title_article': 'Стаття', 
+            'title_views': 'Перегляди'
+        }
+    }
+
+FLAGS_STUFF = {
+    'ar': 
+    "<img src='/static/ar.svg' style='height: 10px; width: auto;'>",
+    'de': 
+    "<img src='/static/de.svg' style='height: 10px; width: auto;'>",
+    'en': 
+    "<img src='/static/en-uk.svg' style='height: 10px; width: auto;'><img src='/static/en-us.svg' style='height: 10px; width: auto;'>",
+    'eo': 
+    "<img src='/static/eo.svg' style='height: 10px; width: auto;'>",
+    'es': 
+    "<img src='/static/es.svg' style='height: 10px; width: auto;'>",
+    'fr': 
+    "<img src='/static/francophonie.svg' style='height: 10px; width: auto;'><img src='/static/fr.svg' style='height: 10px; width: auto;'>",
+    'he': 
+    "<img src='/static/he.svg' style='height: 10px; width: auto;'>",
+    'hy': 
+    "<img src='/static/hy.svg' style='height: 10px; width: auto;'> <img src='/static/artsakh.svg' style='height: 10px; width: auto;'>",
+    'it': 
+    "<img src='/static/it.svg' style='height: 10px; width: auto;'>",
+    'ja': 
+    "<img src='/static/ja.svg' style='height: 10px; width: auto;'>",
+    'nl': 
+    "<img src='/static/nl.svg' style='height: 10px; width: auto;'>",
+    'pt': 
+    "<img src='/static/pt-pt.svg' style='height: 10px; width: auto;'><img src='/static/pt-br.svg' style='height: 10px; width: auto;'>",
+    'uk': 
+    "<img src='/static/uk.svg' style='height: 10px; width: auto;'>",
+}
+
+YEAR_PAGE_STUFF = {
+    'ar': {
+        'bymonthyear': "حسب شهر السنة",
+    },
+    'de': {
+        "bymonthyear": "Nach Monat des Jahres",
+    },
+    'en': {
+        'bymonthyear': "By month of the year",
+        },
+    'eo': {
+        'bymonthyear': "Laŭ monato de la jaro",         
+    },        
+    'es': {
+        'bymonthyear': "Por mes del año",
+        },
+    'fr': {        
+        'bymonthyear': "Par mois de l'année", 
+        },
+    'he': {
+        'bymonthyear': "לפי חודש בשנה",
+    },
+    'hy': {
+        'bymonthyear': "Տարվա ամսերով",
+    },
+    'it': {
+        'bymonthyear': "Per mese dell'anno",
+    },
+    'ja': {
+        'bymonthyear': "年間の月別",
+    },
+    'nl': {
+        "bymonthyear": "Per maand van het jaar",
+    },
+    'pt': {
+        'bymonthyear': "Por mês do ano",
+    },
+    'uk': {
+        'bymonthyear': "За місяцями року",     
+    }
+}
+ 
+MONTH_PAGE_STUFF = {
+    'ar': {
+        'byday': "حسب يوم من الشهر",
+    },
+    'de': {
+        "byday": "Nach Tag des Monats",
+    },
+    'en': {
+        'byday': "By day of month",  
+    },
+    'eo': {
+        'byday': "Laŭ tago de la monato",
+    },
+    'es': {
+        'byday': "Por día del mes",
+    },
+    'fr': {
+        'byday': "Par jour du mois", 
+    },
+    'he': {
+        'byday': "לפי יום בחודש",
+    },
+    'hy': {
+        'byday': "Ամսվա օրերով", 
+    },
+    'it': {
+        'byday': "Per giorno del mese",
+    },
+    'ja': {
+        'byday': "月の日別",
+    },
+    'nl': {
+        "byday": "Per dag van de maand",
+    },
+    'pt': {
+        'byday': "Por dia do mês",
+    },
+    'uk': {
+        'byday': "По днях місяця",
+    }
+}
+
+DAILY_TWEET_SENTENCE = {
+    'ar': 'المقالات الأكثر استشارة على ar.wikipedia.org يوم أمس',
+    'de': 'Meistgesehene Artikel auf de.wikipedia.org gestern',
+    'en': 'Articles en.wikipedia.org the most consulted yesterday',
+    'eo': 'Artikoloj en eo.wikipedia.org plej konsultitaj hieraŭ',
+    'es': 'Artículos es.wikipedia.org más consultados ayer',
+    'fr': 'Articles fr.wikipedia.org les plus vus hier',
+    'he': 'מאמרים ב-he.wikipedia.org שזכו לצפייה הרבה ביותר אתמול',
+    'hy': 'Հյուրագրված հոդվածներ hy.wikipedia.org-ում երեկ',
+    'it': 'Articoli di it.wikipedia.org più visualizzati ieri',
+    'ja': '昨日最も閲覧されたja.wikipedia.orgの記事',
+    'nl': 'Meest bekeken artikelen op nl.wikipedia.org gisteren',
+    'pt': 'Artigos mais vistos ontem na pt.Wikipedia.org',
+    'uk': 'Статті uk.wikipedia.org найбільш консультовані вчора'
+}
+
+MONTHLY_TWEET_SENTENCE = {
+    'ar': 'المقالات الأكثر استشارة على ar.wikipedia.org',
+    'de': 'Meistgesehene Artikel auf de.wikipedia.org',
+    'en': 'Articles en.wikipedia.org the most consulted',
+    'eo': 'Artikoloj en eo.wikipedia.org plej konsultitaj',
+    'es': 'Artículos más consultados en es.wikipedia.org',
+    'fr': 'Articles fr.Wikipedia.org les plus vus',
+    'he': 'מאמרים ב-he.wikipedia.org הכי נצפים',
+    'hy': 'Հյուրագրված հոդվածներ hy.wikipedia.org-ում երեկ',
+    'it': 'Articoli più visualizzati su it.wikipedia.org',
+    'ja': 'ja.wikipedia.orgで最も閲覧された記事',
+    'nl': 'Meest bekeken artikelen op nl.Wikipedia.org',
+    'pt': 'Artigos mais vistos ontem na pt.Wikipedia.org',
+    'uk': 'Статті uk.wikipedia.org найбільш консультовані вчора'
+}
