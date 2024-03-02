@@ -21,5 +21,5 @@ def get_data_lang_start_end_date(lang, start_year, start_month, start_day, end_y
 
   
 if __name__ == '__main__':
-    for lang in [ 'ko', 'pl', 'ru', 'zh', 'ko']:
-        get_data_lang_start_end_date(lang, 2015, 7, 1, 2024, 3, 1)
+    for lang in [ 'zh']:
+        get_data_lang_start_end_date(lang, 2018, 3, 7, 2024, 3, 1)

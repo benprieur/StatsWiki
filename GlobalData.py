@@ -1,7 +1,7 @@
 DB_NAME = 'StatsWiki00.db'
 CURRENT_YEAR = 2024
 SUPPORTED_YEARS = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
-SUPPORTED_LANGUAGES = ['ar', 'de', 'en', 'eo', 'es', 'fr', 'ja', 'he', 'hy', 'it', 'ko', 'nl', 'pt', 'uk']
+SUPPORTED_LANGUAGES = ['ar', 'de', 'en', 'eo', 'es', 'fr', 'ja', 'he', 'hy', 'it', 'ko', 'nl', 'pl', 'pt', 'ru', 'uk', 'zh']
 
 MONTHS_BY_LANG = { 
     'ar':
@@ -24,12 +24,20 @@ MONTHS_BY_LANG = {
     ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
     'ja' :
     ['1月 (いちがつ)', '2月 (にがつ)', '3月 (さんがつ)', '4月 (しがつ)', '5月 (ごがつ)', '6月 (ろくがつ)', '7月 (しちがつ)', '8月 (はちがつ)', '9月 (くがつ)', '10月 (じゅうがつ)', '11月 (じゅういちがつ)', '12月 (じゅうにがつ)'],
+    'ko' :
+    ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
     'nl' : 
     ['Januari', 'Februari', 'Maart', 'April', 'Mei', 'Juni', 'Juli', 'Augustus', 'September', 'Oktober', 'November', 'December'],
+    'pl' :
+    ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'],
     'pt' : 
     ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+    'ru' : 
+    ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
     'uk' : 
-    ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень']
+    ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'],
+    'zh' : 
+    ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
 }
 
 FILTERS_BY_LANG = {
@@ -49,16 +57,24 @@ FILTERS_BY_LANG = {
         ('משתמש:', 'קובץ:', 'עמוד_ראשי', '�', 'מיוחד:', 'ויקיפדיה:', 'Template:', 'Special:'),
     'hy' : 
         ('Template:', '�', 'Special:','Վիքիպեդիա:', 'Կատեգորիա:', 'Գլխավոր_էջ', 'Պարույր_Սևակ', 'Հովհաննես_Թումանյան', 'Ստորոգութիւն:', 'Սպասարկող:'),
+    'ko' : 
+        ('특수:', '최근_바뀜', 'Special:', '위키백과:', '특수:', '�', 'Template:', 'Project:'),    
     'it' :
         ('Special:', 'Wikipedia:', 'Pagina', 'Template:', 'Speciale:'),
     'ja' :
         ('�', 'Template:', 'メインページ', '特別:', 'Re:', 'Special:'),
     'nl' : 
         ('Hoofdpagina', 'Speciaal:', 'Special:', 'Template:', 'User:'),
+    'pl':
+        ('xss', 'Special:', 'Wikipedia:', 'Specjalna:', 'Template:', 'Strona_główna'),
     'pt' : 
         ('Usuário(a) Discussão:', 'Template:', 'Wikip�', 'Special:', 'Wikipedia:', 'Wikipédia:', 'Especial:', 'Ficheiro:', 'Predefinição:'),
+    'ru' :
+        ('Template:', 'Заглавная_страница', 'Служебная:', 'Special:', '�', 'Исламское_государство', 'Россия'),
     'uk' : 
-        ('Special:', 'Template:', '�', 'Дюна:', 'Ukr.net', 'Файл:', 'Куки', 'Спеціальна:', 'Вікіпедія:', 'Головна_сторінка')
+        ('Special:', 'Template:', '�', 'Дюна:', 'Ukr.net', 'Файл:', 'Куки', 'Спеціальна:', 'Вікіпедія:', 'Головна_сторінка'),
+    'zh' : 
+        ('維基媒體基金會', 'Wikipedia:', 'Special:', '�', 'Wiki', 'Category:', 'Template:')    
 }
 
 GlOBAL_PAGE_STUFF = {
@@ -121,25 +137,49 @@ GlOBAL_PAGE_STUFF = {
             "title": "日本語のウィキペディア",
             "title_article": "記事",
             "title_views": "閲覧数"
-        },        
+        },
+    'ko' : 
+        {
+            'title': '한국어 위키백과', 
+            'title_article': '기사', 
+            'title_views': '조회수'
+        },                       
     'nl' :
         {
             'title': 'Wikipedia in het Nederlands',
             'title_article': 'Artikel',
             'title_views': 'Weergaven'
         },
+    'pl' : 
+        {
+            'title': 'Wikipedia po polsku', 
+            'title_article': 'Artykuł', 
+            'title_views': 'Wyświetlenia'
+        },
     'pt' : 
         {
             'title': 'Wikipédia em português',
             'title_article': 'Artigo',
             'title_views': 'Visualizações'
-        },    
+        },
+    'ru' : 
+        {
+            'title': 'Википедия на русском', 
+            'title_article': 'Статья', 
+            'title_views': 'Просмотры'
+        },
     'uk' :
         {
             'title': 'Вікіпедія українською', 
             'title_article': 'Стаття', 
             'title_views': 'Перегляди'
-        }
+        },
+    'zh': 
+        {
+            'title': '中文维基百科', 
+            'title_article': '文章', 
+            'title_views': '浏览量'
+        }      
     }
 
 FLAGS_STUFF = {
@@ -163,12 +203,20 @@ FLAGS_STUFF = {
     "<img src='/static/it.svg' style='height: 10px; width: auto;'>",
     'ja': 
     "<img src='/static/ja.svg' style='height: 10px; width: auto;'>",
+    'ko': 
+    "<img src='/static/ko.svg' style='height: 10px; width: auto;'>",
     'nl': 
     "<img src='/static/nl.svg' style='height: 10px; width: auto;'>",
+    'pl': 
+    "<img src='/static/pl.svg' style='height: 10px; width: auto;'>",
     'pt': 
     "<img src='/static/pt-pt.svg' style='height: 10px; width: auto;'><img src='/static/pt-br.svg' style='height: 10px; width: auto;'>",
+    'ru': 
+    "<img src='/static/ru.svg' style='height: 10px; width: auto;'>",
     'uk': 
     "<img src='/static/uk.svg' style='height: 10px; width: auto;'>",
+    'zh': 
+    "<img src='/static/zh.svg' style='height: 10px; width: auto;'>"
 }
 
 YEAR_PAGE_STUFF = {
@@ -202,14 +250,26 @@ YEAR_PAGE_STUFF = {
     'ja': {
         'bymonthyear': "年間の月別",
     },
+    'ko': {
+        'bymonthyear': "연도별 월별",
+    },
     'nl': {
         "bymonthyear": "Per maand van het jaar",
     },
+    'pl': {
+        'bymonthyear': "Według miesiąca roku",
+    },    
     'pt': {
         'bymonthyear': "Por mês do ano",
     },
+    'ru': {
+        'bymonthyear': "По месяцам года",
+    },
     'uk': {
         'bymonthyear': "За місяцями року",     
+    },
+    'zh': {
+        'bymonthyear': "按年份的月份",
     }
 }
  
@@ -244,14 +304,26 @@ MONTH_PAGE_STUFF = {
     'ja': {
         'byday': "月の日別",
     },
+    'ko': {
+        'byday': "월별 일자별",
+    },
     'nl': {
         "byday": "Per dag van de maand",
     },
+    'pl': {
+        'byday': "Według dnia miesiąca",
+    },    
     'pt': {
         'byday': "Por dia do mês",
     },
+    'ru': {
+        'byday': "По дням месяца",
+    },
     'uk': {
         'byday': "По днях місяця",
+    },
+    'zh': {
+        'byday': "按月份中的日",
     }
 }
 
@@ -266,9 +338,13 @@ DAILY_TWEET_SENTENCE = {
     'hy': 'Հյուրագրված հոդվածներ hy.wikipedia.org-ում երեկ',
     'it': 'Articoli di it.wikipedia.org più visualizzati ieri',
     'ja': '昨日最も閲覧されたja.wikipedia.orgの記事',
+    'ko': '어제 가장 많이 조회된 ko.wikipedia.org의 기사들',
     'nl': 'Meest bekeken artikelen op nl.wikipedia.org gisteren',
+    'pl': 'Artykuły na pl.wikipedia.org najczęściej konsultowane wczoraj',
     'pt': 'Artigos mais vistos ontem na pt.Wikipedia.org',
-    'uk': 'Статті uk.wikipedia.org найбільш консультовані вчора'
+    'ru': 'Самые консультируемые статьи на ru.wikipedia.org вчера',
+    'uk': 'Статті uk.wikipedia.org найбільш консультовані вчора',
+    'zh': '昨天在zh.wikipedia.org上咨询最多的文章'
 }
 
 MONTHLY_TWEET_SENTENCE = {
@@ -282,7 +358,11 @@ MONTHLY_TWEET_SENTENCE = {
     'hy': 'Հյուրագրված հոդվածներ hy.wikipedia.org-ում երեկ',
     'it': 'Articoli più visualizzati su it.wikipedia.org',
     'ja': 'ja.wikipedia.orgで最も閲覧された記事',
+    'ko': 'ko.wikipedia.org에서 가장 많이 조회된 기사들',
     'nl': 'Meest bekeken artikelen op nl.Wikipedia.org',
+'    pl': 'Najczęściej konsultowane artykuły na pl.wikipedia.org',    
     'pt': 'Artigos mais vistos ontem na pt.Wikipedia.org',
-    'uk': 'Статті uk.wikipedia.org найбільш консультовані вчора'
+    'ru': 'Самые консультируемые статьи на ru.wikipedia.org',
+    'uk': 'Статті uk.wikipedia.org найбільш консультовані вчора',
+    'zh': '在zh.wikipedia.org上最多咨询的文章'
 }

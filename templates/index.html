@@ -18,7 +18,7 @@
         <div style="font-size:12px"><i>View Statistics for <b>Wikipedia</b> by <u>language</u></u></i></div>
         <small>
             {% for lang in langs %}
-            &nbsp;&nbsp;
+            &nbsp;
             <a href='/{{lang}}'>{{lang}}</a>
             {{imgs[lang]|safe}} 
             {% endfor %}
@@ -27,7 +27,7 @@
     
     <main>
         <section>
-            <div class="table-container">
+            <div>
                 <table>
                     {% for lang in langs %}
                     <tr>
