@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from dbRequestLayer import request_by_lang_by_day, request_by_lang_by_month
 from datetime import date
 import tweepy
-from GlobalData import SUPPORTED_LANGUAGES, DAILY_TWEET_SENTENCE, MONTHS_BY_LANG, MONTHLY_TWEET_SENTENCE
+from constants import SUPPORTED_LANGUAGES, DAILY_TWEET_SENTENCE, MONTHS_BY_LANG, MONTHLY_TWEET_SENTENCE
 import time
 
 '''
@@ -14,42 +14,35 @@ def daily_tweet():
 
     for lang in SUPPORTED_LANGUAGES:
         
-        # Tweet
-        results = []
-        try:
-            smonth = f'{yesterday.month:02d}'
-            sday = f'{yesterday.day:02d}'
-            syear = str(yesterday.year)
-            results = request_by_lang_by_day(lang, syear, smonth, sday)
-        except Exception as e:
-            print(f"{e}")
-            results = []
-            return
-
-        if results[0][1] == 0:
-            results = []
-            return
+        results = request_by_lang_by_day(lang, 
+                                        yesterday.year, 
+                                        yesterday.month, 
+                                        yesterday.day,
+                                        translation=True)
         
         articles = []
-        text = ''
-        for item in results[:3]:
-            article = item[0]
-            views = item[1]            
-            article_with_spaces = article.replace("_", " ")
-            articles.append([article_with_spaces, views])     
+        for article in results:
+                article_with_ = article[0]
+                article_with_space = article[0].replace("_", " ")
+                views = article[1]
+                translation = article[2] if article[2] else "."
+                articles.append([article_with_, 
+                                article_with_space, 
+                                views, 
+                                translation])       
 
 
-            yesterday_str = yesterday.strftime('%Y/%m/%d')
-            text = DAILY_TWEET_SENTENCE[lang] +  ' '+ f'({yesterday_str})\n'
+        yesterday_str = yesterday.strftime('%Y/%m/%d')
+        text = DAILY_TWEET_SENTENCE[lang] +  ' '+ f'({yesterday_str})\n'
 
-            url = f'http://statswiki.info/{lang}/{yesterday.year}/{yesterday.month}/{yesterday.day}'
-            for index, article in enumerate(articles, start=1):
-                match (index):
-                    case 1: text += "🥇 "
-                    case 2: text += "🥈 "
-                    case 3: text += "🥉 "
-                text += f"{article[0]} ({article[1]})"  + "\n"
-            text += url + "\n"
+        url = f'http://statswiki.info/{lang}/{yesterday.year}/{yesterday.month}/{yesterday.day}'
+        for index, article in enumerate(articles, start=1):
+            match (index):
+                case 1: text += "🥇 "
+                case 2: text += "🥈 "
+                case 3: text += "🥉 "
+        text += f"{article[1]} . {article[3]})"  + "\n"
+        text += url + "\n"
         print(text)
         tweet_upload_v2(text)
         
@@ -58,47 +51,40 @@ def daily_tweet():
     monthly_tweet
 '''
 def monthly_tweet():
-    last_month = date.today() - timedelta(days=2)
+    last_month = date.today() - timedelta(days=15)
 
     for lang in SUPPORTED_LANGUAGES:
         
-        # Tweet
-        results = []
-        try:
-            smonth = f'{last_month.month:02d}'
-            syear = str(last_month.year)
-            results = request_by_lang_by_month(lang, syear, smonth)
-        except Exception as e:
-            print(f"{e}")
-            results = []
-            return
-
-        if results[0][1] == 0:
-            results = []
-            return
+        results = request_by_lang_by_month(lang, 
+                                        last_month.year, 
+                                        last_month.month, 
+                                        translation=True)
         
         articles = []
-        text = ''
-        for item in results[:3]:
-            article = item[0]
-            views = item[1]            
-            article_with_spaces = article.replace("_", " ")
-            articles.append([article_with_spaces, views])     
+        for article in results:
+                article_with_ = article[0]
+                article_with_space = article[0].replace("_", " ")
+                views = article[1]
+                translation = article[2] if article[2] else "."
+                articles.append([article_with_, 
+                                article_with_space, 
+                                views, 
+                                translation])    
 
 
-            last_month_str = MONTHS_BY_LANG[lang][last_month.month-1] + ' ' + syear
-            text = MONTHLY_TWEET_SENTENCE[lang] +  ' ' + f'{last_month_str}\n'
+        last_month_str = MONTHS_BY_LANG[lang][last_month.month-1] + ' ' + str(last_month.year)
+        text = MONTHLY_TWEET_SENTENCE[lang] +  ' ' + f'{last_month_str}\n'
 
-            article_url = f'http://statswiki.info/{lang}/{last_month.year}/{last_month.month}'
-            for index, article in enumerate(articles, start=1):
-                match (index):
-                    case 1: text += "🥇 "
-                    case 2: text += "🥈 "
-                    case 3: text += "🥉 "
-                text += f"{article[0]} ({article[1]})"  + "\n"
-            text += article_url + "\n"
-        print(text)
-        tweet_upload_v2(text)
+        article_url = f'http://statswiki.info/{lang}/{last_month.year}/{last_month.month}'
+        for index, article in enumerate(articles, start=1):
+            match (index):
+                case 1: text += "🥇 "
+                case 2: text += "🥈 "
+                case 3: text += "🥉 "
+            text += f"{article[1]} ({article[2]})"  + "\n"
+        text += article_url + "\n"
+    print(text)
+    tweet_upload_v2(text)
 
 '''
     tweet_upload_v2

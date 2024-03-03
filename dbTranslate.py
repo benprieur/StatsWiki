@@ -1,5 +1,5 @@
 import sqlite3
-from GlobalData import DB_NAME
+from constants import DB_NAME
 
 conn = sqlite3.connect(DB_NAME)
 cursor = conn.cursor()

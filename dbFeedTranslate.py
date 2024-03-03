@@ -1,5 +1,5 @@
 from dbRequestLayer import request_by_lang_by_year, request_by_lang_by_month, request_by_lang
-from GlobalData import SUPPORTED_LANGUAGES, DB_NAME, SUPPORTED_YEARS
+from constants import SUPPORTED_LANGUAGES, DB_NAME, SUPPORTED_YEARS
 from app import check_results
 import openai
 import json

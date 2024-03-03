@@ -1,7 +1,7 @@
 from datetime import date, timedelta
 import calendar
 from dbRequestLayer import request_by_lang_by_day
-from GlobalData import SUPPORTED_LANGUAGES, SUPPORTED_YEARS
+from constants import SUPPORTED_LANGUAGES, SUPPORTED_YEARS
 
 '''
     test lambda

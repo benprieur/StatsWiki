@@ -1,35 +1,27 @@
 import sqlite3
-from GlobalData import DB_NAME
+from constants import DB_NAME
 
+'''
+    insert_by_day_by_lang
+'''
+def insert_by_day_by_lang(lang, year, month, day, articles):
 
-def insert_data_date_lang(lang, yy, mm, dd, articles):
-
-    daily_table = f'{lang}_{yy}_day'
-    monthly_table = f'{lang}_{yy}_month'
-    yearly_table = f'{lang}_{yy}'
+    daily_table = f'{lang}_{year}_day'
+    monthly_table = f'{lang}_{year}_month'
+    yearly_table = f'{lang}_{year}'
     
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
-    
-    # Insertion dans la table journalière
-    # cursor.execute("INSERT INTO table_name (column1, column2, column3) VALUES (?, ?, ?)", (article_name, views_count, article_date))
 
-#/////////
-# Mise à jour des tables quotidiennes
-#/////////   
-    column_name = f"_{yy}{mm:02d}{dd:02d}"
+    column_name = f"_{year}{month:02d}{day:02d}"
     for article in articles:
         cursor.execute(f"SELECT 1 FROM {daily_table} WHERE article = ? AND {column_name} IS NOT NULL", (article['article'],))
         exists = cursor.fetchone()
 
         if exists:
-        # Mise à jour des vues pour l'article existant à cette date
             cursor.execute(f"UPDATE {daily_table} SET {column_name} = {column_name} + ? WHERE article = ?", (article['views'], article['article']))
         else:
-        # Insérer une nouvelle ligne ou mettre à jour une ligne existante pour un autre jour
-        # Cela suppose que votre table a d'autres colonnes pour gérer correctement les insertions uniques
             cursor.execute(f"INSERT INTO {daily_table} (article, {column_name}) VALUES (?, ?) ON CONFLICT(article) DO UPDATE SET {column_name} = EXCLUDED.{column_name}", (article['article'], article['views']))
-
 
 #/////////
 # Mise à jour des tables mensuelles

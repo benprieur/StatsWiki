@@ -1,7 +1,7 @@
 from flask import Flask,render_template, redirect, url_for, Response
 from datetime import date, timedelta
 from dateutil.relativedelta import relativedelta
-from GlobalData import SUPPORTED_LANGUAGES,  FLAGS_STUFF, CURRENT_YEAR, GlOBAL_PAGE_STUFF, SUPPORTED_YEARS, MONTHS_BY_LANG, MONTH_PAGE_STUFF, YEAR_PAGE_STUFF, FILTERS_BY_LANG
+from constants import SUPPORTED_LANGUAGES,  FLAGS_STUFF, CURRENT_YEAR, GlOBAL_PAGE_STUFF, SUPPORTED_YEARS, MONTHS_BY_LANG, MONTH_PAGE_STUFF, YEAR_PAGE_STUFF, FILTERS_BY_LANG
 from dbRequestLayer import request_by_lang_by_year, request_by_lang_by_day, request_by_lang_by_month, get_translation, request_by_lang
 import calendar
 import json

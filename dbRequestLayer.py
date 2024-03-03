@@ -1,5 +1,5 @@
 import sqlite3
-from GlobalData import DB_NAME, FILTERS_BY_LANG
+from constants import DB_NAME, FILTERS_BY_LANG
 
 '''
     filter_results
