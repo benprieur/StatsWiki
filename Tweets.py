@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from DatabaseRequest import request_data_date_lang, request_data_month_lang
+from dbRequestLayer import request_by_lang_by_day, request_by_lang_by_month
 from datetime import date
 import tweepy
 from GlobalData import SUPPORTED_LANGUAGES, DAILY_TWEET_SENTENCE, MONTHS_BY_LANG, MONTHLY_TWEET_SENTENCE
@@ -20,7 +20,7 @@ def daily_tweet():
             smonth = f'{yesterday.month:02d}'
             sday = f'{yesterday.day:02d}'
             syear = str(yesterday.year)
-            results = request_data_date_lang(lang, syear, smonth, sday)
+            results = request_by_lang_by_day(lang, syear, smonth, sday)
         except Exception as e:
             print(f"{e}")
             results = []
@@ -67,7 +67,7 @@ def monthly_tweet():
         try:
             smonth = f'{last_month.month:02d}'
             syear = str(last_month.year)
-            results = request_data_month_lang(lang, syear, smonth)
+            results = request_by_lang_by_month(lang, syear, smonth)
         except Exception as e:
             print(f"{e}")
             results = []

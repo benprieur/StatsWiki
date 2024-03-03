@@ -42,7 +42,7 @@ MONTHS_BY_LANG = {
 
 FILTERS_BY_LANG = {
     'common' :
-        ('RSS', 'Portal:', 'File:', 'Help:', 'Category:', 'Main_Page', 'xss','�', 'User:', 'Template:', 'Special:', 'Wikipedia', 'Wikipedia:', 'Youporn', 'Pornhub', 'XHamster', 'YouTube', 'XXXX', '404.php', 'Catégorie:', 'Spécial:', 'Wikipédia'),
+        ('RSS', 'Portal:', 'File:', 'Help:', 'Category:', 'Main_Page', 'xss','�', 'User:', 'Template:', 'Special:', 'Wikipedia', 'Wikipedia:', 'Youporn', 'Pornhub', 'XHamster', 'YouTube', 'XXXX', '404.php', 'Catégorie:', 'Spécial:', 'Wikipédia', 'Facebook', 'Google'),
     'ar' :
         ('تصنيف:', 'خاص:', 'ويكيبيديا:', 'ويكيبيديا:', 'الصفحة_الرئيسية'),
     'de' : 

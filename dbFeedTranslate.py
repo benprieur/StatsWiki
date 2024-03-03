@@ -1,4 +1,4 @@
-from DatabaseRequest import request_data_year_lang, request_data_month_lang, get_articles_ranking_by_lang
+from dbRequestLayer import request_by_lang_by_year, request_by_lang_by_month, request_by_lang
 from GlobalData import SUPPORTED_LANGUAGES, DB_NAME, SUPPORTED_YEARS
 from app import check_results
 import openai
@@ -83,7 +83,7 @@ def feedTraductionsTable():
         if lang != 'en':
             
             for year in [2024, 2023, 2022, 2015, 2016, 2017, 2018, 2019, 2020, 2021]:
-                results = get_articles_ranking_by_lang(lang)
+                results = request_by_lang(lang)
                 articles = [item[0].replace("_", " ") for item in results if check_results(results)]
                 print(f'{lang}-{year}- .')
                 for article in articles:         

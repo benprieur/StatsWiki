@@ -2,7 +2,7 @@ from flask import Flask,render_template, redirect, url_for, Response
 from datetime import date, timedelta
 from dateutil.relativedelta import relativedelta
 from GlobalData import SUPPORTED_LANGUAGES,  FLAGS_STUFF, CURRENT_YEAR, GlOBAL_PAGE_STUFF, SUPPORTED_YEARS, MONTHS_BY_LANG, MONTH_PAGE_STUFF, YEAR_PAGE_STUFF, FILTERS_BY_LANG
-from DatabaseRequest import request_data_year_lang, request_data_date_lang, request_data_month_lang, get_translation, get_articles_ranking_by_lang
+from dbRequestLayer import request_by_lang_by_year, request_by_lang_by_day, request_by_lang_by_month, get_translation, request_by_lang
 import calendar
 import json
 import sqlite3
@@ -52,34 +52,30 @@ def index():
 def ByLanguage(lang):
     if lang in SUPPORTED_LANGUAGES:
 
-        results = get_articles_ranking_by_lang(lang)
+        results = request_by_lang(lang)
         if not check_results(results):
             return redirect("/", code=302)
 
         articles = []
-        for item in results:
-            article = item[0]
-            views = item[1]            
-
-            article_with_spaces = article.replace("_", " ")
-
-            translation = ''
-            try:
-                translation = get_translation(article_with_spaces, lang)[0][0]
-            except:
-                print("Translation request Error")
-
-            articles.append([article, article_with_spaces, views, translation])     
+        for article in results:
+                article_with_ = article[0]
+                article_with_space = article[0].replace("_", " ")
+                views = article[1]
+                translation = article[2] if article[2] else "."
+                articles.append([article_with_, 
+                                article_with_space, 
+                                views, 
+                                translation])        
 
         return render_template('index_lang.html', 
-        lang=lang,
-        langs=SUPPORTED_LANGUAGES,
-        img=FLAGS_STUFF[lang],
-        imgs=FLAGS_STUFF,  
-        title = GlOBAL_PAGE_STUFF[lang]['title'],
-        titles={lang: info['title'] for lang, info in GlOBAL_PAGE_STUFF.items()},
-        years = SUPPORTED_YEARS,
-        articles=articles
+                lang=lang,
+                langs=SUPPORTED_LANGUAGES,
+                img=FLAGS_STUFF[lang],
+                imgs=FLAGS_STUFF,  
+                title = GlOBAL_PAGE_STUFF[lang]['title'],
+                titles={lang: info['title'] for lang, info in GlOBAL_PAGE_STUFF.items()},
+                years = SUPPORTED_YEARS,
+                articles=articles
         )
     elif lang == 'filtering.json':
         json_data = json.dumps(FILTERS_BY_LANG, indent=4, ensure_ascii=False)
@@ -97,26 +93,20 @@ def ByLanguage(lang):
 def byDayLang(lang, year, month, day):
     results = []
     if lang in SUPPORTED_LANGUAGES and int(year) in SUPPORTED_YEARS:
-        smonth = f'{month:02d}'
-        sday = f'{day:02d}'
-        syear = str(year)
-        results = request_data_date_lang(lang, syear, smonth, sday)
+        results = request_by_lang_by_day(lang, year, month, day, translation=True)
         if not check_results(results):
             return redirect("/", code=302)
 
         articles = []
-        for item in results:
-            article = item[0]
-            views = item[1]            
-
-            article_with_spaces = article.replace("_", " ")
-
-            translation = ''
-            try:
-                translation = get_translation(article_with_spaces, lang)[0][0]
-            except:
-                print("Translation request Error")            
-            articles.append([article, article_with_spaces, views, translation])     
+        for article in results:
+                article_with_ = article[0]
+                article_with_space = article[0].replace("_", " ")
+                views = article[1]
+                translation = article[2] if article[2] else "."
+                articles.append([article_with_, 
+                                article_with_space, 
+                                views, 
+                                translation])     
 
         day_current = date(year=year, month=month, day=day)
         day_before_date = day_current - timedelta(days=1)
@@ -124,28 +114,35 @@ def byDayLang(lang, year, month, day):
         day_before_link = f'/{lang}/{day_before_date.year}/{day_before_date.month:02d}/{day_before_date.day:02d}'
         day_after_link = f'/{lang}/{day_after_date.year}/{day_after_date.month:02d}/{day_after_date.day:02d}'
         day_after_str, day_before_str = '', ''
-        if check_results(request_data_date_lang(lang, day_before_date.year, f'{day_before_date.month:02d}', f'{day_before_date.day:02d}')):
+        if check_results(request_by_lang_by_day(lang, 
+                                                day_before_date.year, 
+                                                day_before_date.month, 
+                                                day_before_date.day, 
+                                                False)):
             day_before_str = f'<< {day_before_date.year}/{day_before_date.month:02d}/{day_before_date.day:02d}'
-        if check_results(request_data_date_lang(lang, day_after_date.year, f'{day_after_date.month:02d}', f'{day_after_date.day:02d}')):
+        if check_results(request_by_lang_by_day(lang, 
+                                                day_after_date.year, 
+                                                day_after_date.month,day_after_date.day, 
+                                                False)):
             day_after_str = f'{day_after_date.year}/{day_after_date.month:02d}/{day_after_date.day:02d} >>'
 
         current_month_link = f'/{lang}/{day_current.year}/{day_current.month}'
         current_month = MONTHS_BY_LANG[lang][month-1]
 
         return render_template('day.html', 
-        articles=articles, 
-        current_date=f'{year}/{month:02d}/{day:02d}', 
-        day= f'{day:02d}',
-        day_after=day_after_str,
-        day_before=day_before_str, 
-        day_after_link=day_after_link,
-        day_before_link=day_before_link,
-        title=GlOBAL_PAGE_STUFF[lang]['title'],
-        current_month=current_month,
-        lang=lang,
-        year=f'{year}',
-        imgs=FLAGS_STUFF[lang],
-        current_month_link=current_month_link
+                articles=articles, 
+                current_date=f'{year}/{month:02d}/{day:02d}', 
+                day= f'{day:02d}',
+                day_after=day_after_str,
+                day_before=day_before_str, 
+                day_after_link=day_after_link,
+                day_before_link=day_before_link,
+                title=GlOBAL_PAGE_STUFF[lang]['title'],
+                current_month=current_month,
+                lang=lang,
+                year=f'{year}',
+                imgs=FLAGS_STUFF[lang],
+                current_month_link=current_month_link
         )
                             
 
@@ -155,24 +152,22 @@ def byDayLang(lang, year, month, day):
 @app.route('/<lang>/<int:year>/<int:month>/', strict_slashes=False)
 def byMonthLang(lang, year, month):
     if lang in SUPPORTED_LANGUAGES and year in SUPPORTED_YEARS:
-        smonth = f'{month:02d}'
-        results = request_data_month_lang(lang, year,smonth)
+        results = request_by_lang_by_month(lang, year, month)
 
         if not check_results(results):
             return redirect("/", code=302)
 
         articles = []
-        for item in results:
-            article = item[0]
-            views = item[1]            
+        for article in results:
+                article_with_ = article[0]
+                article_with_space = article[0].replace("_", " ")
+                views = article[1]
+                translation = article[2] if article[2] else "."
+                articles.append([article_with_, 
+                                article_with_space, 
+                                views, 
+                                translation])     
 
-            article_with_spaces = article.replace("_", " ")
-            translation = ''
-            try:
-                translation = get_translation(article_with_spaces, lang)[0][0]
-            except:
-                print("Translation request Error")            
-            articles.append([article, article_with_spaces, views, translation])
         month_current_date = date(year=year, month=month, day=15)
         month_before_date = month_current_date - relativedelta(days=30)
         month_after_date = month_current_date + relativedelta(days=30)
@@ -181,11 +176,15 @@ def byMonthLang(lang, year, month):
         current_month = MONTHS_BY_LANG[lang][month-1]
 
         month_before, month_after = '', ''
-        smonth_before = f'{month_before_date.month:02d}'
         smonth_after = f'{month_after_date.month:02d}'
-        if check_results(request_data_month_lang(lang, month_before_date.year, smonth_before)): 
+        if check_results(request_by_lang_by_month(lang, 
+                                                  month_before_date.year, 
+                                                  month_before_date.month,
+                                                  False)): 
             month_before = '<< ' + MONTHS_BY_LANG[lang][month_before_date.month-1] + ' ' + str(month_before_date.year)
-        if check_results(request_data_month_lang(lang, month_after_date.year, smonth_after)): 
+        if check_results(request_by_lang_by_month(lang, 
+                                                  month_after_date.year, 
+                                                  month_after_date.month, False)): 
             month_after = MONTHS_BY_LANG[lang][month_after_date.month-1] + ' ' + str(month_after_date.year) + ' >>'        
 
         num_days = calendar.monthrange(month_current_date.year, month_current_date.month)
@@ -194,22 +193,21 @@ def byMonthLang(lang, year, month):
             list_days_str = [f'/{lang}/{month_current_date.year}/{month_current_date.month:02d}/{day:02d}' for day in range(1, date.today().day)]
 
         return render_template('month.html',
-            lang=lang,
-            title=GlOBAL_PAGE_STUFF[lang]['title'], 
-            year=year,
-            imgs=FLAGS_STUFF[lang],                      
-            articles=articles, 
-            current_month=current_month, 
-            month_after=month_after, 
-            month_before=month_before, 
-            month_after_link=month_after_link, 
-            month_before_link=month_before_link,          
-            current_year=year, 
-         
-            list_days_str=list_days_str,
-            byday=MONTH_PAGE_STUFF[lang]['byday'], 
-            title_article=GlOBAL_PAGE_STUFF[lang]['title_article'], 
-            title_views=GlOBAL_PAGE_STUFF[lang]['title_views'],
+                lang=lang,
+                title=GlOBAL_PAGE_STUFF[lang]['title'], 
+                year=year,
+                imgs=FLAGS_STUFF[lang],                      
+                articles=articles, 
+                current_month=current_month, 
+                month_after=month_after, 
+                month_before=month_before, 
+                month_after_link=month_after_link, 
+                month_before_link=month_before_link,          
+                current_year=year, 
+                list_days_str=list_days_str,
+                byday=MONTH_PAGE_STUFF[lang]['byday'], 
+                title_article=GlOBAL_PAGE_STUFF[lang]['title_article'], 
+                title_views=GlOBAL_PAGE_STUFF[lang]['title_views'],
         )
     else:
         return redirect("/", code=302)
@@ -221,29 +219,27 @@ def byMonthLang(lang, year, month):
 '''
 @app.route('/<lang>/<int:year>', strict_slashes=False)
 def byYearLang(lang, year):
-    if lang in SUPPORTED_LANGUAGES and int(year) in SUPPORTED_YEARS:
-        year = str(year)
-        results = request_data_year_lang(lang, year)
+    if lang in SUPPORTED_LANGUAGES and year in SUPPORTED_YEARS:
+        results = request_by_lang_by_year(lang, year)
         
         if not check_results(results):
             return redirect("/", code=302)
 
         articles = []
-        for item in results:
-            article = item[0]
-            views = item[1]            
-            article_with_spaces = article.replace("_", " ")
-            translation = ''
-            try:
-                translation = get_translation(article_with_spaces, lang)[0][0]
-            except:
-                print("Translation request Error")            
-            articles.append([article, article_with_spaces, views, translation])   
+        for article in results:
+            article_with_ = article[0]
+            article_with_space = article[0].replace("_", " ")
+            views = article[1]
+            translation = article[2] if article[2] else "."
+            articles.append([article_with_, 
+                             article_with_space, 
+                             views, 
+                             translation])     
 
         list_months = []
         list_months_link = [] 
         for index, _ in enumerate(MONTHS_BY_LANG[lang]):
-            results = request_data_month_lang(lang, f'{year}', f'{(index+1):02d}')
+            results = request_by_lang_by_month(lang, year, index+1)
             if results:
                 if results[0][1] > 0:
                     list_months.append(MONTHS_BY_LANG[lang][index])    
@@ -257,25 +253,26 @@ def byYearLang(lang, year):
         year_before, year_after = '', ''
         year_before_link = f'/{lang}/{previous_year:02d}'
         year_after_link = f'/{lang}/{next_year:02d}'
-        if check_results(request_data_year_lang(lang, previous_year)):
+        if check_results(request_by_lang_by_year(lang, previous_year, False)):
             year_before = '<< ' + str(previous_year)
-        if check_results(request_data_year_lang(lang, next_year)):
+        if check_results(request_by_lang_by_year(lang, next_year, False)):
             year_after = str(next_year) + ' >>'
 
         return render_template('year.html', 
-        articles=articles, 
-        imgs=FLAGS_STUFF[lang],
-        year=year, 
-        year_before_link=year_before_link,
-        year_after_link=year_after_link,
-        year_before=year_before,
-        year_after=year_after,
-        months=months,
-        title=GlOBAL_PAGE_STUFF[lang]['title'] + ' ' + year,
-        title_views=GlOBAL_PAGE_STUFF[lang]['title_views'], 
-        title_article=GlOBAL_PAGE_STUFF[lang]['title_article'], 
-        bymonthyear=YEAR_PAGE_STUFF[lang]['bymonthyear'],
-        lang=lang)
+                articles=articles, 
+                imgs=FLAGS_STUFF[lang],
+                year=str(year), 
+                year_before_link=year_before_link,
+                year_after_link=year_after_link,
+                year_before=year_before,
+                year_after=year_after,
+                months=months,
+                title=GlOBAL_PAGE_STUFF[lang]['title'] + ' ' + str(year),
+                title_views=GlOBAL_PAGE_STUFF[lang]['title_views'], 
+                title_article=GlOBAL_PAGE_STUFF[lang]['title_article'], 
+                bymonthyear=YEAR_PAGE_STUFF[lang]['bymonthyear'],
+                lang=lang
+        )
     else:
         return redirect("/", code=302)
 
