@@ -29,7 +29,10 @@
             <table>
                 {% for article in articles %}
                 <tr>
-                    <td style="text-align: left;"><a href='http://{{lang}}.wikipedia.org/wiki/{{article[0]}}'>{{article[1]}}</a></td>
+                    <td style="text-align: left;">
+                        <a href='http://{{lang}}.wikipedia.org/wiki/{{article[0]}}'>{{article[1]}}</a>
+                        <br /><span style="font-size: 0.6em; font-style: italic;">{{article[3]}}</span>
+                    </td>
                     <td class="number" style="text-align: right;">{{article[2]}}</td>
                 </tr>    
                 {% endfor %}

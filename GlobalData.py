@@ -41,40 +41,42 @@ MONTHS_BY_LANG = {
 }
 
 FILTERS_BY_LANG = {
+    'common' :
+        ('RSS', 'Portal:', 'File:', 'Help:', 'Category:', 'Main_Page', 'xss','�', 'User:', 'Template:', 'Special:', 'Wikipedia', 'Wikipedia:', 'Youporn', 'Pornhub', 'XHamster', 'YouTube', 'XXXX', '404.php', 'Catégorie:', 'Spécial:', 'Wikipédia'),
     'ar' :
-        ('Special:', 'خاص:', 'Template:', 'ويكيبيديا:', 'ويكيبيديا:', '�', 'الصفحة_الرئيسية', 'Main_Page', 'xss'),
+        ('تصنيف:', 'خاص:', 'ويكيبيديا:', 'ويكيبيديا:', 'الصفحة_الرئيسية'),
     'de' : 
-        ('Kategorie:', 'Hauptseite', 'Wikipedia:', 'Spezial:', 'Special:', 'Template:', 'Benutzer:', 'Datei:'),
+        ( 'Anthocyane', 'Kategorie:', 'Hauptseite', 'Spezial:', 'Benutzer:', 'Datei:'),
     'en' : 
-        ('User:', 'Template:', 'HTTP_cookie', 'Portal:', 'Main_Page', 'Special:', 'File:', 'Help:', 'Category:', 'Wikipedia:'),
+        ('HTTP_cookie'),
     'eo' :
-        ('Portalo:', 'Helpo:', 'Template:', 'Vikipedio:', 'Speciala', 'Special:', 'Uzanto:'),    
+        ('Portalo:', 'Helpo:', 'Vikipedio:', 'Speciala', 'Uzanto:'),    
     'es' : 
-        ('Wikipedia:', 'Especial:', 'Special:', 'Template:'),
+        ('Especial:'),
     'fr' : 
-        ('Accueil', 'Template:', 'Wikip�', 'Sp?cial:', 'Special:', 'Cookie_(informatique)', 'Spécial:', 'Fichier:', 'Aide:', 'Catégorie:', 'Wikipédia:'),
+        ('Organisme_de_placement_collectif_en_valeurs_mobilières', 'Accueil', 'Wikip�', 'Sp?cial:', 'Cookie_(informatique)', 'Fichier:', 'Aide:'),
     'he' : 
-        ('משתמש:', 'קובץ:', 'עמוד_ראשי', '�', 'מיוחד:', 'ויקיפדיה:', 'Template:', 'Special:'),
+        ('משתמש:', 'קובץ:', 'עמוד_ראשי', 'מיוחד:', 'ויקיפדיה:'),
     'hy' : 
-        ('Template:', '�', 'Special:','Վիքիպեդիա:', 'Կատեգորիա:', 'Գլխավոր_էջ', 'Պարույր_Սևակ', 'Հովհաննես_Թումանյան', 'Ստորոգութիւն:', 'Սպասարկող:'),
+        ('Վիքիպեդիա:', 'Կատեգորիա:', 'Գլխավոր_էջ', 'Պարույր_Սևակ', 'Հովհաննես_Թումանյան', 'Ստորոգութիւն:', 'Սպասարկող:'),
     'ko' : 
         ('특수:', '최근_바뀜', 'Special:', '위키백과:', '특수:', '�', 'Template:', 'Project:'),    
     'it' :
-        ('Special:', 'Wikipedia:', 'Pagina', 'Template:', 'Speciale:'),
+        ('Pagina', 'Speciale:'),
     'ja' :
-        ('�', 'Template:', 'メインページ', '特別:', 'Re:', 'Special:'),
+        ('メインページ', '特別:', 'Re:'),
     'nl' : 
-        ('Hoofdpagina', 'Speciaal:', 'Special:', 'Template:', 'User:'),
+        ('Hoofdpagina', 'Speciaal:'),
     'pl':
-        ('xss', 'Special:', 'Wikipedia:', 'Specjalna:', 'Template:', 'Strona_główna'),
+        ('Specjalna:', 'Strona_główna'),
     'pt' : 
-        ('Usuário(a) Discussão:', 'Template:', 'Wikip�', 'Special:', 'Wikipedia:', 'Wikipédia:', 'Especial:', 'Ficheiro:', 'Predefinição:'),
+        ('Usuário(a) Discussão:', 'Wikip�', 'Especial:', 'Ficheiro:', 'Predefinição:'),
     'ru' :
-        ('Template:', 'Заглавная_страница', 'Служебная:', 'Special:', '�', 'Исламское_государство', 'Россия'),
+        ('Заглавная_страница', 'Служебная:', 'Исламское_государство', 'Россия'),
     'uk' : 
-        ('Special:', 'Template:', '�', 'Дюна:', 'Ukr.net', 'Файл:', 'Куки', 'Спеціальна:', 'Вікіпедія:', 'Головна_сторінка'),
+        ('Дюна:', 'Ukr.net', 'Файл:', 'Куки', 'Спеціальна:', 'Вікіпедія:', 'Головна_сторінка'),
     'zh' : 
-        ('維基媒體基金會', 'Wikipedia:', 'Special:', '�', 'Wiki', 'Category:', 'Template:')    
+        ('維基媒體基金會', 'Wiki')    
 }
 
 GlOBAL_PAGE_STUFF = {
@@ -192,7 +194,7 @@ FLAGS_STUFF = {
     'eo': 
     "<img src='/static/eo.svg' style='height: 10px; width: auto;'>",
     'es': 
-    "<img src='/static/es.svg' style='height: 10px; width: auto;'>",
+    "<img src='/static/es.svg' style='height: 10px; width: auto;'><img src='/static/es-me.svg' style='height: 10px; width: auto;'>",
     'fr': 
     "<img src='/static/francophonie.svg' style='height: 10px; width: auto;'><img src='/static/fr.svg' style='height: 10px; width: auto;'>",
     'he': 

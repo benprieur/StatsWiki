@@ -49,7 +49,7 @@ def daily_tweet():
                     case 2: text += "🥈 "
                     case 3: text += "🥉 "
                 text += f"{article[0]} ({article[1]})"  + "\n"
-            text += article_url + "\n"
+            text += url + "\n"
         print(text)
         tweet_upload_v2(text)
         
@@ -124,7 +124,4 @@ def tweet_upload_v2(text):
     except Exception as e: 
         print(e)
       
-
-if __name__ == '__main__':
-    monthly_tweet()
-  
+daily_tweet()

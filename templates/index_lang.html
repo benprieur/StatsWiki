@@ -10,17 +10,26 @@
         
         gtag('config', 'G-LP7HKWG7XQ');
     </script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+   <script src="{{ url_for('static', filename='js/number.js') }}"></script>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <header>
         <div class="nav-title"><a href='/'>StatsWiki</a></div>
+        <div style="font-size:12px"><i>View Statistics for <b>Wikipedia</b> by <u>language</u></u></i></div>
+        <small>
+            {% for language in langs %}
+            &nbsp;
+            <a href='/{{language}}'>{{language}}</a>
+            {{imgs[language]|safe}} 
+            {% endfor %}
+        </small>
     </header>
     <main>
         <section>
             <table>
                 <tr><td>{{title}} <a href='https://{{lang}}.wikipedia.org'>{{lang}}.wikipedia.org</a>
-                    &nbsp;{{imgs|safe}}
+                    &nbsp;{{img|safe}}
                 </td></tr>
                 <tr>
                     <td>
@@ -32,12 +41,30 @@
                 </tr>
             </table>
         </section>
-        
-        <aside>
-            <a class="twitter-timeline" href="https://twitter.com/StatsWiki" data-height="600">StatsWiki</a> 
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </aside>    
+        <section>
+            <table>
+                {% for article in articles %}
+                <tr>
+                    <td style="text-align: left;">
+                        <a href='http://{{lang}}.wikipedia.org/wiki/{{article[0]}}'>{{article[1]}}</a>
+                        <br /><span style="font-size: 0.6em; font-style: bold;">{{article[3]}}</span>
+                    </td>
+                    <td class="number" style="text-align: right;">{{article[2]}}</td>
+                </tr>    
+                {% endfor %}
+            </table>
+        </section>
     </main>
-    
+
+    <footer>
+        <a href='https://www.benoit-prieur.fr/'>[dev]</a>
+        &nbsp;
+        <a href='/filtering.json'>[filtered results]</a>
+        &nbsp;
+        <a href='https://www.twitter.com/statswiki'>@StatsWiki (X)</a>
+        &nbsp;
+        <a href='https://www.instagram.com/statswiki'>@StatsWiki (Insta)</a>        
+    </footer>
+
 </body>
 </html>

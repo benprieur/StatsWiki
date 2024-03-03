@@ -59,6 +59,6 @@ def CreateTables(years, langs):
 
 
 if __name__ == '__main__':
-    years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
-    langs = ['ko']
+    years = []
+    langs = []
     CreateTables(years, langs)

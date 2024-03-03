@@ -2,7 +2,7 @@ from flask import Flask,render_template, redirect, url_for, Response
 from datetime import date, timedelta
 from dateutil.relativedelta import relativedelta
 from GlobalData import SUPPORTED_LANGUAGES,  FLAGS_STUFF, CURRENT_YEAR, GlOBAL_PAGE_STUFF, SUPPORTED_YEARS, MONTHS_BY_LANG, MONTH_PAGE_STUFF, YEAR_PAGE_STUFF, FILTERS_BY_LANG
-from DatabaseRequest import request_data_year_lang, request_data_date_lang, request_data_month_lang
+from DatabaseRequest import request_data_year_lang, request_data_date_lang, request_data_month_lang, get_translation, get_articles_ranking_by_lang
 import calendar
 import json
 import sqlite3
@@ -23,7 +23,6 @@ def check_results(results):
             ret = False
         else:
             ret = True
-        print(f'CheckResults: {ret}')    
         return ret
     except sqlite3.Error as e:
         print("CheckResults: sqlite3.Error")    
@@ -52,11 +51,35 @@ def index():
 @app.route("/<lang>", strict_slashes=False)
 def ByLanguage(lang):
     if lang in SUPPORTED_LANGUAGES:
+
+        results = get_articles_ranking_by_lang(lang)
+        if not check_results(results):
+            return redirect("/", code=302)
+
+        articles = []
+        for item in results:
+            article = item[0]
+            views = item[1]            
+
+            article_with_spaces = article.replace("_", " ")
+
+            translation = ''
+            try:
+                translation = get_translation(article_with_spaces, lang)[0][0]
+            except:
+                print("Translation request Error")
+
+            articles.append([article, article_with_spaces, views, translation])     
+
         return render_template('index_lang.html', 
         lang=lang,
-        imgs=FLAGS_STUFF[lang],
+        langs=SUPPORTED_LANGUAGES,
+        img=FLAGS_STUFF[lang],
+        imgs=FLAGS_STUFF,  
         title = GlOBAL_PAGE_STUFF[lang]['title'],
-        years = SUPPORTED_YEARS
+        titles={lang: info['title'] for lang, info in GlOBAL_PAGE_STUFF.items()},
+        years = SUPPORTED_YEARS,
+        articles=articles
         )
     elif lang == 'filtering.json':
         json_data = json.dumps(FILTERS_BY_LANG, indent=4, ensure_ascii=False)
@@ -87,7 +110,13 @@ def byDayLang(lang, year, month, day):
             views = item[1]            
 
             article_with_spaces = article.replace("_", " ")
-            articles.append([article, article_with_spaces, views])     
+
+            translation = ''
+            try:
+                translation = get_translation(article_with_spaces, lang)[0][0]
+            except:
+                print("Translation request Error")            
+            articles.append([article, article_with_spaces, views, translation])     
 
         day_current = date(year=year, month=month, day=day)
         day_before_date = day_current - timedelta(days=1)
@@ -138,8 +167,12 @@ def byMonthLang(lang, year, month):
             views = item[1]            
 
             article_with_spaces = article.replace("_", " ")
-            articles.append([article, article_with_spaces, views])     
-
+            translation = ''
+            try:
+                translation = get_translation(article_with_spaces, lang)[0][0]
+            except:
+                print("Translation request Error")            
+            articles.append([article, article_with_spaces, views, translation])
         month_current_date = date(year=year, month=month, day=15)
         month_before_date = month_current_date - relativedelta(days=30)
         month_after_date = month_current_date + relativedelta(days=30)
@@ -150,9 +183,9 @@ def byMonthLang(lang, year, month):
         month_before, month_after = '', ''
         smonth_before = f'{month_before_date.month:02d}'
         smonth_after = f'{month_after_date.month:02d}'
-        if check_results(request_data_month_lang(lang, year, smonth_before)): 
+        if check_results(request_data_month_lang(lang, month_before_date.year, smonth_before)): 
             month_before = '<< ' + MONTHS_BY_LANG[lang][month_before_date.month-1] + ' ' + str(month_before_date.year)
-        if check_results(request_data_month_lang(lang, year, smonth_after)): 
+        if check_results(request_data_month_lang(lang, month_after_date.year, smonth_after)): 
             month_after = MONTHS_BY_LANG[lang][month_after_date.month-1] + ' ' + str(month_after_date.year) + ' >>'        
 
         num_days = calendar.monthrange(month_current_date.year, month_current_date.month)
@@ -200,7 +233,12 @@ def byYearLang(lang, year):
             article = item[0]
             views = item[1]            
             article_with_spaces = article.replace("_", " ")
-            articles.append([article, article_with_spaces, views])     
+            translation = ''
+            try:
+                translation = get_translation(article_with_spaces, lang)[0][0]
+            except:
+                print("Translation request Error")            
+            articles.append([article, article_with_spaces, views, translation])   
 
         list_months = []
         list_months_link = [] 
