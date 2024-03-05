@@ -16,7 +16,7 @@
 <body>
     <header>
         <div class="nav-title"><a href='/'>StatsWiki</a></div>
-        <div style="font-size:12px"><i>View Statistics for <b>Wikipedia</b> by <u>language</u></u></i></div>
+        <div style="font-size:12px"><i>View Statistics for <b>Wikipedia</b> <u>by  language</u></u></i></div>
         <small>
             {% for language in langs %}
             &nbsp;
@@ -26,21 +26,6 @@
         </small>
     </header>
     <main>
-        <section>
-            <table>
-                <tr><td>{{title}} <a href='https://{{lang}}.wikipedia.org'>{{lang}}.wikipedia.org</a>
-                    &nbsp;{{img|safe}}
-                </td></tr>
-                <tr>
-                    <td>
-                        {% for year in years %}
-                        <a href='/{{lang}}/{{year}}'>{{year}}</a>
-                        &nbsp;
-                        {% endfor %}
-                    </td>
-                </tr>
-            </table>
-        </section>
         <section>
             <table>
                 {% for article in articles %}
@@ -54,12 +39,30 @@
                 {% endfor %}
             </table>
         </section>
+        <section>
+            <table>
+                <tr><td style="text-align: left;">{{title}} <a href='https://{{lang}}.wikipedia.org'>{{lang}}.wikipedia.org</a>
+                    &nbsp;{{img|safe}}
+                </td></tr>
+                <tr>
+                    <td style="text-align: left;">
+                        {% for year in years %}
+                        <a href='/{{lang}}/{{year}}'>{{year}}</a>
+                        &nbsp;
+                        {% endfor %}
+                    </td>
+                </tr>
+            </table>
+        </section>
+
     </main>
 
     <footer>
         <a href='https://www.benoit-prieur.fr/'>[dev]</a>
         &nbsp;
-        <a href='/filtering.json'>[filtered results]</a>
+        <a href='/filtering_by_wiki.json'>[by wiki filtering]</a>
+        &nbsp;
+        <a href='/global_filtering_by_qids.json'>[global wikidata filtering]</a>
         &nbsp;
         <a href='https://www.twitter.com/statswiki'>@StatsWiki (X)</a>
         &nbsp;

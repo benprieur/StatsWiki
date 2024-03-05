@@ -1,5 +1,7 @@
 import sqlite3
 from constants import DB_NAME
+from constants_wikidata import WIKIDATA_TABLE
+import json
 
 '''
     insert_by_day_by_lang
@@ -26,7 +28,7 @@ def insert_by_day_by_lang(lang, year, month, day, articles):
 #/////////
 # Mise à jour des tables mensuelles
 #/////////   
-    column_month_name = f"_{mm:02d}"
+    column_month_name = f"_{month:02d}"
     for article in articles:
         # Vérification de l'existence de l'article dans la table
         cursor.execute(f"SELECT \"{column_month_name}\" FROM {monthly_table} WHERE article = ?", (article['article'],))
@@ -43,7 +45,7 @@ def insert_by_day_by_lang(lang, year, month, day, articles):
 #/////////
 # Mise à jour des tables annuelles
 #/////////            
-    column_month_name = f"_{mm:02d}"
+    column_month_name = f"_{month:02d}"
     for article in articles:
         # Vérification de l'existence de l'article dans la table
         cursor.execute(f"SELECT views FROM {yearly_table} WHERE article = ?", (article['article'],))
@@ -62,4 +64,35 @@ def insert_by_day_by_lang(lang, year, month, day, articles):
     conn.commit()
     
     # Fermeture de la connexion
+    conn.close()
+
+
+'''
+    insert_wikidata_stuff
+'''
+def insert_wikidata_stuff(lang, qid, stuff):
+    table = WIKIDATA_TABLE
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+
+    en_translation = stuff.get('label_en', '') or stuff.get('sitelinks', {}).get('en', '').replace('_', ' ')
+    
+    props = json.dumps(stuff.get('main_properties', {}))
+    sitelinks = stuff.get('sitelinks', {})
+    columns = ['qid', 'en_translation', 'props']
+    values = [qid, en_translation, props]
+
+    for lang_code, title in sitelinks.items():
+        column_name = f'{lang_code}_title'
+        columns.append(column_name)
+        values.append(title)
+
+    columns_str = ', '.join(columns)
+    placeholders = ', '.join(['?' for _ in range(len(columns))])
+
+    insert_query = f'''
+    REPLACE INTO {table} ({columns_str}) VALUES ({placeholders})
+    '''
+    cursor.execute(insert_query, values)
+    conn.commit()
     conn.close()

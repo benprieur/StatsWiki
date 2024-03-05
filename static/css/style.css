@@ -39,6 +39,7 @@ main {
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+    text-align: right;
 }
 
 section, aside {
@@ -46,6 +47,7 @@ section, aside {
     box-shadow: 0 2px 4px rgba(0,0,0,0);
     border-radius: 5px;
 }
+
 
 aside {
     width: 200px;
@@ -74,6 +76,10 @@ th, td {
 th {
     background-color: #007bff;
     color: #ffffff;
+}
+
+tr {
+    height: 65px;
 }
 
 footer {

@@ -1,5 +1,8 @@
 import sqlite3
-from constants import DB_NAME, FILTERS_BY_LANG
+
+from constants import DB_NAME, SQL_LIMIT
+from constants_wikidata import WIKIDATA_TABLE
+from constants_langs import FILTERS_BY_LANG
 
 '''
     filter_results
@@ -34,7 +37,7 @@ def column_exists(conn, table_name, column_name):
 '''
     request_by_lang_by_day
 '''
-def request_by_lang_by_day(lang, year, month, day, translation=True):
+def request_by_lang_by_day(lang, year, month, day):
     daily_table = f'{lang}_{year}_day'
     formatted_date = f'_{year}{month:02d}{day:02d}'
 
@@ -44,12 +47,11 @@ def request_by_lang_by_day(lang, year, month, day, translation=True):
     try:
         if table_exists(cursor, daily_table) and column_exists(conn, daily_table, formatted_date):
             sql_query = f"""
-                SELECT d.article, d.{formatted_date}{", t.translation" if translation else ""}
+                SELECT d.article, d.{formatted_date}
                 FROM {daily_table} AS d
-                {f"LEFT JOIN Translation AS t ON d.article = t.article AND t.lang = '{lang}'" if translation else ""}
                 WHERE d.{formatted_date} IS NOT NULL
                 ORDER BY d.{formatted_date} DESC
-                LIMIT 50
+                LIMIT {SQL_LIMIT}
             """
             cursor.execute(sql_query)
             results = cursor.fetchall()
@@ -68,7 +70,7 @@ def request_by_lang_by_day(lang, year, month, day, translation=True):
 '''
     request_by_lang_by_month
 '''
-def request_by_lang_by_month(lang, year, month, translation=True):
+def request_by_lang_by_month(lang, year, month):
     monthly_table = f'{lang}_{year}_month'
     conn = sqlite3.connect(DB_NAME)
     formatted_date = f'_{month:02d}'
@@ -78,12 +80,11 @@ def request_by_lang_by_month(lang, year, month, translation=True):
     try:
         if table_exists(cursor, monthly_table) and column_exists(conn, monthly_table, formatted_date):
             sql_query = f"""
-                SELECT d.article, d.{formatted_date}{", t.translation" if translation else ""}
+                SELECT d.article, d.{formatted_date}
                 FROM {monthly_table} AS d
-                {f"LEFT JOIN Translation AS t ON d.article = t.article AND t.lang = '{lang}'" if translation else ""}
                 WHERE d.{formatted_date} IS NOT NULL
                 ORDER BY d.{formatted_date} DESC
-                LIMIT 50
+                LIMIT {SQL_LIMIT}
             """
             cursor.execute(sql_query)
             results = cursor.fetchall()
@@ -98,7 +99,7 @@ def request_by_lang_by_month(lang, year, month, translation=True):
 '''
     request_by_lang_by_month
 '''
-def request_by_lang_by_year(lang, year, translation=True):
+def request_by_lang_by_year(lang, year):
     yearly_table = f'{lang}_{year}'
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
@@ -107,12 +108,11 @@ def request_by_lang_by_year(lang, year, translation=True):
     try:
         if table_exists(cursor, yearly_table) and column_exists(conn, yearly_table, 'views'):
             sql_query = f"""
-                SELECT d.article, d.views{", t.translation" if translation else ""}
+                SELECT d.article, d.views
                 FROM {yearly_table} AS d
-                {f"LEFT JOIN Translation AS t ON d.article = t.article AND t.lang = '{lang}'" if translation else ""}
                 WHERE d.views IS NOT NULL
                 ORDER BY d.views DESC
-                LIMIT 50
+                LIMIT {SQL_LIMIT}
             """
             cursor.execute(sql_query)
             results = cursor.fetchall()
@@ -127,27 +127,23 @@ def request_by_lang_by_year(lang, year, translation=True):
 '''
     def request_by_lang
 '''
-def request_by_lang(lang, translation=True):
+def request_by_lang(lang):
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
     view_name = f"{lang}_view"
 
-    # Construire la requête SQL en tenant compte de la demande de traduction
     sql_query = f"""
-        SELECT v.article, SUM(v.views) AS total_views{", t.translation" if translation else ""}
+        SELECT v.article, SUM(v.views) AS total_views
         FROM {view_name} AS v
-        {f"LEFT JOIN Translation AS t ON v.article = t.article AND t.lang = '{lang}'" if translation else ""}
         GROUP BY v.article
-        ORDER BY total_views DESC LIMIT 50;
+        ORDER BY total_views DESC
+        LIMIT {SQL_LIMIT}
     """
 
     try:
         cursor.execute(sql_query)
         results = cursor.fetchall()
-        
-        # Pas besoin de filtrer les résultats ici si 'filter_results' est spécifique à la structure des données
-        filtered_results = filter_results(lang, results) if translation else results
-        return filtered_results
+        return filter_results(lang, results) 
     except sqlite3.Error as e:
         print(f"'{lang}' - {e}")
     finally:
@@ -157,24 +153,44 @@ def request_by_lang(lang, translation=True):
 
 
 '''
-    get_translation
+    request_wikidata_stuff
 '''
-def get_translation(article, lang):
+def request_wikidata_stuff(lang, articles):
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
-    request = """SELECT translation FROM Translation
-             WHERE lang = ?
-             AND article = ?"""
+    placeholders = ', '.join(['?' for _ in articles])
+    select_query = f'''
+    SELECT {WIKIDATA_TABLE}.qid, {WIKIDATA_TABLE}.{lang}_title, COALESCE({WIKIDATA_TABLE}.en_translation, '') AS en_translation
+    FROM {WIKIDATA_TABLE}
+    LEFT JOIN (
+        SELECT {WIKIDATA_TABLE}.{lang}_title, {WIKIDATA_TABLE}.en_translation
+        FROM {WIKIDATA_TABLE}
+    ) AS translations
+    ON {WIKIDATA_TABLE}.{lang}_title = translations.{lang}_title
+    WHERE {WIKIDATA_TABLE}.{lang}_title IN ({placeholders})
+    '''
 
-    
-    params = (lang, article)
+    cursor.execute(select_query, articles)
+    results = cursor.fetchall()
+    conn.close()
+    return results
 
-    try:
-        cursor.execute(request, params)
-        results = cursor.fetchall()
-        return results
-    except sqlite3.Error as e:
-        print(f"'{lang}' - {e}")
-    finally:
-        conn.close()
+
+'''
+    request_wikidata_stuff_by_article
+'''
+def request_wikidata_stuff_by_article(lang, article):
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+
+    select_query = f'''
+    SELECT *
+    FROM {WIKIDATA_TABLE}
+    WHERE {WIKIDATA_TABLE}.{lang}_title = ?
+    '''
+
+    cursor.execute(select_query, (article,))
+    wikidata_stuff = cursor.fetchall()
+    conn.close()
+    return wikidata_stuff

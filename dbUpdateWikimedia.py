@@ -1,9 +1,8 @@
 from datetime import datetime, timedelta
-from dbInsert import insert_by_day_by_lang
+from dbInsertLayer import insert_by_day_by_lang
 from wikimedia import request_from_wikimedia
 from constants import SUPPORTED_LANGUAGES
 from datetime import date
-from Tweets import daily_tweet
   
 '''
     get_data_lang_start_end_date
@@ -27,6 +26,7 @@ def get_data_lang_start_end_date(lang,
                                          current_date.day)
         if results:        
             if len(results):
+                print(f'Daily import for {lang}')
                 insert_by_day_by_lang(lang, current_date.year, current_date.month, current_date.day, results)
         current_date += timedelta(days=1)
 

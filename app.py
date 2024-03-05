@@ -1,11 +1,15 @@
 from flask import Flask,render_template, redirect, url_for, Response
 from datetime import date, timedelta
 from dateutil.relativedelta import relativedelta
-from constants import SUPPORTED_LANGUAGES,  FLAGS_STUFF, CURRENT_YEAR, GlOBAL_PAGE_STUFF, SUPPORTED_YEARS, MONTHS_BY_LANG, MONTH_PAGE_STUFF, YEAR_PAGE_STUFF, FILTERS_BY_LANG
-from dbRequestLayer import request_by_lang_by_year, request_by_lang_by_day, request_by_lang_by_month, get_translation, request_by_lang
 import calendar
 import json
 import sqlite3
+
+from constants import SUPPORTED_LANGUAGES, SUPPORTED_YEARS
+from constants_langs import FLAGS_STUFF, GlOBAL_PAGE_STUFF, MONTHS_BY_LANG, MONTH_PAGE_STUFF, YEAR_PAGE_STUFF, FILTERS_BY_LANG
+from constants_wikidata import FILTERERED_QIDS
+
+from dbRequestLayer import request_by_lang_by_year, request_by_lang_by_day, request_by_lang_by_month, request_by_lang, request_wikidata_stuff, request_wikidata_stuff_by_article
 
 app = Flask(__name__)
 
@@ -33,7 +37,7 @@ def check_results(results):
     
 
 '''
-    Index
+    index
 '''
 @app.route("/")
 def index():
@@ -46,27 +50,33 @@ def index():
 
 
 '''
-    ByLanguage
+    by_language
 '''
 @app.route("/<lang>", strict_slashes=False)
-def ByLanguage(lang):
+def by_language(lang):
     if lang in SUPPORTED_LANGUAGES:
 
-        results = request_by_lang(lang)
-        if not check_results(results):
+        articles = request_by_lang(lang)
+        if not check_results(articles):
             return redirect("/", code=302)
 
-        articles = []
-        for article in results:
-                article_with_ = article[0]
-                article_with_space = article[0].replace("_", " ")
-                views = article[1]
-                translation = article[2] if article[2] else "."
-                articles.append([article_with_, 
-                                article_with_space, 
-                                views, 
-                                translation])        
+        results_wikidata = request_wikidata_stuff(lang, [article[0] for article in articles])
+        translation_dict = {tup[1]: tup[2] for tup in results_wikidata}
+        authorization_dict = {tup[1]: tup[0] for tup in results_wikidata}
+        articles_display = []
 
+        for article in articles:
+            article_ = article[0]
+            qid = authorization_dict.get(article_, '')
+            if qid not in FILTERERED_QIDS.keys():
+                article_cleaned = article_.replace("_", " ")
+                views = article[1]
+                translation = translation_dict.get(article_, '')
+                articles_display.append([article_, 
+                                        article_cleaned, 
+                                        views, 
+                                        translation])
+            
         return render_template('index_lang.html', 
                 lang=lang,
                 langs=SUPPORTED_LANGUAGES,
@@ -75,10 +85,13 @@ def ByLanguage(lang):
                 title = GlOBAL_PAGE_STUFF[lang]['title'],
                 titles={lang: info['title'] for lang, info in GlOBAL_PAGE_STUFF.items()},
                 years = SUPPORTED_YEARS,
-                articles=articles
+                articles=articles_display
         )
-    elif lang == 'filtering.json':
+    elif lang == 'filtering_by_wiki.json':
         json_data = json.dumps(FILTERS_BY_LANG, indent=4, ensure_ascii=False)
+        return Response(json_data, mimetype='application/json')
+    elif lang == 'global_filtering_by_qids.json':
+        json_data = json.dumps(FILTERERED_QIDS, indent=4, ensure_ascii=False)
         return Response(json_data, mimetype='application/json')
     elif lang == 'ads.txt':
             return 'google.com, pub-2569045443543971, DIRECT, f08c47fec0942fa0'
@@ -87,26 +100,33 @@ def ByLanguage(lang):
 
 
 '''
-    byDayLang
+    by_day_lang
 '''
 @app.route('/<lang>/<int:year>/<int:month>/<int:day>/', strict_slashes=False)
-def byDayLang(lang, year, month, day):
+def by_day_lang(lang, year, month, day):
     results = []
     if lang in SUPPORTED_LANGUAGES and int(year) in SUPPORTED_YEARS:
-        results = request_by_lang_by_day(lang, year, month, day, translation=True)
-        if not check_results(results):
+        articles = request_by_lang_by_day(lang, year, month, day)
+        if not check_results(articles):
             return redirect("/", code=302)
 
-        articles = []
-        for article in results:
-                article_with_ = article[0]
-                article_with_space = article[0].replace("_", " ")
+        results_wikidata = request_wikidata_stuff(lang, [article[0] for article in articles])
+        translation_dict = {tup[1]: tup[2] for tup in results_wikidata}
+        authorization_dict = {tup[1]: tup[0] for tup in results_wikidata}
+        articles_display = []
+
+        for article in articles:
+            article_ = article[0]
+            qid = authorization_dict.get(article_, '')
+            if qid not in FILTERERED_QIDS.keys():
+                article_cleaned = article_.replace("_", " ")
                 views = article[1]
-                translation = article[2] if article[2] else "."
-                articles.append([article_with_, 
-                                article_with_space, 
-                                views, 
-                                translation])     
+                translation = translation_dict.get(article_, '')
+                articles_display.append([article_, 
+                                        article_cleaned, 
+                                        views, 
+                                        translation])
+
 
         day_current = date(year=year, month=month, day=day)
         day_before_date = day_current - timedelta(days=1)
@@ -117,20 +137,18 @@ def byDayLang(lang, year, month, day):
         if check_results(request_by_lang_by_day(lang, 
                                                 day_before_date.year, 
                                                 day_before_date.month, 
-                                                day_before_date.day, 
-                                                False)):
+                                                day_before_date.day)):
             day_before_str = f'<< {day_before_date.year}/{day_before_date.month:02d}/{day_before_date.day:02d}'
         if check_results(request_by_lang_by_day(lang, 
                                                 day_after_date.year, 
-                                                day_after_date.month,day_after_date.day, 
-                                                False)):
+                                                day_after_date.month,day_after_date.day)):
             day_after_str = f'{day_after_date.year}/{day_after_date.month:02d}/{day_after_date.day:02d} >>'
 
         current_month_link = f'/{lang}/{day_current.year}/{day_current.month}'
         current_month = MONTHS_BY_LANG[lang][month-1]
 
         return render_template('day.html', 
-                articles=articles, 
+                articles=articles_display, 
                 current_date=f'{year}/{month:02d}/{day:02d}', 
                 day= f'{day:02d}',
                 day_after=day_after_str,
@@ -147,26 +165,33 @@ def byDayLang(lang, year, month, day):
                             
 
 '''
-    byMonthLang
+    by_month_lang
 '''
 @app.route('/<lang>/<int:year>/<int:month>/', strict_slashes=False)
-def byMonthLang(lang, year, month):
+def by_month_lang(lang, year, month):
     if lang in SUPPORTED_LANGUAGES and year in SUPPORTED_YEARS:
-        results = request_by_lang_by_month(lang, year, month)
+        articles = request_by_lang_by_month(lang, year, month)
 
-        if not check_results(results):
+        if not check_results(articles):
             return redirect("/", code=302)
 
-        articles = []
-        for article in results:
-                article_with_ = article[0]
-                article_with_space = article[0].replace("_", " ")
+        results_wikidata = request_wikidata_stuff(lang, [article[0] for article in articles])
+        translation_dict = {tup[1]: tup[2] for tup in results_wikidata}
+        authorization_dict = {tup[1]: tup[0] for tup in results_wikidata}
+        articles_display = []
+
+        for article in articles:
+            article_ = article[0]
+            qid = authorization_dict.get(article_, '')
+            if qid not in FILTERERED_QIDS.keys():
+                article_cleaned = article_.replace("_", " ")
                 views = article[1]
-                translation = article[2] if article[2] else "."
-                articles.append([article_with_, 
-                                article_with_space, 
-                                views, 
-                                translation])     
+                translation = translation_dict.get(article_, '')
+                articles_display.append([article_, 
+                                        article_cleaned, 
+                                        views, 
+                                        translation])
+
 
         month_current_date = date(year=year, month=month, day=15)
         month_before_date = month_current_date - relativedelta(days=30)
@@ -176,15 +201,15 @@ def byMonthLang(lang, year, month):
         current_month = MONTHS_BY_LANG[lang][month-1]
 
         month_before, month_after = '', ''
-        smonth_after = f'{month_after_date.month:02d}'
         if check_results(request_by_lang_by_month(lang, 
                                                   month_before_date.year, 
                                                   month_before_date.month,
-                                                  False)): 
+                                                  )): 
             month_before = '<< ' + MONTHS_BY_LANG[lang][month_before_date.month-1] + ' ' + str(month_before_date.year)
         if check_results(request_by_lang_by_month(lang, 
                                                   month_after_date.year, 
-                                                  month_after_date.month, False)): 
+                                                  month_after_date.month
+                                                  )): 
             month_after = MONTHS_BY_LANG[lang][month_after_date.month-1] + ' ' + str(month_after_date.year) + ' >>'        
 
         num_days = calendar.monthrange(month_current_date.year, month_current_date.month)
@@ -197,7 +222,7 @@ def byMonthLang(lang, year, month):
                 title=GlOBAL_PAGE_STUFF[lang]['title'], 
                 year=year,
                 imgs=FLAGS_STUFF[lang],                      
-                articles=articles, 
+                articles=articles_display, 
                 current_month=current_month, 
                 month_after=month_after, 
                 month_before=month_before, 
@@ -215,26 +240,33 @@ def byMonthLang(lang, year, month):
     
     
 '''
-    byYearLang
+    by_year_lang
 '''
 @app.route('/<lang>/<int:year>', strict_slashes=False)
-def byYearLang(lang, year):
+def by_year_lang(lang, year):
     if lang in SUPPORTED_LANGUAGES and year in SUPPORTED_YEARS:
-        results = request_by_lang_by_year(lang, year)
+        articles = request_by_lang_by_year(lang, year)
         
-        if not check_results(results):
+        if not check_results(articles):
             return redirect("/", code=302)
 
-        articles = []
-        for article in results:
-            article_with_ = article[0]
-            article_with_space = article[0].replace("_", " ")
-            views = article[1]
-            translation = article[2] if article[2] else "."
-            articles.append([article_with_, 
-                             article_with_space, 
-                             views, 
-                             translation])     
+        results_wikidata = request_wikidata_stuff(lang, [article[0] for article in articles])
+        translation_dict = {tup[1]: tup[2] for tup in results_wikidata}
+        authorization_dict = {tup[1]: tup[0] for tup in results_wikidata}
+        articles_display = []
+
+        for article in articles:
+            article_ = article[0]
+            qid = authorization_dict.get(article_, '')
+            if qid not in FILTERERED_QIDS.keys():
+                article_cleaned = article_.replace("_", " ")
+                views = article[1]
+                translation = translation_dict.get(article_, '')
+                articles_display.append([article_, 
+                                        article_cleaned, 
+                                        views, 
+                                        translation])
+
 
         list_months = []
         list_months_link = [] 
@@ -253,13 +285,13 @@ def byYearLang(lang, year):
         year_before, year_after = '', ''
         year_before_link = f'/{lang}/{previous_year:02d}'
         year_after_link = f'/{lang}/{next_year:02d}'
-        if check_results(request_by_lang_by_year(lang, previous_year, False)):
+        if check_results(request_by_lang_by_year(lang, previous_year)):
             year_before = '<< ' + str(previous_year)
-        if check_results(request_by_lang_by_year(lang, next_year, False)):
+        if check_results(request_by_lang_by_year(lang, next_year)):
             year_after = str(next_year) + ' >>'
 
         return render_template('year.html', 
-                articles=articles, 
+                articles=articles_display, 
                 imgs=FLAGS_STUFF[lang],
                 year=str(year), 
                 year_before_link=year_before_link,
@@ -275,6 +307,19 @@ def byYearLang(lang, year):
         )
     else:
         return redirect("/", code=302)
+
+
+'''
+    byArticle
+'''
+@app.route("/<lang>/<article>", strict_slashes=False)
+def by_article(lang, article):
+    if lang in SUPPORTED_LANGUAGES:
+        article = request_wikidata_stuff_by_article(lang, article)
+        return f"<html>{article}</html>"
+    return f""    
+
+    
 
 
 if __name__ == '__main__':
