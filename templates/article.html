@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LP7HKWG7XQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-LP7HKWG7XQ');
+    </script>
+   <script src="{{ url_for('static', filename='js/dynamic.js') }}"></script>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body>
+    <nav class="nav-title">
+        <a href='/'>StatsWiki</a>
+        <a ref='https://{{lang}}.wikipedia.org/'>{{lang}}.wikipedia.org {{flag|safe}}</a> {{article [0]}
+    </nav>
+</body>
+</html>
