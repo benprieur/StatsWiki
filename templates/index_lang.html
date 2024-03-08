@@ -34,7 +34,7 @@
 
                         <td style="text-align: left; background-color: rgb(205, 187, 190);">
                             <a href="http://{{lang}}.wikipedia.org/wiki/{{article_}}">{{article['cleaned_article']}}</a> 
-                            <br /><span style="font-size: 0.5em; font-style: italic; color:firebrick">[redirect to handle]</span>
+                            <br /><span style="font-size: 0.5em; font-style: italic; color:firebrick">[redirect or wikidata item creation, to handle]</span>
                         </td>
                         
                         <td style="text-align: left; background-color: rgb(205, 187, 190);"><img src="" width='50px'></td>
@@ -46,7 +46,7 @@
 
                         <td style="text-align: left;">
 
-                            <a href="http://{{lang}}.wikipedia.org/wiki/{{article_}}">{{article['cleaned_article']}}</a>
+                            <a href="/{{lang}}/{{article['qid']}}">{{article['cleaned_article']}}</a>
 
                             <img src='/static/wikidata.svg' style='width:10px;'/><a href="https://www.wikidata.org/wiki/{{article['qid']}}" style="font-size: 0.5em;">{{article['qid']}}</a>
                             
@@ -107,10 +107,6 @@
 
     <footer>
         <a href='https://www.benoit-prieur.fr/'>[dev]</a>
-        &nbsp;
-        <a href='/filters_by_language.json'>[filters by language]</a>
-        &nbsp;
-        <a href='/global_filters.json'>[global filters]</a>
         &nbsp;
         <a href='https://www.twitter.com/statswiki'>@StatsWiki (X)</a>
         &nbsp;

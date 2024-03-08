@@ -309,7 +309,7 @@ FLAGS_STUFF = {
     'he': 
     "<img src='/static/he.svg' style='height: 10px; width: auto;'>",
     'hy': 
-    "<img src='/static/hy.svg' style='height: 10px; width: auto;'> <img src='/static/artsakh.svg' style='height: 10px; width: auto;'>",
+    "<img src='/static/artsakh.svg' style='height: 10px; width: auto;'>",
     'it': 
     "<img src='/static/it.svg' style='height: 10px; width: auto;'>",
     'ja': 
@@ -509,7 +509,9 @@ SUPPORTED_REDIRECTS_BY_LANG = {
             
             'Charles de Galles' : 'Q43274',
 
-            'Mort de George Floyd' : 'Q95579249'
+            'Mort de George Floyd' : 'Q95579249',
+
+            'Cédric Doumbé' : 'Q24452252'
         },
     'ja': 
         {

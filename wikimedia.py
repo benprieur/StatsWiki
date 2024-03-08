@@ -18,3 +18,32 @@ def request_from_wikimedia(lang, year, month, day):
     except requests.RequestException as e:
         print(f"{e}") 
         return None   
+
+'''
+    get_first_sentence_wikipedia_article
+'''
+def get_first_sentence_wikipedia_article(lang, article_title):
+    URL = f"https://{lang}.wikipedia.org/w/api.php"
+
+    PARAMS = {
+        "action": "query",
+        "format": "json",
+        "titles": article_title,
+        "prop": "extracts",
+        "exintro": True,
+        "explaintext": True,
+    }
+
+    response = requests.get(URL, params=PARAMS)
+    data = response.json()
+
+    if data.get("query", {}):
+        page = next(iter(data["query"]["pages"].values()))
+
+        first_sentence = ""
+        if page.get("extract", {}):
+            first_sentence = page["extract"].split('.')[0] + '.'
+    
+        return first_sentence
+    
+    return ""

@@ -18,7 +18,7 @@
         <a href='/'>StatsWiki</a>
         {{title}}
     </nav>
-    <nav style="font-size: 24px;"><a ref='https://{{lang}}.wikipedia.org/'>{{lang}}.wikipedia.org {{flag|safe}}</a></nav>
+    <nav style="font-size: 24px;"><a href='https://{{lang}}.wikipedia.org/'>{{lang}}.wikipedia.org {{flag|safe}}</a></nav>
     <nav>
         <b><a href="{{year_before_link}}" class="nav-link">{{year_before}}</a></b>    
         <b><a href="{{year_after_link}}" class="nav-link">{{year_after}}</a></b>
@@ -40,8 +40,8 @@
                         {% if not article['qid'] %}
 
                             <td style="text-align: left; background-color: rgb(205, 187, 190);">
-                                <a href="http://{{lang}}.wikipedia.org/wiki/{{article_}}">{{article['cleaned_article']}}</a> 
-                                <br /><span style="font-size: 0.5em; font-style: italic; color:firebrick">[redirect to handle]</span>
+                                <<a href="/{{lang}}/{{article['qid']}}">{{article['cleaned_article']}}</a>
+                                <br /><span style="font-size: 0.5em; font-style: italic; color:firebrick">[redirect or wikidata item creation, to handle]</span>
                             </td>
                             
                             <td style="text-align: left; background-color: rgb(205, 187, 190);"><img src="" width='50px'></td>

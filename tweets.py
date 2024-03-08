@@ -34,11 +34,10 @@ def daily_tweet():
             if qid not in FILTERERED_QIDS.keys():
                 cleaned_article = article_.replace("_", " ")
                 views = article[1]
-                translation = translation_dict.get(article_, '')
                 articles_display.append([article_, 
                                          cleaned_article, 
-                                         views, 
-                                         translation])
+                                         views
+                                        ])
                  
         yesterday_str = yesterday.strftime('%Y/%m/%d')
         text = DAILY_TWEET_SENTENCE[lang] +  ' '+ f'({yesterday_str})\n'
@@ -49,11 +48,9 @@ def daily_tweet():
                 case 1: text += "🥈 "
                 case 2: text += "🥉 "
             text += f'{articles_display[index][1]}' 
-            if lang not in ['en']:
-                text += f' | {articles_display[index][3]}\n'
-            else:
-                text += f'\n'   
-        text += f'{url}\n'
+            text += f' | ' 
+            text += f'{articles_display[index][2]}\n'
+        text += f'{url}\r\n'
         print(text)
         tweet_upload_v2(text)
 

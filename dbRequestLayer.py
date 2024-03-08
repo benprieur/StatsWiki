@@ -37,7 +37,7 @@ def column_exists(conn, table_name, column_name):
     request_views_by_article
 '''
 def request_views_by_article(redirect, request):
-
+    redirect = redirect.replace("'", "''")
     # ['lang', lang]
     # ['year', lang, year]
     # ['month', lang, year, month]
@@ -46,6 +46,8 @@ def request_views_by_article(redirect, request):
     cursor = conn.cursor()
     tuples = ()
     sql_query = ""
+    if not redirect:
+        return []
     redirect = redirect.replace(" ", "_")
     
     if request[0] == 'lang':
@@ -91,7 +93,7 @@ def request_views_by_article(redirect, request):
             """         
 
     try:
-        #print(f'{sql_query} sql_query')   
+        print(f'{sql_query} sql_query')   
         cursor.execute(sql_query)
         results = cursor.fetchall()
         if results:
@@ -223,6 +225,7 @@ def request_by_lang(lang):
     request_wd_by_lang_by_articles
 '''
 def request_wd_by_lang_by_articles(lang, articles):
+    articles = [article.replace("'", "''") for article in articles]
 
     conn = None
     results = []
@@ -259,6 +262,7 @@ def request_wd_by_lang_by_articles(lang, articles):
     request_wd_by_lang_by_article
 '''
 def request_wd_by_lang_by_article(lang, article):
+    article = article.replace("'", "''")
 
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()

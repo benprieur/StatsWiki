@@ -11,7 +11,8 @@ from constants_wikidata import FILTERERED_QIDS
 from commons import get_commons_image_url
 
 from dbRequestLayer import request_by_lang_by_year, request_by_lang_by_month, request_by_lang_by_day, request_wd_by_qid
-from dbRequestLayer import request_by_lang, request_wd_by_lang_by_article, request_views_by_article, request_wd_by_lang_by_articles
+from dbRequestLayer import request_by_lang, request_views_by_article, request_wd_by_lang_by_articles
+from wikimedia import get_first_sentence_wikipedia_article
 
 
 app = Flask(__name__)
@@ -46,7 +47,7 @@ def display(lang, articles, request):
             props['total_views'] = props['views']
 
 
-    articles_display = dict(sorted(articles_display.items(), key=lambda item: item[1]['views'], reverse=True))
+    articles_display = dict(sorted(articles_display.items(), key=lambda item: item[1]['total_views'], reverse=True))
     return articles_display
 
 '''
@@ -65,15 +66,19 @@ def update_display_package_by_redirect(lang, articles, request):
 
         # Les redirections connues
         qids = [id for key, id in SUPPORTED_REDIRECTS_BY_LANG[lang].items() if key == cleaned_article] 
-        
+        print("----")
+        print(article_)
+        print(qids)
         # Pour chaque redirect
         for qid in qids:
             results = request_wd_by_qid(lang, qid)
+            print(results)
             main_article = results[0]
             main_article_ = main_article[1]
             main_cleaned_article = main_article_.replace("_", " ")
             articles_to_remove.append(article_)
 
+            print(main_article_)
             if main_article_ not in articles.keys():
                 article_display = {}
                 article_display['cleaned_article'] = main_cleaned_article
@@ -105,9 +110,10 @@ def update_display_package_by_redirect(lang, articles, request):
     # add target redirects
     for article_display in articles_to_add:
         key = article_display['cleaned_article'].replace(" ", "_")
-        print(f'{key}-{article_display}- line 108')
         if key not in articles:
             articles[key] = article_display
+            print(f'{key}-{article_display} add2dict line 11')
+
 
     # Ici on parcourt toutes les lignes du dataset
     for article_, props in articles.items():
@@ -258,14 +264,6 @@ def by_language(lang):
                 articles=articles_display
         )
     
-    elif lang == 'filters_by_language.json':
-        json_data = json.dumps(FILTERS_BY_LANG, indent=4, ensure_ascii=False)
-        return Response(json_data, mimetype='application/json')
-    
-    elif lang == 'global_filters.json':
-        json_data = json.dumps(FILTERERED_QIDS, indent=4, ensure_ascii=False)
-        return Response(json_data, mimetype='application/json')
-    
     elif lang == 'ads.txt':
             return 'google.com, pub-2569045443543971, DIRECT, f08c47fec0942fa0'
     
@@ -316,8 +314,10 @@ def by_day_lang(lang, year, month, day):
                 title=GlOBAL_PAGE_STUFF[lang]['title'],
                 current_month=current_month,
                 lang=lang,
+                langs = SUPPORTED_LANGUAGES,
                 year=f'{year}',
-                flags=FLAGS_STUFF[lang],
+                flags=FLAGS_STUFF,
+                flag=FLAGS_STUFF[lang],
                 current_month_link=current_month_link
         )
                             
@@ -438,17 +438,57 @@ def by_year_lang(lang, year):
 '''
     byArticle
 '''
-@app.route("/<lang>/<article>", strict_slashes=False)
-def by_article(lang, article):
+@app.route("/<lang>/<qid>", strict_slashes=False)
+def by_article(lang, qid):
+    if not qid.startswith('Q'):
+        return redirect("/", code=302)
     if lang not in  SUPPORTED_LANGUAGES:
         return redirect("/", code=302)
+    article = request_wd_by_qid(lang, qid)
+    title_ = article[0][1]
+    if not title_:
+        return redirect("/", code=302)
     
-    article = request_wd_by_lang_by_article(lang, article)
-    #articles_display = prepare_jinja_inputs_by_articles(lang, [article])  
-    return(article)
+    props_str = json.dumps(article[0][3])
+    wikidata_image, wikidata_image_url = '', ''
 
+    if props_str != 'null': #JSON stuff, to rewrite
+        wikidata_image = get_value_from_string_by_key(props_str, "P18")
+        wikidata_image_url =  ""
+        if wikidata_image:
+            wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + wikidata_image.replace(' ', '_')
+            wikidata_image = get_commons_image_url(wikidata_image_url)
+
+    sentence = get_first_sentence_wikipedia_article(lang, title_)
+
+    statistics = []
+    for year in SUPPORTED_YEARS:
+        if year == 2015:
+            for month in range(7, 13):
+                mont_stats = request_views_by_article(title_, ['month', lang, year, month])
+                statistics.append(mont_stats)
+        elif year in [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]:
+            for month in range(1, 13):
+                mont_stats = request_views_by_article(title_, ['month', lang, year, month])
+                statistics.append(mont_stats)
+        elif year == 2024:
+            for month in range(1, 4):
+                mont_stats = request_views_by_article(title_, ['month', lang, year, month])
+                statistics.append(mont_stats)
+
+
+    return render_template('article.html', 
+                lang=lang,
+                qid=qid,            
+                title=title_,
+                translation=article[0][2].replace("_", " "),
+                wikidata_image=wikidata_image,
+                wikidata_image_url=wikidata_image_url,
+                flag = FLAGS_STUFF[lang],
+                sentence = sentence,
+                statistics = statistics
+    )
     
-
 
 if __name__ == '__main__':
     app.run(debug=True)

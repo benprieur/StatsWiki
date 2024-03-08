@@ -14,13 +14,7 @@ def insert_wikidata_by_lang_by_article(lang, article):
             insert_wikidata_stuff(lang, qid, wikidata_stuff)
 
 
-for lang in SUPPORTED_LANGUAGES:
-    for year in SUPPORTED_YEARS:
-        if year==2024:
-            for month in range(1, 4):
-                articles = request_by_lang_by_month(lang, year, month)         
-                for article in articles:
-                    insert_wikidata_by_lang_by_article(lang, article)
-                    print(f'{lang} {article}')
+
+insert_wikidata_by_lang_by_article('fr', 'Cédric Doumbè')
 
 
