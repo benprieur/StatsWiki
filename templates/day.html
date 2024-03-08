@@ -38,10 +38,16 @@
                     <tr>    
                         {% if not article['qid'] %}
 
-                            <td style="text-align: left; background-color: rgb(205, 187, 190);">
-                                <a href="http://{{lang}}.wikipedia.org/wiki/{{article_}}">{{article['cleaned_article']}}</a> 
-                                <br /><span style="font-size: 0.5em; font-style: italic; color:firebrick">[redirect or wikidata item creation, to handle]</span>
-                            </td>
+                        <td style="text-align: left; background-color: rgb(205, 187, 190);">
+                            <a href="/{{lang}}/{{article['qid']}}">{{article['cleaned_article']}}</a>
+                           
+                            <span style="color: rgb(0, 0, 0); font-size: 0.4em; font-style: italic;">
+                                <a href="https://{{lang}}.wikipedia.org/wiki/{{article_}}">[...]</a>
+                            </span>
+                            <br />
+                            
+                            <span style="font-size: 0.5em; font-style: italic; color:firebrick">[redirect or wikidata item creation, to handle]</span>
+                        </td>
                             
                             <td style="text-align: left; background-color: rgb(205, 187, 190);"><img src="" width='50px'></td>
                             
@@ -60,6 +66,10 @@
                                 {% if lang != 'en' and article['translation'] != ''  %}
                                     ({{article['translation']}})
                                 {% endif %}    
+                                </span>
+
+                                <span style="color: rgb(0, 0, 0); font-size: 0.4em; font-style: italic;">
+                                    <a href="https://{lang}.wikipedia.org/wiki/{{article_}}">[...]</a>
                                 </span>
                                 
                                 {% if article['redirects'] %}

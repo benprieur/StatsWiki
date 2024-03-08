@@ -15,6 +15,8 @@ def insert_wikidata_by_lang_by_article(lang, article):
 
 
 
-insert_wikidata_by_lang_by_article('fr', 'Cédric Doumbè')
-
-
+#insert_wikidata_by_lang_by_article('fr', 'La vie est un long fleuve tranquille')
+qid = 'Q83145'
+wikidata_stuff = get_wikidata_stuff('fr', qid)
+if wikidata_stuff is not {}:
+    insert_wikidata_stuff('fr', qid, wikidata_stuff)

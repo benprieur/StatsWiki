@@ -1,6 +1,6 @@
 import sqlite3
 
-from constants import DB_NAME, SQL_LIMIT
+from constants import DB_NAME, SQL_LIMIT, GISCARD_TRICK
 from constants_wikidata import WIKIDATA_TABLE
 from constants_langs import FILTERS_BY_LANG
 
@@ -37,7 +37,9 @@ def column_exists(conn, table_name, column_name):
     request_views_by_article
 '''
 def request_views_by_article(redirect, request):
-    redirect = redirect.replace("'", "''")
+    
+    redirect = redirect.replace("'", GISCARD_TRICK)
+
     # ['lang', lang]
     # ['year', lang, year]
     # ['month', lang, year, month]
@@ -218,67 +220,41 @@ def request_by_lang(lang):
     finally:
         conn.close()
 
-    return []
-
 
 '''
     request_wd_by_lang_by_articles
 '''
 def request_wd_by_lang_by_articles(lang, articles):
-    articles = [article.replace("'", "''") for article in articles]
+    
+    articles = [article.replace("'", GISCARD_TRICK) for article in articles]
 
+    table = f'{lang}_wikidata_view'
     conn = None
-    results = []
-    try:
-        conn = sqlite3.connect(DB_NAME)
-        cursor = conn.cursor()
-
-        placeholders = ', '.join(['?' for _ in articles])
-
-        select_query = f'''
-        SELECT qid, 
-               {lang}_title, 
-               COALESCE(en_title, en_translation) AS en_translation,
-               props
-        FROM {WIKIDATA_TABLE}
-        WHERE {lang}_title IN ({placeholders})
-        '''
-
-        #print(articles)
-        # ['France', 'Coronavirus', 'Élisabeth_II', 'Joe_Biden', 'Signe_du_zodiaque', 'Grippe_espagnole', 'Donald_Trump', 'Pandémie_de_Covid-19_en_France', 'États-Unis']
-        cursor.execute(select_query, articles)
-        results = cursor.fetchall()
-
-    except Exception as e:
-        print(e)
-
-    finally:
-        if conn:
-            conn.close()     
-    return results
-
-
-'''
-    request_wd_by_lang_by_article
-'''
-def request_wd_by_lang_by_article(lang, article):
-    article = article.replace("'", "''")
+    wikidata_stuff = []
 
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
+    placeholders = ', '.join('?' for _ in articles)  
     select_query = f'''
     SELECT qid, 
-    {lang}_title, 
-    COALESCE(en_title, en_translation) AS en_translation,
-    props
-    FROM {WIKIDATA_TABLE}
-    WHERE {WIKIDATA_TABLE}.{lang}_title = ?
+            article, 
+            en_translation,
+            props
+    FROM {table}
+    WHERE article IN ({placeholders})
     '''
 
-    cursor.execute(select_query, (article,))
-    wikidata_stuff = cursor.fetchall()
-    conn.close()
+    try:
+        cursor.execute(select_query, articles)
+        wikidata_stuff = cursor.fetchall()
+        #print(f'{wikidata_stuff} wikidata_stuff')
+    except Exception as e:
+        print(f'request_wd_by_lang_by_articles: {e}')
+    finally:
+        if conn:
+            conn.close()
+     
     return wikidata_stuff
 
 
@@ -289,17 +265,24 @@ def request_wd_by_qid(lang, qid):
 
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
-
+    wikidata_stuff = []
+    table = f'{lang}_wikidata_view'
+    
     select_query = f'''
     SELECT qid, 
-    {lang}_title, 
-    COALESCE(en_title, en_translation) AS en_translation,
-    props
-    FROM {WIKIDATA_TABLE}
-    WHERE {WIKIDATA_TABLE}.qid = ?
+    article, 
+    props,
+    en_translation
+    FROM {table}
+    WHERE {table}.qid = ?
     '''
 
-    cursor.execute(select_query, (qid,))
-    wikidata_stuff = cursor.fetchall()
-    conn.close()
+    try:
+        cursor.execute(select_query, (qid,))
+        wikidata_stuff = cursor.fetchall()
+    except Exception as e:
+        print(f'request_wd_by_qid: {e}')
+    finally:
+        if conn:
+            conn.close()     
     return wikidata_stuff

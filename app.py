@@ -5,7 +5,7 @@ import calendar
 import json
 import sqlite3
 
-from constants import SUPPORTED_LANGUAGES, SUPPORTED_YEARS, REQUEST_TYPE
+from constants import SUPPORTED_LANGUAGES, SUPPORTED_YEARS, REQUEST_TYPE, GISCARD_TRICK
 from constants_langs import FLAGS_STUFF, GlOBAL_PAGE_STUFF, MONTHS_BY_LANG, MONTH_PAGE_STUFF, YEAR_PAGE_STUFF, FILTERS_BY_LANG, SUPPORTED_REDIRECTS_BY_LANG
 from constants_wikidata import FILTERERED_QIDS
 from commons import get_commons_image_url
@@ -66,39 +66,36 @@ def update_display_package_by_redirect(lang, articles, request):
 
         # Les redirections connues
         qids = [id for key, id in SUPPORTED_REDIRECTS_BY_LANG[lang].items() if key == cleaned_article] 
-        print("----")
-        print(article_)
-        print(qids)
+
         # Pour chaque redirect
         for qid in qids:
             results = request_wd_by_qid(lang, qid)
-            print(results)
-            main_article = results[0]
-            main_article_ = main_article[1]
-            main_cleaned_article = main_article_.replace("_", " ")
-            articles_to_remove.append(article_)
+            if results:
+                main_article = results[0]
+                main_article_ = main_article[1].replace(GISCARD_TRICK, "'")
+                main_cleaned_article = main_article_.replace("_", " ").replace(GISCARD_TRICK, "'")
+                articles_to_remove.append(article_)
 
-            print(main_article_)
-            if main_article_ not in articles.keys():
-                article_display = {}
-                article_display['cleaned_article'] = main_cleaned_article
-                article_display['translation'] = main_article[2].replace("_", " ")
-                article_display['wikidata_image_url'] = ''
-                article_display['wikidata_image'] = ''
-                article_display['qid'] = main_article[0]
-                article_display['redirects'] = {}
+                if main_article_ not in articles.keys():
+                    article_display = {}
+                    article_display['cleaned_article'] = main_cleaned_article
+                    article_display['translation'] = main_article[2].replace("_", " ")
+                    article_display['wikidata_image_url'] = ''
+                    article_display['wikidata_image'] = ''
+                    article_display['qid'] = main_article[0]
+                    article_display['redirects'] = {}
 
-                views_t = request_views_by_article(main_article_, request)
-                print(views_t)
-                views = 0
-                try:
-                    views = int(views_t)
-                except Exception as e:
-                    print(f'{e} line 93 {views_t}')
-                article_display['views'] = views
-                article_display['total_views'] = 0
+                    views_t = request_views_by_article(main_article_, request)
+                    print(f'{views_t} views_t line 89')
+                    views = 0
+                    try:
+                        views = int(views_t)
+                    except Exception as e:
+                        print(f'{e} line 93 {views_t}')
+                    article_display['views'] = views
+                    article_display['total_views'] = 0
 
-                articles_to_add.append(article_display)
+                    articles_to_add.append(article_display)
 
 
     # remove redirects
@@ -122,6 +119,7 @@ def update_display_package_by_redirect(lang, articles, request):
         
             if props['qid'] == qid: # l'article main courant à des redirs à sommer
                 views_t = request_views_by_article(redirect, request)
+                print(f'{views_t} views_t line 122')
                 views = 0
                 try:
                     views = int(views_t)
@@ -152,55 +150,56 @@ def get_value_from_string_by_key(str_analyze, key):
     create_display_dataset
 '''
 def create_display_dataset(lang, articles):
-    results_wikidata = request_wd_by_lang_by_articles(lang, [article[0] for article in articles])
-    # [ qid, article_, translation, prop]
-    qids         = {tup[1]: tup[0] for tup in results_wikidata}
-    translations = {tup[1]: tup[2] for tup in results_wikidata}
-    wikidata = {tup[1]: tup[3] for tup in results_wikidata}
+    response = request_wd_by_lang_by_articles(lang, [article[0] for article in articles])
+    # [ (qid, article_, translation, prop) ] liste de tuples
+    lines = {}
+    for line in response:
+        article_ = line[1].replace(GISCARD_TRICK, "'")
+        qid = line[0]
+        translation = line[2]
+        props = line[3]
+        dict_line = {'qid': qid, 'translation': translation, 'props': props}
+        lines[article_] = dict_line
 
-    articles_dict = {}
-    for article_views_tuple in articles:
+    dict_articles = {}
+    for article in articles:
 
-        article_ = article_views_tuple[0]
-        views_t = article_views_tuple[1]
+        article_ = article[0]
+        views_t = article[1]
         views = 0
         try:
             views = int(views_t)
         except Exception as e:
             print(f'{e} create_display_dataset line 131')
 
-        qid = qids.get(article_, {})
-        cleaned_article = article_.replace('_', ' ')
+        qid = lines.get(article_, {}).get('qid', {})
+        if qid: #KeyError: 'Cédric_Doumbé'
+            cleaned_article = article_.replace('_', ' ')
+            translation = lines[article_].get('translation', {})
+            dict_props = lines[article_].get('props', {})
+        
+            props_str = json.dumps(dict_props)
+            wikidata_image, wikidata_image_url = '', ''
+            if props_str != 'null': #JSON stuff, to rewrite
+                wikidata_image = get_value_from_string_by_key(props_str, "P18")
+                wikidata_image_url =  ""
+                if wikidata_image:
+                    wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + wikidata_image.replace(' ', '_')
+                    wikidata_image = get_commons_image_url(wikidata_image_url)
 
-        translation = translations.get(article_, '')
-        dict_props = {}
-        try:
-            dict_props = wikidata.get(article_)
-        except Exception as e:
-            print(f'{e} create_display_dataset line 141')
+            if article_ not in FILTERERED_QIDS.values():
+                article_display = {}
+                article_display['cleaned_article'] = cleaned_article
+                article_display['views'] = views
+                article_display['translation'] = translation.replace("_", " ")
+                article_display['wikidata_image_url'] = wikidata_image_url
+                article_display['wikidata_image'] = wikidata_image
+                article_display['qid'] = qid
+                article_display['redirects'] = {}
+                article_display['total_views'] = 0
+                dict_articles[article_] = article_display
 
-        props_str = json.dumps(dict_props)
-        wikidata_image, wikidata_image_url = '', ''
-        if props_str != 'null': #JSON stuff, to rewrite
-            wikidata_image = get_value_from_string_by_key(props_str, "P18")
-            wikidata_image_url =  ""
-            if wikidata_image:
-                wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + wikidata_image.replace(' ', '_')
-                wikidata_image = get_commons_image_url(wikidata_image_url)
-
-        if article_ not in FILTERERED_QIDS.values():
-            article_display = {}
-            article_display['cleaned_article'] = cleaned_article;
-            article_display['views'] = views;
-            article_display['translation'] = translation.replace("_", " ");
-            article_display['wikidata_image_url'] = wikidata_image_url;
-            article_display['wikidata_image'] = wikidata_image;
-            article_display['qid'] = qid;
-            article_display['redirects'] = {};
-            article_display['total_views'] = 0;
-            articles_dict[article_] = article_display
-
-    return articles_dict
+    return dict_articles
 
 
 '''
@@ -442,14 +441,15 @@ def by_year_lang(lang, year):
 def by_article(lang, qid):
     if not qid.startswith('Q'):
         return redirect("/", code=302)
+    
     if lang not in  SUPPORTED_LANGUAGES:
         return redirect("/", code=302)
     article = request_wd_by_qid(lang, qid)
+    # [('Q106349', 'Fanny_Ardant', '"{\\"P18\\": \\"FANNY ARDANT CESAR 2020.jpg\\", \\"P31\\": \\"Q5\\", \\"P21\\": \\"Q6581072\\"}"')]
+    print(f'{article} sur accès wikidata line 449')
     title_ = article[0][1]
-    if not title_:
-        return redirect("/", code=302)
-    
-    props_str = json.dumps(article[0][3])
+    props_str = json.dumps(article[0][2])
+    translation = article[0][3]
     wikidata_image, wikidata_image_url = '', ''
 
     if props_str != 'null': #JSON stuff, to rewrite
@@ -481,11 +481,11 @@ def by_article(lang, qid):
                 lang=lang,
                 qid=qid,            
                 title=title_,
-                translation=article[0][2].replace("_", " "),
                 wikidata_image=wikidata_image,
                 wikidata_image_url=wikidata_image_url,
                 flag = FLAGS_STUFF[lang],
                 sentence = sentence,
+                translation=translation,
                 statistics = statistics
     )
     

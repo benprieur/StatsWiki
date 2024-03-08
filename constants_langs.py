@@ -501,17 +501,19 @@ SUPPORTED_REDIRECTS_BY_LANG = {
         },
     'fr': 
         {
-            'Pandémie de maladie à coronavirus de 2019-2020' : 'Q81068910',
+            "Pandémie de maladie à coronavirus de 2019-2020" : "Q81068910",
             
-            'Pandémie de maladie à coronavirus de 2020 en France' : 'Q83873593',
+            "Pandémie de maladie à coronavirus de 2020 en France" : "Q83873593",
             
-            'Grippe de 1918' : 'Q178275',
+            "Grippe de 1918" : "Q178275",
             
-            'Charles de Galles' : 'Q43274',
+            "Charles de Galles" : "Q43274",
 
-            'Mort de George Floyd' : 'Q95579249',
+            "Mort de George Floyd" : "Q95579249",
 
-            'Cédric Doumbé' : 'Q24452252'
+            "Cédric Doumbé" : "Q24452252",
+
+            "Coupe d'Afrique des Nations" : "Q83145"
         },
     'ja': 
         {
