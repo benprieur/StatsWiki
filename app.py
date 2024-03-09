@@ -4,28 +4,50 @@ from dateutil.relativedelta import relativedelta
 import calendar
 import json
 import sqlite3
+from datetime import date
+from datetime import timedelta
 
-from constants import SUPPORTED_LANGUAGES, SUPPORTED_YEARS, REQUEST_TYPE, GISCARD_TRICK
+from constants import SUPPORTED_LANGUAGES, SUPPORTED_YEARS
 from constants_langs import FLAGS_STUFF, GlOBAL_PAGE_STUFF, MONTHS_BY_LANG, MONTH_PAGE_STUFF, YEAR_PAGE_STUFF, FILTERS_BY_LANG, SUPPORTED_REDIRECTS_BY_LANG
 from constants_wikidata import FILTERERED_QIDS
 from commons import get_commons_image_url
 
-from dbRequestLayer import request_by_lang_by_year, request_by_lang_by_month, request_by_lang_by_day, request_wd_by_qid
-from dbRequestLayer import request_by_lang, request_views_by_article, request_wd_by_lang_by_articles
+from dbRequestLayer import request_by_lang_by_articles_by_date, request_by_qid, request_by_lang_by_date, request_by_lang, request_dataviz, request_by_lang_by_qids_by_date, special_request_redirects
 from wikimedia import get_first_sentence_wikipedia_article
 
 
 app = Flask(__name__)
 
+'''
+    check_date
+'''
+def check_date(year, month=1, day=1):
+
+    dt = date(year=year, month=month, day=day)
+    today = date.today()
+    yesterday = today - timedelta(days = 1)
+    start_2015 = date(2015,7, 1)
+
+    if dt <= yesterday and dt >= start_2015:
+        return True
+    return False
 
 '''
     display
 '''
-def display(lang, articles, request):
-    articles_display = create_display_dataset(lang, articles)            
-    articles_display = update_display_package_by_redirect(lang, articles_display, request)
+def display(lang, articles, year=0, month=0, day=0):
+    articles_display = create_display_dataset(lang, 
+                                              articles, 
+                                              year, 
+                                              month, day)           
+    articles_display = update_display_package_by_redirect(lang, 
+                                                          articles_display, 
+                                                          year, 
+                                                          month, 
+                                                          day)
 
     for _, props in articles_display.items():
+        
         qid = props.get('qid', "")
 
         if qid in SUPPORTED_REDIRECTS_BY_LANG[lang].values():
@@ -50,84 +72,84 @@ def display(lang, articles, request):
     articles_display = dict(sorted(articles_display.items(), key=lambda item: item[1]['total_views'], reverse=True))
     return articles_display
 
+
 '''
     update_display_package_by_redirect
 '''
-def update_display_package_by_redirect(lang, articles, request):
+def update_display_package_by_redirect(lang, 
+                                       articles_display,
+                                       year,
+                                       month,
+                                       day):
 
     articles_to_remove = []
     articles_to_add = []
 
-    # Pour tous les articles du dataset
-    for article_, props in articles.items():
-        views = props['views']
-        qid = props['qid']
-        cleaned_article =  props['cleaned_article']
+    for key, value in articles_display.items():
+        article_ = key
+        views = value['views']
+        qid = value['qid']
 
-        # Les redirections connues
-        qids = [id for key, id in SUPPORTED_REDIRECTS_BY_LANG[lang].items() if key == cleaned_article] 
+        if qid in SUPPORTED_REDIRECTS_BY_LANG[lang].values():
 
-        # Pour chaque redirect
-        for qid in qids:
-            results = request_wd_by_qid(lang, qid)
-            if results:
-                main_article = results[0]
-                main_article_ = main_article[1].replace(GISCARD_TRICK, "'")
-                main_cleaned_article = main_article_.replace("_", " ").replace(GISCARD_TRICK, "'")
-                articles_to_remove.append(article_)
+            # Ici on a un article qui est dans le support redirect
+            # L'article courant article_ est une redir
+            articles_to_remove.append(article_)
 
-                if main_article_ not in articles.keys():
-                    article_display = {}
-                    article_display['cleaned_article'] = main_cleaned_article
-                    article_display['translation'] = main_article[2].replace("_", " ")
-                    article_display['wikidata_image_url'] = ''
-                    article_display['wikidata_image'] = ''
-                    article_display['qid'] = main_article[0]
-                    article_display['redirects'] = {}
+            # On va chercher les infos relatives au main article
+            main_article = request_by_lang_by_qids_by_date(lang, [qid], year, month, day)
+            main_article = main_article[0]
+            main_article_ = main_article[1]
 
-                    views_t = request_views_by_article(main_article_, request)
-                    print(f'{views_t} views_t line 89')
-                    views = 0
-                    try:
-                        views = int(views_t)
-                    except Exception as e:
-                        print(f'{e} line 93 {views_t}')
-                    article_display['views'] = views
-                    article_display['total_views'] = 0
+            article_display = {}
 
-                    articles_to_add.append(article_display)
-
+            article_display['cleaned_article'] = main_article_.replace("_", " ")
+            article_display['translation'] = main_article[2].replace("_", " ")
+            article_display['wikidata_image_url'] = ''
+            article_display['wikidata_image'] = ''
+            article_display['qid'] = main_article[0]
+            article_display['redirects'] = {}
+            article_display['views'] = main_article[4]
+            article_display['total_views'] = 0
+            articles_to_add.append(article_display)
 
     # remove redirects
     for article_ in articles_to_remove:
-        if article_ in articles.keys():
-            articles.pop(article_)  
-            print(f'{article_} pop line 102')
+        if article_ in articles_display.keys():
+            articles_display.pop(article_)  
 
     # add target redirects
     for article_display in articles_to_add:
         key = article_display['cleaned_article'].replace(" ", "_")
-        if key not in articles:
-            articles[key] = article_display
-            print(f'{key}-{article_display} add2dict line 11')
-
+        if key not in articles_display:
+            articles_display[key] = article_display
 
     # Ici on parcourt toutes les lignes du dataset
-    for article_, props in articles.items():
-        # Quand il a des redirects
-        for redirect, qid in SUPPORTED_REDIRECTS_BY_LANG[lang].items():
-        
-            if props['qid'] == qid: # l'article main courant à des redirs à sommer
-                views_t = request_views_by_article(redirect, request)
-                print(f'{views_t} views_t line 122')
+    for article_, props in articles_display.items():
+    
+        qid = props.get('qid', {})
+        redirects = []
+        for key, val in SUPPORTED_REDIRECTS_BY_LANG[lang].items():
+            if val == qid:
+                redirects.append(key)
+                
+        views_redirects = special_request_redirects(lang,
+                                            redirects,
+                                            year,
+                                            month,
+                                            day)
+        print(views_redirects)
+        if views_redirects:
+            for index, vr in enumerate(views_redirects[0]):
                 views = 0
                 try:
-                    views = int(views_t)
+                    views = int(vr)
                 except Exception as e:
-                    print(f'{e} line 125 {views_t}')
-                props['redirects'][redirect] = views
-    
-    return articles
+                    print(f'{e} line 125 {vr}')
+                
+                props['redirects'][redirects[index]] = views
+
+    return articles_display
 
 
 '''
@@ -149,55 +171,51 @@ def get_value_from_string_by_key(str_analyze, key):
 '''
     create_display_dataset
 '''
-def create_display_dataset(lang, articles):
-    response = request_wd_by_lang_by_articles(lang, [article[0] for article in articles])
-    # [ (qid, article_, translation, prop) ] liste de tuples
-    lines = {}
+def create_display_dataset(lang, articles, year=0, month=0, day=0):
+
+    response = articles
+    if year != 0:
+        response = request_by_lang_by_articles_by_date(lang, 
+                                                   [article[1] for article in articles],
+                                                   year,
+                                                   month,
+                                                   day)
+    '''
+    qid,
+    {lang}_title,
+    en_translation,
+    props,
+    views
+    '''
+    
+    dict_articles = {}
     for line in response:
-        article_ = line[1].replace(GISCARD_TRICK, "'")
         qid = line[0]
+        article = line[1]
         translation = line[2]
         props = line[3]
-        dict_line = {'qid': qid, 'translation': translation, 'props': props}
-        lines[article_] = dict_line
+        views = line[4]
 
-    dict_articles = {}
-    for article in articles:
+        props_str = json.dumps(props)
+        wikidata_image, wikidata_image_url = '', ''
+        if props_str != 'null':
+            wikidata_image = get_value_from_string_by_key(props_str, "P18")
+            wikidata_image_url =  ""
+            if wikidata_image:
+                wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + wikidata_image.replace(' ', '_')
+                wikidata_image = get_commons_image_url(wikidata_image_url)
 
-        article_ = article[0]
-        views_t = article[1]
-        views = 0
-        try:
-            views = int(views_t)
-        except Exception as e:
-            print(f'{e} create_display_dataset line 131')
-
-        qid = lines.get(article_, {}).get('qid', {})
-        if qid: #KeyError: 'Cédric_Doumbé'
-            cleaned_article = article_.replace('_', ' ')
-            translation = lines[article_].get('translation', {})
-            dict_props = lines[article_].get('props', {})
-        
-            props_str = json.dumps(dict_props)
-            wikidata_image, wikidata_image_url = '', ''
-            if props_str != 'null': #JSON stuff, to rewrite
-                wikidata_image = get_value_from_string_by_key(props_str, "P18")
-                wikidata_image_url =  ""
-                if wikidata_image:
-                    wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + wikidata_image.replace(' ', '_')
-                    wikidata_image = get_commons_image_url(wikidata_image_url)
-
-            if article_ not in FILTERERED_QIDS.values():
-                article_display = {}
-                article_display['cleaned_article'] = cleaned_article
-                article_display['views'] = views
-                article_display['translation'] = translation.replace("_", " ")
-                article_display['wikidata_image_url'] = wikidata_image_url
-                article_display['wikidata_image'] = wikidata_image
-                article_display['qid'] = qid
-                article_display['redirects'] = {}
-                article_display['total_views'] = 0
-                dict_articles[article_] = article_display
+        if article not in FILTERERED_QIDS.values():
+            article_display = {}
+            article_display['cleaned_article'] = article.replace("_", " ")
+            article_display['views'] = views
+            article_display['translation'] = translation.replace("_", " ")
+            article_display['wikidata_image_url'] = wikidata_image_url
+            article_display['wikidata_image'] = wikidata_image
+            article_display['qid'] = qid
+            article_display['redirects'] = {}
+            article_display['total_views'] = 0
+            dict_articles[article] = article_display
 
     return dict_articles
 
@@ -206,22 +224,16 @@ def create_display_dataset(lang, articles):
     check_results
 '''
 def check_results(results):
+
     try:
-        ret = False
         if results is None:
-            ret = False
+            return False
         if results == []:
-            ret = False
-        elif results[0][1] == 0: 
-            ret = False
+            return False
         else:
-            ret = True
-        return ret
-    except sqlite3.Error as e:
-        print(f'{e} check_results line 183')  
-        return False
-    except:
-        print(f'{e} check_results line 186')    
+            return True
+    except Exception as e:
+        print(f'{e} check_results line 224')    
         return False
     
 
@@ -249,8 +261,8 @@ def by_language(lang):
         articles = request_by_lang(lang)
         if not check_results(articles):
             return redirect("/", code=302)
-
-        articles_display = display(lang, articles, ['lang', lang])
+        
+        articles_display = display(lang, articles)
 
         return render_template('index_lang.html', 
                 lang=lang,
@@ -276,12 +288,19 @@ def by_language(lang):
 @app.route('/<lang>/<int:year>/<int:month>/<int:day>/', strict_slashes=False)
 def by_day_lang(lang, year, month, day):
 
+    if not check_date(year, month, day):
+        return redirect("/", code=302)
+    
     if lang in SUPPORTED_LANGUAGES and int(year) in SUPPORTED_YEARS:
-        articles = request_by_lang_by_day(lang, year, month, day)
+        articles = request_by_lang_by_date(lang, year, month, day)
         if not check_results(articles):
             return redirect("/", code=302)
 
-        articles_display = display(lang, articles, ['day', lang, year, month, day])
+        articles_display = display(lang, 
+                                   articles, 
+                                   year, 
+                                   month, 
+                                   day)
          
         day_current = date(year=year, month=month, day=day)
         day_before_date = day_current - timedelta(days=1)
@@ -289,12 +308,12 @@ def by_day_lang(lang, year, month, day):
         day_before_link = f'/{lang}/{day_before_date.year}/{day_before_date.month:02d}/{day_before_date.day:02d}'
         day_after_link = f'/{lang}/{day_after_date.year}/{day_after_date.month:02d}/{day_after_date.day:02d}'
         day_after_str, day_before_str = '', ''
-        if check_results(request_by_lang_by_day(lang, 
+        if check_results(request_by_lang_by_date(lang, 
                                                 day_before_date.year, 
                                                 day_before_date.month, 
                                                 day_before_date.day)):
             day_before_str = f'<< {day_before_date.year}/{day_before_date.month:02d}/{day_before_date.day:02d}'
-        if check_results(request_by_lang_by_day(lang, 
+        if check_results(request_by_lang_by_date(lang, 
                                                 day_after_date.year, 
                                                 day_after_date.month,day_after_date.day)):
             day_after_str = f'{day_after_date.year}/{day_after_date.month:02d}/{day_after_date.day:02d} >>'
@@ -326,13 +345,20 @@ def by_day_lang(lang, year, month, day):
 '''
 @app.route('/<lang>/<int:year>/<int:month>/', strict_slashes=False)
 def by_month_lang(lang, year, month):
+    
+    if not check_date(year, month):
+        return redirect("/", code=302)
+    
     if lang in SUPPORTED_LANGUAGES and year in SUPPORTED_YEARS:
-        articles = request_by_lang_by_month(lang, year, month)
+        articles = request_by_lang_by_date(lang, year, month)
 
         if not check_results(articles):
             return redirect("/", code=302)
 
-        articles_display = display(lang, articles, ['month', lang, year, month])
+        articles_display = display(lang, 
+                                   articles,
+                                    year, 
+                                    month)
          
         month_current_date = date(year=year, month=month, day=15)
         month_before_date = month_current_date - relativedelta(days=30)
@@ -342,12 +368,12 @@ def by_month_lang(lang, year, month):
         current_month = MONTHS_BY_LANG[lang][month-1]
 
         month_before, month_after = '', ''
-        if check_results(request_by_lang_by_month(lang, 
+        if check_results(request_by_lang_by_date(lang, 
                                                   month_before_date.year, 
                                                   month_before_date.month,
                                                   )): 
             month_before = '<< ' + MONTHS_BY_LANG[lang][month_before_date.month-1] + ' ' + str(month_before_date.year)
-        if check_results(request_by_lang_by_month(lang, 
+        if check_results(request_by_lang_by_date(lang, 
                                                   month_after_date.year, 
                                                   month_after_date.month
                                                   )): 
@@ -385,22 +411,27 @@ def by_month_lang(lang, year, month):
 '''
 @app.route('/<lang>/<int:year>', strict_slashes=False)
 def by_year_lang(lang, year):
+    
+    if not check_date(year):
+        return redirect("/", code=302)
+    
     if lang in SUPPORTED_LANGUAGES and year in SUPPORTED_YEARS:
-        articles = request_by_lang_by_year(lang, year)
-        
+        articles = request_by_lang_by_date(lang, year)
+
         if not check_results(articles):
             return redirect("/", code=302)
 
-        articles_display = display(lang, articles, ['year', lang, year])
-         
+        articles_display = display(lang, 
+                                   articles, 
+                                   year)
+        
         list_months = []
         list_months_link = [] 
-        for index, _ in enumerate(MONTHS_BY_LANG[lang]):
-            results = request_by_lang_by_month(lang, year, index+1)
+        for month, _ in enumerate(MONTHS_BY_LANG[lang]):
+            results = request_by_lang_by_date(lang, year, month+1)
             if results:
-                if results[0][1] > 0:
-                    list_months.append(MONTHS_BY_LANG[lang][index])    
-                    list_months_link.append(f'/{lang}/{year}/{index+1}')
+                list_months.append(MONTHS_BY_LANG[lang][month])    
+                list_months_link.append(f'/{lang}/{year}/{month+1}')
         months = {}
         for index, month in enumerate(list_months):
             months[month] = list_months_link[index]
@@ -410,9 +441,9 @@ def by_year_lang(lang, year):
         year_before, year_after = '', ''
         year_before_link = f'/{lang}/{previous_year:02d}'
         year_after_link = f'/{lang}/{next_year:02d}'
-        if check_results(request_by_lang_by_year(lang, previous_year)):
+        if check_results(request_by_lang_by_date(lang, previous_year)):
             year_before = '<< ' + str(previous_year)
-        if check_results(request_by_lang_by_year(lang, next_year)):
+        if check_results(request_by_lang_by_date(lang, next_year)):
             year_after = str(next_year) + ' >>'
 
         return render_template('year.html', 
@@ -444,43 +475,42 @@ def by_article(lang, qid):
     
     if lang not in  SUPPORTED_LANGUAGES:
         return redirect("/", code=302)
-    article = request_wd_by_qid(lang, qid)
-    # [('Q106349', 'Fanny_Ardant', '"{\\"P18\\": \\"FANNY ARDANT CESAR 2020.jpg\\", \\"P31\\": \\"Q5\\", \\"P21\\": \\"Q6581072\\"}"')]
-    print(f'{article} sur accès wikidata line 449')
-    title_ = article[0][1]
-    props_str = json.dumps(article[0][2])
-    translation = article[0][3]
-    wikidata_image, wikidata_image_url = '', ''
+    
+    response = request_dataviz(lang, qid)
+    print(response)
+    try:
+        article = response[0]
+        title = article[1]
+        translation = article[2]
+        props_str = json.dumps(article[3])
+        months = []
+        data = response[0][4:]
+        months = [month for _ in SUPPORTED_YEARS for month in range(1,13)]
+        statistics = []
+        for index, month in enumerate(months):
+            if index > 6 and index < 114:
+                statistics.append((month, data[index]))
 
-    if props_str != 'null': #JSON stuff, to rewrite
-        wikidata_image = get_value_from_string_by_key(props_str, "P18")
-        wikidata_image_url =  ""
-        if wikidata_image:
-            wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + wikidata_image.replace(' ', '_')
-            wikidata_image = get_commons_image_url(wikidata_image_url)
+        wikidata_image, wikidata_image_url = '', ''
+        if props_str != 'null': #JSON stuff, to rewrite
+            wikidata_image = get_value_from_string_by_key(props_str, "P18")
+            wikidata_image_url =  ""
+            if wikidata_image:
+                wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + wikidata_image.replace(' ', '_')
+                wikidata_image = get_commons_image_url(wikidata_image_url)
 
-    sentence = get_first_sentence_wikipedia_article(lang, title_)
-
-    statistics = []
-    for year in SUPPORTED_YEARS:
-        if year == 2015:
-            for month in range(7, 13):
-                mont_stats = request_views_by_article(title_, ['month', lang, year, month])
-                statistics.append(mont_stats)
-        elif year in [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]:
-            for month in range(1, 13):
-                mont_stats = request_views_by_article(title_, ['month', lang, year, month])
-                statistics.append(mont_stats)
-        elif year == 2024:
-            for month in range(1, 4):
-                mont_stats = request_views_by_article(title_, ['month', lang, year, month])
-                statistics.append(mont_stats)
-
+        sentence = get_first_sentence_wikipedia_article(lang, title)
+        if '.' not in sentence:
+            words = sentence.split()
+            if len(words) > 20:
+                sentence = ' '.join(words[:20])
+    except:
+        return redirect("/", code=302)
 
     return render_template('article.html', 
                 lang=lang,
                 qid=qid,            
-                title=title_,
+                title=title,
                 wikidata_image=wikidata_image,
                 wikidata_image_url=wikidata_image_url,
                 flag = FLAGS_STUFF[lang],

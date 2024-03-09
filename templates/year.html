@@ -83,7 +83,7 @@
                                     {% for redir, views in article['redirects'].items() %}   
                                         <br />
                                         <img src='/static/redirect.png' style='width:10px;'/>
-                                        <i><a href='https://{{lang}}.wikipedia.org/wiki/{{redir}}'>{{ redir.replace('_', ' ') }}</a></i>
+                                        <i><a href='https://{{lang}}.wikipedia.org/wiki/{{redir}}'>{{ redir | replace('_', ' ') }}</a></i>
                                         &nbsp;(<span class="number">{{views}}</span>)
                                        {% endfor %} 
                                     </span>

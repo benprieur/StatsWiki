@@ -99,10 +99,11 @@ def insert_wikidata_stuff(lang, qid, stuff):
     '''
 
     try:
+        print(insert_query)
         cursor.execute(insert_query, values)
         conn.commit() 
         
     except sqlite3.Error as e:
-        print(e)
+        print(f"insert_query e")
 
     conn.close()
