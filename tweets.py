@@ -1,10 +1,9 @@
 from datetime import datetime, timedelta
 from datetime import date
-from flask import redirect
+
 import tweepy
 import time
 
-from app import check_results
 from dbRequestLayer import request_by_lang_by_date
 from constants import SUPPORTED_LANGUAGES
 from constants_langs import DAILY_TWEET_SENTENCE
@@ -39,14 +38,14 @@ def daily_tweet():
                  
         yesterday_str = yesterday.strftime('%Y/%m/%d')
         text = DAILY_TWEET_SENTENCE[lang] +  ' '+ f'({yesterday_str})\n'
-        url = f'http://statswiki.info/{lang}/{yesterday.year}/{yesterday.month}/{yesterday.day}'
+        url = f'https://statswiki.info/{lang}/{yesterday.year}/{yesterday.month}/{yesterday.day}'
         for index in range(0, 3):
             match (index):
                 case 0: text += "🥇 "
                 case 1: text += "🥈 "
                 case 2: text += "🥉 "
             text += f'{articles_display[index][0]}' 
-            text += f'({articles_display[index][1]})\n'
+            text += f' ({articles_display[index][1]})\n'
         text += f'{url}\r\n'
         print(text)
         tweet_upload_v2(text)

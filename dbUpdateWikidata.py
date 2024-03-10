@@ -7,19 +7,24 @@ from dbRequestLayer import request_by_lang_by_date
 '''
 def insert_wikidata_by_lang_by_article(lang, article):
     _, qid = get_qid(lang, article)
-    if qid:
+    print(f'qid {qid}')
+
+    wikidata_stuff = {}
+
+    if qid == f"Q_{lang}_" + article:
+        #Redir
+        wikidata_stuff = { 'label_en': '', 
+                          'main_properties' : {}, 
+                          'sitelinks' : {} 
+    }
+    else:
         wikidata_stuff = get_wikidata_stuff(lang, qid)
-        if wikidata_stuff is not {}:
-            insert_wikidata_stuff(lang, qid, wikidata_stuff)
+        
+    insert_wikidata_stuff(lang, qid, article, wikidata_stuff)
 
 
-for lang in SUPPORTED_LANGUAGES:
-    response = request_by_lang_by_date(lang, 2024, 3, 8)
-    #print(response)
-    for tup in response:
-        title = tup[1]
-        print(f"{lang}-{title}")
-        insert_wikidata_by_lang_by_article(lang, title)
+
+insert_wikidata_by_lang_by_article('fr', 'Cédric_Doumbé')
 
 
 

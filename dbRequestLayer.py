@@ -1,8 +1,9 @@
 import sqlite3
-
+import json
 from constants import DB_NAME, SQL_LIMIT, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
-from constants_wikidata import WIKIDATA_TABLE
 from constants_langs import FILTERS_BY_LANG
+from commons import get_commons_image_url
+from wikimedia import get_first_sentence_wikipedia_article
 
 '''
     filter_results
@@ -37,6 +38,7 @@ def column_exists(conn, table_name, column_name):
     request_by_lang_by_articles_by_date
 '''
 def request_by_lang_by_articles_by_date(lang, articles, year, month=0, day=0):
+    
     if lang not in SUPPORTED_LANGUAGES:
         return []
 
@@ -204,36 +206,6 @@ def request_by_lang_by_date(lang, year, month=0, day=0):
         conn.close()
 
 
-'''
-    request_by_qid
-'''
-def request_by_qid(lang, qid_):
-
-    conn = sqlite3.connect(DB_NAME)
-    cursor = conn.cursor()
-    if lang not in SUPPORTED_LANGUAGES:
-        return []
-    
-    sql_query = f"""
-                SELECT
-                qid,
-                {lang}_title,
-                en_translation,
-                props
-                FROM {lang}_vue
-                WHERE qid='{qid_}'
-            """
-    
-    try:
-        cursor.execute(sql_query)
-        results = cursor.fetchall()
-        return filter_results(lang, results)
-    except Exception as e:
-        print(f'request_by_qid: {e}')
-    finally:
-        if conn:
-            conn.close()
-
 
 '''
     request_by_lang
@@ -270,6 +242,22 @@ def request_by_lang(lang):
         conn.close()
 
 '''
+    get_value_from_string_by_key
+'''
+def get_value_from_string_by_key(str_analyze, key):
+    # "\"{\\\"P18\\\": \\\"Dark vignette Al-Masjid AL-Nabawi Door800x600x300.jpg\\\", \\\"P21\\\": \\\"Q6581097\\\", \\\"P31\\\": \\\"Q5\\\"}\"" 
+ 
+    start_index = str_analyze.find(key)
+    start_value = str_analyze.find(":", start_index)
+    start_delim = str_analyze.find("\"", start_value)
+    end_delim = str_analyze.find("\"", start_delim+1)
+    result = str_analyze[start_delim+1:end_delim]
+    result = result.replace ("\\", "")
+
+    return result
+
+
+'''
     request_dataviz
 '''
 def request_dataviz(lang, qid_):
@@ -294,12 +282,51 @@ def request_dataviz(lang, qid_):
     try:
         cursor.execute(sql_query)
         results = cursor.fetchall()
-        return filter_results(lang, results)
+        results = filter_results(lang, results)
+        results = results[0]
+
+        _ = results[0] # qid
+        title = results[1]
+        translation = results[2]
+
+        months = []
+        data = results[4:]
+        months = [int(f'{year}{month:02d}') for year in SUPPORTED_YEARS for month in range(1,13)]
+        statistics = []
+        for index, months in enumerate(months):
+            if index > 6 and index < 110:
+                    statistics.append((months, data[index]))
+
+        wikidata_image, wikidata_image_url = '', ''
+
+        if results[3]:
+            props_str = json.dumps(results[3])
+            wikidata_image = get_value_from_string_by_key(props_str, "P18")
+            wikidata_image_url =  ""
+            if wikidata_image:
+                wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + wikidata_image.replace(' ', '_')
+                wikidata_image = get_commons_image_url(wikidata_image_url)
+
+        sentence = get_first_sentence_wikipedia_article(lang, title)
+        words = sentence.split(' ')
+        if len(words) > 20:
+            sentence = ' '.join(words[:20])
+
+        results_dict = {
+            'title' : title,
+            'translation' : translation,
+            'statistics' : statistics,
+            'wikidata_image' : wikidata_image,
+            'wikidata_image_url' : wikidata_image_url,
+            'sentence' : sentence
+        }
+        return results_dict
     except Exception as e:
-        print(e)
-        return []
+        print(f"request_dataviz {e}")
+        return {}
     finally:
         conn.close()
+
 
 '''
     special_request_redirect

@@ -3,6 +3,7 @@ from constants import DB_NAME, SUPPORTED_LANGUAGES
 from constants_wikidata import WIKIDATA_TABLE
 import json
 
+
 '''
     insert_by_day_by_lang
 '''
@@ -70,40 +71,52 @@ def insert_by_day_by_lang(lang, year, month, day, articles):
 '''
     insert_wikidata_stuff
 '''
-def insert_wikidata_stuff(lang, qid, stuff):
+def insert_wikidata_stuff(lang, qid, article, stuff):
 
     table = WIKIDATA_TABLE
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
-    en_translation = stuff.get('label_en', '') or stuff.get('sitelinks', {}).get('en', '').replace('_', ' ')
+    if not qid.startswith(f'Q_{lang}_'):
+        en_translation = stuff.get('label_en', '') or stuff.get('sitelinks', {}).get('en', '').replace('_', ' ')
 
-    props = json.dumps(stuff.get('main_properties', {}))
-    sitelinks = stuff.get('sitelinks', {})
-    columns = ['qid', 'en_translation', 'props']
-    values = [qid, en_translation, props]
+        props = json.dumps(stuff.get('main_properties', {}))
+        sitelinks = stuff.get('sitelinks', {})
+        columns = ['qid', 'en_translation', 'props']
+        values = [qid, en_translation, props]
 
-    for langwiki, site in sitelinks.items():
-        lang = langwiki.replace('wiki', '')
-        if lang in SUPPORTED_LANGUAGES:
-            column_name = f'{lang}_title'
-            columns.append(column_name)
-            value_name = site['title'].replace(" ", "_")
-            values.append(value_name)
+        for langwiki, site in sitelinks.items():
+            lang = langwiki.replace('wiki', '')
+            if lang in SUPPORTED_LANGUAGES:
+                column_name = f'{lang}_title'
+                columns.append(column_name)
+                value_name = site['title'].replace(" ", "_")
+                values.append(value_name)
 
-    columns_str = ', '.join(columns)
-    placeholders = ', '.join(['?' for _ in range(len(columns))])
+        columns_str = ', '.join(columns)
+        placeholders = ', '.join(['?' for _ in range(len(columns))])
 
-    insert_query = f'''
-    REPLACE INTO {table} ({columns_str}) VALUES ({placeholders})
-    '''
-
-    try:
-        print(insert_query)
-        cursor.execute(insert_query, values)
-        conn.commit() 
+        insert_query = f'''
+        REPLACE INTO {table} ({columns_str}) VALUES ({placeholders})
+        '''
         
-    except sqlite3.Error as e:
-        print(f"insert_query e")
+        try:
+            cursor.execute(insert_query, values)
+            conn.commit()   
+        except sqlite3.Error as e:
+            print(f"{e}")
+        
+    else: #Redirs
+
+        insert_query = f"""
+        INSERT INTO {table} (qid, {lang}_title) VALUES (?, ?);
+        """
+        print(insert_query)
+
+        try:
+            cursor.execute(insert_query, (qid, article))
+            conn.commit()   
+        except sqlite3.Error as e:
+            print(f"{e}")
 
     conn.close()

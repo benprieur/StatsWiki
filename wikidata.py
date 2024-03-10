@@ -6,36 +6,33 @@ import json
 '''
     get_qid
 '''
-def get_qid(lang, tuple_article_views):
-    
-    article = tuple_article_views[0]
+def get_qid(lang, article):
+
+    print(article)
     url = f'https://{lang}.wikipedia.org/w/api.php?action=query&titles={article}&prop=pageprops&format=json'
 
-    try:
-        headers = {'User-Agent': 'MyApp/1.0 (myemail@example.com)'}
-        response = requests.get(url, headers=headers)
-        if response.status_code == 200:
-            data = response.json()
+    headers = {'User-Agent': 'MyApp/1.0 (myemail@example.com)'}
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
 
-            try:
-                pages = data['query']['pages']
-                pageid = ''
+        pageid = ""
+        wikidata = ""
 
-                for page in pages.values():
-                    pageid = page['pageid']
-                    break
-            except:
-                print(f'get_qid exception - pageid: {lang} {article}')
-                return '', ''
-            try:
-                wikidata = pages[f'{pageid}']['pageprops']['wikibase_item']
-            except:
-                print(f'get_qid exception - wikibase_item: {lang} {article}')
-                return '', ''
+        data = response.json()
+        pages = data['query']['pages']
+        for page in pages.values():
+            pageid = page['pageid']
+            print(pageid)
+            break
+        
+        try:
+            wikidata = pages[f'{pageid}']['pageprops']['wikibase_item']
+            print(wikidata)
             return pageid, wikidata
-    except requests.RequestException as e:
-        print(f"{e}") 
-        return '', '' 
+        except:
+            wikidata = f"Q_{lang}_" + str(article)
+            print(f'redir_wikidata: {wikidata}')
+            return pageid, wikidata
     
 
 '''

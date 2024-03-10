@@ -185,5 +185,15 @@ def create_views_alltime():
 
     conn.close()
 
+conn = sqlite3.connect(DB_NAME)
+cursor = conn.cursor()
 
-create_views_day()
+#sql_command1 = "UPDATE _wikidata SET fr_title = 'Cédric_Doumbè' WHERE qid = 'Q24452252';"
+#cursor.execute(sql_command1)
+#conn.commit()
+
+sql_command2 = "SELECT * FROM fr_2024 WHERE article = 'Cédric_Doumbé';"
+cursor.execute(sql_command2)
+print(cursor.fetchall())
+
+

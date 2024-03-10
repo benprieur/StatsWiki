@@ -55,7 +55,7 @@
                         var views = {{ statistics|tojson }};
                         
                         var labels = [];
-                        var startDate = new Date(2015, 6); 
+                        var startDate = new Date(2015, 7); 
 
                         for (let i = 0; i < views.length; i++) {
                             var year = startDate.getFullYear();
@@ -69,7 +69,7 @@
                             data: {
                                 labels: labels,
                                 datasets: [{
-                                    label: 'Redirects not taken into account yet, coming soon',
+                                    label:'',
                                     data: views,
                                     borderColor: 'rgb(0, 1, 2)',
                                     tension: 0.5

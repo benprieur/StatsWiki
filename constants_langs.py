@@ -513,7 +513,9 @@ SUPPORTED_REDIRECTS_BY_LANG = {
 
             "Cédric Doumbé" : "Q24452252",
 
-            "Coupe d'Afrique des Nations" : "Q83145"
+            "Coupe d'Afrique des Nations" : "Q83145",
+
+            "Michel Manouchian" : 'Q708078'
         },
     'ja': 
         {
