@@ -5,7 +5,7 @@ import tweepy
 import time
 
 from app import check_results
-from dbRequestLayer import request_by_lang_by_day, request_wd_by_lang_by_articles
+from dbRequestLayer import request_by_lang_by_date
 from constants import SUPPORTED_LANGUAGES
 from constants_langs import DAILY_TWEET_SENTENCE
 from constants_wikidata import FILTERERED_QIDS
@@ -17,24 +17,22 @@ def daily_tweet():
     yesterday = date.today() - timedelta(days=1)
     for lang in SUPPORTED_LANGUAGES:
         
-        articles = request_by_lang_by_day(lang,
+        articles = request_by_lang_by_date(lang,
                                           yesterday.year,
                                           yesterday.month,
                                           yesterday.day
                                          )
-        articles = articles[:6]
-        results_wikidata = request_wd_by_lang_by_articles(lang, [article[0] for article in articles])
-        translation_dict = {tup[1]: tup[2] for tup in results_wikidata}
-        authorization_dict = {tup[1]: tup[0] for tup in results_wikidata}
-        articles_display = []
 
+        articles_display = []
         for article in articles:
-            article_ = article[0]
-            qid = authorization_dict.get(article_, '')
+            qid = article[0]
+            
             if qid not in FILTERERED_QIDS.keys():
+                article_ = article[1]
                 cleaned_article = article_.replace("_", " ")
-                views = article[1]
-                articles_display.append([article_, 
+                views = article[4]
+                translation = article[2]
+                articles_display.append([ 
                                          cleaned_article, 
                                          views
                                         ])
@@ -47,9 +45,8 @@ def daily_tweet():
                 case 0: text += "🥇 "
                 case 1: text += "🥈 "
                 case 2: text += "🥉 "
-            text += f'{articles_display[index][1]}' 
-            text += f' | ' 
-            text += f'{articles_display[index][2]}\n'
+            text += f'{articles_display[index][0]}' 
+            text += f'({articles_display[index][1]})\n'
         text += f'{url}\r\n'
         print(text)
         tweet_upload_v2(text)

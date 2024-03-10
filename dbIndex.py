@@ -1,5 +1,5 @@
 import sqlite3
-from constants import DB_NAME, SUPPORTED_LANGUAGES
+from constants import DB_NAME, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
 
 def index_wikidata_qid():
 
@@ -52,3 +52,68 @@ def index_wikidata_titles():
 
         conn.commit()
         conn.close()
+
+'''
+    index_tables_times
+'''
+def index_tables_times():
+
+
+    for lang in SUPPORTED_LANGUAGES:
+        for year in SUPPORTED_YEARS:
+
+            table_day = f"{lang}_{year}_day"
+            table_month = f"{lang}_{year}_month"
+            table_year = f"{lang}_{year}"
+
+            conn = sqlite3.connect(DB_NAME)
+            cursor = conn.cursor()
+    
+            sql_command_year = f"""
+                CREATE INDEX index_{lang}_{year} ON {table_year}(article);
+            """
+
+            try:
+                cursor.execute(sql_command_year)
+                conn.commit()
+            except Exception as e:
+                print(e)
+
+            
+            conn.close()
+            
+            ####### END YEAR
+            
+            conn = sqlite3.connect(DB_NAME)
+            cursor = conn.cursor()
+
+            sql_command_month= f"""
+                CREATE INDEX index_{lang}_{year}_month ON {table_month}(article);
+            """
+
+            try:
+                cursor.execute(sql_command_month)
+                conn.commit()
+            except Exception as e:
+                print(e)
+                
+            conn.close()
+
+            #### END MONTH 
+
+            conn = sqlite3.connect(DB_NAME)
+            cursor = conn.cursor()
+
+            sql_command_day= f"""
+                CREATE INDEX index_{lang}_{year}_day ON {table_day}(article);
+            """
+
+            try:
+                cursor.execute(sql_command_day)
+                conn.commit()
+            except Exception as e:
+                print(e)
+
+            conn.close()
+
+index_tables_times()

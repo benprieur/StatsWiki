@@ -35,66 +35,73 @@
         &nbsp;
         {% endfor %}
     </nav>
-    <main>
+    <div>
         <section>
-            <table>
+            <table style="width: 70%; margin-left: auto; margin-right: auto;">
                 {% for article_, article in articles.items() %}
-                <tr>    
-                    {% if not article['qid'] %}
-
-                    <td style="text-align: left; background-color: rgb(205, 187, 190);">
-                        <a href="/{{lang}}/{{article['qid']}}">{{article['cleaned_article']}}</a>
-                       
-                        <span style="color: rgb(0, 0, 0); font-size: 0.4em; font-style: italic;">
-                            <a href="https://{{lang}}.wikipedia.org/wiki/{{article_}}">[...]</a>
-                        </span>
-                        <br />
+                
+                <tr>
+                {% if not article['qid'] %}
                         
-                        <span style="font-size: 0.5em; font-style: italic; color:firebrick">[redirect or wikidata item creation, to handle]</span>
-                    </td>
+                    <td style="text-align: left; background-color: rgb(205, 187, 190);">
+    
+                            <a href="/lang/{{article['qid']}}">{{article['cleaned_article']}}</a>
+                            
+                            <span style="color: rgb(0, 0, 0); font-size: 0.4em; font-style: italic;">
+                               <a href="https://{{lang}}.wikipedia.org/wiki/{{article_}}">[...]</a>
+                            </span>
+                            &nbsp;
+                            
+                            <span style="color: rgb(0, 0, 0); font-size: 0.4em; font-style: italic;">
+                                <a href="{{article['wikidata_image_url']}}">[img]</a>
+                            </span>
+                            
+                            <br />
+                            
+                            <span style="font-size: 0.5em; font-style: italic; color:firebrick">[redirect or wikidata item creation, to handle]</span>
+                        </td>
                         
                         <td style="text-align: left; background-color: rgb(205, 187, 190);"><img src="" width='50px'></td>
                         
-                        <td class="number" style="text-align: right; background-color: rgb(205, 187, 190); text-decoration: line-through;">{{article['views']}}</script>
+                        <td class="number" style="text-align: right; background-color: rgb(205, 187, 190); text-decoration: line-through;">{{article['views']}}
                         </td>
-
-                    {% else %}
-
+                        
+                        {% else %}
+                        
                         <td style="text-align: left;">
-
+                            
                             <a href="/{{lang}}/{{article['qid']}}">{{article['cleaned_article']}}</a>
-
                             <img src='/static/wikidata.svg' style='width:10px;'/><a href="https://www.wikidata.org/wiki/{{article['qid']}}" style="font-size: 0.5em;">{{article['qid']}}</a>
                             
                             <span style="color: rgb(0, 0, 0); font-size: 0.7em; font-style: italic;">
-                            {% if lang != 'en' and article['translation'] != ''  %}
+                                {% if lang != 'en' and article['translation'] != ''  %}
                                 ({{article['translation']}})
-                            {% endif %}    
+                                {% endif %}    
                             </span>
-
+                            
                             <span style="color: rgb(0, 0, 0); font-size: 0.4em; font-style: italic;">
-                                <a href="https://{lang}.wikipedia.org/wiki/{{article_}}">[...]</a>
+                                <a href="https://{{lang}}.wikipedia.org/wiki/{{article_}}">[...]</a>
                             </span>
                             
                             {% if article['redirects'] %}
-                                
-                                <br />
-
-                                <span style="font-size: 0.6em; color:rgb(114, 114, 114)">
+                            
+                            <br />
+                            
+                            <span style="font-size: 0.6em; color:rgb(114, 114, 114)">
                                 {{article['cleaned_article']}} 
                                 &nbsp;
                                 (<span class="number">{{article['views']}}</span>)
                                 {% for redir, views in article['redirects'].items() %}   
-                                    <br />
-                                    <img src='/static/redirect.png' style='width:10px;'/>
-                                    <i><a href='https://{{lang}}.wikipedia.org/wiki/{{redir}}'>{{ redir | replace('_', ' ') }}</a></i>
-                                    &nbsp;(<span class="number">{{views}}</span>)
-                                   {% endfor %} 
-                                </span>
+                                <br />
+                                <img src='/static/redirect.png' style='width:10px;'/>
+                                <i><a href='https://{{lang}}.wikipedia.org/wiki/{{redir}}'>{{ redir | replace('_', ' ') }}</a></i>
+                                &nbsp;(<span class="number">{{views}}</span>)
+                                {% endfor %} 
+                            </span>
                             {% endif %}
                             
                         </td>
-                
+                        
                         <td><a href="{{article['wikidata_image_url']}}"><img src="{{article['wikidata_image']}}" width='50px'></a>
                         </td>
                         
@@ -102,13 +109,13 @@
                             {{article['total_views']}}
                         </td>    
                         
-                    {% endif %}
-                </tr>
-                {% endfor %}   
-            </table>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}   
+                </table>   
     </section>
         
-    </main>
+    </div>
     
 </body>
 </html>

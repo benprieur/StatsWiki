@@ -6,31 +6,41 @@ import json
 import sqlite3
 from datetime import date
 from datetime import timedelta
+import random
 
 from constants import SUPPORTED_LANGUAGES, SUPPORTED_YEARS
 from constants_langs import FLAGS_STUFF, GlOBAL_PAGE_STUFF, MONTHS_BY_LANG, MONTH_PAGE_STUFF, YEAR_PAGE_STUFF, FILTERS_BY_LANG, SUPPORTED_REDIRECTS_BY_LANG
 from constants_wikidata import FILTERERED_QIDS
 from commons import get_commons_image_url
 
-from dbRequestLayer import request_by_lang_by_articles_by_date, request_by_qid, request_by_lang_by_date, request_by_lang, request_dataviz, request_by_lang_by_qids_by_date, special_request_redirects
+from dbRequestLayer import request_by_lang_by_articles_by_date, request_by_qid, request_by_lang_by_date, request_by_lang, request_dataviz, request_by_lang_by_qids_by_date, special_request_redirect
 from wikimedia import get_first_sentence_wikipedia_article
 
 
 app = Flask(__name__)
 
 '''
-    check_date
+    check_date_true_access
 '''
-def check_date(year, month=1, day=1):
+def check_date_true_access(year, month=0, day=0):
 
-    dt = date(year=year, month=month, day=day)
     today = date.today()
     yesterday = today - timedelta(days = 1)
     start_2015 = date(2015,7, 1)
+    
+    if day:
+        dt = date(year=year, month=month, day=day)
+        if dt > yesterday or dt < start_2015:
+            return False
+    elif month:
+        dt = date(year=year, month=month, day=1)
+        if dt > yesterday or dt < start_2015:
+            return False
+    else:
+        if year > 2024 or year < 2015:
+            return False
+    return True
 
-    if dt <= yesterday and dt >= start_2015:
-        return True
-    return False
 
 '''
     display
@@ -96,9 +106,10 @@ def update_display_package_by_redirect(lang,
             # L'article courant article_ est une redir
             articles_to_remove.append(article_)
 
-            # On va chercher les infos relatives au main article
-            main_article = request_by_lang_by_qids_by_date(lang, [qid], year, month, day)
-            main_article = main_article[0]
+            # On va chercher les infos relatives au main article d
+            response = request_by_lang_by_qids_by_date(lang, [qid], year, month, day)
+            
+            main_article = response[0]
             main_article_ = main_article[1]
 
             article_display = {}
@@ -132,22 +143,23 @@ def update_display_package_by_redirect(lang,
         for key, val in SUPPORTED_REDIRECTS_BY_LANG[lang].items():
             if val == qid:
                 redirects.append(key)
-                
-        views_redirects = special_request_redirects(lang,
-                                            redirects,
-                                            year,
-                                            month,
-                                            day)
-        print(views_redirects)
-        if views_redirects:
-            for index, vr in enumerate(views_redirects[0]):
-                views = 0
+        
+        for redirect in redirects:
+
+            response = special_request_redirect(lang,
+                                                redirect,
+                                                year,
+                                                month,
+                                                day)
+            views = 0                
+            if response:
+                print(response)
                 try:
-                    views = int(vr)
+                    views = int(response[0][0])
                 except Exception as e:
-                    print(f'{e} line 125 {vr}')
+                    print(f'{e}')
                 
-                props['redirects'][redirects[index]] = views
+            props['redirects'][redirect] = views
 
     return articles_display
 
@@ -242,7 +254,55 @@ def check_results(results):
 '''
 @app.route("/")
 def index():
+    une_lang = random.choice(['fr', 'en', 'de', 'es'])
+    une_qid = random.choice([ 'Q32096', 'Q708078', 'Q38964', 'Q117037697']) 
+
+    response = request_dataviz(une_lang, une_qid)
+    article = []
+    try:
+        article = response[0]
+    except:
+        return redirect("/", code=302)
+
+    une_title = article[1]
+    une_translation = article[2]
+
+    props_str = json.dumps(article[3])
+    months = []
+    data = response[0][4:]
+    months = [f'{year}-{month:02d}' for year in SUPPORTED_YEARS for month in range(1,13)]
+    une_statistics = []
+    for index, month in enumerate(months):
+        if index > 6 and index < 114:
+            une_statistics.append((month, data[index]))
+
+    print(f'une_statistics {une_statistics}')
+
+    une_wikidata_image, une_wikidata_image_url = '', ''
+    if props_str != 'null': #JSON stuff, to rewrite
+        une_wikidata_image = get_value_from_string_by_key(props_str, "P18")
+        une_wikidata_image_url =  ""
+        if une_wikidata_image:
+            une_wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + une_wikidata_image.replace(' ', '_')
+            une_wikidata_image = get_commons_image_url(une_wikidata_image_url)
+
+    une_sentence = get_first_sentence_wikipedia_article(une_lang, une_title)[:-1]
+    if '.' not in une_sentence:
+        words = une_sentence.split()
+        if len(words) > 20:
+            une_sentence = ' '.join(words[:20])
+
+    print(une_statistics)
     return render_template('index.html', 
+        une_flag = FLAGS_STUFF[une_lang],
+        une_qid = une_qid,
+        une_lang = une_lang,
+        une_title = une_title,
+        une_translation = une_translation,
+        une_wikidata_image_url = une_wikidata_image_url,
+        une_wikidata_image = une_wikidata_image,
+        une_sentence = une_sentence,
+        une_statistics = une_statistics,
         flags=FLAGS_STUFF,                   
         langs=SUPPORTED_LANGUAGES,
         years=SUPPORTED_YEARS,
@@ -288,7 +348,7 @@ def by_language(lang):
 @app.route('/<lang>/<int:year>/<int:month>/<int:day>/', strict_slashes=False)
 def by_day_lang(lang, year, month, day):
 
-    if not check_date(year, month, day):
+    if not check_date_true_access(year, month, day):
         return redirect("/", code=302)
     
     if lang in SUPPORTED_LANGUAGES and int(year) in SUPPORTED_YEARS:
@@ -346,7 +406,7 @@ def by_day_lang(lang, year, month, day):
 @app.route('/<lang>/<int:year>/<int:month>/', strict_slashes=False)
 def by_month_lang(lang, year, month):
     
-    if not check_date(year, month):
+    if not check_date_true_access(year, month):
         return redirect("/", code=302)
     
     if lang in SUPPORTED_LANGUAGES and year in SUPPORTED_YEARS:
@@ -412,7 +472,7 @@ def by_month_lang(lang, year, month):
 @app.route('/<lang>/<int:year>', strict_slashes=False)
 def by_year_lang(lang, year):
     
-    if not check_date(year):
+    if not check_date_true_access(year):
         return redirect("/", code=302)
     
     if lang in SUPPORTED_LANGUAGES and year in SUPPORTED_YEARS:
@@ -477,35 +537,38 @@ def by_article(lang, qid):
         return redirect("/", code=302)
     
     response = request_dataviz(lang, qid)
-    print(response)
+    article = []
     try:
         article = response[0]
-        title = article[1]
-        translation = article[2]
-        props_str = json.dumps(article[3])
-        months = []
-        data = response[0][4:]
-        months = [month for _ in SUPPORTED_YEARS for month in range(1,13)]
-        statistics = []
-        for index, month in enumerate(months):
-            if index > 6 and index < 114:
-                statistics.append((month, data[index]))
-
-        wikidata_image, wikidata_image_url = '', ''
-        if props_str != 'null': #JSON stuff, to rewrite
-            wikidata_image = get_value_from_string_by_key(props_str, "P18")
-            wikidata_image_url =  ""
-            if wikidata_image:
-                wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + wikidata_image.replace(' ', '_')
-                wikidata_image = get_commons_image_url(wikidata_image_url)
-
-        sentence = get_first_sentence_wikipedia_article(lang, title)
-        if '.' not in sentence:
-            words = sentence.split()
-            if len(words) > 20:
-                sentence = ' '.join(words[:20])
     except:
         return redirect("/", code=302)
+    
+    title = article[1]
+    translation = article[2]
+    props_str = json.dumps(article[3])
+    months = []
+    data = response[0][4:]
+    months = [f'{year}{month:02d}' for year in SUPPORTED_YEARS for month in range(1,13)]
+    statistics = []
+    for index, month in enumerate(months):
+        if index > 6 and index < 114:
+            statistics.append((month, data[index]))
+    print(data)
+    print(statistics)
+
+    wikidata_image, wikidata_image_url = '', ''
+    if props_str != 'null': #JSON stuff, to rewrite
+        wikidata_image = get_value_from_string_by_key(props_str, "P18")
+        wikidata_image_url =  ""
+        if wikidata_image:
+            wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + wikidata_image.replace(' ', '_')
+            wikidata_image = get_commons_image_url(wikidata_image_url)
+
+    sentence = get_first_sentence_wikipedia_article(lang, title)
+    if '.' not in sentence:
+        words = sentence.split()
+        if len(words) > 20:
+            sentence = ' '.join(words[:20])
 
     return render_template('article.html', 
                 lang=lang,

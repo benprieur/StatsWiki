@@ -10,8 +10,9 @@
         
         gtag('config', 'G-LP7HKWG7XQ');
     </script>
-   <script src="{{ url_for('static', filename='js/number.js') }}"></script>
-   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/number.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -28,32 +29,101 @@
     
     <main>
         <section>
-            <div>
-                <table>
-                    {% for lang in langs %}
-                    <tr>
-                        <td><a href="/{{lang}}" class="nav-link">{{lang}}</a></td>
-                        <td>{{titles[lang]}}</td>
-                        <td>
-                            {% for year in years %}
-                            <a href="/{{lang}}/{{year}}" class="nav-link">{{year}}</a>
-                            &nbsp;&nbsp;
-                            {% endfor %}
+            <table style='min-width: 400px;'>
+                <tr>
+                    <td style="vertical-align: top; text-align: left;">
+                        <span style="color: rgb(0, 0, 0); font-size: 0.9em; font-style: italic; ">
+                            {{une_flag|safe}}
+                            &nbsp;
+                            <a href='https://{{une_lang}}.wikipedia.org/wiki/{{une_title}}'>{{ une_title | replace("_", " ") }}</a>
+                            &nbsp;
+                            <img src='/static/wikidata.svg' style='width:10px;'/>
+                            <a href="https://www.wikidata.org/wiki/{{une_qid}}" style="font-size: 0.5em;">{{une_qid}}</a>                        
+                            &nbsp;
+                            <a href="/{{une_lang}}/{{une_qid}}" style="font-size: 0.5em;">/{{une_lang}}/{{une_qid}}</a>        
+                            
+                            <a href="{{une_wikidata_image_url}}"><img src="{{une_wikidata_image}}" style="width:100px; float: right;"></a>
+
+                            <br />
+                            {% if lang != 'en' and translation != ''  %}
+                            ({{une_translation}})
+                            {% endif %}
+                            <br /><br />
+                            {{une_sentence}}
+                        </span>   
+                        &nbsp;
                         </td>
                     </tr>
-                    {% endfor %}
+                    <tr><td>
+                        <canvas id="myChart" width="350" height="250"></canvas>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', (event) => {
+                                var ctx = document.getElementById('myChart').getContext('2d');
+                                
+                                var views = {{ une_statistics | tojson }};
+                                
+                                var labels = [];
+                                var startDate = new Date(2015, 7); 
+                                
+                                for (let i = 0; i < views.length; i++) {
+                                    var year = startDate.getFullYear();
+                                    var month = startDate.getMonth() + 1;
+                                    labels.push(`${year}-${month.toString().padStart(2, '0')}`);
+                                    startDate.setMonth(startDate.getMonth() + 1);
+                                }
+                                
+                                var myChart = new Chart(ctx, {
+                                    type: 'line',
+                                    data: {
+                                        labels: labels,
+                                        datasets: [{
+                                            label: 'Redirects not taken into account yet, coming soon',
+                                            data: views,
+                                            borderColor: 'rgb(0, 1, 2)',
+                                            tension: 0.5
+                                        }]
+                                    },
+                                    options: {
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                });
+                            });
+                        </script>
+                    </td>
+                </tr>      
                 </table>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <a href='https://www.benoit-prieur.fr/'>[dev]</a>
-        &nbsp;
-        <a href='https://www.twitter.com/statswiki'>@StatsWiki (X)</a>
-        &nbsp;
-        <a href='https://www.instagram.com/statswiki'>@StatsWiki (Insta)</a>        
-    </footer>
-    
-</body>
-</html>
+            </section>
+            <section>
+                <div>
+                    <table>
+                        {% for lang in langs %}
+                        <tr>
+                            <td><a href="/{{lang}}" class="nav-link">{{lang}}</a></td>
+                            <td>{{titles[lang]}}</td>
+                            <td>
+                                {% for year in years %}
+                                <a href="/{{lang}}/{{year}}" class="nav-link">{{year}}</a>
+                                &nbsp;&nbsp;
+                                {% endfor %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <a href='https://www.benoit-prieur.fr/'>[dev]</a>
+            &nbsp;
+            <a href='https://www.twitter.com/statswiki'>@StatsWiki (X)</a>
+            &nbsp;
+            <a href='https://www.instagram.com/statswiki'>@StatsWiki (Insta)</a>        
+        </footer>
+        
+    </body>
+    </html>

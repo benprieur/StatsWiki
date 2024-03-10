@@ -36,26 +36,27 @@ def column_exists(conn, table_name, column_name):
 '''
     request_by_lang_by_articles_by_date
 '''
-def request_by_lang_by_articles_by_date(lang, articles, year=0, month=0, day=0):
+def request_by_lang_by_articles_by_date(lang, articles, year, month=0, day=0):
     if lang not in SUPPORTED_LANGUAGES:
         return []
 
     if year not in SUPPORTED_YEARS:
         return []
 
-    if (month not in range(1, 13) and month != 0) or (day not in range(1, 32) and day != 0):
-        return []
-
     formatted_articles = [article.replace(" ", "_") for article in articles]
     placeholders = ', '.join('?' for _ in formatted_articles)  
 
     col_date = ""
-    if day > 0:
+    view_name = f"{lang}_{year}_vue"
+    if day:
         col_date = f"_{year}{month:02d}{day:02d}"
-    elif month > 0:
+        view_name = f'{lang}_{year}_day_view'
+    elif month:
         col_date = f"_{month:02d}"
+        view_name = f'{lang}_{year}_month_view'
     else:
         col_date = "views"
+        view_name = f'{lang}_{year}_view'
 
     sql_query = f"""
         SELECT
@@ -65,7 +66,7 @@ def request_by_lang_by_articles_by_date(lang, articles, year=0, month=0, day=0):
             props,
             {col_date}
         FROM
-            {lang}_{year}_vue
+            {view_name}
         WHERE
             {lang}_title IN ({placeholders})
     """
@@ -87,25 +88,27 @@ def request_by_lang_by_articles_by_date(lang, articles, year=0, month=0, day=0):
 '''
     request_by_lang_by_qids_by_date
 '''
-def request_by_lang_by_qids_by_date(lang, qids, year=0, month=0, day=0):
+def request_by_lang_by_qids_by_date(lang, qids, year, month=0, day=0):
+
     if lang not in SUPPORTED_LANGUAGES:
         return []
 
     if year not in SUPPORTED_YEARS:
         return []
 
-    if (month not in range(1, 13) and month != 0) or (day not in range(1, 32) and day != 0):
-        return []
-
-    placeholders = ', '.join('?' for _ in qids)  
+    placeholders = ', '.join('?' for _ in qids)
 
     col_date = ""
-    if day > 0:
+    view_name = ""
+    if day and month and year:
         col_date = f"_{year}{month:02d}{day:02d}"
-    elif month > 0:
+        view_name = f"{lang}_{year}_day_view"
+    elif month and year:
         col_date = f"_{month:02d}"
-    else:
+        view_name = f'{lang}_{year}_month_view'
+    elif year:
         col_date = "views"
+        view_name = f'{lang}_{year}_view'
 
     sql_query = f"""
         SELECT
@@ -115,7 +118,7 @@ def request_by_lang_by_qids_by_date(lang, qids, year=0, month=0, day=0):
             props,
             {col_date}
         FROM
-            {lang}_{year}_vue
+            {view_name}
         WHERE
             qid IN ({placeholders})
     """
@@ -128,7 +131,7 @@ def request_by_lang_by_qids_by_date(lang, qids, year=0, month=0, day=0):
         results = cursor.fetchall()
         return filter_results(lang, results)
     except Exception as e:
-        print(f"Error in request_by_lang_by_articles_by_date: {e}")
+        print(f"request_by_lang_by_qids_by_date: {e}")
         return []
     finally:
         conn.close()
@@ -137,13 +140,11 @@ def request_by_lang_by_qids_by_date(lang, qids, year=0, month=0, day=0):
 '''
     request_by_lang_by_date
 '''
-def request_by_lang_by_date(lang, year=0, month=0, day=0):
+def request_by_lang_by_date(lang, year, month=0, day=0):
     
     if lang not in SUPPORTED_LANGUAGES:
         return []
-    if year not in SUPPORTED_YEARS and year != 0:
-        return []
-    if (month not in range(1, 13)) and month != 0:
+    if year not in SUPPORTED_YEARS:
         return []
     
     sql_query = ""
@@ -157,12 +158,12 @@ def request_by_lang_by_date(lang, year=0, month=0, day=0):
                 en_translation,
                 props,
                 {col_day}
-                FROM {lang}_{year}_vue
+                FROM {lang}_{year}_day_view
                 WHERE {col_day} IS NOT NULL
                 ORDER BY {col_day} DESC
                 LIMIT {SQL_LIMIT};
             """
-    elif year and month and day == 0:
+    elif year and month:
         col_month = f'_{month:02d}'
         sql_query = f"""
                 SELECT
@@ -171,12 +172,12 @@ def request_by_lang_by_date(lang, year=0, month=0, day=0):
                 en_translation,
                 props,
                 {col_month}
-                FROM {lang}_{year}_vue
+                FROM {lang}_{year}_month_view
                 WHERE {col_month} IS NOT NULL
                 ORDER BY {col_month} DESC
                 LIMIT {SQL_LIMIT};
             """
-    elif year and month == 0 and day == 0:
+    elif year:
         sql_query = f"""
                 SELECT
                 qid,
@@ -184,7 +185,7 @@ def request_by_lang_by_date(lang, year=0, month=0, day=0):
                 en_translation,
                 props,
                 views
-                FROM {lang}_{year}_vue
+                FROM {lang}_{year}_view
                 WHERE views IS NOT NULL
                 ORDER BY views DESC
                 LIMIT {SQL_LIMIT};
@@ -226,7 +227,6 @@ def request_by_qid(lang, qid_):
     try:
         cursor.execute(sql_query)
         results = cursor.fetchall()
-        print(sql_query)
         return filter_results(lang, results)
     except Exception as e:
         print(f'request_by_qid: {e}')
@@ -292,7 +292,6 @@ def request_dataviz(lang, qid_):
             """
 
     try:
-        print(sql_query)
         cursor.execute(sql_query)
         results = cursor.fetchall()
         return filter_results(lang, results)
@@ -303,54 +302,51 @@ def request_dataviz(lang, qid_):
         conn.close()
 
 '''
-    special_request_redirects
+    special_request_redirect
 '''
-def special_request_redirects(lang, redirects, year=0, month=0, day=0):
-    
-    if lang not in SUPPORTED_LANGUAGES:
-        return []
-    if year not in SUPPORTED_YEARS and year != 0:
-        return []
-    if (month not in range(1, 13)) and month != 0:
-        return []
+def special_request_redirect(lang, redirect, year, month=0, day=0):
 
-    redirects = [redirect.replace(" ", "_") for redirect in redirects]           
-    placeholders = ', '.join('?' for _ in redirects)  
-    
+    redirect = redirect.replace(" ", "_")
+
     if year and month and day:
         col_day = f'_{year}{month:02d}{day:02d}'
+        table_day = f"{lang}_{year}_day"
         sql_query = f"""
             SELECT
             {col_day}
-            FROM {lang}_{year}_day
-            WHERE article IN ({placeholders});
+            FROM {table_day}
+            WHERE article = "{redirect}";
             """
     
-    elif year and month and day == 0:
+    elif year and month:
         col_month = f'_{month:02d}'
+        table_month = f"{lang}_{year}_month"
         sql_query = f"""
             SELECT
             {col_month}
-            FROM {lang}_{year}_month
-            WHERE article IN ({placeholders});
+            FROM {table_month}
+            WHERE article = "{redirect}";
             """
 
-    elif year and month == 0 and day == 0:
+    elif year:
+        col_year = f'views'
+        table_year = f"{lang}_{year}"
         sql_query = f"""
             SELECT
-            views
-            FROM {lang}_{year}
-            WHERE article IN ({placeholders});
+            {col_year}
+            FROM {table_year}
+            WHERE article = "{redirect}";
             """
-    
+
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
+
     try:
-        cursor.execute(sql_query, redirects)
+        cursor.execute(sql_query)
         results = cursor.fetchall()
         return results
     except Exception as e:
-        print(f'redirects query: {e}')
+        print(f'special_request_redirect query: {e}')
         return []
     finally:
         conn.close()
