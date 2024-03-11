@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LP7HKWG7XQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-LP7HKWG7XQ');
+    </script>
+    <script src="{{ url_for('static', filename='js/dynamic.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+    <body>
+        <nav class="nav-title">
+            <a href='/'>StatsWiki</a>
+            {{title}} - {{current_date}}
+        </nav>
+        <nav style="font-size: 24px;">
+            <b><a href='/{{lang}}'>{{lang}}&nbsp;{{flag|safe}}</a></b></nav>
+            <nav>
+                <a href="{{day_before_link}}" class="nav-link">{{day_before}}</a>    
+                <div>{{day}},&nbsp;<a href="{{current_month_link}}" class="nav-link">{{current_month}}</a>,&nbsp;<a href="/{{lang}}/{{year}}" class="nav-link">{{year}}</a></div>
+                <a href="{{day_after_link}}" class="nav-link">{{day_after}}</a>
+            </nav>
+            <nav style="font-size: 13px;">
+                {% for lang in langs %}
+                <a href='/{{lang}}/{{current_date}}'>{{lang}}&nbsp;{{flags[lang]|safe}}</a>&nbsp;&nbsp;
+                {% endfor %}     
+            </nav>
+            
+            <div>
+                <section>
+                    <table style="width: 70%; margin-left: auto; margin-right: auto;">
+                        {% for article_, article in articles.items() %}   
+                        <tr>    
+                            <td style="text-align: left;">
+                                
+                                <a href="/{{lang}}/{{article['qid']}}">{{article['cleaned_article']}}</a>
+                                <img src='/static/wikidata.svg' style='width:10px;'/><a href="https://www.wikidata.org/wiki/{{article['qid']}}" style="font-size: 0.5em;">{{article['qid']}}</a>
+                                
+                                <span style="color: rgb(0, 0, 0); font-size: 0.7em; font-style: italic;">
+                                    {% if lang != 'en' and article['translation'] != ''  %}
+                                    ({{article['translation']}})
+                                    {% endif %}    
+                                </span>
+                                
+                                <span style="color: rgb(0, 0, 0); font-size: 0.4em; font-style: italic;">
+                                    <a href="https://{{lang}}.wikipedia.org/wiki/{{article_}}">[...]</a>
+                                </span>
+                                
+                                {% if article['redirects'] %}
+                                <br />
+                                
+                                <span style="font-size: 0.6em; color:rgb(114, 114, 114)">
+                                    {% for redir, views in article['redirects'].items() %}   
+                                    {% if views %}   
+                                    <img src='/static/redirect.png' style='width:10px;'/>
+                                    <i><a href='https://{{lang}}.wikipedia.org/wiki/{{redir}}'>{{ redir | replace('_', ' ') }}</a></i>
+                                    &nbsp;(<span class="number">{{views}}</span>)
+                                    {% endif %} 
+                                    {% endfor %} 
+                                </span>
+                                {% endif %}
+                            </td>
+                            
+                            <td><a href="{{article['wikidata_image_url']}}"><img src="{{article['wikidata_image']}}" width='50px'></a>
+                            </td>
+                            
+                            <td class="number" style="text-align: right;font-size: 0.8em;">     
+                                {{article['total_views']}}
+                            </td>    
+                        </tr>
+                        {% endfor %}   
+                    </table>   
+                    
+                </section>
+                
+            </div>
+            
+        </body>
+        </html>
