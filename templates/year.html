@@ -36,9 +36,12 @@
             <section>
                 <table style="width: 70%; margin-left: auto; margin-right: auto;">
                     {% for article_, article in articles.items() %}   
-                    <tr>    
+                        {% if article['qid'].startswith('Q_') %}
+                            <tr style="background-color: lightpink;">
+                        {% else %}
+                            <tr>
+                        {% endif %}
                         <td style="text-align: left;">
-                            
                             <a href="/{{lang}}/{{article['qid']}}">{{article['cleaned_article']}}</a>
                             <img src='/static/wikidata.svg' style='width:10px;'/><a href="https://www.wikidata.org/wiki/{{article['qid']}}" style="font-size: 0.5em;">{{article['qid']}}</a>
                             

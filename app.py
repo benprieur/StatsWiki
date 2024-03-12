@@ -5,14 +5,14 @@ import calendar
 import json
 from datetime import date
 from datetime import timedelta
-import random
+import re
 
 from constants import SUPPORTED_LANGUAGES, SUPPORTED_YEARS, REDIRECTS_OUTPUT_FILE
 from constants_langs import FLAGS_STUFF, GlOBAL_PAGE_STUFF, MONTHS_BY_LANG, MONTH_PAGE_STUFF, YEAR_PAGE_STUFF, SUPPORTED_REDIRECTS_BY_LANG
-from constants_wikidata import FILTERERED_QIDS
+from constants_wikidata import FILTERERED_QIDS, SHADOW_QID
 from commons import get_commons_image_url
 
-from dbRequestLayer import request_by_lang_by_articles_by_date, request_by_lang_by_date, request_by_lang, request_dataviz, request_by_lang_by_qids_by_date, special_request_redirect, get_value_from_string_by_key
+from dbRequestLayer import request_by_lang_by_articles_by_date, request_by_lang_by_date, request_by_lang, request_by_lang_by_qid, request_by_lang_by_qid_by_date, special_request_redirect, get_value_from_string_by_key, request_qid_from_wikidata_table
 
 
 app = Flask(__name__)
@@ -61,6 +61,19 @@ def display(lang, articles, year=0, month=0, day=0):
         
         qid = props.get('qid', "")
 
+        # Gros hack de merde
+        if not props:
+            props = {}
+            props['views'] = 43
+            props['total_views'] = 43 
+        else:
+            if not props['views']:
+                props['views'] = 42
+            if not props['total_views']:
+                props['total_views'] = 43
+
+        # Est-ce que le qid est une des cibles des redirections supportées
+        # Si oui on somme les views des redirections
         if qid in SUPPORTED_REDIRECTS_BY_LANG[lang].values():
             redirects_dict = props.get('redirects', {})
             if redirects_dict:
@@ -99,6 +112,8 @@ def update_display_package_by_redirect(lang,
         qid = props.get('qid', {})
         redirects = []
         if qid:
+
+            # Pour un qid donné on regarde les redirections qui pointent sur ce qid. Le but est d'ajouter cet info à ce qid.
             for key, val in SUPPORTED_REDIRECTS_BY_LANG[lang].items():
                 if val == qid:
                     redirects.append(key)
@@ -138,35 +153,101 @@ def create_display_dataset(lang, articles, year=0, month=0, day=0):
     '''
     articles_to_add = []
     articles_to_remove = []
-    list_article_= [article[1] for article in articles]
     for line in response:
-        # Redirections 
+
+        '''
+        list_article_dict = {
+            'title' : title,
+            'translation' : translation,
+            'statistics' : statistics,
+            'wikidata_image' : wikidata_image,
+            'wikidata_image_url' : wikidata_image_url,
+            'sentence' : sentence,
+            'redirects' : redirects
+        }
+        '''
+
+        qid_ = line[0]
         article_ = line[1]
-        qid_to_add = SUPPORTED_REDIRECTS_BY_LANG[lang].get(article_.replace("_", " "), {})
-        if qid_to_add:
+        views_ = line[4]
+
+        if not article_:
+            # L'article est dans le classement mais à été suppr, Q96379955 en 'ar' p.e
             articles_to_remove.append(line)
-            req = request_by_lang_by_qids_by_date(lang, [qid_to_add], year, month, day)
-            if req:
-                main_article = req[0]
-                main_article_ = main_article[1]
-                if main_article_ not in list_article_:
-                    print(main_article_)
-                    articles_to_add.append(main_article)
+        
+        elif not views_:
+            articles_to_remove.append(line)
+
+        else:
+
+            if not qid_:
+                # y réfléchir
+                articles_to_remove.append(line)
+
             else:
-                 with open(REDIRECTS_OUTPUT_FILE, 'a') as file:
-                    file.write(f"{lang}-{qid} from app.py line 157\n")
-            
+                motif_straight = r'^Q\d+$'
+                IS_STRAIGHT_QID = re.match(motif_straight, qid_) #Q122345
+                IS_SHADOW_QID = True if qid_.startswith(SHADOW_QID) else False
 
+                if IS_STRAIGHT_QID or IS_SHADOW_QID: 
 
-    for element in articles_to_add:
-        response.append(element)
+                    qid_article_main_redirect = SUPPORTED_REDIRECTS_BY_LANG[lang].get(article_.replace("_", " "), {})
+
+                    if qid_article_main_redirect:
+                            # article_ est dans SUPPORTED_REDIRECTS_BY_LANG
+                            # C'est un redirect géré
+                            articles_to_remove.append(line)
+
+                            # On demande les données de l'article principal
+                            main_article, main_article_ = (), ""
+                            req = request_by_lang_by_qid_by_date(lang, qid_article_main_redirect, year, month, day)
+                            if req:
+                                main_article = req[0]
+                                main_article_ = main_article[1]
+                            else:
+                                # On a pas de données sur l'article dans la table-ci
+                                # On contruit la liste pour lui en demandant à _wikidata             
+                                #[ qid, {lang}_title, en_translation, props, views]
+                                req_seconde_chance = request_qid_from_wikidata_table(lang, qid_article_main_redirect)
+
+                                if req_seconde_chance:
+                                    # main_article est un p... de tuple à la c...
+                                    main_article = req_seconde_chance[0]
+                                    main_article_ = main_article[1]
+                                    main_article_qid_ = main_article[0]
+                                    main_article_translation_ = main_article[2]
+                                    main_article_props_ = main_article[3]
+
+                                    main_article = (main_article_qid_, 
+                                                    main_article_,
+                                                    main_article_translation_,
+                                                    main_article_props_,
+                                                    0) # On ajoute 0 view
+
+                                    main_article_ = main_article[1]
+
+                            if main_article:
+                                # Es-ce que le main est déjà dans le dataset ?
+                                line__article_dict = [article[1] for article in articles]
+                                if main_article_ not in line__article_dict:
+                                    articles_to_add.append(main_article)
+                # End if IS_STRAIGHT_QID or IS_SHADOW_QID:
+                else:
+                    # On a un article qui existe avec un qid qui existe
+                    print(f"Line 222, app.py {qid_} {article_}")
+
+  
+
     for element in articles_to_remove:
         response.remove(element)
 
 
+    for element in articles_to_add:
+        response.append(element)
+
+
     dict_articles = {}
     for line in response:
-
         qid = line[0]
         article = line[1]
         translation = line[2]
@@ -182,17 +263,20 @@ def create_display_dataset(lang, articles, year=0, month=0, day=0):
                 wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + wikidata_image.replace(' ', '_')
                 wikidata_image = get_commons_image_url(wikidata_image_url)
 
-        if article not in FILTERERED_QIDS.keys():
+        if qid not in FILTERERED_QIDS.keys():
             article_display = {}
             article_display['cleaned_article'] = article.replace("_", " ")
             article_display['views'] = views
-            article_display['translation'] = translation.replace("_", " ")
+            article_display['translation'] = "" if translation is None else translation.replace("_", " ")
+            
+            
             article_display['wikidata_image_url'] = wikidata_image_url
             article_display['wikidata_image'] = wikidata_image
             article_display['qid'] = qid
             article_display['redirects'] = {}
             article_display['total_views'] = 0
             dict_articles[article] = article_display
+    
 
     return dict_articles
 
@@ -222,7 +306,6 @@ def index():
 
     #une_lang = random.choice([ 'de', 'en', 'es', 'fr', 'ja', 'it', 'ko', 'nl', 'pl', 'pt'])
     #une_qid = random.choice([ 'Q26876', 'Q33881', 'Q33881'])  
-    #response = request_dataviz(une_lang, une_qid)
     return render_template('index.html',
                 langs=SUPPORTED_LANGUAGES,
                 years=SUPPORTED_YEARS, 
@@ -240,10 +323,12 @@ def by_language(lang):
     if lang in SUPPORTED_LANGUAGES:
 
         articles = request_by_lang(lang)
+        
         if not check_results(articles):
             return redirect("/", code=302)
 
         articles_display = display(lang, articles)
+
 
         return render_template('index_lang.html', 
                 lang=lang,
@@ -457,7 +542,7 @@ def by_article(lang, qid):
     if lang not in  SUPPORTED_LANGUAGES:
         return redirect("/", code=302)
     
-    response = request_dataviz(lang, qid)
+    response = request_by_lang_by_qid(lang, qid)
     if response:
         return render_template('article.html', 
                     lang=lang,

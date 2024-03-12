@@ -105,7 +105,9 @@ FILTERS_BY_LANG = {
             'Sp?cial:', 
             'Fichier:', 
             'Aide:',
-            'Cookie_(informatique)'
+            'Cookie_(informatique)',
+            'Utilisateur:',
+            'Portail:'
         ),
     'he' : 
         (
@@ -132,7 +134,8 @@ FILTERS_BY_LANG = {
             '최근_바뀜',
             '위키백과:', 
             '특수:',
-            '폰허브'
+            '폰허브',
+            '분류:'
         ),    
     'it' :
         (
@@ -481,7 +484,10 @@ MONTHLY_TWEET_SENTENCE = {
 SUPPORTED_REDIRECTS_BY_LANG = { 
     'ar': 
         {
-            'قائمة الدول_والتبعيات حسب_عد السكان' : 'Q712280'
+            'قائمة الدول_والتبعيات حسب_عد السكان' : 'Q712280',
+            'محمد بن سلمان بن عبد العزيز آل سعود' : 'Q6892571',
+            'فيس بوك' : 'Q355',
+            'حوثيون' : 'Q3042087'
         },
     'de': 
         {
@@ -537,7 +543,8 @@ SUPPORTED_REDIRECTS_BY_LANG = {
         },
     'nl': 
         {
-            'Google Inc.' : "Q95"
+            'Google Inc.' : "Q95",
+            'Saga o wiedźminie' : 'Q11835640'
         },
     'pl': 
         {

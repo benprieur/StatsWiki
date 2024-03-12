@@ -33,8 +33,8 @@ def get_qid(lang, article):
                 return pageid, wikidata
             except:
                 wikidata = f"Q_{lang}_" + str(article)
-                with open(REDIRECTS_OUTPUT_FILE, 'a') as file:
-                    file.write(f"{lang}-{wikidata}: {article} \n")
+                #with open(REDIRECTS_OUTPUT_FILE, 'a') as file:
+                #    file.write(f"{lang}-{wikidata}: {article} \n")
                 return pageid, wikidata
     
 

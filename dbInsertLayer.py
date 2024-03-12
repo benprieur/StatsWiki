@@ -71,23 +71,21 @@ def insert_by_day_by_lang(lang, year, month, day, articles):
 '''
     insert_wikidata_stuff
 '''
-def insert_wikidata_stuff(lang, qid, article, stuff):
-
-    if not stuff or stuff is not None:
-        return
+def insert_wikidata_stuff(lang, qid, article_, stuff):
     
     table = WIKIDATA_TABLE
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
-    if not qid.startswith(f'Q_{lang}_'):
-        en_translation = stuff.get('label_en', '') or stuff.get('sitelinks', {}).get('en', '').replace('_', ' ')
+    if not qid.startswith("Q_"):
 
+        en_translation = stuff.get('label_en', '') or stuff.get('sitelinks', {}).get('en', '').replace('_', ' ')
         props = json.dumps(stuff.get('main_properties', {}))
         sitelinks = stuff.get('sitelinks', {})
+
         columns = ['qid', 'en_translation', 'props']
         values = [qid, en_translation, props]
-
+        
         for langwiki, site in sitelinks.items():
             lang = langwiki.replace('wiki', '')
             if lang in SUPPORTED_LANGUAGES:
@@ -109,14 +107,15 @@ def insert_wikidata_stuff(lang, qid, article, stuff):
         except sqlite3.Error as e:
             print(f"{e}")
         
-    else: #Redirs
+    else: # SHADOW_QID
 
         insert_query = f"""
         INSERT INTO {table} (qid, {lang}_title) VALUES (?, ?);
         """
 
         try:
-            cursor.execute(insert_query, (qid, article))
+            print(insert_query,  (qid, article_))
+            cursor.execute(insert_query, (qid, article_))
             conn.commit()   
         except sqlite3.Error as e:
             print(f"{e}")

@@ -1,3 +1,6 @@
+WIKIDATA_TABLE = '_wikidata'
+SHADOW_QID = 'Q_'
+
 WIKIDATA_PROPERTIES = {
     'direct' : {
         'P18':'image',
@@ -13,8 +16,6 @@ WIKIDATA_PROPERTIES = {
    }
    
 }
-
-WIKIDATA_TABLE = '_wikidata'
 
 FILTERERED_QIDS = {
         'Q52'       : 'Wikipedia', 
@@ -38,5 +39,5 @@ FILTERERED_QIDS = {
         'Q8042634'  : 'XXXX',
         'Q2451637'  : 'Torrent file',
         'Q4555537'  : 'Twitch',
-        
+        'Q5296'     : 'Home page Wikipedia'
 }

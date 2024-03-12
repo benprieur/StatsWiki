@@ -9,9 +9,16 @@ from wikimedia import get_first_sentence_wikipedia_article
     filter_results
 '''
 def filter_results(lang, results):
-    filters = tuple(FILTERS_BY_LANG[lang]) + tuple(FILTERS_BY_LANG['global'])
-    results = [result for result in results if not result[1].startswith(filters)]
-    return results
+    # Combine language-specific and global filters into one tuple
+    filters = FILTERS_BY_LANG[lang] + FILTERS_BY_LANG['global']
+
+    output = []
+    for result in results:
+        if result[1]:
+            if result and len(result) > 1 and not result[1].startswith(tuple(filters)):
+                output.append(result)
+
+    return output
 
 
 '''
@@ -86,19 +93,36 @@ def request_by_lang_by_articles_by_date(lang, articles, year, month=0, day=0):
     finally:
         conn.close()
 
-
 '''
-    request_by_lang_by_qids_by_date
+    request_qid_from_wikidata_table
 '''
-def request_by_lang_by_qids_by_date(lang, qids, year, month=0, day=0):
+def request_qid_from_wikidata_table(lang, qid):
+   
+    sql_query = f"SELECT qid, {lang}_title, en_translation, props FROM _wikidata WHERE qid = '{qid}';"
+   
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    
+    try:
+        print(sql_query)
+        cursor.execute(sql_query)
+        results = cursor.fetchall()
+        return filter_results(lang, results)
+    except Exception as e:
+        print(f"request_qid_from_wikidata_table: {e}")
+        return []
+    finally:
+        conn.close()
+'''
+    request_by_lang_by_qid_by_date
+'''
+def request_by_lang_by_qid_by_date(lang, qid_, year, month=0, day=0):
 
     if lang not in SUPPORTED_LANGUAGES:
         return []
 
     if year not in SUPPORTED_YEARS:
         return []
-
-    placeholders = ', '.join('?' for _ in qids)
 
     col_date = ""
     view_name = ""
@@ -122,18 +146,19 @@ def request_by_lang_by_qids_by_date(lang, qids, year, month=0, day=0):
         FROM
             {view_name}
         WHERE
-            qid IN ({placeholders})
+            qid = '{qid_}'
     """
 
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
-
+    
     try:
-        cursor.execute(sql_query, qids)
+        print(sql_query)
+        cursor.execute(sql_query)
         results = cursor.fetchall()
         return filter_results(lang, results)
     except Exception as e:
-        print(f"request_by_lang_by_qids_by_date: {e}")
+        print(f"request_by_lang_by_qid_by_date: {e}")
         return []
     finally:
         conn.close()
@@ -258,12 +283,12 @@ def get_value_from_string_by_key(str_analyze, key):
 
 
 '''
-    request_dataviz
+    request_by_lang_by_qid (request_dataviz)
 '''
-def request_dataviz(lang, qid_):
+def request_by_lang_by_qid(lang, qid_):
 
     view_name = f'{lang}_vue'
-    months_ = ", ".join([f"_{year}-{month:02d}" for year in SUPPORTED_YEARS for month in range(1, 13)])
+    months_ = ", ".join([f"_{year}{month:02d}" for year in SUPPORTED_YEARS for month in range(1, 13)])
 
     sql_query = f"""
                 SELECT
@@ -275,6 +300,7 @@ def request_dataviz(lang, qid_):
                 FROM {view_name}
                 WHERE qid='{qid_}';
             """
+    #print(f' request_dataviz: {sql_query}')
 
     try:
         conn = sqlite3.connect(DB_NAME)
@@ -328,6 +354,7 @@ def request_dataviz(lang, qid_):
                 FROM {view_name}
                 WHERE {lang}_title = '{redir}';
                 """
+                print(f' sql_query_redir: {sql_query_redir}')
                 conn = sqlite3.connect(DB_NAME)
                 cursor = conn.cursor()
                 cursor.execute(sql_query_redir)
