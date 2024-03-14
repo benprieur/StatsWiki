@@ -1,54 +1,45 @@
-from datetime import datetime, timedelta
+from datetime import timedelta
 from datetime import date
 
 import tweepy
 import time
 
-from dbRequestLayer import request_by_lang_by_date
-from constants import SUPPORTED_LANGUAGES
-from constants_langs import DAILY_TWEET_SENTENCE
-from constants_wikidata import FILTERERED_QIDS
+from db.dbRequestLayer import request_by_lang_by_date
+from const.constants import SUPPORTED_LANGUAGES
+from const.constants_langs import DAILY_TWEET_SENTENCE
 
 '''
     daily_tweet
 '''
 def daily_tweet():
+
     yesterday = date.today() - timedelta(days=1)
+    yesterday_str = yesterday.strftime('%Y/%m/%d')    
+
     for lang in SUPPORTED_LANGUAGES:
         
-        articles = request_by_lang_by_date(lang,
-                                          yesterday.year,
-                                          yesterday.month,
-                                          yesterday.day
-                                         )
+        lines = request_by_lang_by_date(lang, yesterday.year, yesterday.month, yesterday.day)
 
-        articles_display = []
-        for article in articles:
-            qid = article[0]
-            
-            if qid not in FILTERERED_QIDS.keys():
-                article_ = article[1]
-                cleaned_article = article_.replace("_", " ")
-                views = article[4]
-                translation = article[2]
-                articles_display.append([ 
-                                         cleaned_article, 
-                                         views
-                                        ])
-                 
-        yesterday_str = yesterday.strftime('%Y/%m/%d')
-        text = DAILY_TWEET_SENTENCE[lang] +  ' '+ f'({yesterday_str})\n'
+        top3 = lines.items[:3]
+        # Identification du top 3
+        medals = ["🥇",  "🥈", "🥉"]
+        top3_display = []
+        for index, line in enumerate(top3):
+            article = line.title.replace("_", " ")
+            translation = line.en_translation
+            views = line.views
+            #if not lang in LANG_LIMIT_TWITTER:
+            top3_display.append( [medals[index], article, translation, "{:,}".format(line.views)] )
+            #else:
+            #top3_display.append( [medals[index], article, views] )
+        # On écrit le texte du tweet pour cette langue
+        text = DAILY_TWEET_SENTENCE[lang] +  ' '+ f'({yesterday_str})\r\n'
         url = f'https://statswiki.info/{lang}/{yesterday.year}/{yesterday.month}/{yesterday.day}'
-        for index in range(0, 3):
-            match (index):
-                case 0: text += "🥇 "
-                case 1: text += "🥈 "
-                case 2: text += "🥉 "
-            text += f'{articles_display[index][0]}' 
-            text += f' ({articles_display[index][1]})\n'
+        for top in top3_display:
+            text += ' '.join([element for element in top]) + '\r\n'    
         text += f'{url}\r\n'
         print(text)
-        tweet_upload_v2(text)
+        #tweet_upload_v2(text)
 
 
 '''

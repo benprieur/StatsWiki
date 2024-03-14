@@ -1,6 +1,7 @@
 import sqlite3
-from constants import DB_NAME, SUPPORTED_LANGUAGES, REDIRECTS_OUTPUT_FILE
-from constants_wikidata import WIKIDATA_TABLE
+from const.constants_wikidata import WIKIDATA_TABLE
+from const.constants import DB_NAME, SUPPORTED_LANGUAGES
+
 import json
 
 

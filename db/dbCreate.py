@@ -1,6 +1,6 @@
 import sqlite3
 from datetime import date, timedelta
-from constants import DB_NAME
+from const.constants import DB_NAME
 import calendar
 
 def CreateTables(years, langs):

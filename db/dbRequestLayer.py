@@ -1,24 +1,58 @@
 import sqlite3
-import json
-from constants import DB_NAME, SQL_LIMIT, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
-from constants_langs import FILTERS_BY_LANG, SUPPORTED_REDIRECTS_BY_LANG
+from const.constants import DB_NAME, SUPPORTED_LANGUAGES, SUPPORTED_YEARS, SQL_LIMIT
+from const.FILTERS_BY_LANG import FILTERS_BY_LANG
+from const.SUPPORTED_REDIRECTS_BY_LANG import SUPPORTED_REDIRECTS_BY_LANG
+from const.FILTERERED_QIDS import FILTERERED_QIDS
+from objects import Lines, Line
 from commons import get_commons_image_url
 from wikimedia import get_first_sentence_wikipedia_article
+import json
 
 '''
-    filter_results
+    image, image_url = dumps_properties(props)   
 '''
-def filter_results(lang, results):
-    # Combine language-specific and global filters into one tuple
-    filters = FILTERS_BY_LANG[lang] + FILTERS_BY_LANG['global']
+def dumps_properties(props):
+        
+    props_str = json.dumps(props)
+    wikidata_image, wikidata_image_url = '', ''
+    if props_str != 'null':
+        wikidata_image = get_value_from_string_by_key(props_str, "P18")
+        wikidata_image_url =  ""
+        if wikidata_image:
+            wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + wikidata_image.replace(' ', '_')
+            wikidata_image = get_commons_image_url(wikidata_image_url)
+    
+    return wikidata_image, wikidata_image_url
 
-    output = []
+'''
+    build_answer
+'''
+def build_answer(lang, results, sequence, year=0, month=0, day=0):
+    
+    FILTERS = FILTERS_BY_LANG[lang] + FILTERS_BY_LANG['global']
+
+    lines = Lines(lang, year, month, day)
     for result in results:
-        if result[1]:
-            if result and len(result) > 1 and not result[1].startswith(tuple(filters)):
-                output.append(result)
 
-    return output
+        line = Line()
+        
+        for index, element in enumerate(sequence):
+            if element == 'qid':
+                line.qid = result[index]
+            elif element == 'title':
+                line.title = result[index]
+            elif element == 'en_translation':
+                line.en_translation = result[index]
+            elif element == 'views':
+                line.views = result[index]
+            elif element == 'props':
+                line.props = result[index]
+                line.wikidata_image, line.wikidata_image_url = dumps_properties(line.props)  
+        
+        if not line.title.startswith(FILTERS) and not line.qid in FILTERERED_QIDS.keys() and not line.title.replace("_", " ") in SUPPORTED_REDIRECTS_BY_LANG[lang].keys():
+            lines.add(line)
+
+    return lines
 
 
 '''
@@ -41,10 +75,11 @@ def column_exists(conn, table_name, column_name):
             return True
     return False
 
+
 '''
     request_by_lang_by_articles_by_date
 '''
-def request_by_lang_by_articles_by_date(lang, articles, year, month=0, day=0):
+def request_by_lang_by_articles_by_date(lang, articles, year=0, month=0, day=0):
     
     if lang not in SUPPORTED_LANGUAGES:
         return []
@@ -86,12 +121,14 @@ def request_by_lang_by_articles_by_date(lang, articles, year, month=0, day=0):
     try:
         cursor.execute(sql_query, formatted_articles)
         results = cursor.fetchall()
-        return filter_results(lang, results)
+        return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props', 'views'], year, month, day)
+    
     except Exception as e:
         print(f"Error in request_by_lang_by_articles_by_date: {e}")
         return []
     finally:
         conn.close()
+
 
 '''
     request_qid_from_wikidata_table
@@ -104,15 +141,16 @@ def request_qid_from_wikidata_table(lang, qid):
     cursor = conn.cursor()
     
     try:
-        print(sql_query)
         cursor.execute(sql_query)
         results = cursor.fetchall()
-        return filter_results(lang, results)
+        return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props'])
     except Exception as e:
         print(f"request_qid_from_wikidata_table: {e}")
         return []
     finally:
         conn.close()
+
+
 '''
     request_by_lang_by_qid_by_date
 '''
@@ -153,10 +191,9 @@ def request_by_lang_by_qid_by_date(lang, qid_, year, month=0, day=0):
     cursor = conn.cursor()
     
     try:
-        print(sql_query)
         cursor.execute(sql_query)
         results = cursor.fetchall()
-        return filter_results(lang, results)
+        return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props', 'views'], year, month, day)
     except Exception as e:
         print(f"request_by_lang_by_qid_by_date: {e}")
         return []
@@ -223,13 +260,12 @@ def request_by_lang_by_date(lang, year, month=0, day=0):
     try:
         cursor.execute(sql_query)
         results = cursor.fetchall()
-        return filter_results(lang, results)
+        return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props', 'views'], year, month, day)
     except Exception as e:
         print(f'request_by_lang_by_date: {e}')
         return []
     finally:
         conn.close()
-
 
 
 '''
@@ -259,7 +295,7 @@ def request_by_lang(lang):
     try:
         cursor.execute(sql_query)
         results = cursor.fetchall()
-        return filter_results(lang, results)
+        return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props', 'views'])
     except Exception as e:
         print(e)
         return []
@@ -285,8 +321,9 @@ def get_value_from_string_by_key(str_analyze, key):
 '''
     request_by_lang_by_qid (request_dataviz)
 '''
-def request_by_lang_by_qid(lang, qid_):
+def request_by_lang_by_qid(lang, qid):
 
+    print(lang, qid)
     view_name = f'{lang}_vue'
     months_ = ", ".join([f"_{year}{month:02d}" for year in SUPPORTED_YEARS for month in range(1, 13)])
 
@@ -298,16 +335,14 @@ def request_by_lang_by_qid(lang, qid_):
                 props,
                 {months_}
                 FROM {view_name}
-                WHERE qid='{qid_}';
+                WHERE qid='{qid}';
             """
-    #print(f' request_dataviz: {sql_query}')
 
     try:
         conn = sqlite3.connect(DB_NAME)
         cursor = conn.cursor()
         cursor.execute(sql_query)
         results = cursor.fetchall()
-        results = filter_results(lang, results)
         results = results[0]
         conn.close()
 
@@ -334,16 +369,14 @@ def request_by_lang_by_qid(lang, qid_):
                 wikidata_image = get_commons_image_url(wikidata_image_url)
 
         sentence = get_first_sentence_wikipedia_article(lang, title)
-        words = sentence.split(' ')
-        if len(words) > 20:
-            sentence = ' '.join(words[:20])
+        
 
         # BEGIN REDIRECTS
         # Ici on rechercher toutes les redirects
         redirects = []
-        for redir, qid in SUPPORTED_REDIRECTS_BY_LANG[lang].items():
+        for redir, qid_redir in SUPPORTED_REDIRECTS_BY_LANG[lang].items():
             redir = redir.replace(" ", "_")
-            if qid == qid_:
+            if qid_redir == qid:
                 # Houston, on a des redirs, il faut récupérer les views.
                 # En faire une fonction dédiée
                 redirects.append(redir)
@@ -354,7 +387,6 @@ def request_by_lang_by_qid(lang, qid_):
                 FROM {view_name}
                 WHERE {lang}_title = '{redir}';
                 """
-                print(f' sql_query_redir: {sql_query_redir}')
                 conn = sqlite3.connect(DB_NAME)
                 cursor = conn.cursor()
                 cursor.execute(sql_query_redir)
@@ -387,13 +419,13 @@ def request_by_lang_by_qid(lang, qid_):
     finally:
         conn.close()
 
-
 '''
     special_request_redirect
 '''
 def special_request_redirect(lang, redirect, year, month=0, day=0):
 
     redirect = redirect.replace(" ", "_")
+    sql_query = f""""""
 
     if year and month and day:
         col_day = f'_{year}{month:02d}{day:02d}'
@@ -427,13 +459,14 @@ def special_request_redirect(lang, redirect, year, month=0, day=0):
 
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
-
+    
     try:
         cursor.execute(sql_query)
-        results = cursor.fetchall()
-        return results
+        results = cursor.fetchall() 
+        return build_answer(lang, results, ['views'], year, month, day)
+
     except Exception as e:
         print(f'special_request_redirect query: {e}')
-        return []
+        return None
     finally:
         conn.close()

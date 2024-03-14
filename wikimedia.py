@@ -1,6 +1,7 @@
 from datetime import date
 import requests
 import time
+import re
 
 def request_from_wikimedia(lang, year, month, day):
     date_ = date(year=year, month=month, day=day)
@@ -37,13 +38,11 @@ def get_first_sentence_wikipedia_article(lang, article_title):
     response = requests.get(URL, params=PARAMS)
     data = response.json()
 
+    first_sentence = ""
     if data.get("query", {}):
         page = next(iter(data["query"]["pages"].values()))
-
-        first_sentence = ""
-        if page.get("extract", {}):
-            first_sentence = page["extract"].split('.')[0] + '.'
-    
-        return first_sentence
-    
-    return ""
+        first_sentence = page["extract"][:120]
+        first_sentence = re.sub( "[(),]", "", first_sentence)
+        words = first_sentence.split(" ")
+        first_sentence = ' '.join(words[:-1])
+    return first_sentence

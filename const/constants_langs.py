@@ -35,162 +35,6 @@ MONTHS_BY_LANG = {
     ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
 }
 
-FILTERS_BY_LANG = {
-    'global' :
-        (
-            'MediaWiki:', 
-            '????:', 
-            'Portal:', 
-            'File:', 
-            'Help:', 
-            'Category:', 
-            'Main_Page', 
-            '�', 
-            'User:', 
-            'Template:', 
-            'Special:', 
-            'Wikipedia:',  
-            'Catégorie:', 
-            'Spécial:', 
-            'Wikipédia', 
-            'Project:',
-            '404.php',
-            'xss',
-            'Orangemorange',
-            'Wiki',
-        ),
-    'ar' :
-        (
-            'تصنيف:', 
-            'خاص:', 
-            'ويكيبيديا:', 
-            'ويكيبيديا:',
-            'الصفحة_الرئيسية',
-            'ملف:',
-        ),
-    'de' : 
-        (  
-            'Kategorie:', 
-            'Hauptseite', 
-            'Spezial:', 
-            'Benutzer:', 
-            'Datei:'
-        ),
-    'en' : 
-        (
-
-        ),
-    'eo' :
-        (
-            'Portalo:', 
-            'Helpo:', 
-            'Vikipedio:', 
-            'Speciala', 
-            'Uzanto:',
-            'Kategorio:',
-            'Vikipedia_diskuto:',
-            'Ŝablono:',
-            'XXX'
-        ),    
-    'es' : 
-        (
-            'Especial:',
-            'Archivo:'
-        ),
-    'fr' : 
-        (
-
-            'Accueil', 
-            'Wikip�', 
-            'Sp?cial:', 
-            'Fichier:', 
-            'Aide:',
-            'Cookie_(informatique)',
-            'Utilisateur:',
-            'Portail:'
-        ),
-    'he' : 
-        (
-            'משתמש:', 
-            'קובץ:', 
-            'עמוד_ראשי', 
-            'מיוחד:', 
-            'ויקיפדיה:'
-        ),
-    'hy' : 
-        (
-            'Կաղապար:', 
-            'Վիքիպեդիա:', 
-            'Կատեգորիա:', 
-            'Գլխավոր_էջ', 
-            'Ստորոգութիւն:', 
-            'Սպասարկող:',
-            'Վիքինախագիծ:',
-            'Մասնակից:'
-         ),
-    'ko' : 
-        (
-            '특수:', 
-            '최근_바뀜',
-            '위키백과:', 
-            '특수:',
-            '폰허브',
-            '분류:'
-        ),    
-    'it' :
-        (
-            'Pagina', 
-            'Speciale:'
-        ),
-    'ja' :
-        (
-            'メインページ', 
-            '特別:', 
-            'Re:'
-        ),
-    'nl' : 
-        (
-            'Hoofdpagina', 
-            'Speciaal:'
-        ),
-    'pl':
-        (
-            'Specjalna:', 
-            'Strona_główna',
-            'Szablon:',
-            'Plik:'
-        ),
-    'pt' : 
-        (
-            'Usuário(a) Discussão:', 
-            'Wikip�', 
-            'Especial:', 
-            'Ficheiro:', 
-            'Predefinição:'
-        ),
-    'ru' :
-        (
-            'Категория:',
-            'Википедия:',
-            'Первый мститель:', 
-            'Заглавная_страница', 
-            'Служебная:', 
-        ),
-    'uk' : 
-        (
-            'Дюна:', 
-            'Файл:', 
-            'Спеціальна:', 
-            'Вікіпедія:', 
-            'Головна_сторінка'
-        ),
-    'zh' : 
-        (
-            '維基媒體基金會', 
-            '首页'
-        )    
-}
-
 GlOBAL_PAGE_STUFF = {
     'ar':
         {
@@ -441,6 +285,10 @@ MONTH_PAGE_STUFF = {
     }
 }
 
+
+'''
+    DAILY_TWEET_SENTENCE
+'''
 DAILY_TWEET_SENTENCE = {
     'ar': 'المقالات الأكثر استشارة على ar.wikipedia يوم أمس',
     'de': 'Meistgesehene Artikel auf de.wikipedia gestern',
@@ -461,6 +309,10 @@ DAILY_TWEET_SENTENCE = {
     'zh': '昨天在zh.wikipedia上咨询最多的文章'
 }
 
+
+'''
+    MONTHLY_TWEET_SENTENCE
+'''
 MONTHLY_TWEET_SENTENCE = {
     'ar': 'المقالات الأكثر استشارة على ar.wikipedia',
     'de': 'Meistgesehene Artikel auf de.wikipedia',
@@ -481,91 +333,4 @@ MONTHLY_TWEET_SENTENCE = {
     'zh': '在zh.wikipedia上最多咨询的文章'
 }
 
-SUPPORTED_REDIRECTS_BY_LANG = { 
-    'ar': 
-        {
-            'قائمة الدول_والتبعيات حسب_عد السكان' : 'Q712280',
-            'محمد بن سلمان بن عبد العزيز آل سعود' : 'Q6892571',
-            'فيس بوك' : 'Q355',
-            'حوثيون' : 'Q3042087'
-        },
-    'de': 
-        {
 
-        },
-    'en': 
-        {
-            '2019–20coronavirus pandemic' : 'Q81068910',
-            'Animal (2023 film)' : 'Q115947372',
-            'Shōgun (2024 TV series)' : 'Q56276181',
-            'Islamic State of Iraq and the Levant' : 'Q2429253'
-        }, 
-    'eo': 
-        {
-            'Kreo' : 'Q215304',
-            'Romiaj ciferoj': 'Q38918',
-            'Carolus Linnaeus': 'Q1043'
-        },
-    'es': 
-        {
-
-        },
-    'fr': 
-        {
-            "Pandémie de maladie à coronavirus de 2019-2020" : "Q81068910",
-            "Pandémie de maladie à coronavirus de 2020 en France" : "Q83873593",
-            "Grippe de 1918" : "Q178275",
-            "Charles de Galles" : "Q43274",
-            "Mort de George Floyd" : "Q95579249",
-            "Cédric Doumbé" : "Q24452252",
-            "Coupe d'Afrique des Nations" : "Q83145",
-            "Michel Manouchian" : 'Q708078'
-        },
-    'ja': 
-        {
-            '令和6年能登半島地震' : 'Q124060919'
-        },
-    'he': 
-        {
-            'ערים בישראל' : 'Q28330'
-        },
-    'hy': 
-        {
-
-        },
-    'it': 
-        {
-
-        },
-    'ko': 
-        {
-            '지구 온난화' : "Q7942"
-        },
-    'nl': 
-        {
-            'Google Inc.' : "Q95",
-            'Saga o wiedźminie' : 'Q11835640'
-        },
-    'pl': 
-        {
-            'Mariusz Kamiński (minister)' : 'Q3845166'
-        },
-    'pt': 
-        {
-
-        },
-    'ru': 
-        {
-            "Смерть Алексея Навального" : 'Q124556504',
-            "Надеждин, Борис Борисович (политик)" : 'Q4311880'
-        },
-    'uk': 
-        {
-            'Російське вторгнення в Україну (2022)' : 'Q110999040',
-            'Радіо «Свобода»' : 'Q485500'
-        },
-    'zh': 
-        {
-
-        }
-}

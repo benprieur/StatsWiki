@@ -10,7 +10,6 @@
         
         gtag('config', 'G-LP7HKWG7XQ');
     </script>
-    <script src="{{ url_for('static', filename='js/dynamic.js') }}"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
 </head>
 <body>
@@ -44,47 +43,44 @@
         <div>
             <section>
                 <table style="width: 70%; margin-left: auto; margin-right: auto;">
-                    {% for article_, article in articles.items() %}   
+                    {% for article in articles.items %}   
                     <tr>    
-                        {% if article['qid'].startswith('Q_') %}
+                        {% if article.qid.startswith('Q_') %}
                         <td style="text-align: left; background-color: lightpink;">
                         {% else %}
                         <td style="text-align: left;">
                         {% endif %}
                             
-                            <a href="/{{lang}}/{{article['qid']}}">{{article['cleaned_article']}}</a>
-                            <img src='/static/wikidata.svg' style='width:10px;'/><a href="https://www.wikidata.org/wiki/{{article['qid']}}" style="font-size: 0.5em;">{{article['qid']}}</a>
+                            <a href="/{{lang}}/{{article.qid}}">{{article.title | replace('_', ' ') }}</a>
+
+                            <img src='/static/wikidata.svg' style='width:10px;'/><a href="https://www.wikidata.org/wiki/{{article.qid}}" style="font-size: 0.5em;">{{article.qid}}</a>
                             
                             <span style="color: rgb(0, 0, 0); font-size: 0.7em; font-style: italic;">
-                                {% if lang != 'en' and article['translation'] != ''  %}
-                                ({{article['translation']}})
-                                {% endif %}    
+                                ({{article.en_translation}})   
                             </span>
                             
                             <span style="color: rgb(0, 0, 0); font-size: 0.4em; font-style: italic;">
-                                <a href="https://{{lang}}.wikipedia.org/wiki/{{article_}}">[...]</a>
+                                <a href="https://{{lang}}.wikipedia.org/wiki/{{article.title}}">[...]</a>
                             </span>
                             
-                            {% if article['redirects'] %}
+                            {% if article.redirects %}
                             <br />
                             
                             <span style="font-size: 0.6em; color:rgb(114, 114, 114)">
-                                {% for redir, views in article['redirects'].items() %}   
-                                {% if views %}   
+                                {% for redir in article.redirects.items %}    
                                 <img src='/static/redirect.png' style='width:10px;'/>
-                                <i><a href='https://{{lang}}.wikipedia.org/wiki/{{redir}}'>{{ redir | replace('_', ' ') }}</a></i>
-                                &nbsp;(<span class="number">{{views}}</span>)
-                                {% endif %} 
+                                <i><a href='https://{{lang}}.wikipedia.org/wiki/{{redir}}'>{{ redir.title | replace('_', ' ') }}</a></i>
+                                &nbsp;(<span>{{redir.views}}</span>)
                                 {% endfor %} 
                             </span>
                             {% endif %}
                         </td>
                         
-                        <td><a href="{{article['wikidata_image_url']}}"><img src="{{article['wikidata_image']}}" width='50px'></a>
+                        <td><a href="{{article.wikidata_image_url}}"><img src="{{article.wikidata_image}}" width='50px'></a>
                         </td>
                         
                         <td class="number" style="text-align: right;font-size: 0.8em;">     
-                            {{article['total_views']}}
+                            {{article.views}}
                         </td>    
                     </tr>
                     {% endfor %}   

@@ -1,7 +1,7 @@
 import requests
-from constants_wikidata import WIKIDATA_PROPERTIES
+from const.constants_wikidata import WIKIDATA_PROPERTIES
 import json
-from constants import REDIRECTS_OUTPUT_FILE
+from const.constants import REDIRECTS_OUTPUT_FILE
 
 '''
     get_qid

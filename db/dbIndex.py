@@ -1,5 +1,5 @@
 import sqlite3
-from constants import DB_NAME, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
+from const.constants import DB_NAME, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
 
 def index_wikidata_qid():
 

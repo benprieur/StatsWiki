@@ -1,7 +1,7 @@
 from wikidata import get_qid, get_wikidata_stuff
 from dbInsertLayer import insert_wikidata_stuff
-from constants import DB_NAME, SUPPORTED_YEARS, SUPPORTED_LANGUAGES
-from constants_langs import FILTERS_BY_LANG, SUPPORTED_REDIRECTS_BY_LANG
+from const.constants import DB_NAME, SUPPORTED_YEARS, SUPPORTED_LANGUAGES
+from const.constants_langs import FILTERS_BY_LANG, SUPPORTED_REDIRECTS_BY_LANG
 import sqlite3
 import time
 
