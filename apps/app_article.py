@@ -25,3 +25,26 @@ def by_article(lang, qid):
                 )
     else:
         return redirect("/", code=302)
+
+
+'''
+    api_by_article
+'''
+def api_by_article(lang, qid):
+    
+    response = request_by_lang_by_qid(lang, qid)
+    if not response:
+        return {}
+    
+    return {
+        "lang": lang,
+        "qid": qid,
+        "title": response['title'],
+        "wikidata_image" : response['wikidata_image'],
+        "wikidata_image_url" :response['wikidata_image_url'],
+        "flag": FLAGS_STUFF[lang],
+        'sentence' : response['sentence'],
+        'en_translation' : response['translation'],
+        'statistics' : response['statistics'],
+        'redirects'  : response['redirects']
+    }
