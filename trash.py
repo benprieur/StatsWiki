@@ -1,7 +1,7 @@
 from wikidata import get_qid, get_wikidata_stuff
 from db.dbInsertLayer import insert_wikidata_stuff
 from const.constants import DB_NAME, SUPPORTED_YEARS, SUPPORTED_LANGUAGES
-from const.constants_langs import FILTERS_BY_LANG
+from const.FILTERS_BY_LANG import FILTERS_BY_LANG
 import sqlite3
 import time
 
@@ -36,15 +36,11 @@ def insert_wikidata_by_lang_by_article(lang, article_tuple):
         print(f'{qid} {article} {lang}')
         insert_wikidata_stuff(lang, qid, article, wikidata_stuff)
 
-'''
 conn = sqlite3.connect(DB_NAME)
 cursor = conn.cursor()
-article = 'محمد بن سلمان بن عبد العزيز آل سعود'
-article = article.replace(" ", "_")
-sql_command2 = f"SELECT * FROM _wikidata WHERE ar_title = '{article}';"
+sql_command2 = f"SELECT * FROM _wikidata WHERE en_translation like '%Steak%';"
 cursor.execute(sql_command2)
 print(cursor.fetchall())
-'''
 
 '''
 for qid in ['Q712280', 'Q6892571', 'Q355']:
@@ -87,6 +83,7 @@ print(cursor.fetchall())
 conn.close()
 '''
 
+'''
 for qid in ['Q355']:
     for lang in ['ar']:
         wikidata_stuff = get_wikidata_stuff(lang, qid)
@@ -99,3 +96,4 @@ for qid in ['Q355']:
                 print(article)
                 print(qid)
                 insert_wikidata_stuff('ar', qid, article, wikidata_stuff)
+'''

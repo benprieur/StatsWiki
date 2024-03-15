@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from dbInsertLayer import insert_by_day_by_lang
+from db.dbInsertLayer import insert_by_day_by_lang
 from wikimedia import request_from_wikimedia
 from const.constants import SUPPORTED_LANGUAGES
 from datetime import date

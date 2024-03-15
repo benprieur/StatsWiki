@@ -323,7 +323,6 @@ def get_value_from_string_by_key(str_analyze, key):
 '''
 def request_by_lang_by_qid(lang, qid):
 
-    print(lang, qid)
     view_name = f'{lang}_vue'
     months_ = ", ".join([f"_{year}{month:02d}" for year in SUPPORTED_YEARS for month in range(1, 13)])
 

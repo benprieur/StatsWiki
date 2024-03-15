@@ -39,7 +39,7 @@ def daily_tweet():
             text += ' '.join([element for element in top]) + '\r\n'    
         text += f'{url}\r\n'
         print(text)
-        #tweet_upload_v2(text)
+        tweet_upload_v2(text)
 
 
 '''
