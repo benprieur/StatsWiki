@@ -22,26 +22,20 @@ def by_article(lang, qid, api=False):
                     wikidata_image_url=response['wikidata_image_url'],
                     flag = FLAGS_STUFF[lang],
                     sentence =response['sentence'],
-                    translation=response['translation'],
+                    en_translation=response['en_translation'],
                     statistics=response['statistics'],
-                    redirects =response['redirects']
+                    statistics_redirects =response['statistics_redirects']
                 )
     else:
-        '''
         return jsonify({
             "lang" : lang,
             "qid" : qid,
             "title" : response['title'],
-            'en_translation' : response['translation'],
+            'en_translation' : response['en_translation'],
             'sentence' : response['sentence'],
             "wikidata_image" : response['wikidata_image'],
-            "wikidata_image_url" : response['wikidata_image_url'],
-            "flag" : FLAGS_STUFF[lang],
-            'statistics' : response['statistics'],
-            'redirects'  : response['redirects']
+            "wikidata_image_url" : response['wikidata_image_url']
+            #'statistics' : response['statistics'],
+            #'statistics_redirects'  : response['statistics_redirects']
         })
-        '''
-        return jsonify({
-            "lang" : lang,
-            "qid" : qid
-        })
+

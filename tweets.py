@@ -36,8 +36,14 @@ def daily_tweet():
         text = DAILY_TWEET_SENTENCE[lang] +  ' '+ f'({yesterday_str})\r\n'
         url = f'https://statswiki.info/{lang}/{yesterday.year}/{yesterday.month}/{yesterday.day}'
         for top in top3_display:
-            text += ' '.join([element for element in top]) + '\r\n'    
-        text += f'{url}\r\n'
+            text += top[0] # medal
+            text += f" {top[1]}" # title
+            if top[2] and top[1] != top[2]: # en_translation
+                text += f" [{top[2]}] " # en_translation
+            else:
+                text += " "
+            text += top[3] + "\r\n" # views
+        text += f'{url} #StatsWiki\r\n'
         print(text)
         tweet_upload_v2(text)
 

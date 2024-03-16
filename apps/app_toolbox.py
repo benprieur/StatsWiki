@@ -62,7 +62,7 @@ def display(lang, lines, year=0, month=0, day=0):
 
                 if line.is_straight_qid() or line.is_shadow_qid():
  
-                    qid_main_redirect = SUPPORTED_REDIRECTS_BY_LANG[lang].get(line.title.replace("_", " "), {})
+                    qid_main_redirect = SUPPORTED_REDIRECTS_BY_LANG[lang].get(line.title_with_spaces, {})
 
                     if qid_main_redirect:
                             

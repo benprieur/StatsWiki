@@ -30,29 +30,36 @@ def dumps_properties(props):
 def build_answer(lang, results, sequence, year=0, month=0, day=0):
     
     FILTERS = FILTERS_BY_LANG[lang] + FILTERS_BY_LANG['global']
-
     lines = Lines(lang, year, month, day)
-    for result in results:
 
-        line = Line()
-        
-        for index, element in enumerate(sequence):
-            if element == 'qid':
-                line.qid = result[index]
-            elif element == 'title':
-                line.title = result[index]
-            elif element == 'en_translation':
-                line.en_translation = result[index]
-            elif element == 'views':
-                line.views = result[index]
-            elif element == 'props':
-                line.props = result[index]
-                line.wikidata_image, line.wikidata_image_url = dumps_properties(line.props)  
-        
-        if not line.title.startswith(FILTERS) and not line.qid in FILTERERED_QIDS.keys() and not line.title.replace("_", " ") in SUPPORTED_REDIRECTS_BY_LANG[lang].keys():
-            lines.add(line)
+    try:
+        for result in results:
 
-    return lines
+            line = Line()
+
+            for index, element in enumerate(sequence):
+                if element == 'qid':
+                    line.qid = result[index]
+                elif element == 'title':
+                    line.title = result[index]
+                elif element == 'en_translation':
+                    line.en_translation = result[index]
+                elif element == 'views':
+                    line.views = result[index]
+                elif element == 'props':
+                    line.props = result[index]
+                    line.wikidata_image, line.wikidata_image_url = dumps_properties(line.props)
+                elif element == 'views_collection':
+                    line.views_collection = result[index:]
+            
+            if not line.title_with_undescores.startswith(FILTERS) and not line.qid in FILTERERED_QIDS.keys() and not line.title_with_spaces in SUPPORTED_REDIRECTS_BY_LANG[lang].keys():
+                lines.add(line)
+
+        return lines
+    
+    except Exception as e:
+        print(f"Error in build_answer: {e}")
+        return []
 
 
 '''
@@ -258,6 +265,7 @@ def request_by_lang_by_date(lang, year, month=0, day=0):
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
     try:
+        print(sql_query)
         cursor.execute(sql_query)
         results = cursor.fetchall()
         return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props', 'views'], year, month, day)
@@ -297,7 +305,7 @@ def request_by_lang(lang):
         results = cursor.fetchall()
         return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props', 'views'])
     except Exception as e:
-        print(e)
+        print(f"request_by_lang {e}")
         return []
     finally:
         conn.close()
@@ -319,9 +327,9 @@ def get_value_from_string_by_key(str_analyze, key):
 
 
 '''
-    request_by_lang_by_qid (request_dataviz)
+    request_monthly_views
 '''
-def request_by_lang_by_qid(lang, qid):
+def request_monthly_views(lang, qid):
 
     view_name = f'{lang}_vue'
     months_ = ", ".join([f"_{year}{month:02d}" for year in SUPPORTED_YEARS for month in range(1, 13)])
@@ -342,81 +350,100 @@ def request_by_lang_by_qid(lang, qid):
         cursor = conn.cursor()
         cursor.execute(sql_query)
         results = cursor.fetchall()
-        results = results[0]
-        conn.close()
-
-        _ = results[0] # qid
-        title = results[1]
-        translation = results[2]
-
-        data = results[4:]
-        data = tuple(0 if element is None else element for element in data)
-        month_column_list = [int(f'{year}{month:02d}') for year in SUPPORTED_YEARS for month in range(1,13)]
-        statistics = {}
-        for index, month in enumerate(month_column_list):
-            if index > 6 and index < 110:
-                    statistics[month] = data[index]
-
-        wikidata_image, wikidata_image_url = '', ''
-
-        if results[3]:
-            props_str = json.dumps(results[3])
-            wikidata_image = get_value_from_string_by_key(props_str, "P18")
-            wikidata_image_url =  ""
-            if wikidata_image:
-                wikidata_image_url = 'https://commons.wikimedia.org/wiki/File:' + wikidata_image.replace(' ', '_')
-                wikidata_image = get_commons_image_url(wikidata_image_url)
-
-        sentence = get_first_sentence_wikipedia_article(lang, title)
-        
-
-        # BEGIN REDIRECTS
-        # Ici on rechercher toutes les redirects
-        redirects = []
-        for redir, qid_redir in SUPPORTED_REDIRECTS_BY_LANG[lang].items():
-            redir = redir.replace(" ", "_")
-            if qid_redir == qid:
-                # Houston, on a des redirs, il faut récupérer les views.
-                # En faire une fonction dédiée
-                redirects.append(redir)
-                redir = redir.replace("'", "''")
-                sql_query_redir = f"""
-                SELECT
-                {months_}
-                FROM {view_name}
-                WHERE {lang}_title = '{redir}';
-                """
-                conn = sqlite3.connect(DB_NAME)
-                cursor = conn.cursor()
-                cursor.execute(sql_query_redir)
-                results = cursor.fetchall()
-                conn.close()
-
-                if results:                
-                    data_redir = results[0] # Tuple de views
-                    data_redir = tuple(0 if element is None else element for element in data_redir)
-                    for index, month in enumerate(month_column_list):
-                        if index > 6 and index < 110:             
-                            total = statistics[month] + data_redir[index]
-                            statistics[month] = total
-                
-        # END REDIRECTS
-
-        results_dict = {
-            'title' : title,
-            'translation' : translation,
-            'statistics' : statistics,
-            'wikidata_image' : wikidata_image,
-            'wikidata_image_url' : wikidata_image_url,
-            'sentence' : sentence,
-            'redirects' : redirects
-        }
-        return results_dict
+        return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props', 'views_collection'])
     except Exception as e:
-        print(f"request_dataviz {e}")
-        return {}
+        print(f"request_monthly_views {e}")
+        return []
     finally:
         conn.close()
+
+
+'''
+    request_monthly_views_redirect
+'''
+def request_monthly_views_redirect(lang, title):
+
+    view_name = f'{lang}_vue'
+    months_ = ", ".join([f"_{year}{month:02d}" for year in SUPPORTED_YEARS for month in range(1, 13)])
+
+    sql_query = f"""
+                SELECT
+                qid,
+                {lang}_title,
+                en_translation,
+                props,
+                {months_}
+                FROM {view_name}
+                WHERE {lang}_title='{title}';
+            """
+    conn = sqlite3.connect(DB_NAME)
+    cursor = conn.cursor()
+    
+    try:
+        print(f"request_monthly_views_redirect sql_query {sql_query}")
+        cursor.execute(sql_query)
+        results = cursor.fetchall()
+        print(f"request_monthly_views_redirect results {results}")
+        return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props', 'views_collection'])
+    except Exception as e:
+        print(f"request_monthly_views_redirect {e}")
+        return []
+    finally:
+        conn.close()
+
+
+'''
+    request_by_lang_by_qid (request_dataviz)
+'''
+def request_by_lang_by_qid(lang, qid):
+
+        lines = request_monthly_views(lang, qid)
+
+        for line in lines.items:
+
+            month_column_list = [int(f'{year}{month:02d}') for year in SUPPORTED_YEARS for month in range(1,13)]
+
+            from datetime import date
+            start_date = date(2015, 7, 1)
+            end_date = date.today()
+            diff_months_number = (end_date.year - start_date.year) * 12 + end_date.month - start_date.month + 1  
+            START_MONTH = start_date.month
+            END_MONTH = diff_months_number
+
+            statistics = {}
+            statistics_redirects = {}
+            for index, month in enumerate(month_column_list):
+                if index >= START_MONTH and index <= END_MONTH:
+                    statistics[f'{month}'] = line.views_collection[index]
+
+            sentence = get_first_sentence_wikipedia_article(lang, line.title)
+            
+            for redir, qid_ in SUPPORTED_REDIRECTS_BY_LANG[lang].items():
+                if qid == qid_:
+                    redir = redir.replace(" ", "_")
+                    line_views = request_monthly_views_redirect(lang, redir.replace("'", "''"))
+
+                    for line_views in line_views.items:
+                        for index, month in enumerate(month_column_list):
+                            if index >= START_MONTH and index <= END_MONTH:
+                                statistics_redirects[redir] = {}
+                                key_month = f'{month}'
+                                dict_month = {key_month : line_views.views_collection[index]}
+                                statistics_redirects[redir] = dict_month
+
+            results_dict = {
+                'lang'  : lang,
+                'title' : line.title,
+                'en_translation' : line.en_translation,
+                'wikidata_image' : line.wikidata_image,
+                'wikidata_image_url' :line.wikidata_image_url,
+                'sentence' : sentence,
+                'statistics' : statistics,
+                'statistics_redirects' : statistics_redirects
+            }
+            print(results_dict)
+            return results_dict
+
 
 '''
     special_request_redirect

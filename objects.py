@@ -42,7 +42,8 @@ class Line:
                  views=0, 
                  props='',
                  wikidata_image='',
-                 wikidata_image_url = ''):
+                 wikidata_image_url = '',
+                 views_collection = []):
         self.qid = qid
         self.title = title
         self.en_translation = en_translation
@@ -51,6 +52,7 @@ class Line:
         self.wikidata_image = wikidata_image
         self.wikidata_image_url = wikidata_image_url
         self.redirects = Redirects()
+        self.views_collection = views_collection
 
     def __repr__(self):
         return f"Line:{self.qid}|{self.title}|{self.en_translation}|{self.views}|{self.wikidata_image}|{self.wikidata_image_url}\n{self.redirects}"
@@ -65,6 +67,15 @@ class Line:
         if self.qid.startswith(f"Q_"):
             return True
         return False
+    
+    @property
+    def title_with_spaces(self):
+        return self.title.replace("_", " ")
+    
+    @property
+    def title_with_undescores(self):
+        return self.title.replace(" ", "_")
+    
     
 
 '''
