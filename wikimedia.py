@@ -41,7 +41,7 @@ def get_first_sentence_wikipedia_article(lang, article_title):
     first_sentence = ""
     if data.get("query", {}):
         page = next(iter(data["query"]["pages"].values()))
-        first_sentence = page["extract"][:120]
+        first_sentence = page["extract"][:220]
         first_sentence = re.sub( "[(),]", "", first_sentence)
         words = first_sentence.split(" ")
         first_sentence = ' '.join(words[:-1])

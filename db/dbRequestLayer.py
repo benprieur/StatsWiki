@@ -51,7 +51,6 @@ def build_answer(lang, results, sequence, year=0, month=0, day=0):
                     line.wikidata_image, line.wikidata_image_url = dumps_properties(line.props)
                 elif element == 'views_collection':
                     line.views_collection = result[index:]
-            
             if not line.title_with_undescores.startswith(FILTERS) and not line.qid in FILTERERED_QIDS.keys() and not line.title_with_spaces in SUPPORTED_REDIRECTS_BY_LANG[lang].keys():
                 lines.add(line)
 
@@ -265,7 +264,6 @@ def request_by_lang_by_date(lang, year, month=0, day=0):
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
     try:
-        print(sql_query)
         cursor.execute(sql_query)
         results = cursor.fetchall()
         return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props', 'views'], year, month, day)
@@ -350,6 +348,7 @@ def request_monthly_views(lang, qid):
         cursor = conn.cursor()
         cursor.execute(sql_query)
         results = cursor.fetchall()
+
         return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props', 'views_collection'])
     except Exception as e:
         print(f"request_monthly_views {e}")
@@ -363,33 +362,38 @@ def request_monthly_views(lang, qid):
 '''
 def request_monthly_views_redirect(lang, title):
 
-    view_name = f'{lang}_vue'
-    months_ = ", ".join([f"_{year}{month:02d}" for year in SUPPORTED_YEARS for month in range(1, 13)])
+    dict_results = {} # toutes les views par mois pour title
+    for year in SUPPORTED_YEARS:
 
-    sql_query = f"""
-                SELECT
-                qid,
-                {lang}_title,
-                en_translation,
-                props,
-                {months_}
-                FROM {view_name}
-                WHERE {lang}_title='{title}';
-            """
-    conn = sqlite3.connect(DB_NAME)
-    cursor = conn.cursor()
+        conn = sqlite3.connect(DB_NAME)
+        cursor = conn.cursor()
+
+        table_name = f"{lang}_{year}_month" 
+        months_col = ", ".join([f"_{month:02d}" for month in range(1, 13)])
+
+        query = f"SELECT {months_col} FROM {table_name} WHERE article = '{title}';"
     
-    try:
-        print(f"request_monthly_views_redirect sql_query {sql_query}")
-        cursor.execute(sql_query)
-        results = cursor.fetchall()
-        print(f"request_monthly_views_redirect results {results}")
-        return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props', 'views_collection'])
-    except Exception as e:
-        print(f"request_monthly_views_redirect {e}")
-        return []
-    finally:
-        conn.close()
+        list_dict_keys = [f"{year}-{month:02d}" for month in range(1, 13)] 
+        
+        try:
+            cursor.execute(query)
+            results = cursor.fetchall()
+
+            if results:
+                results = results[0]
+
+                for _, (key, val) in enumerate(zip(list_dict_keys, results)):
+                    dict_results[key] = val
+            else:
+                for key in list_dict_keys:
+                    dict_results[key] = None
+        except Exception as e:
+            print(f"Exception request_monthly_views_redirect {e}")
+            for key in list_dict_keys:
+                dict_results[key] = None
+        finally:
+            conn.close()
+    return dict_results
 
 
 '''
@@ -397,52 +401,61 @@ def request_monthly_views_redirect(lang, title):
 '''
 def request_by_lang_by_qid(lang, qid):
 
-        lines = request_monthly_views(lang, qid)
+    statistics_global = {}
+    statistics = {} # Statistics, main article
+    lines = request_monthly_views(lang, qid)
+    line = lines.items[0]
 
-        for line in lines.items:
+    month_column_list = [f'{year}-{month:02d}' for year in SUPPORTED_YEARS for month in range(1,13)]
 
-            month_column_list = [int(f'{year}{month:02d}') for year in SUPPORTED_YEARS for month in range(1,13)]
+    sentence = get_first_sentence_wikipedia_article(lang, line.title)
 
-            from datetime import date
-            start_date = date(2015, 7, 1)
-            end_date = date.today()
-            diff_months_number = (end_date.year - start_date.year) * 12 + end_date.month - start_date.month + 1  
-            START_MONTH = start_date.month
-            END_MONTH = diff_months_number
+    for index, month in enumerate(month_column_list):
+        statistics[f'{month}'] = line.views_collection[index]
+    
+    statistics_global[f'{line.title_with_spaces}'] = statistics
 
-            statistics = {}
-            statistics_redirects = {}
-            for index, month in enumerate(month_column_list):
-                if index >= START_MONTH and index <= END_MONTH:
-                    statistics[f'{month}'] = line.views_collection[index]
+    # Statistics, redirects
+    for redir, qid_ in SUPPORTED_REDIRECTS_BY_LANG[lang].items():
+        if qid == qid_:
+            redir = redir.replace(" ", "_")
+            dict_results = request_monthly_views_redirect(lang, redir.replace("'", "''"))
+            statistics_global[f'{redir.replace("_", " ")}'] = dict_results
 
-            sentence = get_first_sentence_wikipedia_article(lang, line.title)
-            
-            for redir, qid_ in SUPPORTED_REDIRECTS_BY_LANG[lang].items():
-                if qid == qid_:
-                    redir = redir.replace(" ", "_")
-                    line_views = request_monthly_views_redirect(lang, redir.replace("'", "''"))
+    # On remplace tout None par 0
+    for title, values in statistics_global.items():
+        for month, value in values.items():
+            if value is None:
+                values[month] = 0
 
-                    for line_views in line_views.items:
-                        for index, month in enumerate(month_column_list):
-                            if index >= START_MONTH and index <= END_MONTH:
-                                statistics_redirects[redir] = {}
-                                key_month = f'{month}'
-                                dict_month = {key_month : line_views.views_collection[index]}
-                                statistics_redirects[redir] = dict_month
 
-            results_dict = {
-                'lang'  : lang,
-                'title' : line.title,
-                'en_translation' : line.en_translation,
-                'wikidata_image' : line.wikidata_image,
-                'wikidata_image_url' :line.wikidata_image_url,
-                'sentence' : sentence,
-                'statistics' : statistics,
-                'statistics_redirects' : statistics_redirects
-            }
-            print(results_dict)
-            return results_dict
+    # On met à jour le 'global' avec les données des redirects
+    main_dict = statistics_global[f'{line.title_with_spaces}']
+    for redirect, _ in statistics_global.items():
+        if redirect != line.title:
+            for month, value in statistics_global[redirect].items():
+                try:
+                    main_dict[month] += value
+                except:
+                    main_dict[month] = value
+
+    # On remplace tout 0 par None
+    for title, values in statistics_global.items():
+        for month, value in values.items():
+            if not value:
+                values[month] = None
+
+    results_dict = {
+        'lang'  : lang,
+        'title' : line.title,
+        'en_translation' : line.en_translation,
+        'wikidata_image' : line.wikidata_image,
+        'wikidata_image_url' :line.wikidata_image_url,
+        'sentence' : sentence,
+        'statistics_global' : statistics_global
+    }
+    print(results_dict)
+    return results_dict
 
 
 '''
