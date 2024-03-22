@@ -1,6 +1,11 @@
 import sqlite3
-from const.constants import DB_NAME, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
+DB_NAME = 'StatsWiki00.db'
+SUPPORTED_YEARS = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+SUPPORTED_LANGUAGES = ['ar', 'de', 'en', 'eo', 'es', 'fr', 'ja', 'he', 'hy', 'it', 'ko', 'nl', 'pl', 'pt', 'ru', 'uk', 'zh']
 
+'''
+    def index_wikidata_qid():
+'''
 def index_wikidata_qid():
 
     conn = sqlite3.connect(DB_NAME)
@@ -52,6 +57,7 @@ def index_wikidata_titles():
 
         conn.commit()
         conn.close()
+
 
 '''
     index_tables_times
@@ -116,4 +122,31 @@ def index_tables_times():
 
             conn.close()
 
-index_tables_times()
+
+'''
+    index_tables_year_view
+'''
+def index_tables_year_view():
+
+    for lang in SUPPORTED_LANGUAGES:
+        for year in SUPPORTED_YEARS:
+
+            table_year = f"{lang}_{year}_view"
+
+            conn = sqlite3.connect(DB_NAME)
+            cursor = conn.cursor()
+    
+            sql_command_year = f"""
+                CREATE INDEX index_{lang}_{year}_view ON {table_year}(views DESC);
+            """
+
+            try:
+                print(sql_command_year)
+                cursor.execute(sql_command_year)
+                conn.commit()
+            except Exception as e:
+                print(e)
+
+            conn.close()
+
+index_tables_year_view()

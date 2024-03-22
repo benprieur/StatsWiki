@@ -58,7 +58,7 @@ def build_answer(lang, results, sequence, year=0, month=0, day=0):
     
     except Exception as e:
         print(f"Error in build_answer: {e}")
-        return []
+        return Lines(lang)
 
 
 '''
@@ -211,12 +211,7 @@ def request_by_lang_by_qid_by_date(lang, qid_, year, month=0, day=0):
     request_by_lang_by_date
 '''
 def request_by_lang_by_date(lang, year, month=0, day=0):
-    
-    if lang not in SUPPORTED_LANGUAGES:
-        return []
-    if year not in SUPPORTED_YEARS:
-        return []
-    
+        
     sql_query = ""
     
     if year and month and day:
@@ -266,6 +261,7 @@ def request_by_lang_by_date(lang, year, month=0, day=0):
     try:
         cursor.execute(sql_query)
         results = cursor.fetchall()
+        print(f'request_by_lang_by_date')
         return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props', 'views'], year, month, day)
     except Exception as e:
         print(f'request_by_lang_by_date: {e}')

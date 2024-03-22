@@ -9,8 +9,16 @@ class Redirect:
                  views=0):
         self.title = title
         self.views = views
+
     def __repr__(self):
         return f"Redirect:{self.title}|{self.views}\n"
+
+    def to_dict(self):
+        return {
+            "title" : self.title,
+            "views" : self.views
+        }
+
 
 '''
     Redirects
@@ -30,6 +38,10 @@ class Redirects:
 
     def __repr__(self):
         return f"Redirects:{self.items}\n"
+
+    def to_dict(self):
+        return [redirect.to_dict() for redirect in self.items[:20]]
+
 
 '''
     Line
@@ -75,7 +87,19 @@ class Line:
     @property
     def title_with_undescores(self):
         return self.title.replace(" ", "_")
-    
+
+    def to_dict(self):
+        return {
+            "qid": self.qid,
+            "title": self.title,
+            "views": self.views,
+            "en_translation" : self.en_translation,
+            "props" : self.props,
+            "wikidata_image" : self.wikidata_image,
+            "wikidata_image_url" : self.wikidata_image_url,
+            "redirects" : self.redirects.to_dict(),
+            "views_collection" : [views_collection.to_dict() for views_collection in self.views_collection]
+        }
     
 
 '''
@@ -105,3 +129,12 @@ class Lines:
         for line in self.items:
             if line.qid == qid:
                 return True
+
+    def to_dict(self):
+        return {
+            "lang" : self.lang,
+            "year" : self.year,
+            "month" : self.month,
+            "day" : self.day,
+            "items" : [item.to_dict() for item in self.items]
+        }
