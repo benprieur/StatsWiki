@@ -57,17 +57,14 @@ def by_year(lang, year, api=False):
         bymonthyear=YEAR_PAGE_STUFF[lang]['bymonthyear']
         )
     else:
-        print(lines)
-        return jsonify({ 
+        return jsonify({
             'lang' : lang,            
             'year' : year, 
-            'year_before' : year_before,
-            'year_after' : year_after,
             'months' : months,
             'title' : GlOBAL_PAGE_STUFF[lang]['title'] + ' ' + str(year),
             'title_views' : GlOBAL_PAGE_STUFF[lang]['title_views'], 
             'title_article' : GlOBAL_PAGE_STUFF[lang]['title_article'], 
             'bymonthyear' : YEAR_PAGE_STUFF[lang]['bymonthyear'],
-            'articles' : lines.to_dict(), 
+            'lines' : [item.to_dict() for item in lines.items]
         })
 

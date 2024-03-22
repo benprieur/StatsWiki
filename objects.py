@@ -40,7 +40,7 @@ class Redirects:
         return f"Redirects:{self.items}\n"
 
     def to_dict(self):
-        return [redirect.to_dict() for redirect in self.items[:20]]
+        return [redirect.to_dict() for redirect in self.items]
 
 
 '''
