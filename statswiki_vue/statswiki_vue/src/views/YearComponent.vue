@@ -51,7 +51,7 @@ export default {
   computed: {
     columnsData() {
       return [
-        { label: this.title_article, field: 'title', tdClass: 'normal-behavior', html: true },
+        { label: this.title_article, field: 'title', tdClass: 'article', html: true },
         { label: 'English translation', field: 'en_translation', tdClass: 'normal-behavior' },
         { label: '', field: 'image', sortable: false, html: true, tdClass: 'align-center' },
         { label: this.title_views, field: 'views', tdClass: 'align-right' },

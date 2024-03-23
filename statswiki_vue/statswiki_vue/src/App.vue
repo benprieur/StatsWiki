@@ -7,12 +7,14 @@
 <script>
 import ArticleComponent from './views/ArticleComponent.vue';
 import YearComponent from './views/YearComponent.vue';
+import MonthComponent from './views/MonthComponent.vue';
 
 export default {
   name: 'App',
   components: {
     ArticleComponent,
-    YearComponent
+    YearComponent,
+    MonthComponent
   }
 };
 </script>

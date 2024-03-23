@@ -13,28 +13,14 @@ def by_article(lang, qid, api=False):
     if not response:
         return {}
     
-    if not api:
-        return render_template('article.html', 
-                    lang=lang,
-                    qid=qid,        
-                    title=response['title'],
-                    wikidata_image=response['wikidata_image'],
-                    wikidata_image_url=response['wikidata_image_url'],
-                    flag = FLAGS_STUFF[lang],
-                    sentence =response['sentence'],
-                    en_translation=response['en_translation'],
-                    statistics=response['statistics'],
-                    statistics_redirects =response['statistics_redirects']
-                )
-    else:
-        return jsonify({
-            "lang" : lang,
-            "qid" : qid,
-            "title" : response['title'],
-            'en_translation' : response['en_translation'],
-            'sentence' : response['sentence'],
-            "wikidata_image" : response['wikidata_image'],
-            "wikidata_image_url" : response['wikidata_image_url'],
-            'statistics_global' : response['statistics_global']
-        })
+    return jsonify({
+        "lang" : lang,
+        "qid" : qid,
+        "title" : response['title'],
+        'en_translation' : response['en_translation'],
+        'sentence' : response['sentence'],
+        "wikidata_image" : response['wikidata_image'],
+        "wikidata_image_url" : response['wikidata_image_url'],
+        'statistics_global' : response['statistics_global']
+    })
 

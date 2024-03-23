@@ -31,20 +31,31 @@
   
   <style>
   @import 'vue-good-table-next/dist/vue-good-table-next.css';
-  
-  .normal-behavior{
+
+  .article{
     text-align: left;
-    font-size: 17px !important;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    vertical-align: middle;
+    text-decoration: underline; 
+  }
+
+  .normal-behavior{
+    font-family: Arial, sans-serif;
+    text-align: left;
+    font-size: 22px;
     vertical-align: middle;
   }
 
   .align-right {
+    font-family: Arial, sans-serif;
     text-align: right;
-    font-size: 18px !important;
+    font-size: 25px;
     vertical-align: middle;
   }
 
   .align-center {
+    font-family: Arial, sans-serif;
     text-align: center;
     vertical-align: middle;
   }
