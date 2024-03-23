@@ -122,6 +122,7 @@ def display(lang, lines, year=0, month=0, day=0):
                         line.redirects.add(Redirect(redir_title, 0))
 
     # sort
+    lines.items = lines.items[:50]
     lines.items.sort(key=lambda line: line.views, reverse=True)
 
     # format us 

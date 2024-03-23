@@ -11,7 +11,7 @@ from objects import Lines
 
 '''
     by_year
-'''
+'''     
 def by_year(lang, year, api=False):
 
     if year not in SUPPORTED_YEARS:
@@ -21,15 +21,6 @@ def by_year(lang, year, api=False):
     
     lines = request_by_lang_by_date(lang, year)
     lines = display(lang, lines, year)
-    
-    list_months = []
-    list_months_link = [] 
-    for month, _ in enumerate(MONTHS_BY_LANG[lang]):
-        list_months.append(MONTHS_BY_LANG[lang][month])    
-        list_months_link.append(f'/{lang}/{year}/{month+1}')
-    months = {}
-    for index, month in enumerate(list_months):
-        months[month] = list_months_link[index]
     
     previous_year = int(year) - 1
     next_year = int(year) + 1
@@ -50,7 +41,6 @@ def by_year(lang, year, api=False):
         year_after_link=year_after_link,
         year_before=year_before,
         year_after=year_after,
-        months=months,
         title=GlOBAL_PAGE_STUFF[lang]['title'] + ' ' + str(year),
         title_views=GlOBAL_PAGE_STUFF[lang]['title_views'], 
         title_article=GlOBAL_PAGE_STUFF[lang]['title_article'], 
@@ -60,8 +50,8 @@ def by_year(lang, year, api=False):
         return jsonify({
             'lang' : lang,            
             'year' : year, 
-            'months' : months,
-            'title' : GlOBAL_PAGE_STUFF[lang]['title'] + ' ' + str(year),
+            'months' : MONTHS_BY_LANG[lang],
+            'title' : GlOBAL_PAGE_STUFF[lang]['title'],
             'title_views' : GlOBAL_PAGE_STUFF[lang]['title_views'], 
             'title_article' : GlOBAL_PAGE_STUFF[lang]['title_article'], 
             'bymonthyear' : YEAR_PAGE_STUFF[lang]['bymonthyear'],
