@@ -1,23 +1,6 @@
 <template>
   <article class="article-container">
     <div class="content">
-      <div class="text-side">
-        <p><img :src="$getFlagUrl(lang)" style="width:25px;" /> {{ articleData.lang }}.wikipedia</p>
-        
-        <p>
-          <span class="bold-and-large">{{ replaceUnderscoreWithSpace(articleData.title) }}</span>
-          <span v-if="articleData.en_translation" style="font-style: italic;">&nbsp;&nbsp;({{ articleData.en_translation }})</span>
-          <span class="small-wikidata">&nbsp;&nbsp;&nbsp;&nbsp;
-            <a :href="`https://www.wikidata.org/wiki/${articleData.qid}`">{{ articleData.qid }}</a>
-            &nbsp;<img :src="$getFlagUrl('wd')" style="width:13px;" />
-          </span>
-        </p>
-        
-        <p class="article-excerpt">{{ articleData.sentence }}
-          <a :href="`https://${articleData.lang}.wikipedia.org/wiki/${replaceUnderscoreWithSpace(articleData.title)}`">...</a>
-        </p>
-      
-      </div>
       
       <div class="image-side">
         <a :href="articleData.wikidata_image_url">
@@ -25,9 +8,24 @@
         </a>
       </div>
 
+      <div class="text-side">
+        <p><img :src="$getFlagUrl(lang)" style="width:25px;" /> <a :href="`https://${articleData.lang}.wikipedia.org`">{{ articleData.lang }}.wikipedia</a></p>
+        
+        <p>
+          <span class="bold-and-large"><a :href="`https://${articleData.lang}.wikipedia.org/wiki/${articleData.title}`">{{ replaceUnderscoreWithSpace(articleData.title) }}</a></span>
+          <span v-if="articleData.en_translation" style="font-style: italic;">&nbsp;&nbsp;({{ articleData.en_translation }})</span>
+          <span class="small-wikidata">&nbsp;&nbsp;&nbsp;&nbsp;
+            <a :href="`https://www.wikidata.org/wiki/${articleData.qid}`">{{ articleData.qid }}</a>
+            &nbsp;<img :src="$getFlagUrl('wd')" style="width:13px;" />
+          </span>
+        </p>
+        
+        <p class="article-excerpt">{{ articleData.sentence }}...</p>
+      
+      </div>
+      
     </div>
     
-    <br/><br/><br/>
     <div v-if="articleData && articleData.statistics_global">
     <ChartComponent :data="articleData.statistics_global"></ChartComponent>
     </div>
@@ -57,7 +55,6 @@ export default {
     return {
       fetchError: false,
       articleData: {
-        // Initialisez les données de l'article ici, si nécessaire
         lang: this.lang,
         qid: this.qid,
         title: this.title,
@@ -93,50 +90,69 @@ export default {
 </script>
 
 <style scoped>
+
 .article-container {
   display: flex;
   flex-direction: column;
+  background-color: #e8e8e8;
+  border: 3px solid black; /* Liseret noir */
+  border-radius: 20px; /* Bords arrondis */
+  padding: 20px; /* Espacement intérieur pour ne pas coller au bord */
+  margin: 20px 0; /* Ajout d'une marge extérieure pour l'espacement avec d'autres éléments */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionnel: ajoute une ombre pour un effet de profondeur */
 }
+
 .content {
   display: flex;
-  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #c1c1c1;
+  border: 1px solid black;
+  border-radius: 20px; 
 }
+
 .text-side, .image-side {
   flex: 1;
 }
+
 .text-side {
-  padding-right: 20px; 
+  padding-left: 20px; 
+  flex: 3;
 }
+
 .image-side img {
-  width: 100%; 
-  height: auto; 
+  flex: 1;
+  padding: 20px;
+  width: auto; 
+  max-width: 100px;
 }
+
 canvas {
-  max-width: 100%;
+  align-self: center;
+  max-width: 90%;
 }
+
 .bold-and-large {
   font-size: 30px; 
+  color: black;
   font-weight: bold;
 }
+
 .small-wikidata {
   font-size: 13px; 
 }
 
 .article-excerpt {
   font-family: 'Georgia', serif; 
-  font-size: 18px; 
+  font-size: 20px; 
   line-height: 1.6; 
-  color: #333; 
-  background-color: #f9f9f9; 
-  border-radius: 10px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #4c4c4c;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
 a {
-  color: black; 
+  color: black;
   text-decoration: underline; 
 }
 

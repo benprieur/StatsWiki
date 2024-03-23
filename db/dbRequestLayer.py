@@ -436,7 +436,7 @@ def request_by_lang_by_qid(lang, qid):
                     main_dict[month] = value
 
     # On remplace tout 0 par None
-    for title, values in statistics_global.items():
+    for _, values in statistics_global.items():
         for month, value in values.items():
             if not value:
                 values[month] = None
