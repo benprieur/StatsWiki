@@ -18,10 +18,7 @@ def by_month(lang, year, month, api=False):
     list_days_str = [f'/{lang}/{month_current_date.year}/{month_current_date.month:02d}/{day:02d}' for day in range(1, num_days[1] + 1)]
     if (date.today().year == month_current_date.year) and (date.today().month == month_current_date.month):
         list_days_str = [f'/{lang}/{month_current_date.year}/{month_current_date.month:02d}/{day:02d}' for day in range(1, date.today().day)]
-
-    print(list_days_str)
     
-    print(MONTHS_BY_LANG[lang][month])
     return jsonify({
         'lang' : lang,            
         'title' : GlOBAL_PAGE_STUFF[lang]['title'], 

@@ -43,7 +43,8 @@ def build_answer(lang, results, sequence, year=0, month=0, day=0):
                 elif element == 'title':
                     line.title = result[index]
                 elif element == 'en_translation':
-                    line.en_translation = result[index]
+                    if result[index] != line.title_with_spaces:
+                        line.en_translation = result[index]
                 elif element == 'views':
                     line.views = result[index]
                 elif element == 'props':

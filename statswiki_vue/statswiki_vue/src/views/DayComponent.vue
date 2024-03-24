@@ -2,18 +2,8 @@
     <article class="container">
       <div class="header">
 
-        <span class="bold-and-large"> {{localized_month}}  <a :href="`/${lang}/${year}`">{{ year }}</a></span>&nbsp;&nbsp;
+        <span class="bold-and-large"> {{current_date}}>&nbsp;&nbsp;<a :href="`/${lang}/${year}/${month}`">{{ localized_month }}</a>&nbsp;<a :href="`/${lang}/${year}`">{{ year }}</a></span
         <img :src="$getFlagUrl(lang)" style="width:25px;"/> <a :href="`https://${lang}.wikipedia.org`">{{ title }}</a> 
-      </div>
-      
-      <div class="day-navigation">
-        <ul>
-          <li>{{ bymonthday }}</li>&nbsp;&nbsp;
-          <li v-for="(day, index) in days" :key="index">
-            <a :href="`${day}`">{{padDay(index+1)}}</a>
-          </li>
-        </ul>
-      
       </div>
       
       <div>
@@ -28,7 +18,7 @@
     import axios from 'axios';
     
     export default {
-      name: 'YearComponent',
+      name: 'DayComponent',
       components: {
         ListComponent
       },
@@ -36,6 +26,7 @@
         'lang',
         'year',
         'month',
+        'day'
       ],
       data() {
         return {
@@ -44,12 +35,8 @@
           title: '',
           title_article : '',
           title_views : '0',
-          bymonthday : '',
-          days: [],
           localized_month: '',
-          currentDay: new Date().getDay() + 1,
-          currentMonth: new Date().getMonth() + 1,
-          currentYear: new Date().getFullYear(),    
+          current_date: ''
         };
       },
       computed: {
@@ -72,28 +59,23 @@
         },
       },
       mounted() {
-        this.fetchMonthData();
+        this.fetchDayData();
       },
       methods: {
-        async fetchMonthData() {
-          const url = `/api/${this.lang}/${this.year}/${this.month}/`;
+        async fetchDayData() {
+          const url = `/api/${this.lang}/${this.year}/${this.month}/${this.day}/`;
           try {
             const response = await axios.get(url);
             this.lines = response.data.lines;
             this.title_article = response.data.title_article;
             this.title_views = response.data.title_views;
             this.title = response.data.title;
-            this.bymonthday = response.data.bymonthday;
-            this.days = response.data.days;
             this.localized_month = response.data.localized_month;
+            this.current_date = response.data.current_date;
           } catch (error) {
-            console.error("An error occurred while fetching the month data", error);
+            console.error("An error occurred while fetching the day data", error);
             this.fetchError = true;
           }
-        },
-
-        padDay(day) {
-          return day.toString().padStart(2, '0');
         },
       }
     }
@@ -119,40 +101,6 @@
       color: black;
       font-weight: bold;
     }
-    
-    .day-navigation {
-        background-color: #48466e; /* Fond noir clair */
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-    }
-
-    .day-navigation ul {
-        display: flex; /* Utilise Flexbox pour la disposition */
-        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
-        padding: 0;
-        margin: 0;
-        list-style-type: none; /* Enlève les puces de la liste */
-    }
-
-    .day-navigation li {
-        margin-right: 25px; /* Ajoute un peu d'espace entre les éléments */
-    }
-
-    .day-navigation a {
-        text-decoration: none;
-        color: white; /* Définit la couleur du texte des liens */
-    }
-
-    @media (max-width: 600px) { /* Pour les écrans de moins de 600px de large */
-        .day-navigation ul {
-        justify-content: center; /* Centre les éléments dans le conteneur */
-    }}
-
-    .day-navigation li {
-        margin-bottom: 5px; /* Ajoute un peu d'espace entre les éléments lorsqu'ils passent à la ligne */
-    }
-
 
     a {
         color: black;
