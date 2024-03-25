@@ -105,6 +105,7 @@ export default {
   background-color: #e8e8e8;
 }
 .header {
+  height: 80px;
   background-color: #c1c1c1;
   border: 1px solid black; 
   border-radius: 20px; 

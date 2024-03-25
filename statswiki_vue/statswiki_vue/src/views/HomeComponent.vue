@@ -2,7 +2,7 @@
       <div class="homepage-container">
         <div class="row">
           <DayComponent lang="en" :year="yesterday.year" :month="yesterday.month" :day="yesterday.day" class="component" />
-          <MonthComponent lang="ja" :year="yesterday.year" :month="yesterday.month" class="component" />
+          <DayComponent lang="ja" :year="yesterday.year" :month="yesterday.month" :day="yesterday.day" class="component" />
         </div>
       </div>
   </template>
@@ -39,6 +39,7 @@
   
   <style>
   .homepage-container {
+    background-color: #e8e8e8;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

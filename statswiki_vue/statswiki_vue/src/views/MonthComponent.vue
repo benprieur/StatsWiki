@@ -106,6 +106,7 @@
     }
 
     .header {
+      height: 80px;
       background-color: #c1c1c1;
       border: 1px solid black; 
       border-radius: 20px; 
