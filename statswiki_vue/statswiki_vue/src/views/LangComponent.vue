@@ -2,10 +2,8 @@
     <article class="container">
       <div class="header">
         <span class="bold-and-large">
-          {{ day }}&nbsp;<a :href="`/${lang}/${year}/${month}/`">{{ localized_month }}</a>&nbsp;<a :href="`/${lang}/${year}/`">{{ year }}</a>
-        </span>
-        &nbsp;&nbsp;
         <img :src="$getFlagUrl(lang)" style="width:25px;"/> <a :href="`https://${lang}.wikipedia.org`">{{ title }}</a> 
+        </span>
       </div>
       
       <div>
@@ -20,15 +18,12 @@
     import axios from 'axios';
     
     export default {
-      name: 'DayComponent',
+      name: 'LangComponent',
       components: {
         ListComponent
       },
       props: [
-        'lang',
-        'year',
-        'month',
-        'day'
+        'lang'
       ],
       data() {
         return {
@@ -37,8 +32,6 @@
           title: '',
           title_article : '',
           title_views : '0',
-          localized_month: '',
-          current_date: ''
         };
       },
       computed: {
@@ -61,27 +54,25 @@
         },
       },
       mounted() {
-        this.fetchDayData();
+        this.fetchLangData();
       },
       methods: {
-        async fetchDayData() {
-          const url = `/api/${this.lang}/${this.year}/${this.month}/${this.day}/`;
-          try {
+        async fetchLangData() {
+            const url = `/api/${this.lang}/`;
+            try {
             const response = await axios.get(url);
             this.lines = response.data.lines;
             this.title_article = response.data.title_article;
             this.title_views = response.data.title_views;
             this.title = response.data.title;
-            this.localized_month = response.data.localized_month;
-            this.current_date = response.data.current_date;
-          } catch (error) {
-            console.error("An error occurred while fetching the day data", error);
+            } catch (error) {
+            console.error("An error occurred while fetching the lang data", error);
             this.fetchError = true;
-          }
+            }
         },
-      }
     }
-    </script>
+}
+</script>
     
 <style scoped>
     

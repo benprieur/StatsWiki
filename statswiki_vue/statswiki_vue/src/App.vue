@@ -9,6 +9,7 @@ import ArticleComponent from './views/ArticleComponent.vue';
 import YearComponent from './views/YearComponent.vue';
 import MonthComponent from './views/MonthComponent.vue';
 import DayComponent from './views/DayComponent.vue';
+import LangComponent from './views/LangComponent.vue';
 
 export default {
   name: 'App',
@@ -16,7 +17,8 @@ export default {
     ArticleComponent,
     YearComponent,
     MonthComponent,
-    DayComponent
+    DayComponent,
+    LangComponent,
   }
 };
 </script>

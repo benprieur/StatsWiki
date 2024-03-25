@@ -1,7 +1,5 @@
 from flask import Flask,render_template
 #from flask_cors import CORS
-from const.constants import SUPPORTED_LANGUAGES, SUPPORTED_YEARS
-from const.constants_langs import FLAGS_STUFF, GlOBAL_PAGE_STUFF
 from apps.app_year import by_year
 from apps.app_month import by_month
 from apps.app_day import by_day
@@ -50,16 +48,15 @@ def api_by_day(lang, year, month, day):
 '''
 @app.route('/api/<lang>', strict_slashes=False)
 def api_by_lang(lang):
-    print(f"api/{lang}")
-    return "<html>API Lang</html>"
+    return by_lang(lang, True)
 
-    
+
 '''
-    by_language
+    api_ads
 '''
-@app.route("/<lang>", strict_slashes=False)
-def app_by_lang(lang):
-    return by_lang(lang)
+@app.route('/api/ads.txt', strict_slashes=False)
+def api_ads():
+    return 'google.com, pub-2569045443543971, DIRECT, f08c47fec0942fa0'
 
 
 @app.route('/', defaults={'path': ''}, strict_slashes=False)
