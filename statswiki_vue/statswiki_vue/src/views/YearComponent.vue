@@ -12,7 +12,6 @@
         <a :href="`/${lang}/${year}/${padMonth(index + 1)}`">{{ month }}</a>
       </li>
     </ul>
-  
   </div>
   
   <div>

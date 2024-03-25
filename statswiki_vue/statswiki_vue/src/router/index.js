@@ -4,6 +4,7 @@ import YearComponent from '../views/YearComponent.vue';
 import MonthComponent from '../views/MonthComponent.vue'; 
 import DayComponent from '../views/DayComponent.vue'; 
 import LangComponent from '../views/LangComponent.vue'; 
+import HomeComponent from '../views/HomeComponent.vue'; 
 
 const routes = [
   {
@@ -34,6 +35,12 @@ const routes = [
     path: '/:lang(ar|de|en|eo|es|fr|ja|he|hy|it|ko|nl|pl|pt|ru|uk|zh)',
     name: 'Lang',
     component: LangComponent,
+    props: true,
+  },
+  {
+    path: '/',
+    name: 'Home',
+    component: HomeComponent,
     props: true,
   },
 ];

@@ -1,25 +1,27 @@
 <template>
   <div id="app">
+    <HeaderComponent />
     <router-view></router-view>
+    <FooterComponent />
   </div>
 </template>
 
 <script>
-import ArticleComponent from './views/ArticleComponent.vue';
 import YearComponent from './views/YearComponent.vue';
 import MonthComponent from './views/MonthComponent.vue';
 import DayComponent from './views/DayComponent.vue';
-import LangComponent from './views/LangComponent.vue';
+import HeaderComponent from './views/HeaderComponent.vue';
+import FooterComponent from './views/FooterComponent.vue';
 
 export default {
-  name: 'App',
+  name: 'StatsWiki',
   components: {
-    ArticleComponent,
     YearComponent,
     MonthComponent,
     DayComponent,
-    LangComponent,
-  }
+    HeaderComponent,
+    FooterComponent
+  },
 };
 </script>
 
