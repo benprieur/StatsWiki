@@ -1,4 +1,5 @@
 <template>
+    <div v-if="isLoading" class="loader"></div> 
     <article class="container">
       <div class="header">
         <span class="bold-and-large">
@@ -28,6 +29,7 @@
       data() {
         return {
           fetchError: false,
+          isLoading: false,
           lines: [],
           title: '',
           title_article : '',
@@ -59,8 +61,17 @@
       methods: {
         async fetchLangData() {
             const url = `/api/${this.lang}/`;
+
+            this.isLoading = true;
+            const timeoutPromise = new Promise(resolve => setTimeout(resolve, 3000));
+            const fetchPromise = axios.get(url);
+            await Promise.race([fetchPromise, timeoutPromise]);
+            this.isLoading = false;
+
             try {
-            const response = await axios.get(url);
+
+            const response = await fetchPromise;
+
             this.lines = response.data.lines;
             this.title_article = response.data.title_article;
             this.title_views = response.data.title_views;

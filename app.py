@@ -59,13 +59,12 @@ def api_ads():
     return 'google.com, pub-2569045443543971, DIRECT, f08c47fec0942fa0'
 
 
-@app.route('/', defaults={'path': ''}, strict_slashes=False)
 @app.route('/<path:path>', strict_slashes=False)
 def catch_all(path):
     if path.startswith('api'):
         return "API route not found", 404
     else:
-        return "<html>Catch all</html>"
+        return "<html>Maintenance, StatsWiki</html>"
 
 
 if __name__ == '__main__':

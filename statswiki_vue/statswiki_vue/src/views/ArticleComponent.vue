@@ -1,4 +1,5 @@
 <template>
+  <div v-if="isLoading" class="loader"></div>
   <article class="article-container">
     <div class="content">
       
@@ -54,6 +55,7 @@ export default {
   data() {
     return {
       fetchError: false,
+      isLoading: false,
       articleData: {
         lang: this.lang,
         qid: this.qid,
@@ -72,10 +74,17 @@ export default {
   },
   methods: {
     async fetchArticleData() {
+      
       const url = `/api/${this.lang}/${this.qid}/`;
+
+      this.isLoading = true;
+      const timeoutPromise = new Promise(resolve => setTimeout(resolve, 3000));
+      const fetchPromise = axios.get(url);
+      await Promise.race([fetchPromise, timeoutPromise]);
+      this.isLoading = false;
+
       try {
-        const response = await axios.get(url);
-        console.log(response.data);
+        const response = await fetchPromise;
         this.articleData = { ...this.articleData, ...response.data };
       } catch (error) {
         console.error("An error occurred while fetching the article data", error);

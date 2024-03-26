@@ -18,28 +18,18 @@
             </span>
         </div>
     </div>
-  
+    <br/>
     <div class="search-modes">
         <span style="color:greenyellow; font-size:24px;">By language & year, month or day [/lang/year/month/day]:&nbsp;&nbsp;</span>
         <div class="search-languages">
-            <span class="language-item">
-                <img :src="$getFlagUrl('es')" style="width:20px; vertical-align:middle;" />&nbsp;
-                <a class="search-link" :href="`/es/${currentYear}`">/es/{{currentYear}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-
-            <span class="language-item">
-                <img :src="$getFlagUrl('en')" style="width:20px; vertical-align:middle;" />&nbsp;
-                <a class="search-link" :href="`/en/${currentYear}`">/en/{{currentYear}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            </span>
-            
-
-            <span class="language-item">
-                <img :src="$getFlagUrl('pl')" style="width:20px; vertical-align:middle;" />&nbsp;
-                <a class="search-link" :href="`/pl/2023/03/24`">/pl/2024/03/24</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <span v-for="lang in languages" :key="lang" class="language-item">
+                <img :src="$getFlagUrl(lang)" style="width:20px; vertical-align:middle;" />
+                <a :href="`/${lang}/${yesterday_year}/${yesterday_month}/${yesterday_day}`" class="search-link">/{{ lang }}/{{ yesterday_year }}/{{ yesterday_month }}/{{ yesterday_day }}</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
             </span>
         </div>
     </div>
-
+    <br/>
     <div class="search-modes">
         <span style="color:greenyellow; font-size:24px;">By language & Wikidata concept [/lang/qid]:&nbsp;&nbsp;</span>
         <div class="search-languages">
@@ -64,11 +54,12 @@ export default {
   name: "HeaderComponent",
   data() {
     const currentDate = new Date();
+    const yesterday = new Date(currentDate.getTime() - (24 * 60 * 60 * 1000));
     return {
       languages: ['ar', 'de', 'en', 'eo', 'es', 'fr', 'ja', 'he', 'hy', 'it', 'ko', 'nl', 'pl', 'pt', 'ru', 'uk', 'zh'],
-      currentYear: currentDate.getFullYear(),
-      currentMonth: currentDate.getMonth(), // Note: getMonth() retourne un mois indexé à 0
-      currentDay: currentDate.getDate(), // Le jour du mois
+      yesterday_year: yesterday.getFullYear(), 
+      yesterday_month: this.pad(yesterday.getMonth() + 1), 
+      yesterday_day: this.pad(yesterday.getDate()),
     };
   },
   methods: {
