@@ -63,7 +63,7 @@
             const url = `/api/${this.lang}/`;
 
             this.isLoading = true;
-            const timeoutPromise = new Promise(resolve => setTimeout(resolve, 3000));
+            const timeoutPromise = new Promise(resolve => setTimeout(resolve, 6000));
             const fetchPromise = axios.get(url);
             await Promise.race([fetchPromise, timeoutPromise]);
             this.isLoading = false;

@@ -1,0 +1,29 @@
+server {
+    listen 80;
+    server_name statswiki.info www.statswiki.info;
+
+    root /var/www/html/StatsWiki/dist; # Chemin vers les fichiers de ton application front-end
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html; # S'assure que Vue Router gère les routes côté client
+    }
+
+    # Configuration de cache pour /api/specific
+    location /api/specific {
+        proxy_pass http://127.0.0.1:5000;
+        proxy_cache my_cache;
+        proxy_cache_valid 200 302 12h; # Cache valide pour les réponses 200 et 302 pendant 12 heures
+        proxy_cache_valid 404 1m; # Les réponses 404 sont mises en cache pour 1 minute
+        add_header X-Proxy-Cache $upstream_cache_status; # Optionnel : pour voir si la réponse vient du cache
+    }
+
+    # Configuration de cache pour le reste sous /api
+    location /api/ {
+        proxy_pass http://127.0.0.1:5000;
+        proxy_cache my_cache;
+        proxy_cache_valid 200 302 1M; # Cache valide pour les réponses 200 et 302 pendant un mois
+        proxy_cache_valid 404 1m; # Les réponses 404 sont mises en cache pour 1 minute
+        add_header X-Proxy-Cache $upstream_cache_status; # Optionnel : pour voir si la réponse vient du cache
+    }
+}

@@ -28,10 +28,28 @@ def api_by_year(lang, year):
 
 
 '''
+    api_by_year_specific
+'''
+@app.route('/api/specific/<lang>/<int:year>/', strict_slashes=False)
+def api_by_year_specific(lang, year):
+    print("api_by_year_specific")
+    return by_year(lang, year, True)
+
+
+'''
     api_by_month
 '''
 @app.route('/api/<lang>/<int:year>/<int:month>/', strict_slashes=False)
 def api_by_month(lang, year, month):
+    return by_month(lang, year, month, True)
+
+
+'''
+    api_by_month_specific
+'''
+@app.route('/api/specific/<lang>/<int:year>/<int:month>/', strict_slashes=False)
+def api_by_month_specific(lang, year, month):
+    print("api_by_month_specific")
     return by_month(lang, year, month, True)
 
 
@@ -68,7 +86,7 @@ def catch_all(path):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
 
 # FLASK_APP=app.py FLASK_DEBUG=1 flask run
 # stat
