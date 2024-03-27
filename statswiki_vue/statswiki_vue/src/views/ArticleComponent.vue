@@ -1,46 +1,51 @@
 <template>
-  <div v-if="isLoading" class="loader"></div>
-  <article class="article-container">
-    <div class="content">
-      
-      <div class="image-side">
-        <a :href="articleData.wikidata_image_url">
-          <img :src="articleData.wikidata_image" />
-        </a>
-      </div>
+  <div v-if="isLoading" class="loader">Loading...</div>
+  <div v-else>
+    <article class="article-container">
+      <div class="content">
+        
+        <div class="image-side">
+          <a :href="articleData.wikidata_image_url">
+            <img :src="articleData.wikidata_image" />
+          </a>
+        </div>
 
-      <div class="text-side">
-        <p><img :src="$getFlagUrl(lang)" style="width:25px;" /> <a :href="`https://${articleData.lang}.wikipedia.org`">{{ articleData.lang }}.wikipedia</a></p>
+        <div class="text-side">
+          <p><img :src="$getFlagUrl(lang)" style="width:25px;" /> <a :href="`https://${articleData.lang}.wikipedia.org`">{{ articleData.lang }}.wikipedia</a></p>
+          
+          <p>
+            <span class="bold-and-large"><a :href="`https://${articleData.lang}.wikipedia.org/wiki/${articleData.title}`">{{ replaceUnderscoreWithSpace(articleData.title) }}</a></span>
+            <span v-if="articleData.en_translation" style="font-style: italic;">&nbsp;&nbsp;({{ articleData.en_translation }})</span>
+            <span class="small-wikidata">&nbsp;&nbsp;&nbsp;&nbsp;
+              <a :href="`https://www.wikidata.org/wiki/${articleData.qid}`">{{ articleData.qid }}</a>
+              &nbsp;<img :src="$getFlagUrl('wd')" style="width:13px;" />
+            </span>
+          </p>
+          
+          <p class="article-excerpt">{{ articleData.sentence }}...</p>
         
-        <p>
-          <span class="bold-and-large"><a :href="`https://${articleData.lang}.wikipedia.org/wiki/${articleData.title}`">{{ replaceUnderscoreWithSpace(articleData.title) }}</a></span>
-          <span v-if="articleData.en_translation" style="font-style: italic;">&nbsp;&nbsp;({{ articleData.en_translation }})</span>
-          <span class="small-wikidata">&nbsp;&nbsp;&nbsp;&nbsp;
-            <a :href="`https://www.wikidata.org/wiki/${articleData.qid}`">{{ articleData.qid }}</a>
-            &nbsp;<img :src="$getFlagUrl('wd')" style="width:13px;" />
-          </span>
-        </p>
+        </div>
         
-        <p class="article-excerpt">{{ articleData.sentence }}...</p>
-      
       </div>
       
-    </div>
-    
-    <div v-if="articleData && articleData.statistics_global">
-    <ChartComponent :data="articleData.statistics_global"></ChartComponent>
-    </div>
-  </article>
+      <div v-if="articleData && articleData.statistics_global">
+      <ChartComponent :data="articleData.statistics_global"></ChartComponent>
+      </div>
+    </article>
+    <FooterComponent />
+  </div>
 </template>
 
 <script>
 import ChartComponent from './ChartComponent.vue';
+import FooterComponent from './FooterComponent.vue';
 import axios from 'axios';
 
 export default {
   name: 'ArticleComponent',
   components: {
-    ChartComponent
+    ChartComponent,
+    FooterComponent
   },
   props: {
     lang: String,
@@ -103,7 +108,6 @@ export default {
 .article-container {
   display: flex;
   flex-direction: column;
-  background-color: #e8e8e8;
   border: 3px solid black; /* Liseret noir */
   border-radius: 20px; /* Bords arrondis */
   padding: 20px; /* Espacement intérieur pour ne pas coller au bord */
@@ -114,7 +118,6 @@ export default {
 .content {
   display: flex;
   align-items: flex-start;
-  background-color: #c1c1c1;
   border: 1px solid black;
   border-radius: 20px; 
 }

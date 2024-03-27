@@ -399,60 +399,63 @@ def request_monthly_views_redirect(lang, title):
 def request_by_lang_by_qid(lang, qid):
 
     statistics_global = {}
+    lines = Lines(lang)
     statistics = {} # Statistics, main article
+
     lines = request_monthly_views(lang, qid)
-    line = lines.items[0]
+    if lines.items:
+        line = lines.items[0]
 
-    month_column_list = [f'{year}-{month:02d}' for year in SUPPORTED_YEARS for month in range(1,13)]
+        month_column_list = [f'{year}-{month:02d}' for year in SUPPORTED_YEARS for month in range(1,13)]
 
-    sentence = get_first_sentence_wikipedia_article(lang, line.title)
+        sentence = get_first_sentence_wikipedia_article(lang, line.title)
 
-    for index, month in enumerate(month_column_list):
-        statistics[f'{month}'] = line.views_collection[index]
-    
-    statistics_global[f'{line.title_with_spaces}'] = statistics
+        for index, month in enumerate(month_column_list):
+            statistics[f'{month}'] = line.views_collection[index]
 
-    # Statistics, redirects
-    for redir, qid_ in SUPPORTED_REDIRECTS_BY_LANG[lang].items():
-        if qid == qid_:
-            redir = redir.replace(" ", "_")
-            dict_results = request_monthly_views_redirect(lang, redir.replace("'", "''"))
-            statistics_global[f'{redir.replace("_", " ")}'] = dict_results
+        statistics_global[f'{line.title_with_spaces}'] = statistics
 
-    # On remplace tout None par 0
-    for title, values in statistics_global.items():
-        for month, value in values.items():
-            if value is None:
-                values[month] = 0
+        # Statistics, redirects
+        for redir, qid_ in SUPPORTED_REDIRECTS_BY_LANG[lang].items():
+            if qid == qid_:
+                redir = redir.replace(" ", "_")
+                dict_results = request_monthly_views_redirect(lang, redir.replace("'", "''"))
+                statistics_global[f'{redir.replace("_", " ")}'] = dict_results
+
+        # On remplace tout None par 0
+        for title, values in statistics_global.items():
+            for month, value in values.items():
+                if value is None:
+                    values[month] = 0
 
 
-    # On met à jour le 'global' avec les données des redirects
-    main_dict = statistics_global[f'{line.title_with_spaces}']
-    for redirect, _ in statistics_global.items():
-        if redirect != line.title:
-            for month, value in statistics_global[redirect].items():
-                try:
-                    main_dict[month] += value
-                except:
-                    main_dict[month] = value
+        # On met à jour le 'global' avec les données des redirects
+        main_dict = statistics_global[f'{line.title_with_spaces}']
+        for redirect, _ in statistics_global.items():
+            if redirect != line.title:
+                for month, value in statistics_global[redirect].items():
+                    try:
+                        main_dict[month] += value
+                    except:
+                        main_dict[month] = value
 
-    # On remplace tout 0 par None
-    for _, values in statistics_global.items():
-        for month, value in values.items():
-            if not value:
-                values[month] = None
+        # On remplace tout 0 par None
+        for _, values in statistics_global.items():
+            for month, value in values.items():
+                if not value:
+                    values[month] = None
 
-    results_dict = {
-        'lang'  : lang,
-        'title' : line.title,
-        'en_translation' : line.en_translation,
-        'wikidata_image' : line.wikidata_image,
-        'wikidata_image_url' :line.wikidata_image_url,
-        'sentence' : sentence,
-        'statistics_global' : statistics_global
-    }
-    print(results_dict)
-    return results_dict
+        results_dict = {
+            'lang'  : lang,
+            'title' : line.title,
+            'en_translation' : line.en_translation,
+            'wikidata_image' : line.wikidata_image,
+            'wikidata_image_url' :line.wikidata_image_url,
+            'sentence' : sentence,
+            'statistics_global' : statistics_global
+        }
+        print(results_dict)
+        return results_dict
 
 
 '''

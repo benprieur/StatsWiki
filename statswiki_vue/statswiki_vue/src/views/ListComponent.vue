@@ -1,4 +1,4 @@
-<template style="background-color: #e8e8e8;">
+<template>
   <vue-good-table :columns="columns" :rows="rows" :pagination-options="{enabled: true}" :line-numbers="true" theme="black-rhino">
     <template v-slot:cell(qid)="props">
         <div :class="{'highlight-cell': !/^Q\d+$/.test(props.row.qid)}">{{ props.row.qid }}</div>

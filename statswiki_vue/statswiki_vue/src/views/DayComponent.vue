@@ -1,5 +1,7 @@
 <template>
     <div v-if="isLoading" class="loader"></div>
+    <div v-if="!isLoading">
+
     <article class="container">
       <div class="header">
         <span class="bold-and-large">
@@ -14,16 +16,20 @@
       </div>
     
     </article>
-    </template>
+    <FooterComponent />
+</div>
+</template>
     
     <script>
     import ListComponent from './ListComponent.vue';
+    import FooterComponent from './FooterComponent.vue';
     import axios from 'axios';
     
     export default {
       name: 'DayComponent',
       components: {
-        ListComponent
+        ListComponent,
+        FooterComponent
       },
       props: [
         'lang',
@@ -94,34 +100,30 @@
     </script>
     
 <style scoped>
-    
-    .container {
-      background-color: #e8e8e8;
-    }
 
-    .header {
-      height: 80px;
-      background-color: #c1c1c1;
-      border: 1px solid black; 
-      border-radius: 20px; 
-      padding: 20px; 
-      margin: 20px 0; 
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    }
-    
-    .bold-and-large {
-      font-size: 50px; 
-      color: black;
-      font-weight: bold;
-    }
-
-    a {
-        color: black;
-        text-decoration: underline; 
-    }
-
-    a:hover {
-        color: darkgray; 
-    }
+  .header {
+    display: flex;
+    justify-content: center; 
+    border-radius: 20px; 
+    padding: 10px; 
+    margin: 5px 0; 
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  .bold-and-large {
+  font-size: 35px; 
+  color: black;
+  font-weight: bold;
+  }
+  a {
+  font-size: 35px; 
+  color: black;
+  font-weight: bold;
+  }
+  a:hover {
+  font-size: 35px; 
+  color: black;
+  font-weight: bold;
+  }
 
 </style>

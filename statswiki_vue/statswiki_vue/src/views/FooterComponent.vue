@@ -6,7 +6,7 @@
       <a href="https://instagram.com/StatsWiki" target="_blank" class="social-link">
         <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram"/>
       </a>
-      @Medialoco
+      <span style="font-size: 10px">@ 2024 Medialoco</span>
     </footer>
   </template>
   
@@ -21,7 +21,7 @@
   display: flex;
   justify-content: flex-start; /* Align items to the left */
   align-items: center; /* This aligns items vertically in the center */
-  background-color: black;
+  background-color: rgb(54, 54, 54);
   color: white;
   border-radius: 20px;
   padding: 20px;

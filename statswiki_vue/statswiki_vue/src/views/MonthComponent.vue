@@ -1,34 +1,41 @@
 <template>
   <div v-if="isLoading" class="loader"></div>
-  <article class="container">
-    <div class="header">
-      <span class="bold-and-large">{{ localized_month }} <a :href="`/${lang}/${year}`">{{ year }}</a></span>&nbsp;&nbsp;
-      <img :src="$getFlagUrl(lang)" style="width:25px;" /> <a :href="`https://${lang}.wikipedia.org`">{{ title }}</a>
-    </div>
 
-    <div class="day-navigation">
-      <ul>
-        <li>{{ bymonthday }}</li>&nbsp;&nbsp;
-        <li v-for="(day, index) in days" :key="index">
-          <a :href="`${day}`">{{ padDay(index + 1) }}</a>
-        </li>
-      </ul>
-    </div>
+  <div v-if="!isLoading">
 
-    <div>
-      <ListComponent :columns="columnsData" :rows="rowsData" v-if="lines.length > 0" />
+    <article class="container">
+      <div class="header">
+        <span class="bold-and-large">{{ localized_month }} <a :href="`/${lang}/${year}`">{{ year }}</a></span>&nbsp;&nbsp;
+        <img :src="$getFlagUrl(lang)" style="width:25px;" /> <a :href="`https://${lang}.wikipedia.org`">{{ title }}</a>
+      </div>
+
+      <div class="day-navigation">
+        <ul>
+          <li>{{ bymonthday }}</li>&nbsp;&nbsp;
+          <li v-for="(day, index) in days" :key="index">
+            <a :href="`${day}`">{{ padDay(index + 1) }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <ListComponent :columns="columnsData" :rows="rowsData" v-if="lines.length > 0" />
+      </div>
+    </article>
+    <FooterComponent />
     </div>
-  </article>
 </template>
 
 <script>
 import ListComponent from './ListComponent.vue';
+import FooterComponent from './FooterComponent.vue';
 import axios from 'axios';
 
 export default {
   name: 'YearComponent',
   components: {
     ListComponent,
+    FooterComponent
   },
   props: ['lang', 'year', 'month'],
   data() {
@@ -106,25 +113,30 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  background-color: #e8e8e8;
-}
-
-.header {
-  height: 80px;
-  background-color: #c1c1c1;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.bold-and-large {
-      font-size: 50px; 
-      color: black;
-      font-weight: bold;
-    }
+  .header {
+    display: flex;
+    justify-content: center; 
+    border-radius: 20px; 
+    padding: 10px; 
+    margin: 5px 0; 
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  .bold-and-large {
+  font-size: 35px; 
+  color: black;
+  font-weight: bold;
+  }
+  a {
+  font-size: 35px; 
+  color: black;
+  font-weight: bold;
+  }
+  a:hover {
+  font-size: 35px; 
+  color: black;
+  font-weight: bold;
+  }
     
     .day-navigation {
         background-color: #48466e; /* Fond noir clair */
@@ -157,16 +169,6 @@ export default {
 
     .day-navigation li {
         margin-bottom: 5px; /* Ajoute un peu d'espace entre les éléments lorsqu'ils passent à la ligne */
-    }
-
-
-    a {
-        color: black;
-        text-decoration: underline; 
-    }
-
-    a:hover {
-        color: darkgray; 
     }
 
 </style>

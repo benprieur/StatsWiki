@@ -1,35 +1,41 @@
 <template>
   <article class="container">
-    <div v-if="isLoading" class="loader"></div>
-    <div class="header">
-      <span class="bold-and-large">{{ year }}</span>&nbsp;&nbsp;
-      <img :src="$getFlagUrl(lang)" style="width:25px;"/> <a :href="`https://${lang}.wikipedia.org`">{{ title }}</a> 
+    <div v-if="isLoading" class="loader">Loading...</div>
+
+    <div v-if="!isLoading">
+      <div class="header">
+        <span class="bold-and-large">{{ year }}</span>&nbsp;&nbsp;
+        <img :src="$getFlagUrl(lang)" style="width:25px;"/> <a :href="`https://${lang}.wikipedia.org`">{{ title }}</a>
+      </div>
+      
+      <div class="month-navigation">
+        <ul>
+          <li>{{ bymonthyear }}</li>&nbsp;&nbsp;
+          <li v-for="(month, index) in monthsToShow" :key="index">
+            <a :href="`/${lang}/${year}/${padMonth(index + 1)}`">{{ month }}</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div>
+        <ListComponent :columns="columnsData" :rows="rowsData" v-if="lines.length > 0" />
+      </div>
+      <FooterComponent />
     </div>
-    
-    <div class="month-navigation">
-      <ul>
-        <li>{{ bymonthyear }}</li>&nbsp;&nbsp;
-        <li v-for="(month, index) in monthsToShow" :key="index">
-          <a :href="`/${lang}/${year}/${padMonth(index + 1)}`">{{ month }}</a>
-        </li>
-      </ul>
-    </div>
-    
-    <div>
-      <ListComponent :columns="columnsData" :rows="rowsData" v-if="lines.length > 0" />
-    </div>
-  
   </article>
-  </template>
+</template>
+
   
   <script>
   import ListComponent from './ListComponent.vue';
+  import FooterComponent from './FooterComponent.vue';
   import axios from 'axios';
   
   export default {
     name: 'YearComponent',
     components: {
-      ListComponent
+      ListComponent,
+      FooterComponent
     },
     props: [
       'lang',
@@ -115,29 +121,37 @@
   </script>
   
   <style scoped>
-  .container {
-    background-color: #e8e8e8;
-  }
+
   .header {
-    height: 80px;
-    background-color: #c1c1c1;
-    border: 1px solid black; 
+    display: flex;
+    justify-content: center; 
     border-radius: 20px; 
-    padding: 20px; 
-    margin: 20px 0; 
+    padding: 10px; 
+    margin: 5px 0; 
+    align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   }
   .bold-and-large {
-  font-size: 50px; 
+  font-size: 35px; 
   color: black;
   font-weight: bold;
-}
+  }
+  a {
+  font-size: 35px; 
+  color: black;
+  font-weight: bold;
+  }
+  a:hover {
+  font-size: 35px; 
+  color: black;
+  font-weight: bold;
+  }
 
 .month-navigation {
   background-color: #48466e; /* Fond noir clair */
   color: white;
   text-align: center;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
 .month-navigation ul {
@@ -159,14 +173,5 @@
 
 .month-navigation a:hover {
   text-decoration: underline;
-}
-
-a {
-  color: black;
-  text-decoration: underline; 
-}
-
-a:hover {
-  color: darkgray; 
 }
 </style>

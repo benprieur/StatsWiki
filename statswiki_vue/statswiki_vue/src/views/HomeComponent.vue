@@ -1,5 +1,5 @@
 <template>
-  <div class="homepage-container">
+  <div>
       <DayComponent :lang="randomLang" :year="yesterday.year" :month="yesterday.month" :day="yesterday.day" />
   </div>
 </template>
@@ -41,9 +41,3 @@ computed: {
 }
 };
 </script>
-
-<style>
-.homepage-container {
-background-color: #e8e8e8;
-}
-</style>
