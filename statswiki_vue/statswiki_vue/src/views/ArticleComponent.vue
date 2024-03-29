@@ -83,7 +83,7 @@ export default {
       const url = `/api/${this.lang}/${this.qid}/`;
 
       this.isLoading = true;
-      const timeoutPromise = new Promise(resolve => setTimeout(resolve, 6000));
+      const timeoutPromise = new Promise(resolve => setTimeout(resolve, 8000));
       const fetchPromise = axios.get(url);
       await Promise.race([fetchPromise, timeoutPromise]);
       this.isLoading = false;
@@ -112,6 +112,7 @@ export default {
   border-radius: 20px; /* Bords arrondis */
   padding: 20px; /* Espacement intérieur pour ne pas coller au bord */
   margin: 20px 0; /* Ajout d'une marge extérieure pour l'espacement avec d'autres éléments */
+  width: 80%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionnel: ajoute une ombre pour un effet de profondeur */
 }
 

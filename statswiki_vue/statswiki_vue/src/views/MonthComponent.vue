@@ -18,9 +18,9 @@
         </ul>
       </div>
 
-      <div>
+      <div class="table-container">
         <ListComponent :columns="columnsData" :rows="rowsData" v-if="lines.length > 0" />
-      </div>
+      </div> 
     </article>
     <FooterComponent />
     </div>
@@ -82,7 +82,7 @@ export default {
       const url = isCurrentMonthYear ? `/api/specific/${this.lang}/${this.year}/${this.month}/` : `/api/${this.lang}/${this.year}/${this.month}/`;
 
       this.isLoading = true;
-      const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 6000));
+      const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 8000));
       const fetchPromise = axios.get(url, {
         headers: isCurrentMonthYear  ? { 'CurrentMonth': 'true' } : {}
       });
@@ -138,37 +138,44 @@ export default {
   font-weight: bold;
   }
     
-    .day-navigation {
-        background-color: #48466e; /* Fond noir clair */
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-    }
+  .day-navigation {
+      background-color: #48466e; /* Fond noir clair */
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 25px;
+  }
 
-    .day-navigation ul {
-        display: flex; /* Utilise Flexbox pour la disposition */
-        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
-        padding: 0;
-        margin: 0;
-        list-style-type: none; /* Enlève les puces de la liste */
-    }
+  .day-navigation ul {
+      display: flex; /* Utilise Flexbox pour la disposition */
+      flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+      padding: 0;
+      margin: 0;
+      list-style-type: none; /* Enlève les puces de la liste */
+  }
 
-    .day-navigation li {
-        margin-right: 25px; /* Ajoute un peu d'espace entre les éléments */
-    }
+  .day-navigation li {
+      margin-right: 25px; /* Ajoute un peu d'espace entre les éléments */
+  }
 
-    .day-navigation a {
-        text-decoration: none;
-        color: white; /* Définit la couleur du texte des liens */
-    }
+  .day-navigation a {
+      text-decoration: none;
+      color: white; /* Définit la couleur du texte des liens */
+      font-size: 25px;
+  }
 
-    @media (max-width: 600px) { /* Pour les écrans de moins de 600px de large */
-        .day-navigation ul {
-        justify-content: center; /* Centre les éléments dans le conteneur */
-    }}
+  @media (max-width: 600px) { /* Pour les écrans de moins de 600px de large */
+      .day-navigation ul {
+      justify-content: center; /* Centre les éléments dans le conteneur */
+  }}
 
-    .day-navigation li {
-        margin-bottom: 5px; /* Ajoute un peu d'espace entre les éléments lorsqu'ils passent à la ligne */
-    }
+  .day-navigation li {
+      margin-bottom: 5px; /* Ajoute un peu d'espace entre les éléments lorsqu'ils passent à la ligne */
+  }
+
+  .table-container {
+      width: 80%;
+      margin: 20px auto; /* Ajoute un espace au-dessus et centre le tableau */
+  }
 
 </style>

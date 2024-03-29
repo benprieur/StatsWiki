@@ -1,5 +1,5 @@
 <template>
-  <div id="app" style="background-color: #e8e8e8;">
+  <div id="app">
     <HeaderComponent />
     <router-view></router-view>
   </div>
@@ -33,7 +33,9 @@ export default {
 .loader:before,
 .loader:after {
   border-radius: 50%;
-  color: #717270;
+  color:red;
+  background-color:blue;
+
 }
 .loader {
   font-size: 11px;
@@ -51,9 +53,9 @@ export default {
   content: '';
 }
 .loader:before {
+  background-color:blue;
   width: 5.2em;
   height: 10.2em;
-  background: #abaeab;
   border-radius: 10.2em 0 0 10.2em;
   top: -0.1em;
   left: -0.1em;
@@ -61,9 +63,9 @@ export default {
   animation: load2 2s infinite ease 1.5s;
 }
 .loader:after {
+  background-color:orange;
   width: 5.2em;
   height: 10.2em;
-  background: #b4b9b4;
   border-radius: 0 10.2em 10.2em 0;
   top: -0.1em;
   left: 4.9em;

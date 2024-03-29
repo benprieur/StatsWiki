@@ -52,8 +52,7 @@ SUPPORTED_REDIRECTS_BY_LANG = {
             "Charles de Galles" : "Q43274",
             "Mort de George Floyd" : "Q95579249",
             "Cédric Doumbé" : "Q24452252",
-            "Coupe d'Afrique des Nations" : "Q83145",
-            "Michel Manouchian" : 'Q708078'
+            "Coupe d'Afrique des Nations" : "Q83145"
         },
     'ja': 
         {

@@ -2,24 +2,33 @@
   <header class="header-container">
     <div class="logo-container">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Rosace_trac%C3%A9e_sur_la_pierre_sous_le_porche_de_l%27%C3%A9cole_de_Soug%C3%A8res-en-Puisaye.jpg/582px-Rosace_trac%C3%A9e_sur_la_pierre_sous_le_porche_de_l%27%C3%A9cole_de_Soug%C3%A8res-en-Puisaye.jpg" alt="StatsWiki Logo" class="logo"/>
-      &nbsp;<a :href="`/`" class="title-link">StatsWiki</a>&nbsp;<span class="introduction">Daily viewing statistics of 17+ Wikipedia since July 1, 2015</span>
+      &nbsp;
+      <a :href="`/`" class="title">StatsWiki</a>&nbsp;
+      <span class="introduction">Daily viewing statistics of 17+ Wikipedia since July 1, 2015</span>
     </div>
-    <table class="navigation-table">
-      <tbody>
-        <tr v-for="(navigation, index) in navigations" :key="navigation.label">
-          <td class="language-item-title">
-           {{ navigation.label }}
-          </td>
-          <td class="language-item-data">
-            <span v-for="lang in navigation.languages" :key="lang">
-              &nbsp;&nbsp;
+    <br/>
+      <span style="text-align: left;" v-for="(navigation, _) in navigations" :key="navigation.label">
+        <span style="color:chartreuse; font-size: 20px;">By lang</span>&nbsp;
+        <span v-for="lang in navigation.languages" :key="lang">
               <img :src="$getFlagUrl(lang)" style="max-height: 6px; vertical-align: middle;" />
-              <a :href="navigation.getUrl(lang)" class="search-link">{{ navigation.displayPath(lang) }}</a>
-              </span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+              <a class="languages" :href="navigation.getUrl(lang)">{{ navigation.displayPath(lang) }}</a>
+              &nbsp;
+        </span>
+      </span>
+    <br/>
+      <span style="color:chartreuse; ; font-size: 20px;">
+        
+      By lang by year&nbsp;<img src="/assets/ar.svg" style="max-height: 6px; vertical-align: middle;" /><a class="languages" href="/ar/2024">/ar/2024</a>
+     
+      &nbsp;&nbsp;&nbsp;
+
+      By lang by month&nbsp;<img src="/assets/pl.svg" style="max-height: 6px; vertical-align: middle;" /><a class="languages" href="/pl/2019/12">/pl/2019/12</a>
+      
+      &nbsp;&nbsp;&nbsp;
+
+      By lang by day&nbsp;<img src="/assets/fr.svg" style="max-height: 6px; vertical-align: middle;" /><a class="languages" href="/fr/2022/07/14">/fr/2022/07/14</a>
+      </span>
+
   </header>
 </template>
 
@@ -27,36 +36,14 @@
 export default {
   name: "HeaderComponent",
   data() {
-    const currentDate = new Date();
-    const yesterday = new Date(currentDate.getTime() - (24 * 60 * 60 * 1000));
-    const thisYear = currentDate.getFullYear();
-    const thisMonth = this.pad(currentDate.getMonth() + 1);
     const languages = ['ar', 'de', 'en', 'eo', 'es', 'fr', 'ja', 'he', 'hy', 'it', 'ko', 'nl', 'pl', 'pt', 'ru', 'uk', 'zh'];
     return {
       navigations: [
         {
-          label: 'By lang',
+          label: 'By lang [since 1st of July 2015]',
           languages: languages,
           getUrl: (lang) => `/${lang}`,
           displayPath: (lang) => `/${lang}`
-        },
-        {
-          label: 'By lang by day',
-          languages: languages.slice(0, 6),
-          getUrl: (lang) => `/${lang}/${yesterday.getFullYear()}/${this.pad(yesterday.getMonth() + 1)}/${this.pad(yesterday.getDate())}`,
-          displayPath: (lang) => `/${lang}/${yesterday.getFullYear()}/${this.pad(yesterday.getMonth() + 1)}/${this.pad(yesterday.getDate())}`
-        },
-        {
-          label: 'By lang by month',
-          languages: languages.slice(6, 11),
-          getUrl: (lang) => `/${lang}/${thisYear}/${thisMonth}`,
-          displayPath: (lang) => `/${lang}/${thisYear}/${thisMonth}`
-        },
-        {
-          label: 'By lang by year',
-          languages: languages.slice(11, 16),
-          getUrl: (lang) => `/${lang}/${thisYear}`,
-          displayPath: (lang) => `/${lang}/${thisYear}`
         }
       ]
     };
@@ -86,58 +73,43 @@ export default {
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.title-link {
-  font-size: 36px;
+.title {
+  font-size: 50px;
   color: white;
   text-decoration: none;
-  font-family: 'Arial Narrow', Arial, sans-serif;
 }
 
-.title-link:hover {
-  text-decoration: underline;
-}
 
 .introduction {
   margin-top: 5px;
   text-align: left;
   font-style: italic;
-  font-size: 14px;
+  font-size: 20px;
   color: whitesmoke;
 }
 
-.navigation-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.search-languages {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.language-item-title{
-  font-size: 14px;
-  color: whitesmoke;
+.languages {
+  text-decoration: none;
   text-align: left;
-  font-weight: bold;
+  font-size: 25px;
+  color: whitesmoke;
 }
 
-.language-item-data a {
-  font-size: 14px;
-  color: greenyellow;
-  text-decoration:none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+.navigation-table {
+  margin: 20px auto 0;
+  border: 0px; 
 }
 
-.navigation-row span {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+.navigation-table td, .navigation-table th {
+  border: 0px solid rgb(0, 255, 38); 
+  text-align: left;
+  padding: 8px; 
 }
+
 </style>

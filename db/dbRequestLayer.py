@@ -394,6 +394,29 @@ def request_monthly_views_redirect(lang, title):
 
 
 '''
+    truncate_begin_end
+'''
+def truncate_begin_end(stats):
+    # Tronquer les valeurs à 0 en début et fin et convertir en dictionnaire
+    tronque = {}
+    for title, values in stats.items():
+        items = list(values.items())
+        
+        # Trouver le premier et le dernier indice avec une valeur non nulle
+        debut = next((i for i, item in enumerate(items) if item[1] not in [0, None]), None)
+        fin = next((i for i, item in enumerate(reversed(items)) if item[1] not in [0, None]), None)
+        
+        if debut is not None and fin is not None:
+            fin = len(items) - fin - 1
+            tronque[title] = dict(items[debut:fin+1])
+        else:
+            # Si toutes les valeurs sont nulles, ne rien ajouter
+            tronque[title] = {}
+            
+    return tronque
+
+
+'''
     request_by_lang_by_qid (request_dataviz)
 '''
 def request_by_lang_by_qid(lang, qid):
@@ -444,7 +467,9 @@ def request_by_lang_by_qid(lang, qid):
             for month, value in values.items():
                 if not value:
                     values[month] = None
-
+        statistics_global = {title: truncate_begin_end({title: values})[title] for title, values in statistics_global.items()}
+        print(statistics_global)
+        
         results_dict = {
             'lang'  : lang,
             'title' : line.title,
@@ -454,7 +479,6 @@ def request_by_lang_by_qid(lang, qid):
             'sentence' : sentence,
             'statistics_global' : statistics_global
         }
-        print(results_dict)
         return results_dict
 
 

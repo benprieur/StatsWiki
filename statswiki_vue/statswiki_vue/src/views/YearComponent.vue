@@ -17,9 +17,9 @@
         </ul>
       </div>
       
-      <div>
+      <div class="table-container">
         <ListComponent :columns="columnsData" :rows="rowsData" v-if="lines.length > 0" />
-      </div>
+      </div> 
       <FooterComponent />
     </div>
   </article>
@@ -91,7 +91,7 @@
         const url = isCurrentYear ? `/api/specific/${this.lang}/${this.year}/` : `/api/${this.lang}/${this.year}/`;
 
         this.isLoading = true;
-        const timeoutPromise = new Promise(resolve => setTimeout(resolve, 6000));
+        const timeoutPromise = new Promise(resolve => setTimeout(resolve, 8000));
         const fetchPromise = axios.get(url, {
           headers: isCurrentYear ? { 'CurrentYear': 'true' } : {}
         });
@@ -151,6 +151,7 @@
   background-color: #48466e; /* Fond noir clair */
   color: white;
   text-align: center;
+  font-size: 25px;
   padding: 5px 0;
 }
 
@@ -169,9 +170,15 @@
 .month-navigation a {
   color: white;
   text-decoration: none;
+  font-size: 25px;
 }
 
 .month-navigation a:hover {
   text-decoration: underline;
 }
+
+.table-container {
+  width: 80%;
+  margin: 20px auto; /* Ajoute un espace au-dessus et centre le tableau */
+  }
 </style>

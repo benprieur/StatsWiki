@@ -11,12 +11,11 @@
         <img :src="$getFlagUrl(lang)" style="width:25px;"/> <a :href="`https://${lang}.wikipedia.org`">{{ title }}</a> 
       </div>
       
-      <div>
+      <div class="table-container">
         <ListComponent :columns="columnsData" :rows="rowsData" v-if="lines.length > 0" />
-      </div>
+      </div>  
     
     </article>
-    <FooterComponent />
 </div>
 </template>
     
@@ -76,7 +75,7 @@
           const url = `/api/${this.lang}/${this.year}/${this.month}/${this.day}/`;
 
           this.isLoading = true;
-          const timeoutPromise = new Promise(resolve => setTimeout(resolve, 6000));
+          const timeoutPromise = new Promise(resolve => setTimeout(resolve, 8000));
           const fetchPromise = axios.get(url);
           await Promise.race([fetchPromise, timeoutPromise]);
           this.isLoading = false;
@@ -124,6 +123,10 @@
   font-size: 35px; 
   color: black;
   font-weight: bold;
+  }
+  .table-container {
+  width: 80%;
+  margin: 20px auto; /* Ajoute un espace au-dessus et centre le tableau */
   }
 
 </style>

@@ -9,9 +9,9 @@
         </span>
       </div>
       
-      <div>
+      <div class="table-container">
         <ListComponent :columns="columnsData" :rows="rowsData" v-if="lines.length > 0" />
-      </div>
+      </div> 
     </article>
     <FooterComponent />
     </div>
@@ -68,7 +68,7 @@
             const url = `/api/${this.lang}/`;
 
             this.isLoading = true;
-            const timeoutPromise = new Promise(resolve => setTimeout(resolve, 6000));
+            const timeoutPromise = new Promise(resolve => setTimeout(resolve, 8000));
             const fetchPromise = axios.get(url);
             await Promise.race([fetchPromise, timeoutPromise]);
             this.isLoading = false;
@@ -114,5 +114,9 @@
   font-size: 35px; 
   color: black;
   font-weight: bold;
+  }
+  .table-container {
+  width: 80%;
+  margin: 20px auto; /* Ajoute un espace au-dessus et centre le tableau */
   }
 </style>
