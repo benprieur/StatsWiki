@@ -1,28 +1,27 @@
 <template>
   <div class="home-container">
-    <div class="day-component-tile" v-for="lang in languages" :key="lang.code">
-      <DayComponent :lang="lang.code" :year="yesterday.year" :month="yesterday.month" :day="yesterday.day" />
+    <div class="day-component-tile">
+      <ArticleComponent lang="ja" qid="Q3137013" />
+    </div>
+    <div class="day-component-tile">
+      <ArticleComponent lang="pl" qid="Q989" />
     </div>
 </div>
 <FooterComponent/>
 </template>
 
 <script>
-import DayComponent from './DayComponent.vue';
+import ArticleComponent from './ArticleComponent.vue';
 import FooterComponent from './FooterComponent.vue';
 
 export default {
   name: 'HomeComponent',
   components: {
-    DayComponent,
+    ArticleComponent,
     FooterComponent
   },
   data() {
     return {
-      languages: [
-      { code: 'fr', name: 'French' },
-      { code: 'ja', name: 'Japanese' }
-      ],
       yesterday: this.getYesterdayDate(),
     };
   },

@@ -8,7 +8,7 @@
     </div>
     <br/>
       <span style="text-align: left;" v-for="(navigation, _) in navigations" :key="navigation.label">
-        <span style="color:chartreuse; font-size: 20px;">By lang</span>&nbsp;
+        <span style="color:chartreuse; font-size: 20px;">Supported languages</span>&nbsp;
         <span v-for="lang in navigation.languages" :key="lang">
               <img :src="$getFlagUrl(lang)" style="max-height: 6px; vertical-align: middle;" />
               <a class="languages" :href="navigation.getUrl(lang)">{{ navigation.displayPath(lang) }}</a>
@@ -16,25 +16,21 @@
         </span>
       </span>
     <br/>
-      <span style="color:chartreuse; ; font-size: 20px;">
-        
-      By lang by year&nbsp;<img src="/assets/ar.svg" style="max-height: 6px; vertical-align: middle;" /><a class="languages" href="/ar/2024">/ar/2024</a>
-     
-      &nbsp;&nbsp;&nbsp;
-
-      By lang by month&nbsp;<img src="/assets/pl.svg" style="max-height: 6px; vertical-align: middle;" /><a class="languages" href="/pl/2019/12">/pl/2019/12</a>
-      
-      &nbsp;&nbsp;&nbsp;
-
-      By lang by day&nbsp;<img src="/assets/fr.svg" style="max-height: 6px; vertical-align: middle;" /><a class="languages" href="/fr/2022/07/14">/fr/2022/07/14</a>
-      </span>
-
+      <div style="color:chartreuse; ; font-size: 20px;">
+        By lang and year, month or day
+        <DateNavigatorComponent/>
+      </div>
   </header>
 </template>
 
 <script>
+import DateNavigatorComponent from './DateNavigatorComponent.vue';
+
 export default {
   name: "HeaderComponent",
+  components: {
+    DateNavigatorComponent
+  },
   data() {
     const languages = ['ar', 'de', 'en', 'eo', 'es', 'fr', 'ja', 'he', 'hy', 'it', 'ko', 'nl', 'pl', 'pt', 'ru', 'uk', 'zh'];
     return {
@@ -97,7 +93,7 @@ export default {
 .languages {
   text-decoration: none;
   text-align: left;
-  font-size: 25px;
+  font-size: 20px;
   color: whitesmoke;
 }
 

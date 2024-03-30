@@ -262,7 +262,6 @@ def request_by_lang_by_date(lang, year, month=0, day=0):
     try:
         cursor.execute(sql_query)
         results = cursor.fetchall()
-        print(f'request_by_lang_by_date')
         return build_answer(lang, results, ['qid', 'title', 'en_translation', 'props', 'views'], year, month, day)
     except Exception as e:
         print(f'request_by_lang_by_date: {e}')
@@ -468,7 +467,6 @@ def request_by_lang_by_qid(lang, qid):
                 if not value:
                     values[month] = None
         statistics_global = {title: truncate_begin_end({title: values})[title] for title, values in statistics_global.items()}
-        print(statistics_global)
         
         results_dict = {
             'lang'  : lang,

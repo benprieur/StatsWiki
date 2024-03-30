@@ -21,9 +21,10 @@
               &nbsp;<img :src="$getFlagUrl('wd')" style="width:13px;" />
             </span>
           </p>
-          
-          <p class="article-excerpt">{{ articleData.sentence }}...</p>
+        </div>
         
+        <div class="article-excerpt">
+          {{ articleData.sentence }}...
         </div>
         
       </div>
@@ -32,20 +33,17 @@
       <ChartComponent :data="articleData.statistics_global"></ChartComponent>
       </div>
     </article>
-    <FooterComponent />
   </div>
 </template>
 
 <script>
 import ChartComponent from './ChartComponent.vue';
-import FooterComponent from './FooterComponent.vue';
 import axios from 'axios';
 
 export default {
   name: 'ArticleComponent',
   components: {
-    ChartComponent,
-    FooterComponent
+    ChartComponent
   },
   props: {
     lang: String,
@@ -117,8 +115,9 @@ export default {
 }
 
 .content {
+  background-color: rgb(213, 208, 177);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   border: 1px solid black;
   border-radius: 20px; 
 }
@@ -160,8 +159,8 @@ canvas {
   line-height: 1.6; 
   color: #4c4c4c;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 10px;
 }
 
 a {
