@@ -6,8 +6,14 @@
     <div class="day-component-tile">
       <ArticleComponent lang="pl" qid="Q989" />
     </div>
-</div>
-<FooterComponent/>
+    <div class="day-component-tile">
+      <ArticleComponent lang="fr" qid="Q81068910" />
+    </div>
+    <div class="day-component-tile">
+      <ArticleComponent lang="en" qid="Q22686" />
+    </div>
+  </div>
+  <FooterComponent/>
 </template>
 
 <script>

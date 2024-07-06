@@ -259,6 +259,7 @@ def request_by_lang_by_date(lang, year, month=0, day=0):
     
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
+    print(sql_query)
     try:
         cursor.execute(sql_query)
         results = cursor.fetchall()

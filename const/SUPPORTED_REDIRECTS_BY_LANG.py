@@ -100,5 +100,9 @@ SUPPORTED_REDIRECTS_BY_LANG = {
     'zh': 
         {
 
+        },
+    'az': 
+        {
+
         }
 }

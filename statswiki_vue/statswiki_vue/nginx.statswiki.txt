@@ -2,28 +2,38 @@ server {
     listen 80;
     server_name statswiki.info www.statswiki.info;
 
-    root /var/www/html/StatsWiki/dist; # Chemin vers les fichiers de ton application front-end
+    root /var/www/html/StatsWiki/dist; # Chemin vers les fichiers de votre application front-end
     index index.html;
 
     location / {
         try_files $uri $uri/ /index.html; # S'assure que Vue Router gère les routes côté client
     }
 
-    # Configuration de cache pour /api/specific
-    location /api/specific {
+    # Configuration de cache modifiée pour une section spécifique
+    location /specific/ {
         proxy_pass http://127.0.0.1:5000;
         proxy_cache my_cache;
-        proxy_cache_valid 200 302 12h; # Cache valide pour les réponses 200 et 302 pendant 12 heures
+        proxy_cache_valid 200 302 24h; # Cache valide pour les réponses 200 et 302 pour 24 heures
         proxy_cache_valid 404 1m; # Les réponses 404 sont mises en cache pour 1 minute
-        add_header X-Proxy-Cache $upstream_cache_status; # Optionnel : pour voir si la réponse vient du cache
+        add_header X-Proxy-Cache $upstream_cache_status; # Optionnel : pour voir le statut du cache
+    
+        # Purger les URLs spécifiques
+        location ~ /api/(2024/5/1|2024/5/2|2024/5/3|2024/5/4) {
+        proxy_cache_purge my_cache "https://www.statswiki.info$request_uri";
     }
 
-    # Configuration de cache pour le reste sous /api
+    # Configuration de cache pour le reste sous /api, ajustée selon votre demande
     location /api/ {
         proxy_pass http://127.0.0.1:5000;
         proxy_cache my_cache;
-        proxy_cache_valid 200 302 1M; # Cache valide pour les réponses 200 et 302 pendant un mois
+        proxy_cache_valid 200 302 10y; # Cache valide pour les réponses 200 et 302 "indéfiniment"
         proxy_cache_valid 404 1m; # Les réponses 404 sont mises en cache pour 1 minute
-        add_header X-Proxy-Cache $upstream_cache_status; # Optionnel : pour voir si la réponse vient du cache
+        add_header X-Proxy-Cache $upstream_cache_status; # Optionnel : pour voir le statut du cache
+    }
+
+    # Exclusion de /api/searchqid de la mise en cache
+    location /api/searchqid {
+        proxy_pass http://127.0.0.1:5000;
+        # Aucune directive de mise en cache ici, pour /api/searchqid
     }
 }

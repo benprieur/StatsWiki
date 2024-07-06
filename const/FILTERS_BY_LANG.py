@@ -37,11 +37,12 @@ FILTERS_BY_LANG = {
             'Hauptseite', 
             'Spezial:', 
             'Benutzer:', 
-            'Datei:'
+            'Datei:',
+            'Liste_der_größten_Auslegerbrücken',
         ),
     'en' : 
         (
-
+            '.xxx',
         ),
     'eo' :
         (
@@ -54,12 +55,13 @@ FILTERS_BY_LANG = {
             'Vikipedia_diskuto:',
             'Ŝablono:',
             'XXX',
-            'Uzanto-Diskuto:'
+            'Uzanto-Diskuto:',
         ),    
     'es' : 
         (
             'Especial:',
-            'Archivo:'
+            'Archivo:',
+            'Cleopatra_I_de_Egipto',
         ),
     'fr' : 
         (
@@ -71,7 +73,7 @@ FILTERS_BY_LANG = {
             'Aide:',
             'Cookie_(informatique)',
             'Utilisateur:',
-            'Portail:'
+            'Portail:',
         ),
     'he' : 
         (
@@ -79,7 +81,7 @@ FILTERS_BY_LANG = {
             'קובץ:', 
             'עמוד_ראשי', 
             'מיוחד:', 
-            'ויקיפדיה:'
+            'ויקיפדיה:',
         ),
     'hy' : 
         (
@@ -90,7 +92,7 @@ FILTERS_BY_LANG = {
             'Ստորոգութիւն:', 
             'Սպասարկող:',
             'Վիքինախագիծ:',
-            'Մասնակից:'
+            'Մասնակից:',
          ),
     'ko' : 
         (
@@ -99,7 +101,9 @@ FILTERS_BY_LANG = {
             '위키백과:', 
             '특수:',
             '폰허브',
-            '분류:'
+            '분류:',
+            '문화방송',
+            '한국방송공사',
         ),    
     'it' :
         (
@@ -110,19 +114,20 @@ FILTERS_BY_LANG = {
         (
             'メインページ', 
             '特別:', 
-            'Re:'
+            'Re:',
         ),
     'nl' : 
         (
             'Hoofdpagina', 
-            'Speciaal:'
+            'Speciaal:',
+            'ChatGPT',
         ),
     'pl':
         (
             'Specjalna:', 
             'Strona_główna',
             'Szablon:',
-            'Plik:'
+            'Plik:',
         ),
     'pt' : 
         (
@@ -130,7 +135,8 @@ FILTERS_BY_LANG = {
             'Wikip�', 
             'Especial:', 
             'Ficheiro:', 
-            'Predefinição:'
+            'Predefinição:',
+            'ChatGPT',
         ),
     'ru' :
         (
@@ -138,7 +144,8 @@ FILTERS_BY_LANG = {
             'Википедия:',
             'Первый мститель:', 
             'Заглавная_страница', 
-            'Служебная:', 
+            'Служебная:',
+            'Яндекс',
         ),
     'uk' : 
         (
@@ -146,11 +153,20 @@ FILTERS_BY_LANG = {
             'Файл:', 
             'Спеціальна:', 
             'Вікіпедія:', 
-            'Головна_сторінка'
+            'Головна_сторінка',
         ),
     'zh' : 
         (
             '維基媒體基金會', 
-            '首页'
-        )    
+            '首页',
+        ),
+    'az' : 
+       (
+           'Ana_Səhifə',
+           'Xüsusi:',
+           'Şəkil:',
+           'Kateqoriya:',
+           'Şablon:',
+           'Vikipediya:',
+       ),    
 }

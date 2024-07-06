@@ -1,5 +1,6 @@
 import sqlite3
-from const.constants import DB_NAME, SUPPORTED_LANGUAGES, SUPPORTED_YEARS
+DB_NAME = '../StatsWiki00.db'
+SUPPORTED_YEARS = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
 from datetime import timedelta, date
 import calendar
 
@@ -32,7 +33,7 @@ def create_views_day():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
-    for lang in SUPPORTED_LANGUAGES:
+    for lang in ['az']:
         for year in SUPPORTED_YEARS:
             view_name = f"{lang}_{year}_day_view"  
 
@@ -74,7 +75,7 @@ def create_views_month():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
-    for lang in SUPPORTED_LANGUAGES:
+    for lang in ['az']:
         for year in SUPPORTED_YEARS:
             view_name = f"{lang}_{year}_month_view"  
 
@@ -121,7 +122,7 @@ def create_views_year():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
-    for lang in SUPPORTED_LANGUAGES:
+    for lang in ['az']:
         for year in SUPPORTED_YEARS:
             view_name = f"{lang}_{year}_view"  
 
@@ -155,7 +156,7 @@ def create_views_alltime():
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
 
-    for lang in SUPPORTED_LANGUAGES:
+    for lang in ['az']:
         view_name = f"{lang}_vue"   
         cols_names = [f"A{year}._{month:02d} AS _{year}{month:02d}" for year in SUPPORTED_YEARS for month in range(1, 13)]
         cols_names = ' ,'.join(cols_names)
@@ -192,8 +193,12 @@ cursor = conn.cursor()
 #cursor.execute(sql_command1)
 #conn.commit()
 
-sql_command2 = "SELECT * FROM fr_2024 WHERE article = 'Cédric_Doumbé';"
-cursor.execute(sql_command2)
-print(cursor.fetchall())
+#sql_command2 = "SELECT * FROM fr_2024 WHERE article = 'Cédric_Doumbé';"
+#cursor.execute(sql_command2)
+#print(cursor.fetchall())
 
 
+create_views_day()
+create_views_month()
+create_views_year()
+create_views_alltime()

@@ -5,7 +5,7 @@ import json
 WIKIDATA_TABLE = '_wikidata'
 DB_NAME = './StatsWiki00.db'
 SUPPORTED_YEARS = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
-SUPPORTED_LANGUAGES = ['az']
+SUPPORTED_LANGUAGES = ['ar', 'az', 'de', 'en', 'eo', 'es', 'fr', 'ja', 'he', 'hy', 'it', 'ko', 'nl', 'pl', 'pt', 'ru', 'uk', 'zh']
 
 '''
     SUPPORTED_REDIRECTS_BY_LANG
@@ -273,7 +273,14 @@ FILTERS_BY_LANG = {
         (
             '維基媒體基金會', 
             '首页',
-        )    
+        ),
+    'az' : 
+       (
+           'Ana_Səhifə',
+           'Xüsusi:',
+           'Şəkil:'
+       ),    
+
 }
 
 REDIRECTS_OUTPUT_FILE = "redirects.txt"
@@ -301,13 +308,14 @@ WIKIDATA_PROPERTIES = {
     insert_wikidata_stuff
 '''
 def insert_wikidata_stuff(lang, qid, article_, stuff):
-    
+    #print(stuff)
     table = WIKIDATA_TABLE
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
+    print(qid)
 
     if not qid.startswith("Q_"):
-
+        
         en_translation = stuff.get('label_en', '') or stuff.get('sitelinks', {}).get('en', '').replace('_', ' ')
         props = json.dumps(stuff.get('main_properties', {}))
         sitelinks = stuff.get('sitelinks', {})
@@ -343,7 +351,7 @@ def insert_wikidata_stuff(lang, qid, article_, stuff):
         """
 
         try:
-            print(insert_query,  (qid, article_))
+            #print(insert_query,  (qid, article_))
             cursor.execute(insert_query, (qid, article_))
             conn.commit()   
         except sqlite3.Error as e:
@@ -512,8 +520,8 @@ def insert_wikidata_by_lang_by_article(lang, article_tuple):
     article = article_tuple[0]
     _, qid = get_qid(lang, article)
 
-    if article in SUPPORTED_REDIRECTS_BY_LANG[lang].keys():
-        return
+    #if article in SUPPORTED_REDIRECTS_BY_LANG[lang].keys():
+    #    return
 
     if filter_results(lang, article):
         wikidata_stuff = {}
@@ -535,14 +543,14 @@ sql_query = "SELECT article from az_2015 ORDER BY views DESC LIMIT 200"
 conn = sqlite3.connect(DB_NAME)
 cursor = conn.cursor()
 results = cursor.execute(sql_query)
-print(results)
 articles = results.fetchall()
-print(articles)
 conn.close()
 
 for article in articles:
     time.sleep(0.15)
-    insert_wikidata_by_lang_by_article('az', article)
-
+    try:
+        insert_wikidata_by_lang_by_article('az', article)
+    except:
+        print("bitch, azero")
 
 

@@ -2,35 +2,41 @@
   <div v-if="isLoading" class="loader">Loading...</div>
   <div v-else>
     <article class="article-container">
-      <div class="content">
-        
+      <div class="header-content">
         <div class="image-side">
           <a :href="articleData.wikidata_image_url">
-            <img :src="articleData.wikidata_image" />
+            <img :src="articleData.wikidata_image" alt="Article Image" />
           </a>
         </div>
 
         <div class="text-side">
-          <p><img :src="$getFlagUrl(lang)" style="width:25px;" /> <a :href="`https://${articleData.lang}.wikipedia.org`">{{ articleData.lang }}.wikipedia</a></p>
-          
           <p>
-            <span class="bold-and-large"><a :href="`https://${articleData.lang}.wikipedia.org/wiki/${articleData.title}`">{{ replaceUnderscoreWithSpace(articleData.title) }}</a></span>
-            <span v-if="articleData.en_translation" style="font-style: italic;">&nbsp;&nbsp;({{ articleData.en_translation }})</span>
-            <span class="small-wikidata">&nbsp;&nbsp;&nbsp;&nbsp;
+            <img :src="$getFlagUrl(lang)" alt="Lang Flag" style="width:25px;" />
+            <a :href="`https://${articleData.lang}.wikipedia.org`">{{ articleData.lang }}.wikipedia</a>
+          </p>
+          <p>
+            <span class="bold-and-large">
+              <a :href="`https://${articleData.lang}.wikipedia.org/wiki/${articleData.title}`">
+                {{ replaceUnderscoreWithSpace(articleData.title) }}
+              </a>
+            </span>
+            <span v-if="articleData.en_translation" style="font-style: italic;">
+              ({{ articleData.en_translation }})
+            </span>
+            <span class="small-wikidata">
               <a :href="`https://www.wikidata.org/wiki/${articleData.qid}`">{{ articleData.qid }}</a>
-              &nbsp;<img :src="$getFlagUrl('wd')" style="width:13px;" />
+              <img :src="$getFlagUrl('wd')" alt="WD" style="width:13px;" />
             </span>
           </p>
         </div>
-        
-        <div class="article-excerpt">
-          {{ articleData.sentence }}...
-        </div>
-        
       </div>
       
-      <div v-if="articleData && articleData.statistics_global">
-      <ChartComponent :data="articleData.statistics_global"></ChartComponent>
+      <div class="article-excerpt">
+          {{ articleData.sentence }}...
+      </div>
+
+      <div v-if="articleData && articleData.statistics_global" class="chart-container">
+        <ChartComponent :data="articleData.statistics_global" />
       </div>
     </article>
   </div>
@@ -102,74 +108,61 @@ export default {
 </script>
 
 <style scoped>
-
 .article-container {
   display: flex;
   flex-direction: column;
-  border: 3px solid black; /* Liseret noir */
-  border-radius: 20px; /* Bords arrondis */
-  padding: 20px; /* Espacement intérieur pour ne pas coller au bord */
-  margin: 20px 0; /* Ajout d'une marge extérieure pour l'espacement avec d'autres éléments */
+  border: 3px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
   width: 80%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optionnel: ajoute une ombre pour un effet de profondeur */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.content {
-  background-color: rgb(213, 208, 177);
+.header-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  border: 1px solid black;
-  border-radius: 20px; 
 }
 
-.text-side, .image-side {
-  flex: 1;
-}
-
-.text-side {
-  padding-left: 20px; 
-  flex: 3;
+.image-side, .text-side {
+  text-align: center;
 }
 
 .image-side img {
-  flex: 1;
-  padding: 20px;
-  width: auto; 
   max-width: 100px;
+  height: auto;
+  border-radius: 50%;
 }
 
-canvas {
-  align-self: center;
-  max-width: 90%;
-}
-
-.bold-and-large {
-  font-size: 30px; 
-  color: black;
-  font-weight: bold;
-}
-
-.small-wikidata {
-  font-size: 13px; 
+.bold-and-large, .small-wikidata, .article-excerpt, .introduction {
+  font-size: 16px;
 }
 
 .article-excerpt {
-  font-family: 'Georgia', serif; 
-  font-size: 20px; 
-  line-height: 1.6; 
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
   color: #4c4c4c;
-  max-width: 800px;
-  margin-left: 0;
-  margin-right: 10px;
+  margin-top: 20px; /* Ajoute plus d'espace avant l'extrait */
+  word-break: break-word;
 }
 
-a {
-  color: black;
-  text-decoration: underline; 
-}
+@media (max-width: 768px) {
+  .article-container {
+    width: 95%;
+    padding: 10px;
+  }
 
-a:hover {
-  color: darkgray; 
-}
+  .header-content {
+    align-items: center;
+  }
 
+  .bold-and-large, .small-wikidata, .article-excerpt, .introduction {
+    font-size: 14px;
+  }
+
+  .image-side img {
+    max-width: 80px;
+  }
+}
 </style>

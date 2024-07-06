@@ -45,7 +45,7 @@ export default {
       selectedMonth: '',
       selectedDay: '',
       selectedLanguage: '',
-      SUPPORTED_LANGUAGES: ['ar', 'de', 'en', 'eo', 'es', 'fr', 'ja', 'he', 'hy', 'it', 'ko', 'nl', 'pl', 'pt', 'ru', 'uk', 'zh'],
+      SUPPORTED_LANGUAGES: ['ar', 'az', 'de', 'en', 'eo', 'es', 'fr', 'ja', 'he', 'hy', 'it', 'ko', 'nl', 'pl', 'pt', 'ru', 'uk', 'zh'],
       startDate: new Date(2015, 6, 1), // Les mois sont indexés à partir de 0
       endDate: new Date(new Date().setDate(new Date().getDate() - 1)),
     };
@@ -130,8 +130,8 @@ export default {
   border: 1px solid #dcdcdc;
   border-radius: 5px;
   background-color: rgb(54, 54, 54);
-  color: white;
   font-size: 20px;
+  color: white;
 }
 
 .flag-img {
@@ -142,7 +142,6 @@ export default {
 .button{
   background-color: rgb(54, 54, 54);
   color: rgb(0, 255, 38);
-  font-size: 21px;
   display: inline-block;
 }
 </style>

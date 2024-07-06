@@ -19,33 +19,34 @@ def daily_tweet():
     for lang in SUPPORTED_LANGUAGES:
         
         lines = request_by_lang_by_date(lang, yesterday.year, yesterday.month, yesterday.day)
-
-        top3 = lines.items[:3]
-        # Identification du top 3
-        medals = ["🥇",  "🥈", "🥉"]
-        top3_display = []
-        for index, line in enumerate(top3):
-            article = line.title.replace("_", " ")
-            translation = line.en_translation
-            views = line.views
-            #if not lang in LANG_LIMIT_TWITTER:
-            top3_display.append( [medals[index], article, translation, "{:,}".format(line.views)] )
-            #else:
-            #top3_display.append( [medals[index], article, views] )
-        # On écrit le texte du tweet pour cette langue
-        text = DAILY_TWEET_SENTENCE[lang] +  ' '+ f'({yesterday_str})\r\n'
-        url = f'https://statswiki.info/{lang}/{yesterday.year}/{yesterday.month}/{yesterday.day}'
-        for top in top3_display:
-            text += top[0] # medal
-            text += f" {top[1]}" # title
-            if top[2] and top[1] != top[2]: # en_translation
-                text += f" [{top[2]}] " # en_translation
-            else:
-                text += " "
-            text += top[3] + "\r\n" # views
-        text += f'{url} #StatsWiki\r\n'
-        print(text)
-        tweet_upload_v2(text)
+        print(f'{lang} - {lines} ')
+        if lines:
+            top3 = lines.items[:3]
+            # Identification du top 3
+            medals = ["🥇",  "🥈", "🥉"]
+            top3_display = []
+            for index, line in enumerate(top3):
+                article = line.title.replace("_", " ")
+                translation = line.en_translation
+                views = line.views
+                #if not lang in LANG_LIMIT_TWITTER:
+                top3_display.append( [medals[index], article, translation, "{:,}".format(line.views)] )
+                #else:
+                #top3_display.append( [medals[index], article, views] )
+            # On écrit le texte du tweet pour cette langue
+            text = DAILY_TWEET_SENTENCE[lang] +  ' '+ f'({yesterday_str})\r\n'
+            url = f'https://statswiki.info/{lang}/{yesterday.year}/{yesterday.month}/{yesterday.day}'
+            for top in top3_display:
+                text += top[0] # medal
+                text += f" {top[1]}" # title
+                if top[2] and top[1] != top[2]: # en_translation
+                    text += f" [{top[2]}] " # en_translation
+                else:
+                    text += " "
+                text += top[3] + "\r\n" # views
+            #text += f'{url} #StatsWiki\r\n'
+            print(text)
+            tweet_upload_v2(text)
 
 
 '''

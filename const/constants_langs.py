@@ -1,6 +1,8 @@
 MONTHS_BY_LANG = { 
     'ar': 
     ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'],
+    'az':
+    ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'İyun', 'İyul', 'Avqust', 'Sentyabr', 'Oktyabr', 'Noyabr', 'Dekabr'],
     'de' : 
     ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
     'en' : 
@@ -41,6 +43,12 @@ GlOBAL_PAGE_STUFF = {
             'title': 'ويكيبيديا بالعربية',
             'title_article': 'مقالة',
             'title_views': 'المشاهدات'
+        },
+    'az':
+        {
+            'title': 'Azərbaycanca Vikipediya',
+            'title_article': 'Məqalə',
+            'title_views': 'Baxışlar'
         },
     'de' :
         {
@@ -143,6 +151,8 @@ GlOBAL_PAGE_STUFF = {
 FLAGS_STUFF = {
     'ar': 
     "<img src='/static/ar.svg' style='height: 10px; width: auto;'>",
+    'az': 
+    "<img src='/static/az.svg' style='height: 10px; width: auto;'>",
     'de': 
     "<img src='/static/de.svg' style='height: 10px; width: auto;'>",
     'en': 
@@ -180,6 +190,9 @@ FLAGS_STUFF = {
 YEAR_PAGE_STUFF = {
     'ar': {
         'bymonthyear': "حسب شهر السنة",
+    },
+    'az': {
+        'bymonthyear': "Ay ilə əsasən",
     },
     'de': {
         "bymonthyear": "Nach Monat des Jahres",
@@ -234,6 +247,9 @@ YEAR_PAGE_STUFF = {
 MONTH_PAGE_STUFF = {
     'ar': {
         'byday': "حسب يوم من الشهر",
+    },
+    'az': {
+        'byday': "By day of month",  
     },
     'de': {
         "byday": "Nach Tag des Monats",
@@ -291,6 +307,7 @@ MONTH_PAGE_STUFF = {
 '''
 DAILY_TWEET_SENTENCE = {
     'ar': 'المقالات الأكثر استشارة على ar.wikipedia يوم أمس',
+    'az': 'Dünən ən çox oxunan məqalələr az.wikipedia',
     'de': 'Meistgesehene Artikel auf de.wikipedia gestern',
     'en': 'Articles en.wikipedia the most consulted yesterday',
     'eo': 'Artikoloj en eo.wikipedia plej konsultitaj hieraŭ',
@@ -315,6 +332,7 @@ DAILY_TWEET_SENTENCE = {
 '''
 MONTHLY_TWEET_SENTENCE = {
     'ar': 'المقالات الأكثر استشارة على ar.wikipedia',
+    'az': 'Ən çox baxılan en.wikipedia məqalələri',
     'de': 'Meistgesehene Artikel auf de.wikipedia',
     'en': 'Articles en.wikipedia the most consulted',
     'eo': 'Artikoloj en eo.wikipedia plej konsultitaj',

@@ -1,8 +1,9 @@
 import requests
 from const.constants_wikidata import WIKIDATA_PROPERTIES
 import json
-from const.constants import REDIRECTS_OUTPUT_FILE
-
+from const.constants import REDIRECTS_OUTPUT_FILE, DB_NAME
+import sqlite3
+from db.dbRequestLayer import insert_wikidata_by_lang_by_article
 '''
     get_qid
 '''
@@ -138,8 +139,6 @@ def get_wikidata_stuff(lang, qid):
     except:
         with open(REDIRECTS_OUTPUT_FILE, 'a') as file:
             file.write(f"{lang}-{qid}\n")
-
-
     
     return {
         'label_en': label_en,
@@ -147,4 +146,15 @@ def get_wikidata_stuff(lang, qid):
         'sitelinks': sitelinks
     }
 
-    
+def az_stuff_wikidata():
+    for lang in ['az']:
+        conn = sqlite3.connect(DB_NAME)
+        cursor = conn.cursor()
+        sql_command2 = f"SELECT qid, az_title,en_translation, props, _20190303 FROM az_2019_day_view WHERE _20190303 IS NOT NULL ORDER BY _20190303 DESC LIMIT 56;"
+        results = cursor.fetchall(sql_command2)
+        
+        for article in results[0]:
+            insert_wikidata_by_lang_by_article(lang, article)
+            print(lang, article)
+
+az_stuff_wikidata()

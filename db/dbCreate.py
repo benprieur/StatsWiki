@@ -1,6 +1,6 @@
 import sqlite3
 from datetime import date, timedelta
-from const.constants import DB_NAME
+DB_NAME = '../StatsWiki00.db'
 import calendar
 
 def CreateTables(years, langs):
@@ -58,7 +58,7 @@ def CreateTables(years, langs):
     conn.close()
 
 
-if __name__ == '__main__':
-    years = []
-    langs = []
-    CreateTables(years, langs)
+
+years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+langs = ['az']
+CreateTables(years, langs)
