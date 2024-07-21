@@ -306,24 +306,24 @@ MONTH_PAGE_STUFF = {
     DAILY_TWEET_SENTENCE
 '''
 DAILY_TWEET_SENTENCE = {
-    'ar': 'المقالات الأكثر استشارة على ar.wikipedia يوم أمس',
+    'ar': 'المقالات الأكثر استشارة على @ArabicWikipedia يوم أمس',
     'az': 'Dünən ən çox oxunan məqalələr az.wikipedia',
     'de': 'Meistgesehene Artikel auf de.wikipedia gestern',
     'en': 'Articles en.wikipedia the most consulted yesterday',
-    'eo': 'Artikoloj en eo.wikipedia plej konsultitaj hieraŭ',
-    'es': 'Artículos es.wikipedia más consultados ayer',
-    'fr': 'Articles fr.wikipedia les plus vus hier',
+    'eo': 'Artikoloj en @Vikipedio plej konsultitaj hieraŭ',
+    'es': 'Artículos @eswikipedia más consultados ayer',
+    'fr': 'Articles @Wikipedia_fr les plus vus hier',
     'he': 'מאמרים ב-he.wikipedia שזכו לצפייה הרבה ביותר אתמול',
     'hy': 'Հյուրագրված հոդվածներ hy.wikipedia-ում երեկ',
     'it': 'Articoli di it.wikipedia più visualizzati ieri',
     'ja': '昨日最も閲覧されたja.wikipediaの記事',
     'ko': '어제 가장 많이 조회된 ko.wikipedia의 기사들',
     'nl': 'Meest bekeken artikelen op nl.wikipedia gisteren',
-    'pl': 'Artykuły na pl.wikipedia najczęściej konsultowane wczoraj',
-    'pt': 'Artigos mais vistos ontem na pt.Wikipedia',
-    'ru': 'Самые консультируемые статьи на ru.wikipedia вчера',
-    'uk': 'Статті uk.wikipedia найбільш консультовані вчора',
-    'zh': '昨天在zh.wikipedia上咨询最多的文章'
+    'pl': 'Artykuły na @wikipedia_pl najczęściej konsultowane wczoraj',
+    'pt': 'Artigos mais vistos ontem na @wikipt',
+    'ru': 'Самые консультируемые статьи на @ru_wikipedia вчера',
+    'uk': 'Статті @wikipedia_uk найбільш консультовані вчора',
+    'zh': '昨天在@zhwikipedia上咨询最多的文章'
 }
 
 
