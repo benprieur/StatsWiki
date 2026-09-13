@@ -1,0 +1,68 @@
+{
+  "qid": "Q3126626",
+  "label": "Hamza bin Laden",
+  "title": "Hamza_bin_Laden",
+  "description": "key member of al-Qaeda",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hamza_bin_Laden_%283x4%29.png?width=64",
+  "total": 267093,
+  "monthly": [
+    {
+      "period": "2016-07",
+      "views": 28240
+    },
+    {
+      "period": "2019-03",
+      "views": 59600
+    },
+    {
+      "period": "2019-07",
+      "views": 17071
+    },
+    {
+      "period": "2019-08",
+      "views": 50020
+    },
+    {
+      "period": "2019-09",
+      "views": 69682
+    },
+    {
+      "period": "2019-10",
+      "views": 10310
+    },
+    {
+      "period": "2021-09",
+      "views": 12947
+    },
+    {
+      "period": "2025-05",
+      "views": 10142
+    },
+    {
+      "period": "2026-09",
+      "views": 9081
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 28240
+    },
+    {
+      "period": "2019",
+      "views": 206683
+    },
+    {
+      "period": "2021",
+      "views": 12947
+    },
+    {
+      "period": "2025",
+      "views": 10142
+    },
+    {
+      "period": "2026",
+      "views": 9081
+    }
+  ]
+}

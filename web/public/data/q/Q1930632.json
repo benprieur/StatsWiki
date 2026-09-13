@@ -1,0 +1,64 @@
+{
+  "qid": "Q1930632",
+  "label": "Richard Reid",
+  "title": "Richard_Reid",
+  "description": "British terrorist",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Richard_Reid_Mugshot.png?width=64",
+  "total": 199122,
+  "monthly": [
+    {
+      "period": "2019-12",
+      "views": 20414
+    },
+    {
+      "period": "2021-12",
+      "views": 36941
+    },
+    {
+      "period": "2022-12",
+      "views": 31275
+    },
+    {
+      "period": "2024-02",
+      "views": 20144
+    },
+    {
+      "period": "2025-05",
+      "views": 10774
+    },
+    {
+      "period": "2025-07",
+      "views": 70645
+    },
+    {
+      "period": "2026-09",
+      "views": 8929
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2019",
+      "views": 20414
+    },
+    {
+      "period": "2021",
+      "views": 36941
+    },
+    {
+      "period": "2022",
+      "views": 31275
+    },
+    {
+      "period": "2024",
+      "views": 20144
+    },
+    {
+      "period": "2025",
+      "views": 81419
+    },
+    {
+      "period": "2026",
+      "views": 8929
+    }
+  ]
+}

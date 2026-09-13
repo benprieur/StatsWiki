@@ -4,7 +4,7 @@
   "title": "78th_Primetime_Emmy_Awards",
   "description": "2026 American television programming awards",
   "image": "",
-  "total": 330210,
+  "total": 340178,
   "monthly": [
     {
       "period": "2026-07",
@@ -12,13 +12,13 @@
     },
     {
       "period": "2026-09",
-      "views": 200308
+      "views": 210276
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 330210
+      "views": 340178
     }
   ]
 }

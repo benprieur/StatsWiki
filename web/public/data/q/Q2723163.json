@@ -1,0 +1,28 @@
+{
+  "qid": "Q2723163",
+  "label": "Bharat Mandapam",
+  "title": "Bharat_Mandapam",
+  "description": "Venue for exhibitions and conventions, located at Delhi, India.",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pragati_Maidan%2C_Hall_6.JPG?width=64",
+  "total": 21185,
+  "monthly": [
+    {
+      "period": "2023-09",
+      "views": 11968
+    },
+    {
+      "period": "2026-09",
+      "views": 9217
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2023",
+      "views": 11968
+    },
+    {
+      "period": "2026",
+      "views": 9217
+    }
+  ]
+}

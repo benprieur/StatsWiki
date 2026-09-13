@@ -4,7 +4,7 @@
   "title": "Fall_2:_Deadpoint",
   "description": "2026 film directed by Peter and Michael Spierig",
   "image": "",
-  "total": 209211,
+  "total": 224104,
   "monthly": [
     {
       "period": "2026-06",
@@ -12,13 +12,13 @@
     },
     {
       "period": "2026-09",
-      "views": 200501
+      "views": 215394
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 209211
+      "views": 224104
     }
   ]
 }

@@ -4,7 +4,7 @@
   "title": "United_93_(film)",
   "description": "2006 film directed by Paul Greengrass",
   "image": "",
-  "total": 315041,
+  "total": 349327,
   "monthly": [
     {
       "period": "2015-09",
@@ -36,7 +36,7 @@
     },
     {
       "period": "2026-09",
-      "views": 29801
+      "views": 64087
     }
   ],
   "yearly": [
@@ -70,7 +70,7 @@
     },
     {
       "period": "2026",
-      "views": 29801
+      "views": 64087
     }
   ]
 }

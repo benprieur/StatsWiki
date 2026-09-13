@@ -4,7 +4,7 @@
   "title": "Orio_Palmer",
   "description": "American fire battalion chief (1956–2001)",
   "image": "",
-  "total": 84168,
+  "total": 95348,
   "monthly": [
     {
       "period": "2021-09",
@@ -16,7 +16,7 @@
     },
     {
       "period": "2026-09",
-      "views": 14164
+      "views": 25344
     }
   ],
   "yearly": [
@@ -30,7 +30,7 @@
     },
     {
       "period": "2026",
-      "views": 14164
+      "views": 25344
     }
   ]
 }

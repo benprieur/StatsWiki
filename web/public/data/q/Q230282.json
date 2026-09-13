@@ -4,7 +4,7 @@
   "title": "Brooklyn_Decker",
   "description": "American model and actress",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn_Decker_2012_Shankbone_5.JPG?width=64",
-  "total": 364454,
+  "total": 374426,
   "monthly": [
     {
       "period": "2015-07",
@@ -69,6 +69,10 @@
     {
       "period": "2026-08",
       "views": 8884
+    },
+    {
+      "period": "2026-09",
+      "views": 9972
     }
   ],
   "yearly": [
@@ -106,7 +110,7 @@
     },
     {
       "period": "2026",
-      "views": 18189
+      "views": 28161
     }
   ]
 }

@@ -4,7 +4,7 @@
   "title": "Mirzapur_(film)",
   "description": "2026 Indian film",
   "image": "",
-  "total": 1289277,
+  "total": 1367191,
   "monthly": [
     {
       "period": "2026-06",
@@ -16,13 +16,13 @@
     },
     {
       "period": "2026-09",
-      "views": 1203711
+      "views": 1281625
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 1289277
+      "views": 1367191
     }
   ]
 }

@@ -4,7 +4,7 @@
   "title": "Sami_Zayn",
   "description": "Canadian professional wrestler",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sami_Zayn_WrestleMania_32_Axxess.jpg?width=64",
-  "total": 1277461,
+  "total": 1298518,
   "monthly": [
     {
       "period": "2016-01",
@@ -137,6 +137,10 @@
     {
       "period": "2026-07",
       "views": 17101
+    },
+    {
+      "period": "2026-09",
+      "views": 21057
     }
   ],
   "yearly": [
@@ -178,7 +182,7 @@
     },
     {
       "period": "2026",
-      "views": 233891
+      "views": 254948
     }
   ]
 }

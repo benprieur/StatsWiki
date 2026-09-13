@@ -1,0 +1,28 @@
+{
+  "qid": "Q65047178",
+  "label": "A Black Lady Sketch Show",
+  "title": "A_Black_Lady_Sketch_Show",
+  "description": "American sketch comedy show",
+  "image": "",
+  "total": 24453,
+  "monthly": [
+    {
+      "period": "2021-07",
+      "views": 12901
+    },
+    {
+      "period": "2026-09",
+      "views": 11552
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 12901
+    },
+    {
+      "period": "2026",
+      "views": 11552
+    }
+  ]
+}

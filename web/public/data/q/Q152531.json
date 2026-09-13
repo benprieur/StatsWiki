@@ -1,0 +1,124 @@
+{
+  "qid": "Q152531",
+  "label": "Zero Dark Thirty",
+  "title": "Zero_Dark_Thirty",
+  "description": "2012 film directed by Kathryn Bigelow",
+  "image": "",
+  "total": 452992,
+  "monthly": [
+    {
+      "period": "2015-08",
+      "views": 40209
+    },
+    {
+      "period": "2015-09",
+      "views": 61957
+    },
+    {
+      "period": "2015-11",
+      "views": 9714
+    },
+    {
+      "period": "2016-01",
+      "views": 14264
+    },
+    {
+      "period": "2016-02",
+      "views": 10782
+    },
+    {
+      "period": "2016-05",
+      "views": 26372
+    },
+    {
+      "period": "2016-06",
+      "views": 38987
+    },
+    {
+      "period": "2017-02",
+      "views": 17377
+    },
+    {
+      "period": "2018-01",
+      "views": 10912
+    },
+    {
+      "period": "2018-05",
+      "views": 19568
+    },
+    {
+      "period": "2019-03",
+      "views": 9195
+    },
+    {
+      "period": "2019-04",
+      "views": 10487
+    },
+    {
+      "period": "2019-08",
+      "views": 10221
+    },
+    {
+      "period": "2019-09",
+      "views": 11302
+    },
+    {
+      "period": "2021-09",
+      "views": 27656
+    },
+    {
+      "period": "2022-06",
+      "views": 8946
+    },
+    {
+      "period": "2022-07",
+      "views": 59466
+    },
+    {
+      "period": "2025-08",
+      "views": 56648
+    },
+    {
+      "period": "2026-09",
+      "views": 8929
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 111880
+    },
+    {
+      "period": "2016",
+      "views": 90405
+    },
+    {
+      "period": "2017",
+      "views": 17377
+    },
+    {
+      "period": "2018",
+      "views": 30480
+    },
+    {
+      "period": "2019",
+      "views": 41205
+    },
+    {
+      "period": "2021",
+      "views": 27656
+    },
+    {
+      "period": "2022",
+      "views": 68412
+    },
+    {
+      "period": "2025",
+      "views": 56648
+    },
+    {
+      "period": "2026",
+      "views": 8929
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "title": "Wikipedia:Contact_us",
   "description": "Wikimedia project page",
   "image": "",
-  "total": 51480070,
+  "total": 51493299,
   "monthly": [
     {
       "period": "2015-07",
@@ -500,7 +500,7 @@
     },
     {
       "period": "2026-09",
-      "views": 153306
+      "views": 166535
     }
   ],
   "yearly": [
@@ -550,7 +550,7 @@
     },
     {
       "period": "2026",
-      "views": 3475036
+      "views": 3488265
     }
   ]
 }

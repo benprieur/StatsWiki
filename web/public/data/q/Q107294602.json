@@ -4,7 +4,7 @@
   "title": "Mohamed_Belloumi",
   "description": "Algerian footballer",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mohamed_Bachir_belloumi.jpg_large.jpg?width=64",
-  "total": 37164,
+  "total": 62248,
   "monthly": [
     {
       "period": "2026-05",
@@ -13,12 +13,16 @@
     {
       "period": "2026-08",
       "views": 10797
+    },
+    {
+      "period": "2026-09",
+      "views": 25084
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 37164
+      "views": 62248
     }
   ]
 }

@@ -4,7 +4,7 @@
   "title": "The_Dropout",
   "description": "American TV series",
   "image": "",
-  "total": 496637,
+  "total": 506462,
   "monthly": [
     {
       "period": "2022-04",
@@ -32,7 +32,7 @@
     },
     {
       "period": "2026-09",
-      "views": 91567
+      "views": 101392
     }
   ],
   "yearly": [
@@ -50,7 +50,7 @@
     },
     {
       "period": "2026",
-      "views": 91567
+      "views": 101392
     }
   ]
 }

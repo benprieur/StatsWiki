@@ -4,7 +4,7 @@
   "title": "Come_from_Away",
   "description": "Canadian musical first produced in 2013",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Schoenfeld_Theater_-_Come_From_Away_%2848193460457%29.jpg?width=64",
-  "total": 289963,
+  "total": 305186,
   "monthly": [
     {
       "period": "2017-06",
@@ -32,7 +32,7 @@
     },
     {
       "period": "2026-09",
-      "views": 17216
+      "views": 32439
     }
   ],
   "yearly": [
@@ -50,7 +50,7 @@
     },
     {
       "period": "2026",
-      "views": 17216
+      "views": 32439
     }
   ]
 }

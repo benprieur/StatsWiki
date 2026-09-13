@@ -4,7 +4,7 @@
   "title": "Asha_Sharma",
   "description": "American business executive",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Asha_Sharma_%28March_1_2018%29%2C_on_Facebook_platform.jpg?width=64",
-  "total": 293148,
+  "total": 301915,
   "monthly": [
     {
       "period": "2026-04",
@@ -21,12 +21,16 @@
     {
       "period": "2026-08",
       "views": 9169
+    },
+    {
+      "period": "2026-09",
+      "views": 8767
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 293148
+      "views": 301915
     }
   ]
 }

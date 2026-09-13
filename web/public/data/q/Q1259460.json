@@ -4,7 +4,7 @@
   "title": "The_Falling_Man",
   "description": "iconic photograph from 9/11",
   "image": "",
-  "total": 2112057,
+  "total": 2225119,
   "monthly": [
     {
       "period": "2015-09",
@@ -80,7 +80,7 @@
     },
     {
       "period": "2026-09",
-      "views": 386884
+      "views": 499946
     }
   ],
   "yearly": [
@@ -130,7 +130,7 @@
     },
     {
       "period": "2026",
-      "views": 386884
+      "views": 499946
     }
   ]
 }

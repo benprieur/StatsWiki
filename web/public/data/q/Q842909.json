@@ -1,0 +1,36 @@
+{
+  "qid": "Q842909",
+  "label": "Rice University",
+  "title": "Rice_University",
+  "description": "private university in Houston, Texas, USA",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rice_University_-_Sally_Port.JPG?width=64",
+  "total": 40701,
+  "monthly": [
+    {
+      "period": "2016-09",
+      "views": 15466
+    },
+    {
+      "period": "2023-12",
+      "views": 13727
+    },
+    {
+      "period": "2026-09",
+      "views": 11508
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 15466
+    },
+    {
+      "period": "2023",
+      "views": 13727
+    },
+    {
+      "period": "2026",
+      "views": 11508
+    }
+  ]
+}

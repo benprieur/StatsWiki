@@ -4,7 +4,7 @@
   "title": ".xyz",
   "description": "sponsored top-level Internet domain",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/.xyz_logo.svg?width=64",
-  "total": 18779303,
+  "total": 18878756,
   "monthly": [
     {
       "period": "2026-02",
@@ -36,13 +36,13 @@
     },
     {
       "period": "2026-09",
-      "views": 1183668
+      "views": 1283121
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 18779303
+      "views": 18878756
     }
   ]
 }

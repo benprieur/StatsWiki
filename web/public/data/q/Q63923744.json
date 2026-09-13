@@ -1,0 +1,48 @@
+{
+  "qid": "Q63923744",
+  "label": "Those Who Wish Me Dead",
+  "title": "Those_Who_Wish_Me_Dead",
+  "description": "2021 film directed by Taylor Sheridan",
+  "image": "",
+  "total": 1082357,
+  "monthly": [
+    {
+      "period": "2021-04",
+      "views": 79724
+    },
+    {
+      "period": "2021-05",
+      "views": 836331
+    },
+    {
+      "period": "2021-06",
+      "views": 86179
+    },
+    {
+      "period": "2021-10",
+      "views": 12038
+    },
+    {
+      "period": "2024-01",
+      "views": 54488
+    },
+    {
+      "period": "2026-09",
+      "views": 13597
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 1014272
+    },
+    {
+      "period": "2024",
+      "views": 54488
+    },
+    {
+      "period": "2026",
+      "views": 13597
+    }
+  ]
+}

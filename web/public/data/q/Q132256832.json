@@ -4,7 +4,7 @@
   "title": "The_Dog_Stars_(film)",
   "description": "2026 film directed by Ridley Scott",
   "image": "",
-  "total": 1305776,
+  "total": 1315119,
   "monthly": [
     {
       "period": "2026-04",
@@ -24,13 +24,13 @@
     },
     {
       "period": "2026-09",
-      "views": 243552
+      "views": 252895
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 1305776
+      "views": 1315119
     }
   ]
 }

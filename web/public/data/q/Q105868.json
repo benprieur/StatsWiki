@@ -1,0 +1,48 @@
+{
+  "qid": "Q105868",
+  "label": "Gabriela Sabatini",
+  "title": "Gabriela_Sabatini",
+  "description": "Argentine tennis player",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gabriela_Sabatini_US_Embassy_in_Argentina_cropped.jpg?width=64",
+  "total": 52288,
+  "monthly": [
+    {
+      "period": "2017-07",
+      "views": 10352
+    },
+    {
+      "period": "2020-05",
+      "views": 11571
+    },
+    {
+      "period": "2020-07",
+      "views": 12308
+    },
+    {
+      "period": "2025-07",
+      "views": 8603
+    },
+    {
+      "period": "2026-09",
+      "views": 9454
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2017",
+      "views": 10352
+    },
+    {
+      "period": "2020",
+      "views": 23879
+    },
+    {
+      "period": "2025",
+      "views": 8603
+    },
+    {
+      "period": "2026",
+      "views": 9454
+    }
+  ]
+}

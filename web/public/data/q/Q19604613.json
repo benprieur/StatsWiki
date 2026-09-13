@@ -1,0 +1,28 @@
+{
+  "qid": "Q19604613",
+  "label": "Ward Thomas",
+  "title": "Ward_Thomas_(band)",
+  "description": "musical artist",
+  "image": "",
+  "total": 20816,
+  "monthly": [
+    {
+      "period": "2023-03",
+      "views": 11143
+    },
+    {
+      "period": "2026-09",
+      "views": 9673
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2023",
+      "views": 11143
+    },
+    {
+      "period": "2026",
+      "views": 9673
+    }
+  ]
+}

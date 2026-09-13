@@ -4,7 +4,7 @@
   "title": "Flight_93_National_Memorial",
   "description": "Shanksville, Pennsylvania memorial to the 4th plane that crashed on 9/11",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/A_tour_of_the_Flight_93_National_Memorial_-_16.jpg?width=64",
-  "total": 277062,
+  "total": 296571,
   "monthly": [
     {
       "period": "2015-09",
@@ -44,7 +44,7 @@
     },
     {
       "period": "2026-09",
-      "views": 24704
+      "views": 44213
     }
   ],
   "yearly": [
@@ -86,7 +86,7 @@
     },
     {
       "period": "2026",
-      "views": 24704
+      "views": 44213
     }
   ]
 }

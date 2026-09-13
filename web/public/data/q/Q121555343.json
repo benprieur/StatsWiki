@@ -4,7 +4,7 @@
   "title": "Don't_Move_(2024_film)",
   "description": "2024 film directed by Adam Schindler and Brian Netto",
   "image": "",
-  "total": 1070756,
+  "total": 1081315,
   "monthly": [
     {
       "period": "2024-09",
@@ -25,6 +25,10 @@
     {
       "period": "2026-06",
       "views": 9533
+    },
+    {
+      "period": "2026-09",
+      "views": 10559
     }
   ],
   "yearly": [
@@ -34,7 +38,7 @@
     },
     {
       "period": "2026",
-      "views": 9533
+      "views": 20092
     }
   ]
 }

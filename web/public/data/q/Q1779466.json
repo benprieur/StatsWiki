@@ -1,0 +1,132 @@
+{
+  "qid": "Q1779466",
+  "label": "list of tallest buildings",
+  "title": "List_of_tallest_buildings",
+  "description": "Wikimedia list article",
+  "image": "",
+  "total": 659770,
+  "monthly": [
+    {
+      "period": "2017-03",
+      "views": 14855
+    },
+    {
+      "period": "2017-04",
+      "views": 12154
+    },
+    {
+      "period": "2018-07",
+      "views": 10100
+    },
+    {
+      "period": "2018-09",
+      "views": 19852
+    },
+    {
+      "period": "2019-02",
+      "views": 13536
+    },
+    {
+      "period": "2019-03",
+      "views": 31508
+    },
+    {
+      "period": "2019-09",
+      "views": 58742
+    },
+    {
+      "period": "2020-01",
+      "views": 23264
+    },
+    {
+      "period": "2020-09",
+      "views": 9921
+    },
+    {
+      "period": "2020-12",
+      "views": 21658
+    },
+    {
+      "period": "2021-01",
+      "views": 102926
+    },
+    {
+      "period": "2021-09",
+      "views": 74747
+    },
+    {
+      "period": "2021-10",
+      "views": 10644
+    },
+    {
+      "period": "2022-01",
+      "views": 29001
+    },
+    {
+      "period": "2023-09",
+      "views": 14263
+    },
+    {
+      "period": "2024-02",
+      "views": 10250
+    },
+    {
+      "period": "2024-12",
+      "views": 14050
+    },
+    {
+      "period": "2025-10",
+      "views": 12886
+    },
+    {
+      "period": "2026-01",
+      "views": 166889
+    },
+    {
+      "period": "2026-09",
+      "views": 8524
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2017",
+      "views": 27009
+    },
+    {
+      "period": "2018",
+      "views": 29952
+    },
+    {
+      "period": "2019",
+      "views": 103786
+    },
+    {
+      "period": "2020",
+      "views": 54843
+    },
+    {
+      "period": "2021",
+      "views": 188317
+    },
+    {
+      "period": "2022",
+      "views": 29001
+    },
+    {
+      "period": "2023",
+      "views": 14263
+    },
+    {
+      "period": "2024",
+      "views": 24300
+    },
+    {
+      "period": "2025",
+      "views": 12886
+    },
+    {
+      "period": "2026",
+      "views": 175413
+    }
+  ]
+}

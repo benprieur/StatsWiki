@@ -1,0 +1,28 @@
+{
+  "qid": "Q191811",
+  "label": "Takbir",
+  "title": "Takbir",
+  "description": "Arabic phrase \"ʾAllāhu ʾakbar\", meaning \"God is the greatest\"",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Allahu_akbar.svg?width=64",
+  "total": 22603,
+  "monthly": [
+    {
+      "period": "2015-11",
+      "views": 14029
+    },
+    {
+      "period": "2026-09",
+      "views": 8574
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 14029
+    },
+    {
+      "period": "2026",
+      "views": 8574
+    }
+  ]
+}

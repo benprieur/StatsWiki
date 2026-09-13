@@ -1,0 +1,28 @@
+{
+  "qid": "Q131933130",
+  "label": "2026 Australian Open – Women's singles",
+  "title": "2026_Australian_Open_–_Women's_singles",
+  "description": "tennis championship",
+  "image": "",
+  "total": 539981,
+  "monthly": [
+    {
+      "period": "2026-01",
+      "views": 516529
+    },
+    {
+      "period": "2026-02",
+      "views": 13543
+    },
+    {
+      "period": "2026-09",
+      "views": 9909
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 539981
+    }
+  ]
+}

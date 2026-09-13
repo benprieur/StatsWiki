@@ -4,7 +4,7 @@
   "title": "Oppam",
   "description": "2016 film by Priyadarshan",
   "image": "",
-  "total": 132236,
+  "total": 154288,
   "monthly": [
     {
       "period": "2016-09",
@@ -20,7 +20,7 @@
     },
     {
       "period": "2026-09",
-      "views": 23212
+      "views": 45264
     }
   ],
   "yearly": [
@@ -34,7 +34,7 @@
     },
     {
       "period": "2026",
-      "views": 52155
+      "views": 74207
     }
   ]
 }

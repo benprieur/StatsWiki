@@ -4,7 +4,7 @@
   "title": "Runner_(2026_American_film)",
   "description": "upcoming film directed by Scott Waugh",
   "image": "",
-  "total": 133042,
+  "total": 156160,
   "monthly": [
     {
       "period": "2026-08",
@@ -12,13 +12,13 @@
     },
     {
       "period": "2026-09",
-      "views": 125359
+      "views": 148477
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 133042
+      "views": 156160
     }
   ]
 }

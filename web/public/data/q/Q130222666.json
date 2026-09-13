@@ -4,7 +4,7 @@
   "title": "Opinion_polling_for_the_next_United_Kingdom_general_election",
   "description": "summary of the United Kingdom polls",
   "image": "",
-  "total": 19561866,
+  "total": 19581280,
   "monthly": [
     {
       "period": "2017-04",
@@ -292,7 +292,7 @@
     },
     {
       "period": "2026-09",
-      "views": 237506
+      "views": 256920
     }
   ],
   "yearly": [
@@ -330,7 +330,7 @@
     },
     {
       "period": "2026",
-      "views": 5249370
+      "views": 5268784
     }
   ]
 }

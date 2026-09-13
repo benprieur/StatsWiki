@@ -4,7 +4,7 @@
   "title": "Room_641A",
   "description": "authorized telecommunications intercept point",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Room_641A_exterior.jpg?width=64",
-  "total": 384170,
+  "total": 394166,
   "monthly": [
     {
       "period": "2015-08",
@@ -56,7 +56,7 @@
     },
     {
       "period": "2026-09",
-      "views": 19626
+      "views": 29622
     }
   ],
   "yearly": [
@@ -90,7 +90,7 @@
     },
     {
       "period": "2026",
-      "views": 19626
+      "views": 29622
     }
   ]
 }

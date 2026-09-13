@@ -4,7 +4,7 @@
   "title": "Sardar_2",
   "description": "film directed by P. S. Mithran",
   "image": "",
-  "total": 124636,
+  "total": 155697,
   "monthly": [
     {
       "period": "2026-08",
@@ -12,13 +12,13 @@
     },
     {
       "period": "2026-09",
-      "views": 116697
+      "views": 147758
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 124636
+      "views": 155697
     }
   ]
 }

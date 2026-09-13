@@ -1,0 +1,28 @@
+{
+  "qid": "Q3493803",
+  "label": "Ahmed al-Haznawi",
+  "title": "Ahmed_al-Haznawi",
+  "description": "Mass murderer of thousands in the September 11th attacks in 2001.",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ahmed_al-Haznawi_7-24-01_HQ.jpg?width=64",
+  "total": 31778,
+  "monthly": [
+    {
+      "period": "2021-09",
+      "views": 23297
+    },
+    {
+      "period": "2026-09",
+      "views": 8481
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 23297
+    },
+    {
+      "period": "2026",
+      "views": 8481
+    }
+  ]
+}

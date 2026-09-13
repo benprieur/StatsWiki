@@ -4,7 +4,7 @@
   "title": "War_in_Afghanistan_(2001–2021)",
   "description": "armed conflict between NATO countries and Afghanistan from 2001 to 2021",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Collage_of_the_War_in_Afghanistan_%282001-2021%29.png?width=64",
-  "total": 926918,
+  "total": 936575,
   "monthly": [
     {
       "period": "2021-08",
@@ -36,7 +36,7 @@
     },
     {
       "period": "2026-09",
-      "views": 11464
+      "views": 21121
     }
   ],
   "yearly": [
@@ -58,7 +58,7 @@
     },
     {
       "period": "2026",
-      "views": 52397
+      "views": 62054
     }
   ]
 }

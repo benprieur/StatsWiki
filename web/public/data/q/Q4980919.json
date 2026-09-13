@@ -1,0 +1,60 @@
+{
+  "qid": "Q4980919",
+  "label": "Bryn Williams",
+  "title": "Bryn_Williams",
+  "description": "Welsh chef",
+  "image": "",
+  "total": 141626,
+  "monthly": [
+    {
+      "period": "2017-04",
+      "views": 10911
+    },
+    {
+      "period": "2021-05",
+      "views": 24684
+    },
+    {
+      "period": "2021-09",
+      "views": 28358
+    },
+    {
+      "period": "2023-06",
+      "views": 26675
+    },
+    {
+      "period": "2023-11",
+      "views": 20188
+    },
+    {
+      "period": "2024-03",
+      "views": 20384
+    },
+    {
+      "period": "2026-09",
+      "views": 10426
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2017",
+      "views": 10911
+    },
+    {
+      "period": "2021",
+      "views": 53042
+    },
+    {
+      "period": "2023",
+      "views": 46863
+    },
+    {
+      "period": "2024",
+      "views": 20384
+    },
+    {
+      "period": "2026",
+      "views": 10426
+    }
+  ]
+}

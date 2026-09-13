@@ -4,7 +4,7 @@
   "title": "Karuppu_(film)",
   "description": "Indian Tamil film by RJ Balaji",
   "image": "",
-  "total": 3156304,
+  "total": 3165349,
   "monthly": [
     {
       "period": "2025-07",
@@ -25,6 +25,10 @@
     {
       "period": "2026-08",
       "views": 99952
+    },
+    {
+      "period": "2026-09",
+      "views": 9045
     }
   ],
   "yearly": [
@@ -34,7 +38,7 @@
     },
     {
       "period": "2026",
-      "views": 3087532
+      "views": 3096577
     }
   ]
 }

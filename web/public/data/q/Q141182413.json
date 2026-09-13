@@ -4,7 +4,7 @@
   "title": "2026_Nepal_floods",
   "description": "2026 flooding in China and Nepal",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mudslide_at_Gyirong_Port_2_%28screenshot%29.png?width=64",
-  "total": 1121330,
+  "total": 1132653,
   "monthly": [
     {
       "period": "2026-08",
@@ -12,13 +12,13 @@
     },
     {
       "period": "2026-09",
-      "views": 363924
+      "views": 375247
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 1121330
+      "views": 1132653
     }
   ]
 }

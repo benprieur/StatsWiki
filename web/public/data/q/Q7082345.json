@@ -1,0 +1,28 @@
+{
+  "qid": "Q7082345",
+  "label": "Oklahoma State Cowboys football",
+  "title": "Oklahoma_State_Cowboys_football",
+  "description": "football program representing Oklahoma State University–Stillwater",
+  "image": "",
+  "total": 21794,
+  "monthly": [
+    {
+      "period": "2021-11",
+      "views": 11689
+    },
+    {
+      "period": "2026-09",
+      "views": 10105
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 11689
+    },
+    {
+      "period": "2026",
+      "views": 10105
+    }
+  ]
+}

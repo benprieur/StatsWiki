@@ -4,7 +4,7 @@
   "title": "Trent_Williams",
   "description": "American football player (born 1988)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trent_williams_2014.jpg?width=64",
-  "total": 578744,
+  "total": 587634,
   "monthly": [
     {
       "period": "2019-09",
@@ -80,7 +80,7 @@
     },
     {
       "period": "2026-09",
-      "views": 28217
+      "views": 37107
     }
   ],
   "yearly": [
@@ -114,7 +114,7 @@
     },
     {
       "period": "2026",
-      "views": 50375
+      "views": 59265
     }
   ]
 }

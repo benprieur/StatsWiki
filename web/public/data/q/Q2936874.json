@@ -3,8 +3,8 @@
   "label": "Cantor Fitzgerald",
   "title": "Cantor_Fitzgerald",
   "description": "American financial services company",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cantor_Fitzgerald_logo.png?width=64",
-  "total": 353996,
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cantor_Fitzgerald_logo.svg?width=64",
+  "total": 384047,
   "monthly": [
     {
       "period": "2015-09",
@@ -48,7 +48,7 @@
     },
     {
       "period": "2026-09",
-      "views": 43762
+      "views": 73813
     }
   ],
   "yearly": [
@@ -86,7 +86,7 @@
     },
     {
       "period": "2026",
-      "views": 43762
+      "views": 73813
     }
   ]
 }

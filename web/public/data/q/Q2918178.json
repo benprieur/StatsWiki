@@ -1,0 +1,44 @@
+{
+  "qid": "Q2918178",
+  "label": "United States Court of Appeals for the District of Columbia Circuit",
+  "title": "United_States_Court_of_Appeals_for_the_District_of_Columbia_Circuit",
+  "description": "current United States federal appellate court",
+  "image": "",
+  "total": 60997,
+  "monthly": [
+    {
+      "period": "2016-02",
+      "views": 12380
+    },
+    {
+      "period": "2016-03",
+      "views": 13385
+    },
+    {
+      "period": "2018-07",
+      "views": 14816
+    },
+    {
+      "period": "2018-09",
+      "views": 9649
+    },
+    {
+      "period": "2026-09",
+      "views": 10767
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 25765
+    },
+    {
+      "period": "2018",
+      "views": 24465
+    },
+    {
+      "period": "2026",
+      "views": 10767
+    }
+  ]
+}

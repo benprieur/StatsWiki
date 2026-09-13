@@ -1,0 +1,44 @@
+{
+  "qid": "Q56588154",
+  "label": "Daniel Ballard",
+  "title": "Daniel_Ballard",
+  "description": "Northern Irish association football player (born 1999)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Daniel_Ballard.jpg?width=64",
+  "total": 207035,
+  "monthly": [
+    {
+      "period": "2024-01",
+      "views": 31615
+    },
+    {
+      "period": "2025-05",
+      "views": 49086
+    },
+    {
+      "period": "2025-08",
+      "views": 15698
+    },
+    {
+      "period": "2025-11",
+      "views": 95886
+    },
+    {
+      "period": "2026-09",
+      "views": 14750
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2024",
+      "views": 31615
+    },
+    {
+      "period": "2025",
+      "views": 160670
+    },
+    {
+      "period": "2026",
+      "views": 14750
+    }
+  ]
+}

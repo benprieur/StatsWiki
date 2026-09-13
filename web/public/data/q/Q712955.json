@@ -4,7 +4,7 @@
   "title": "Bobby_Driscoll",
   "description": "American actor (1937–1968)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bobby_Driscoll_1950.jpg?width=64",
-  "total": 563037,
+  "total": 585595,
   "monthly": [
     {
       "period": "2015-07",
@@ -57,6 +57,10 @@
     {
       "period": "2026-06",
       "views": 22341
+    },
+    {
+      "period": "2026-09",
+      "views": 22558
     }
   ],
   "yearly": [
@@ -94,7 +98,7 @@
     },
     {
       "period": "2026",
-      "views": 22341
+      "views": 44899
     }
   ]
 }

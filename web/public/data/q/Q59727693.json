@@ -1,0 +1,44 @@
+{
+  "qid": "Q59727693",
+  "label": "Eliah Drinkwitz",
+  "title": "Eliah_Drinkwitz",
+  "description": "American football coach (born 1983)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/2019-0722-EliahDrinkwitz.PNG?width=64",
+  "total": 122191,
+  "monthly": [
+    {
+      "period": "2019-12",
+      "views": 59810
+    },
+    {
+      "period": "2023-12",
+      "views": 40620
+    },
+    {
+      "period": "2025-10",
+      "views": 12627
+    },
+    {
+      "period": "2026-09",
+      "views": 9134
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2019",
+      "views": 59810
+    },
+    {
+      "period": "2023",
+      "views": 40620
+    },
+    {
+      "period": "2025",
+      "views": 12627
+    },
+    {
+      "period": "2026",
+      "views": 9134
+    }
+  ]
+}

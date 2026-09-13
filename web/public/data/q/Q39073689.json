@@ -4,7 +4,7 @@
   "title": "Bokeh_(film)",
   "description": "2017 film directed by Geoffrey Orthwein and Andrew Sullivan",
   "image": "",
-  "total": 337930,
+  "total": 349056,
   "monthly": [
     {
       "period": "2023-05",
@@ -16,7 +16,7 @@
     },
     {
       "period": "2026-09",
-      "views": 67969
+      "views": 79095
     }
   ],
   "yearly": [
@@ -26,7 +26,7 @@
     },
     {
       "period": "2026",
-      "views": 281997
+      "views": 293123
     }
   ]
 }

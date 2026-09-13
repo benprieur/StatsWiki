@@ -4,7 +4,7 @@
   "title": "United_States_midterm_election",
   "description": "general elections in the United States that are held two years after the quadrennial elections",
   "image": "",
-  "total": 2161638,
+  "total": 2175312,
   "monthly": [
     {
       "period": "2016-11",
@@ -64,7 +64,7 @@
     },
     {
       "period": "2026-09",
-      "views": 133918
+      "views": 147592
     }
   ],
   "yearly": [
@@ -90,7 +90,7 @@
     },
     {
       "period": "2026",
-      "views": 816151
+      "views": 829825
     }
   ]
 }

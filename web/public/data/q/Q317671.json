@@ -1,0 +1,20 @@
+{
+  "qid": "Q317671",
+  "label": "botnet",
+  "title": "Botnet",
+  "description": "collection of compromised internet-connected devices controlled by a third party",
+  "image": "",
+  "total": 9545,
+  "monthly": [
+    {
+      "period": "2026-09",
+      "views": 9545
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 9545
+    }
+  ]
+}

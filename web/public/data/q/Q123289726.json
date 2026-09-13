@@ -1,0 +1,36 @@
+{
+  "qid": "Q123289726",
+  "label": "Franco Mastantuono",
+  "title": "Franco_Mastantuono",
+  "description": "Argentine association football player (born 2007)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Franco_Mastantuono_in_2025_%28cropped%29.jpg?width=64",
+  "total": 260368,
+  "monthly": [
+    {
+      "period": "2025-06",
+      "views": 136077
+    },
+    {
+      "period": "2025-08",
+      "views": 77246
+    },
+    {
+      "period": "2025-09",
+      "views": 35636
+    },
+    {
+      "period": "2026-09",
+      "views": 11409
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 248959
+    },
+    {
+      "period": "2026",
+      "views": 11409
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "title": "Peter_O'Toole",
   "description": "British-Irish actor (1932–2013)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter_O%27Toole_-_1968.jpg?width=64",
-  "total": 298756,
+  "total": 307850,
   "monthly": [
     {
       "period": "2015-07",
@@ -73,6 +73,10 @@
     {
       "period": "2026-07",
       "views": 9331
+    },
+    {
+      "period": "2026-09",
+      "views": 9094
     }
   ],
   "yearly": [
@@ -106,7 +110,7 @@
     },
     {
       "period": "2026",
-      "views": 22685
+      "views": 31779
     }
   ]
 }

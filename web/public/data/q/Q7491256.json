@@ -1,0 +1,36 @@
+{
+  "qid": "Q7491256",
+  "label": "Shawinigan Handshake",
+  "title": "Shawinigan_Handshake",
+  "description": "chokehold move by the Canadian head of state",
+  "image": "",
+  "total": 32521,
+  "monthly": [
+    {
+      "period": "2022-06",
+      "views": 11997
+    },
+    {
+      "period": "2025-03",
+      "views": 11375
+    },
+    {
+      "period": "2026-09",
+      "views": 9149
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2022",
+      "views": 11997
+    },
+    {
+      "period": "2025",
+      "views": 11375
+    },
+    {
+      "period": "2026",
+      "views": 9149
+    }
+  ]
+}

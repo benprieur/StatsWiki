@@ -1,0 +1,48 @@
+{
+  "qid": "Q14558117",
+  "label": "Neal Skupski",
+  "title": "Neal_Skupski",
+  "description": "British tennis player",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Skupski_N._RG19_%2812%29_%2848199059472%29.jpg?width=64",
+  "total": 177466,
+  "monthly": [
+    {
+      "period": "2021-07",
+      "views": 20553
+    },
+    {
+      "period": "2022-07",
+      "views": 30081
+    },
+    {
+      "period": "2023-07",
+      "views": 100001
+    },
+    {
+      "period": "2026-01",
+      "views": 17614
+    },
+    {
+      "period": "2026-09",
+      "views": 9217
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 20553
+    },
+    {
+      "period": "2022",
+      "views": 30081
+    },
+    {
+      "period": "2023",
+      "views": 100001
+    },
+    {
+      "period": "2026",
+      "views": 26831
+    }
+  ]
+}

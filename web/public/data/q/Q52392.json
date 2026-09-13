@@ -4,7 +4,7 @@
   "title": "Tim_curry",
   "description": "English actor (1946–2026)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tim_Curry_cropped.jpg?width=64",
-  "total": 15134457,
+  "total": 15148983,
   "monthly": [
     {
       "period": "2015-07",
@@ -332,7 +332,7 @@
     },
     {
       "period": "2026-09",
-      "views": 391579
+      "views": 406105
     }
   ],
   "yearly": [
@@ -382,7 +382,7 @@
     },
     {
       "period": "2026",
-      "views": 6207994
+      "views": 6222520
     }
   ]
 }

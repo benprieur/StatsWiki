@@ -1,0 +1,36 @@
+{
+  "qid": "Q26851829",
+  "label": "Henryk Siwiak homicide",
+  "title": "Killing_of_Henryk_Siwiak",
+  "description": "only homicide officially recorded in New York City on September 11, 2001",
+  "image": "",
+  "total": 90485,
+  "monthly": [
+    {
+      "period": "2021-09",
+      "views": 13902
+    },
+    {
+      "period": "2024-09",
+      "views": 48347
+    },
+    {
+      "period": "2026-09",
+      "views": 28236
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 13902
+    },
+    {
+      "period": "2024",
+      "views": 48347
+    },
+    {
+      "period": "2026",
+      "views": 28236
+    }
+  ]
+}

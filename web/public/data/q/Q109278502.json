@@ -1,0 +1,28 @@
+{
+  "qid": "Q109278502",
+  "label": "The Dolphins",
+  "title": "Dolphins_(NRL)",
+  "description": "Australian rugby league NRL club, based in Brisbane",
+  "image": "",
+  "total": 47243,
+  "monthly": [
+    {
+      "period": "2023-03",
+      "views": 34707
+    },
+    {
+      "period": "2026-09",
+      "views": 12536
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2023",
+      "views": 34707
+    },
+    {
+      "period": "2026",
+      "views": 12536
+    }
+  ]
+}

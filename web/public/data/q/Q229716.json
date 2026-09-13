@@ -4,7 +4,7 @@
   "title": "Lulu_(singer)",
   "description": "Scottish singer",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lulu_at_Scotland_House.jpg?width=64",
-  "total": 1414755,
+  "total": 1429565,
   "monthly": [
     {
       "period": "2016-02",
@@ -145,6 +145,10 @@
     {
       "period": "2026-08",
       "views": 13855
+    },
+    {
+      "period": "2026-09",
+      "views": 14810
     }
   ],
   "yearly": [
@@ -190,7 +194,7 @@
     },
     {
       "period": "2026",
-      "views": 126679
+      "views": 141489
     }
   ]
 }

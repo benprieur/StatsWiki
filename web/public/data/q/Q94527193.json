@@ -4,7 +4,7 @@
   "title": "Star_Trek:_Strange_New_Worlds",
   "description": "2022 American television series",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Star_Trek_SNW_logo.svg?width=64",
-  "total": 3890910,
+  "total": 3902751,
   "monthly": [
     {
       "period": "2022-04",
@@ -68,7 +68,7 @@
     },
     {
       "period": "2026-09",
-      "views": 68175
+      "views": 80016
     }
   ],
   "yearly": [
@@ -86,7 +86,7 @@
     },
     {
       "period": "2026",
-      "views": 370574
+      "views": 382415
     }
   ]
 }

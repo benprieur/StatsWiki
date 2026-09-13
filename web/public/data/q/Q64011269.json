@@ -1,0 +1,44 @@
+{
+  "qid": "Q64011269",
+  "label": "Cynthia Germanotta",
+  "title": "Cynthia_Germanotta",
+  "description": "American philanthropist",
+  "image": "",
+  "total": 96044,
+  "monthly": [
+    {
+      "period": "2021-01",
+      "views": 15472
+    },
+    {
+      "period": "2021-11",
+      "views": 9768
+    },
+    {
+      "period": "2024-07",
+      "views": 32090
+    },
+    {
+      "period": "2026-02",
+      "views": 24187
+    },
+    {
+      "period": "2026-09",
+      "views": 14527
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 25240
+    },
+    {
+      "period": "2024",
+      "views": 32090
+    },
+    {
+      "period": "2026",
+      "views": 38714
+    }
+  ]
+}

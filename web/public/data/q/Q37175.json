@@ -4,7 +4,7 @@
   "title": "Johnny_Depp",
   "description": "American actor (born 1963)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Johnny_Depp_2020.jpg?width=64",
-  "total": 71727506,
+  "total": 71738198,
   "monthly": [
     {
       "period": "2015-07",
@@ -544,7 +544,7 @@
     },
     {
       "period": "2026-09",
-      "views": 107506
+      "views": 118198
     }
   ],
   "yearly": [
@@ -594,7 +594,7 @@
     },
     {
       "period": "2026",
-      "views": 1035361
+      "views": 1046053
     }
   ]
 }

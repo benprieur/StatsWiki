@@ -1,0 +1,48 @@
+{
+  "qid": "Q2419149",
+  "label": "Flatwoods monster",
+  "title": "Flatwoods_monster",
+  "description": "Folklore creature",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Flatwoods_monster.png?width=64",
+  "total": 111154,
+  "monthly": [
+    {
+      "period": "2016-02",
+      "views": 33374
+    },
+    {
+      "period": "2016-09",
+      "views": 26414
+    },
+    {
+      "period": "2021-09",
+      "views": 22819
+    },
+    {
+      "period": "2023-09",
+      "views": 11273
+    },
+    {
+      "period": "2026-09",
+      "views": 17274
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 59788
+    },
+    {
+      "period": "2021",
+      "views": 22819
+    },
+    {
+      "period": "2023",
+      "views": 11273
+    },
+    {
+      "period": "2026",
+      "views": 17274
+    }
+  ]
+}

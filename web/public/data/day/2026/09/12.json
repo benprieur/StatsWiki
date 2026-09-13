@@ -1,0 +1,455 @@
+{
+  "period": "12 September 2026",
+  "lines": [
+    {
+      "rank": 1,
+      "title": "Ben_Shelton",
+      "label": "Ben Shelton",
+      "description": "American tennis player",
+      "views": 434567,
+      "qid": "Q108532383",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Shelton_MCM23_%2827%29_%2852883150181%29.jpg?width=64"
+    },
+    {
+      "rank": 2,
+      "title": "September_11_attacks",
+      "label": "September 11 attacks",
+      "description": "2001 attacks in the United States",
+      "views": 430057,
+      "qid": "Q10806",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/North_face_south_tower_after_plane_strike_9-11.jpg?width=64"
+    },
+    {
+      "rank": 3,
+      "title": "Elena_Rybakina",
+      "label": "Elena Rybakina",
+      "description": "Kazakhstani tennis player",
+      "views": 416703,
+      "qid": "Q42055714",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Elena_Rybakina_%282025_DC_Open%29_07_%28cropped2%29.jpg?width=64"
+    },
+    {
+      "rank": 4,
+      "title": "Michael_Polansky",
+      "label": "Michael Polansky",
+      "description": "American businessperson",
+      "views": 301297,
+      "qid": "Q98026080",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Michael_Polansky.jpg?width=64"
+    },
+    {
+      "rank": 5,
+      "title": "Aryna_Sabalenka",
+      "label": "Aryna Sabalenka",
+      "description": "Belarusian tennis player",
+      "views": 270730,
+      "qid": "Q23448791",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Aryna_Sabalenka_Trophy_US_Open_2024_%28cropped%29.jpg?width=64"
+    },
+    {
+      "rank": 6,
+      "title": "Lady_Gaga",
+      "label": "Lady Gaga",
+      "description": "American singer-songwriter and actress (born 1986)",
+      "views": 227999,
+      "qid": "Q19848",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lady_Gaga_at_Oscars_2016.jpg?width=64"
+    },
+    {
+      "rank": 7,
+      "title": "United_Airlines_Flight_93",
+      "label": "United Airlines Flight 93",
+      "description": "9/11 hijacked passenger flight, attempted to hit the US Capitol or the White House",
+      "views": 225536,
+      "qid": "Q638603",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/UA93_path.svg?width=64"
+    },
+    {
+      "rank": 8,
+      "title": "Frances_Tiafoe",
+      "label": "Frances Tiafoe",
+      "description": "American tennis player",
+      "views": 212467,
+      "qid": "Q17305299",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiafoe_EBN17_%283%29_%2835716381482%29.jpg?width=64"
+    },
+    {
+      "rank": 9,
+      "title": "Vishwanath_&_Sons",
+      "label": "Vishwanath & Sons",
+      "description": "Indian film",
+      "views": 166365,
+      "qid": "Q135094933",
+      "image": ""
+    },
+    {
+      "rank": 10,
+      "title": "Bryan_Shelton",
+      "label": "Bryan Shelton",
+      "description": "American tennis coach and former player (born 1965)",
+      "views": 162782,
+      "qid": "Q174287",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bryan_Shelton.jpg?width=64"
+    },
+    {
+      "rank": 11,
+      "title": "Killing_of_the_Clancy_children",
+      "label": "killing of the Clancy children",
+      "description": "2023 triple-filicide",
+      "views": 150439,
+      "qid": "Q141112599",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Clancy-search-warrant.pdf?width=64"
+    },
+    {
+      "rank": 12,
+      "title": "Osama_bin_Laden",
+      "label": "Osama bin Laden",
+      "description": "Saudi terrorist and co-founder of al-Qaeda (1957–2011)",
+      "views": 133250,
+      "qid": "Q1317",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Osama_bin_Laden_portrait.jpg?width=64"
+    },
+    {
+      "rank": 13,
+      "title": "Todd_Beamer",
+      "label": "Todd Beamer",
+      "description": "passenger of hijacked flight United 93 and subsequent victim (1968–2001)",
+      "views": 132680,
+      "qid": "Q1282319",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Todd_Beamer_senior_portrait.jpg?width=64"
+    },
+    {
+      "rank": 14,
+      "title": "Hijackers_in_the_September_11_attacks",
+      "label": "hijackers in the September 11 attacks",
+      "description": "Wikimedia list article",
+      "views": 132030,
+      "qid": "Q3709182",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/September_11_Photo_Montage.jpg?width=64"
+    },
+    {
+      "rank": 15,
+      "title": "Deaths_in_2026",
+      "label": "deaths in 2026",
+      "description": "Wikimedia list article",
+      "views": 124702,
+      "qid": "Q134185145",
+      "image": ""
+    },
+    {
+      "rank": 16,
+      "title": "Trinity_Rodman",
+      "label": "Trinity Rodman",
+      "description": "American soccer player",
+      "views": 124635,
+      "qid": "Q97760769",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trinity_Rodman_%28cropped%29.jpg?width=64"
+    },
+    {
+      "rank": 17,
+      "title": "Hanuman_Ansh",
+      "label": "Hanuman Ansh",
+      "description": "2026 film by Vishal Chaturvedi",
+      "views": 122944,
+      "qid": "Q138527176",
+      "image": ""
+    },
+    {
+      "rank": 18,
+      "title": "Mohamed_Atta",
+      "label": "Mohamed Atta",
+      "description": "Egyptian hijacker and one of the ringleaders of the September 11 attacks (1968–2001)",
+      "views": 122741,
+      "qid": "Q110067",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mohamed_Atta_5-2-01_HQ.jpg?width=64"
+    },
+    {
+      "rank": 19,
+      "title": "The_Falling_Man",
+      "label": "The Falling Man",
+      "description": "iconic photograph from 9/11",
+      "views": 113062,
+      "qid": "Q1259460",
+      "image": ""
+    },
+    {
+      "rank": 20,
+      "title": "Casualties_of_the_September_11_attacks",
+      "label": "Casualties of the September 11 attacks",
+      "description": "victims of terror attacks in the US",
+      "views": 112002,
+      "qid": "Q3489621",
+      "image": ""
+    },
+    {
+      "rank": 21,
+      "title": "World_Trade_Center_(1973–2001)",
+      "label": "World Trade Center",
+      "description": "former skyscraper complex in Manhattan, New York (1968-2001)",
+      "views": 109549,
+      "qid": "Q11235",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/World_Trade_Center%2C_New_York_City_-_aerial_view_%28March_2001%29.jpg?width=64"
+    },
+    {
+      "rank": 22,
+      "title": "Ben_Delo",
+      "label": "Ben Delo",
+      "description": "British mathematician and programmer",
+      "views": 104866,
+      "qid": "Q63531089",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben_Delo_on_stage_at_The_Spectator%27s_%22Who%27s_afraid_of_Bitcoin%3F%22_conference.jpg?width=64"
+    },
+    {
+      "rank": 23,
+      "title": "Welles_Crowther",
+      "label": "Welles Crowther",
+      "description": "American stock trader and volunteer firefighter, victim of September 11 attacks (1977–2001)",
+      "views": 103152,
+      "qid": "Q6067721",
+      "image": ""
+    },
+    {
+      "rank": 24,
+      "title": ".xyz",
+      "label": ".xyz",
+      "description": "sponsored top-level Internet domain",
+      "views": 99453,
+      "qid": "Q16049593",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/.xyz_logo.svg?width=64"
+    },
+    {
+      "rank": 25,
+      "title": "American_Airlines_Flight_11",
+      "label": "American Airlines Flight 11",
+      "description": "9/11 hijacked passenger flight, hit the North Tower of the World Trade Center",
+      "views": 98648,
+      "qid": "Q11694",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Flight_paths_of_hijacked_planes-September_11_attacks.jpg?width=64"
+    },
+    {
+      "rank": 26,
+      "title": "Khalid_Sheikh_Mohammed",
+      "label": "Khalid Sheikh Mohammed",
+      "description": "Pakistani militant who was a member of al-Qaeda",
+      "views": 96775,
+      "qid": "Q319068",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Khalid_Shaikh_Mohammed_%28besk%C3%A5ret%29.jpg?width=64"
+    },
+    {
+      "rank": 27,
+      "title": "Alexander_Zverev",
+      "label": "Alexander Zverev",
+      "description": "German tennis player",
+      "views": 96022,
+      "qid": "Q13990552",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Alexander_Zverev_%2830004409818%29.jpg?width=64"
+    },
+    {
+      "rank": 28,
+      "title": "Elizabeth_Holmes",
+      "label": "Elizabeth Holmes",
+      "description": "American biotechnology entrepreneur convicted of fraud",
+      "views": 88686,
+      "qid": "Q17503525",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Elizabeth_Holmes_2014_cropped.jpg?width=64"
+    },
+    {
+      "rank": 29,
+      "title": "XXX_(2002_film)",
+      "label": "xXx",
+      "description": "2002 film directed by Rob Cohen",
+      "views": 83921,
+      "qid": "Q283799",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Xxx-movie-logo.png?width=64"
+    },
+    {
+      "rank": 30,
+      "title": "Practical_Magic_2",
+      "label": "Practical Magic 2",
+      "description": "2026 film directed by Susanne Bier",
+      "views": 83022,
+      "qid": "Q131901398",
+      "image": ""
+    },
+    {
+      "rank": 31,
+      "title": "Nicky_Spence",
+      "label": "Nicky Spence",
+      "description": "opera singer, recitalist (born 1983)",
+      "views": 80130,
+      "qid": "Q7028693",
+      "image": ""
+    },
+    {
+      "rank": 32,
+      "title": "G._D._Naidu",
+      "label": "Gopalswamy Doraiswamy Naidu",
+      "description": "Antartican inventor and engineer (1893-1974)",
+      "views": 79199,
+      "qid": "Q3526620",
+      "image": ""
+    },
+    {
+      "rank": 33,
+      "title": "Haiwaan_(film)",
+      "label": "Haiwaan",
+      "description": "2026 film",
+      "views": 78666,
+      "qid": "Q138622151",
+      "image": ""
+    },
+    {
+      "rank": 34,
+      "title": "Mirzapur_(film)",
+      "label": "Mirzapur",
+      "description": "2026 Indian film",
+      "views": 77914,
+      "qid": "Q138035399",
+      "image": ""
+    },
+    {
+      "rank": 35,
+      "title": "The_Gentlemen_(2024_TV_series)",
+      "label": "The Gentlemen",
+      "description": "2024 American British TV series",
+      "views": 77567,
+      "qid": "Q115860329",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Gentlemen.webp?width=64"
+    },
+    {
+      "rank": 36,
+      "title": "BRICS",
+      "label": "BRICS",
+      "description": "association of Brazil, Russia, India, China, South Africa, Egypt, Ethiopia, Indonesia, Iran, and the United Arab Emirates",
+      "views": 77119,
+      "qid": "Q243630",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/XV_BRICS_Summit_family_photo.jpg?width=64"
+    },
+    {
+      "rank": 37,
+      "title": "Practical_Magic",
+      "label": "Practical Magic",
+      "description": "1998 film directed by Griffin Dunne",
+      "views": 74843,
+      "qid": "Q148429",
+      "image": ""
+    },
+    {
+      "rank": 38,
+      "title": "Rosh_Hashanah",
+      "label": "Rosh Hashanah",
+      "description": "Jewish day of judgement preceding Yom Kippur (day of atonement), one of several Jewish New Years",
+      "views": 73595,
+      "qid": "Q131028",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rosh_Hashana.jpeg?width=64"
+    },
+    {
+      "rank": 39,
+      "title": "Neatsville,_Kentucky",
+      "label": "Neatsville",
+      "description": "township in Adair County, Kentucky",
+      "views": 73027,
+      "qid": "Q6984524",
+      "image": ""
+    },
+    {
+      "rank": 40,
+      "title": "Lil_Durk",
+      "label": "Lil Durk",
+      "description": "American rapper",
+      "views": 72349,
+      "qid": "Q2899818",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lil_Durk_in_2022.png?width=64"
+    },
+    {
+      "rank": 41,
+      "title": "Ziad_Jarrah",
+      "label": "Ziad Jarrah",
+      "description": "Lebanese terrorist and 9/11 hijacker (1975–2001)",
+      "views": 70125,
+      "qid": "Q198290",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ziad_Jarrah_7-10-01_HQ.jpg?width=64"
+    },
+    {
+      "rank": 42,
+      "title": "Mandaadi",
+      "label": "Mandaadi",
+      "description": "film directed by Mathimaran Pugazhendhi",
+      "views": 68611,
+      "qid": "Q134704471",
+      "image": ""
+    },
+    {
+      "rank": 43,
+      "title": "Spider-Man:_Brand_New_Day",
+      "label": "Spider-Man: Brand New Day",
+      "description": "2026 film directed by Destin Daniel Cretton",
+      "views": 68333,
+      "qid": "Q113244935",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Spider-Man_Brand_New_Day_Logo.svg?width=64"
+    },
+    {
+      "rank": 44,
+      "title": "Theo_James",
+      "label": "Theo James",
+      "description": "British actor and musician",
+      "views": 67784,
+      "qid": "Q568509",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Theo_James_Divergent_premiere.jpg?width=64"
+    },
+    {
+      "rank": 45,
+      "title": "The_Odyssey_(2026_film)",
+      "label": "The Odyssey",
+      "description": "2026 film directed by Christopher Nolan",
+      "views": 67753,
+      "qid": "Q131547207",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Odyssey_Press_Conference_at_Seoul_%28August_3%2C_2026%29.jpg?width=64"
+    },
+    {
+      "rank": 46,
+      "title": "Collapse_of_the_World_Trade_Center",
+      "label": "collapse of the World Trade Center",
+      "description": "collapse of the World Trade Center in New York City on September 11, 2001",
+      "views": 66218,
+      "qid": "Q62179",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Remains_of_WTC1_and_WTC2_after_9-11.jpg?width=64"
+    },
+    {
+      "rank": 47,
+      "title": "UFC_Fight_Night:_Silva_vs._Delgado",
+      "label": "UFC Fight Night 288",
+      "description": "mixed martial arts event in 2026",
+      "views": 65947,
+      "qid": "Q140521027",
+      "image": ""
+    },
+    {
+      "rank": 48,
+      "title": "Shailene_Woodley",
+      "label": "Shailene Woodley",
+      "description": "American actress (born 1991)",
+      "views": 65000,
+      "qid": "Q231058",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Shailene_Woodley_2018_%28cropped%29.jpg?width=64"
+    },
+    {
+      "rank": 49,
+      "title": "Neem_Karoli_Baba",
+      "label": "Neem Karoli Baba",
+      "description": "Hindu religious leader (c.1900–1973)",
+      "views": 64210,
+      "qid": "Q708116",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Neemkaroli_14.jpg?width=64"
+    },
+    {
+      "rank": 50,
+      "title": "Brian_Steel",
+      "label": "Brian Steel",
+      "description": "American attorney",
+      "views": 64192,
+      "qid": "Q131157707",
+      "image": ""
+    }
+  ]
+}

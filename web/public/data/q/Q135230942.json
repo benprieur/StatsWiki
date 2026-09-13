@@ -1,0 +1,40 @@
+{
+  "qid": "Q135230942",
+  "label": "Bear Bachmeier",
+  "title": "Bear_Bachmeier",
+  "description": "American football player",
+  "image": "",
+  "total": 212830,
+  "monthly": [
+    {
+      "period": "2025-09",
+      "views": 15794
+    },
+    {
+      "period": "2025-10",
+      "views": 72689
+    },
+    {
+      "period": "2025-11",
+      "views": 31371
+    },
+    {
+      "period": "2025-12",
+      "views": 83652
+    },
+    {
+      "period": "2026-09",
+      "views": 9324
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 203506
+    },
+    {
+      "period": "2026",
+      "views": 9324
+    }
+  ]
+}

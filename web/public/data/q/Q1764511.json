@@ -4,7 +4,7 @@
   "title": "G7",
   "description": "international intergovernmental economic organization",
   "image": "",
-  "total": 2029900,
+  "total": 2039439,
   "monthly": [
     {
       "period": "2018-06",
@@ -69,6 +69,10 @@
     {
       "period": "2026-06",
       "views": 178534
+    },
+    {
+      "period": "2026-09",
+      "views": 9539
     }
   ],
   "yearly": [
@@ -94,7 +98,7 @@
     },
     {
       "period": "2026",
-      "views": 178534
+      "views": 188073
     }
   ]
 }

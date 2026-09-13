@@ -1,0 +1,20 @@
+{
+  "qid": "Q136842075",
+  "label": "Physical 100: Italy",
+  "title": "Physical_100:_Italy",
+  "description": "Italian reality competition series",
+  "image": "",
+  "total": 9172,
+  "monthly": [
+    {
+      "period": "2026-09",
+      "views": 9172
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 9172
+    }
+  ]
+}

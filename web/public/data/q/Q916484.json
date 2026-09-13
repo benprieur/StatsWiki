@@ -1,0 +1,56 @@
+{
+  "qid": "Q916484",
+  "label": "Texas",
+  "title": "Texas_(band)",
+  "description": "Scottish musical group; alternative rock band",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Texas_Rockefeller_Music_Hall_2018_%28213851%29.jpg?width=64",
+  "total": 201104,
+  "monthly": [
+    {
+      "period": "2022-05",
+      "views": 15004
+    },
+    {
+      "period": "2023-06",
+      "views": 78377
+    },
+    {
+      "period": "2023-11",
+      "views": 46673
+    },
+    {
+      "period": "2024-03",
+      "views": 35784
+    },
+    {
+      "period": "2025-06",
+      "views": 13662
+    },
+    {
+      "period": "2026-09",
+      "views": 11604
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2022",
+      "views": 15004
+    },
+    {
+      "period": "2023",
+      "views": 125050
+    },
+    {
+      "period": "2024",
+      "views": 35784
+    },
+    {
+      "period": "2025",
+      "views": 13662
+    },
+    {
+      "period": "2026",
+      "views": 11604
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "qid": "Q125649655",
+  "label": "India Royale",
+  "title": "India_Royale",
+  "description": "American makeup artist (born 1995)",
+  "image": "",
+  "total": 36720,
+  "monthly": [
+    {
+      "period": "2024-10",
+      "views": 24757
+    },
+    {
+      "period": "2026-09",
+      "views": 11963
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2024",
+      "views": 24757
+    },
+    {
+      "period": "2026",
+      "views": 11963
+    }
+  ]
+}

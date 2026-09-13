@@ -4,7 +4,7 @@
   "title": "Will_Stein",
   "description": "American football coach",
   "image": "",
-  "total": 171401,
+  "total": 215140,
   "monthly": [
     {
       "period": "2025-12",
@@ -13,6 +13,10 @@
     {
       "period": "2026-07",
       "views": 9218
+    },
+    {
+      "period": "2026-09",
+      "views": 43739
     }
   ],
   "yearly": [
@@ -22,7 +26,7 @@
     },
     {
       "period": "2026",
-      "views": 9218
+      "views": 52957
     }
   ]
 }

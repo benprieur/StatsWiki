@@ -4,7 +4,7 @@
   "title": "Long-term_nuclear_waste_warning_messages",
   "description": "messages on nuclear waste stations, intended to deter the entrance of future intelligent life",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pictogram_for_nuclear_sites%2C_US_Department_of_Energy%2C_2004.png?width=64",
-  "total": 508695,
+  "total": 527879,
   "monthly": [
     {
       "period": "2022-03",
@@ -52,7 +52,7 @@
     },
     {
       "period": "2026-09",
-      "views": 38618
+      "views": 57802
     }
   ],
   "yearly": [
@@ -74,7 +74,7 @@
     },
     {
       "period": "2026",
-      "views": 38618
+      "views": 57802
     }
   ]
 }

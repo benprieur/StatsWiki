@@ -4,7 +4,7 @@
   "title": "Barbara_Olson",
   "description": "American lawyer (1955-2001)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/BarbaraOlson_%28c._2001%29.png?width=64",
-  "total": 109353,
+  "total": 120827,
   "monthly": [
     {
       "period": "2018-03",
@@ -20,7 +20,7 @@
     },
     {
       "period": "2026-09",
-      "views": 11608
+      "views": 23082
     }
   ],
   "yearly": [
@@ -34,7 +34,7 @@
     },
     {
       "period": "2026",
-      "views": 11608
+      "views": 23082
     }
   ]
 }

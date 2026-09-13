@@ -4,7 +4,7 @@
   "title": "Salty_and_Roselle",
   "description": "working Guide Dogs in 9/11",
   "image": "",
-  "total": 572789,
+  "total": 584154,
   "monthly": [
     {
       "period": "2016-08",
@@ -20,7 +20,7 @@
     },
     {
       "period": "2026-09",
-      "views": 14470
+      "views": 25835
     }
   ],
   "yearly": [
@@ -38,7 +38,7 @@
     },
     {
       "period": "2026",
-      "views": 14470
+      "views": 25835
     }
   ]
 }

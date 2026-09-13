@@ -1,0 +1,36 @@
+{
+  "qid": "Q16975737",
+  "label": "Rock Chalk, Jayhawk",
+  "title": "Rock_Chalk,_Jayhawk",
+  "description": "chant associated with the University of Kansas Jayhawks",
+  "image": "",
+  "total": 52486,
+  "monthly": [
+    {
+      "period": "2022-04",
+      "views": 30696
+    },
+    {
+      "period": "2025-02",
+      "views": 11899
+    },
+    {
+      "period": "2026-09",
+      "views": 9891
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2022",
+      "views": 30696
+    },
+    {
+      "period": "2025",
+      "views": 11899
+    },
+    {
+      "period": "2026",
+      "views": 9891
+    }
+  ]
+}

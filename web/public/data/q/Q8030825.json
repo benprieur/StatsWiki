@@ -4,7 +4,7 @@
   "title": "Women's_Asia_Cup",
   "description": "cricket tournament",
   "image": "",
-  "total": 395609,
+  "total": 407946,
   "monthly": [
     {
       "period": "2022-10",
@@ -16,7 +16,7 @@
     },
     {
       "period": "2026-09",
-      "views": 27763
+      "views": 40100
     }
   ],
   "yearly": [
@@ -30,7 +30,7 @@
     },
     {
       "period": "2026",
-      "views": 27763
+      "views": 40100
     }
   ]
 }

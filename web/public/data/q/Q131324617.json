@@ -4,7 +4,7 @@
   "title": "MobLand",
   "description": "British television series",
   "image": "",
-  "total": 5029467,
+  "total": 5044384,
   "monthly": [
     {
       "period": "2025-03",
@@ -36,7 +36,7 @@
     },
     {
       "period": "2026-09",
-      "views": 69868
+      "views": 84785
     }
   ],
   "yearly": [
@@ -46,7 +46,7 @@
     },
     {
       "period": "2026",
-      "views": 116981
+      "views": 131898
     }
   ]
 }

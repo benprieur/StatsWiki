@@ -1,0 +1,56 @@
+{
+  "qid": "Q1367412",
+  "label": "Kanstantsin Kaltsou",
+  "title": "Konstantin_Koltsov",
+  "description": "Belarusian ice hockey player",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Konstantin_Koltsov.jpg?width=64",
+  "total": 443546,
+  "monthly": [
+    {
+      "period": "2024-03",
+      "views": 206920
+    },
+    {
+      "period": "2024-09",
+      "views": 65314
+    },
+    {
+      "period": "2025-01",
+      "views": 18360
+    },
+    {
+      "period": "2025-06",
+      "views": 24095
+    },
+    {
+      "period": "2025-07",
+      "views": 53902
+    },
+    {
+      "period": "2025-09",
+      "views": 46180
+    },
+    {
+      "period": "2026-01",
+      "views": 16978
+    },
+    {
+      "period": "2026-09",
+      "views": 11797
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2024",
+      "views": 272234
+    },
+    {
+      "period": "2025",
+      "views": 142537
+    },
+    {
+      "period": "2026",
+      "views": 28775
+    }
+  ]
+}

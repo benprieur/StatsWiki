@@ -1,0 +1,20 @@
+{
+  "qid": "Q140502158",
+  "label": "2027 Asia Cup",
+  "title": "2027_Asia_Cup",
+  "description": "cricket tournament",
+  "image": "",
+  "total": 15087,
+  "monthly": [
+    {
+      "period": "2026-09",
+      "views": 15087
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 15087
+    }
+  ]
+}

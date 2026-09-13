@@ -1,0 +1,256 @@
+{
+  "qid": "Q1545",
+  "label": "Cyndi Lauper",
+  "title": "Cyndi_Lauper",
+  "description": "American singer",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/CyndiLauper2022.jpg?width=64",
+  "total": 2351929,
+  "monthly": [
+    {
+      "period": "2015-10",
+      "views": 185629
+    },
+    {
+      "period": "2016-04",
+      "views": 54659
+    },
+    {
+      "period": "2016-05",
+      "views": 13012
+    },
+    {
+      "period": "2016-06",
+      "views": 10801
+    },
+    {
+      "period": "2016-09",
+      "views": 9361
+    },
+    {
+      "period": "2017-01",
+      "views": 18198
+    },
+    {
+      "period": "2017-06",
+      "views": 12108
+    },
+    {
+      "period": "2017-07",
+      "views": 50241
+    },
+    {
+      "period": "2017-08",
+      "views": 9002
+    },
+    {
+      "period": "2017-10",
+      "views": 10678
+    },
+    {
+      "period": "2018-04",
+      "views": 24994
+    },
+    {
+      "period": "2018-05",
+      "views": 36845
+    },
+    {
+      "period": "2018-12",
+      "views": 10226
+    },
+    {
+      "period": "2019-05",
+      "views": 14225
+    },
+    {
+      "period": "2019-07",
+      "views": 26579
+    },
+    {
+      "period": "2019-10",
+      "views": 25719
+    },
+    {
+      "period": "2019-12",
+      "views": 12267
+    },
+    {
+      "period": "2020-01",
+      "views": 46366
+    },
+    {
+      "period": "2020-10",
+      "views": 25938
+    },
+    {
+      "period": "2020-12",
+      "views": 26417
+    },
+    {
+      "period": "2021-01",
+      "views": 210665
+    },
+    {
+      "period": "2021-04",
+      "views": 10387
+    },
+    {
+      "period": "2021-09",
+      "views": 27699
+    },
+    {
+      "period": "2022-07",
+      "views": 15631
+    },
+    {
+      "period": "2022-10",
+      "views": 10588
+    },
+    {
+      "period": "2022-11",
+      "views": 15782
+    },
+    {
+      "period": "2022-12",
+      "views": 26344
+    },
+    {
+      "period": "2023-01",
+      "views": 53453
+    },
+    {
+      "period": "2023-04",
+      "views": 13538
+    },
+    {
+      "period": "2023-06",
+      "views": 24975
+    },
+    {
+      "period": "2023-09",
+      "views": 15205
+    },
+    {
+      "period": "2024-01",
+      "views": 68164
+    },
+    {
+      "period": "2024-02",
+      "views": 185314
+    },
+    {
+      "period": "2024-05",
+      "views": 22928
+    },
+    {
+      "period": "2024-06",
+      "views": 442616
+    },
+    {
+      "period": "2024-07",
+      "views": 48007
+    },
+    {
+      "period": "2024-09",
+      "views": 29945
+    },
+    {
+      "period": "2025-01",
+      "views": 28266
+    },
+    {
+      "period": "2025-02",
+      "views": 56476
+    },
+    {
+      "period": "2025-03",
+      "views": 25251
+    },
+    {
+      "period": "2025-04",
+      "views": 9584
+    },
+    {
+      "period": "2025-05",
+      "views": 10890
+    },
+    {
+      "period": "2025-06",
+      "views": 13814
+    },
+    {
+      "period": "2025-07",
+      "views": 12417
+    },
+    {
+      "period": "2025-10",
+      "views": 203308
+    },
+    {
+      "period": "2025-11",
+      "views": 34177
+    },
+    {
+      "period": "2026-01",
+      "views": 83558
+    },
+    {
+      "period": "2026-05",
+      "views": 8840
+    },
+    {
+      "period": "2026-09",
+      "views": 20842
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 185629
+    },
+    {
+      "period": "2016",
+      "views": 87833
+    },
+    {
+      "period": "2017",
+      "views": 100227
+    },
+    {
+      "period": "2018",
+      "views": 72065
+    },
+    {
+      "period": "2019",
+      "views": 78790
+    },
+    {
+      "period": "2020",
+      "views": 98721
+    },
+    {
+      "period": "2021",
+      "views": 248751
+    },
+    {
+      "period": "2022",
+      "views": 68345
+    },
+    {
+      "period": "2023",
+      "views": 107171
+    },
+    {
+      "period": "2024",
+      "views": 796974
+    },
+    {
+      "period": "2025",
+      "views": 394183
+    },
+    {
+      "period": "2026",
+      "views": 113240
+    }
+  ]
+}

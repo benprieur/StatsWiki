@@ -4,7 +4,7 @@
   "title": "Larry_Silverstein",
   "description": "American businessman",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Larry_Silverstein_for_UJA-Federation_of_New_York.jpg?width=64",
-  "total": 410809,
+  "total": 453260,
   "monthly": [
     {
       "period": "2015-09",
@@ -56,7 +56,7 @@
     },
     {
       "period": "2026-09",
-      "views": 33204
+      "views": 75655
     }
   ],
   "yearly": [
@@ -98,7 +98,7 @@
     },
     {
       "period": "2026",
-      "views": 106968
+      "views": 149419
     }
   ]
 }

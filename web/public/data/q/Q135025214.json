@@ -4,7 +4,7 @@
   "title": "Drishyam_3",
   "description": "2026 film by Jeethu Joseph",
   "image": "",
-  "total": 1599629,
+  "total": 1608256,
   "monthly": [
     {
       "period": "2025-12",
@@ -28,7 +28,7 @@
     },
     {
       "period": "2026-09",
-      "views": 50716
+      "views": 59343
     }
   ],
   "yearly": [
@@ -38,7 +38,7 @@
     },
     {
       "period": "2026",
-      "views": 1574255
+      "views": 1582882
     }
   ]
 }

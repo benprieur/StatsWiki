@@ -1,0 +1,156 @@
+{
+  "qid": "Q508171",
+  "label": "Beverley Knight",
+  "title": "Beverley_Knight",
+  "description": "British soul singer, songwriter and record producer",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beverley_Knight_2025.jpg?width=64",
+  "total": 481230,
+  "monthly": [
+    {
+      "period": "2015-10",
+      "views": 9178
+    },
+    {
+      "period": "2015-12",
+      "views": 23614
+    },
+    {
+      "period": "2016-01",
+      "views": 13014
+    },
+    {
+      "period": "2016-05",
+      "views": 16354
+    },
+    {
+      "period": "2016-06",
+      "views": 12914
+    },
+    {
+      "period": "2017-02",
+      "views": 28505
+    },
+    {
+      "period": "2017-09",
+      "views": 9124
+    },
+    {
+      "period": "2017-12",
+      "views": 53319
+    },
+    {
+      "period": "2018-08",
+      "views": 9147
+    },
+    {
+      "period": "2019-03",
+      "views": 14037
+    },
+    {
+      "period": "2019-08",
+      "views": 9843
+    },
+    {
+      "period": "2019-09",
+      "views": 9393
+    },
+    {
+      "period": "2019-12",
+      "views": 12614
+    },
+    {
+      "period": "2020-05",
+      "views": 25850
+    },
+    {
+      "period": "2020-12",
+      "views": 12883
+    },
+    {
+      "period": "2022-01",
+      "views": 12151
+    },
+    {
+      "period": "2022-02",
+      "views": 13528
+    },
+    {
+      "period": "2022-08",
+      "views": 23754
+    },
+    {
+      "period": "2023-01",
+      "views": 34466
+    },
+    {
+      "period": "2023-03",
+      "views": 17648
+    },
+    {
+      "period": "2023-09",
+      "views": 11901
+    },
+    {
+      "period": "2024-01",
+      "views": 69428
+    },
+    {
+      "period": "2025-09",
+      "views": 14582
+    },
+    {
+      "period": "2026-02",
+      "views": 12146
+    },
+    {
+      "period": "2026-09",
+      "views": 11837
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 32792
+    },
+    {
+      "period": "2016",
+      "views": 42282
+    },
+    {
+      "period": "2017",
+      "views": 90948
+    },
+    {
+      "period": "2018",
+      "views": 9147
+    },
+    {
+      "period": "2019",
+      "views": 45887
+    },
+    {
+      "period": "2020",
+      "views": 38733
+    },
+    {
+      "period": "2022",
+      "views": 49433
+    },
+    {
+      "period": "2023",
+      "views": 64015
+    },
+    {
+      "period": "2024",
+      "views": 69428
+    },
+    {
+      "period": "2025",
+      "views": 14582
+    },
+    {
+      "period": "2026",
+      "views": 23983
+    }
+  ]
+}

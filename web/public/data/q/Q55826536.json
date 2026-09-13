@@ -1,0 +1,20 @@
+{
+  "qid": "Q55826536",
+  "label": "BitMEX",
+  "title": "BitMEX",
+  "description": "cryptocurrency exchange",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bitmex_logo.png?width=64",
+  "total": 9288,
+  "monthly": [
+    {
+      "period": "2026-09",
+      "views": 9288
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 9288
+    }
+  ]
+}

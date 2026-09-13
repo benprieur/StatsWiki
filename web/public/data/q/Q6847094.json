@@ -1,0 +1,112 @@
+{
+  "qid": "Q6847094",
+  "label": "Mike Gundy",
+  "title": "Mike_Gundy",
+  "description": "American college football player, college football coach",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Coach_Gundy_adresses_the_media_after_the_BCS_Countdown_%28cropped%29.jpg?width=64",
+  "total": 384649,
+  "monthly": [
+    {
+      "period": "2017-11",
+      "views": 62537
+    },
+    {
+      "period": "2017-12",
+      "views": 12630
+    },
+    {
+      "period": "2018-10",
+      "views": 15377
+    },
+    {
+      "period": "2019-09",
+      "views": 12780
+    },
+    {
+      "period": "2019-12",
+      "views": 26860
+    },
+    {
+      "period": "2020-06",
+      "views": 59891
+    },
+    {
+      "period": "2021-11",
+      "views": 28934
+    },
+    {
+      "period": "2021-12",
+      "views": 15078
+    },
+    {
+      "period": "2022-01",
+      "views": 13221
+    },
+    {
+      "period": "2023-11",
+      "views": 13009
+    },
+    {
+      "period": "2023-12",
+      "views": 11983
+    },
+    {
+      "period": "2024-11",
+      "views": 9887
+    },
+    {
+      "period": "2024-12",
+      "views": 15854
+    },
+    {
+      "period": "2025-09",
+      "views": 77344
+    },
+    {
+      "period": "2026-09",
+      "views": 9264
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2017",
+      "views": 75167
+    },
+    {
+      "period": "2018",
+      "views": 15377
+    },
+    {
+      "period": "2019",
+      "views": 39640
+    },
+    {
+      "period": "2020",
+      "views": 59891
+    },
+    {
+      "period": "2021",
+      "views": 44012
+    },
+    {
+      "period": "2022",
+      "views": 13221
+    },
+    {
+      "period": "2023",
+      "views": 24992
+    },
+    {
+      "period": "2024",
+      "views": 25741
+    },
+    {
+      "period": "2025",
+      "views": 77344
+    },
+    {
+      "period": "2026",
+      "views": 9264
+    }
+  ]
+}

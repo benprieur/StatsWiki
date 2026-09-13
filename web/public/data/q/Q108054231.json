@@ -4,7 +4,7 @@
   "title": "Trinity_Benson",
   "description": "football player (born 1997)",
   "image": "",
-  "total": 136590,
+  "total": 147877,
   "monthly": [
     {
       "period": "2024-07",
@@ -24,7 +24,7 @@
     },
     {
       "period": "2026-09",
-      "views": 13350
+      "views": 24637
     }
   ],
   "yearly": [
@@ -34,7 +34,7 @@
     },
     {
       "period": "2026",
-      "views": 25564
+      "views": 36851
     }
   ]
 }

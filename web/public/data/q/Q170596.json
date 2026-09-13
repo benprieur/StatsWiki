@@ -4,7 +4,7 @@
   "title": "T._E._Lawrence",
   "description": "British archaeologist, army officer and diplomat (1888–1935)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Te_lawrence.jpg?width=64",
-  "total": 818796,
+  "total": 837834,
   "monthly": [
     {
       "period": "2015-07",
@@ -149,6 +149,10 @@
     {
       "period": "2026-08",
       "views": 8162
+    },
+    {
+      "period": "2026-09",
+      "views": 19038
     }
   ],
   "yearly": [
@@ -198,7 +202,7 @@
     },
     {
       "period": "2026",
-      "views": 51626
+      "views": 70664
     }
   ]
 }

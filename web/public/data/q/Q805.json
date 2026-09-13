@@ -4,7 +4,7 @@
   "title": "Yemen",
   "description": "country in West Asia",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sanaa_HDR_%2816482367935%29.jpg?width=64",
-  "total": 2718320,
+  "total": 2746013,
   "monthly": [
     {
       "period": "2016-10",
@@ -176,7 +176,7 @@
     },
     {
       "period": "2026-09",
-      "views": 68654
+      "views": 96347
     }
   ],
   "yearly": [
@@ -218,7 +218,7 @@
     },
     {
       "period": "2026",
-      "views": 264613
+      "views": 292306
     }
   ]
 }

@@ -1,0 +1,36 @@
+{
+  "qid": "Q465311",
+  "label": "Yuja Wang",
+  "title": "Yuja_Wang",
+  "description": "Chinese pianist",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Yuja-Wang-2014.jpg?width=64",
+  "total": 64538,
+  "monthly": [
+    {
+      "period": "2019-08",
+      "views": 11611
+    },
+    {
+      "period": "2022-08",
+      "views": 10146
+    },
+    {
+      "period": "2026-09",
+      "views": 42781
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2019",
+      "views": 11611
+    },
+    {
+      "period": "2022",
+      "views": 10146
+    },
+    {
+      "period": "2026",
+      "views": 42781
+    }
+  ]
+}

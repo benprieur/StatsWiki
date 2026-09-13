@@ -1,0 +1,28 @@
+{
+  "qid": "Q3050406",
+  "label": "Saeed al-Ghamdi",
+  "title": "Saeed_al-Ghamdi",
+  "description": "9/11 hijacker",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saeed_al-Ghamdi_7-10-01_HQ.jpg?width=64",
+  "total": 39943,
+  "monthly": [
+    {
+      "period": "2021-09",
+      "views": 31156
+    },
+    {
+      "period": "2026-09",
+      "views": 8787
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 31156
+    },
+    {
+      "period": "2026",
+      "views": 8787
+    }
+  ]
+}

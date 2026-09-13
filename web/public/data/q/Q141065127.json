@@ -4,7 +4,7 @@
   "title": "Magudam_(2026_film)",
   "description": "2026 film directed by Vishal",
   "image": "",
-  "total": 89817,
+  "total": 105491,
   "monthly": [
     {
       "period": "2026-08",
@@ -12,13 +12,13 @@
     },
     {
       "period": "2026-09",
-      "views": 15374
+      "views": 31048
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 89817
+      "views": 105491
     }
   ]
 }

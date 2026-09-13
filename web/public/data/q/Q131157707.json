@@ -1,0 +1,28 @@
+{
+  "qid": "Q131157707",
+  "label": "Brian Steel",
+  "title": "Brian_Steel",
+  "description": "American attorney",
+  "image": "",
+  "total": 101953,
+  "monthly": [
+    {
+      "period": "2025-07",
+      "views": 37761
+    },
+    {
+      "period": "2026-09",
+      "views": 64192
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 37761
+    },
+    {
+      "period": "2026",
+      "views": 64192
+    }
+  ]
+}

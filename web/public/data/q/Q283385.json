@@ -1,0 +1,116 @@
+{
+  "qid": "Q283385",
+  "label": "Sharleen Spiteri",
+  "title": "Sharleen_Spiteri",
+  "description": "Scottish singer",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/SharleenSpiteriAvent.jpg?width=64",
+  "total": 658628,
+  "monthly": [
+    {
+      "period": "2015-07",
+      "views": 10171
+    },
+    {
+      "period": "2016-06",
+      "views": 10674
+    },
+    {
+      "period": "2017-04",
+      "views": 36619
+    },
+    {
+      "period": "2017-07",
+      "views": 8729
+    },
+    {
+      "period": "2021-05",
+      "views": 52194
+    },
+    {
+      "period": "2021-09",
+      "views": 49197
+    },
+    {
+      "period": "2021-10",
+      "views": 19282
+    },
+    {
+      "period": "2021-12",
+      "views": 12039
+    },
+    {
+      "period": "2022-01",
+      "views": 19012
+    },
+    {
+      "period": "2022-05",
+      "views": 31138
+    },
+    {
+      "period": "2023-01",
+      "views": 13503
+    },
+    {
+      "period": "2023-06",
+      "views": 167499
+    },
+    {
+      "period": "2023-11",
+      "views": 85914
+    },
+    {
+      "period": "2024-01",
+      "views": 16083
+    },
+    {
+      "period": "2024-03",
+      "views": 74979
+    },
+    {
+      "period": "2025-06",
+      "views": 25971
+    },
+    {
+      "period": "2026-09",
+      "views": 25624
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 10171
+    },
+    {
+      "period": "2016",
+      "views": 10674
+    },
+    {
+      "period": "2017",
+      "views": 45348
+    },
+    {
+      "period": "2021",
+      "views": 132712
+    },
+    {
+      "period": "2022",
+      "views": 50150
+    },
+    {
+      "period": "2023",
+      "views": 266916
+    },
+    {
+      "period": "2024",
+      "views": 91062
+    },
+    {
+      "period": "2025",
+      "views": 25971
+    },
+    {
+      "period": "2026",
+      "views": 25624
+    }
+  ]
+}

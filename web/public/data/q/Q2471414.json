@@ -4,7 +4,7 @@
   "title": "Satam_al-Suqami",
   "description": "9/11 Hijacker (1976–2001)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Satam_al-Suqami_7-3-01_HQ.jpg?width=64",
-  "total": 29674,
+  "total": 47159,
   "monthly": [
     {
       "period": "2021-09",
@@ -12,7 +12,7 @@
     },
     {
       "period": "2026-09",
-      "views": 18893
+      "views": 36378
     }
   ],
   "yearly": [
@@ -22,7 +22,7 @@
     },
     {
       "period": "2026",
-      "views": 18893
+      "views": 36378
     }
   ]
 }

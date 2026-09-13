@@ -4,7 +4,7 @@
   "title": "World_Trade_Center_(2001–present)",
   "description": "building complex in Lower Manhattan, New York City",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lower_Manhattan_from_Jersey_City_September_2020_HDR_panorama_%28cropped%29.jpg?width=64",
-  "total": 260464,
+  "total": 286021,
   "monthly": [
     {
       "period": "2015-09",
@@ -44,7 +44,7 @@
     },
     {
       "period": "2026-09",
-      "views": 28330
+      "views": 53887
     }
   ],
   "yearly": [
@@ -82,7 +82,7 @@
     },
     {
       "period": "2026",
-      "views": 28330
+      "views": 53887
     }
   ]
 }

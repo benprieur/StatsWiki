@@ -3,18 +3,18 @@
   "label": "18th BRICS summit",
   "title": "18th_BRICS_summit",
   "description": "2026 international summit in India",
-  "image": "",
-  "total": 37120,
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/18th_BRICS_Summit_family_picture.jpg?width=64",
+  "total": 73902,
   "monthly": [
     {
       "period": "2026-09",
-      "views": 37120
+      "views": 73902
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 37120
+      "views": 73902
     }
   ]
 }

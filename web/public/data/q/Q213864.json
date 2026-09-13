@@ -4,7 +4,7 @@
   "title": "Paul_Walker",
   "description": "American actor (1973–2013)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/PaulWalkerEdit-1.jpg?width=64",
-  "total": 22980390,
+  "total": 22992958,
   "monthly": [
     {
       "period": "2015-07",
@@ -481,6 +481,10 @@
     {
       "period": "2026-08",
       "views": 213601
+    },
+    {
+      "period": "2026-09",
+      "views": 12568
     }
   ],
   "yearly": [
@@ -530,7 +534,7 @@
     },
     {
       "period": "2026",
-      "views": 406431
+      "views": 418999
     }
   ]
 }

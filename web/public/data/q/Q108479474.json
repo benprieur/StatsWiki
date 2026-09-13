@@ -4,7 +4,7 @@
   "title": "Marvel's_Wolverine",
   "description": "2026 video game developed by Insomniac Games",
   "image": "",
-  "total": 207915,
+  "total": 241338,
   "monthly": [
     {
       "period": "2025-09",
@@ -20,7 +20,7 @@
     },
     {
       "period": "2026-09",
-      "views": 86949
+      "views": 120372
     }
   ],
   "yearly": [
@@ -30,7 +30,7 @@
     },
     {
       "period": "2026",
-      "views": 143444
+      "views": 176867
     }
   ]
 }

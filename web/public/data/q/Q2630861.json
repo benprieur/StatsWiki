@@ -4,7 +4,7 @@
   "title": "Operation_Yellow_Ribbon",
   "description": "diversion of Canadian civilian flights from US airspace after 9/11",
   "image": "",
-  "total": 644463,
+  "total": 660384,
   "monthly": [
     {
       "period": "2015-09",
@@ -40,7 +40,7 @@
     },
     {
       "period": "2026-09",
-      "views": 22145
+      "views": 38066
     }
   ],
   "yearly": [
@@ -74,7 +74,7 @@
     },
     {
       "period": "2026",
-      "views": 22145
+      "views": 38066
     }
   ]
 }

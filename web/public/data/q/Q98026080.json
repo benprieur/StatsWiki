@@ -1,0 +1,56 @@
+{
+  "qid": "Q98026080",
+  "label": "Michael Polansky",
+  "title": "Michael_Polansky",
+  "description": "American businessperson",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Michael_Polansky.jpg?width=64",
+  "total": 713913,
+  "monthly": [
+    {
+      "period": "2025-04",
+      "views": 22397
+    },
+    {
+      "period": "2025-05",
+      "views": 28395
+    },
+    {
+      "period": "2025-06",
+      "views": 9990
+    },
+    {
+      "period": "2025-09",
+      "views": 101417
+    },
+    {
+      "period": "2025-10",
+      "views": 34084
+    },
+    {
+      "period": "2025-11",
+      "views": 14107
+    },
+    {
+      "period": "2026-02",
+      "views": 178085
+    },
+    {
+      "period": "2026-03",
+      "views": 24141
+    },
+    {
+      "period": "2026-09",
+      "views": 301297
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 210390
+    },
+    {
+      "period": "2026",
+      "views": 503523
+    }
+  ]
+}

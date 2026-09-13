@@ -4,7 +4,7 @@
   "title": "East–West_Crude_Oil_Pipeline",
   "description": "oil pipeline in Saudi Arabia",
   "image": "",
-  "total": 47614,
+  "total": 56480,
   "monthly": [
     {
       "period": "2026-03",
@@ -12,13 +12,13 @@
     },
     {
       "period": "2026-09",
-      "views": 9609
+      "views": 18475
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 47614
+      "views": 56480
     }
   ]
 }

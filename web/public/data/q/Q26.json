@@ -4,7 +4,7 @@
   "title": "Northern_Ireland",
   "description": "part of the United Kingdom situated on the island of Ireland",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Northern_Ireland_-_panoramio.jpg?width=64",
-  "total": 1506765,
+  "total": 1515925,
   "monthly": [
     {
       "period": "2016-03",
@@ -149,6 +149,10 @@
     {
       "period": "2026-06",
       "views": 28239
+    },
+    {
+      "period": "2026-09",
+      "views": 9160
     }
   ],
   "yearly": [
@@ -194,7 +198,7 @@
     },
     {
       "period": "2026",
-      "views": 51542
+      "views": 60702
     }
   ]
 }

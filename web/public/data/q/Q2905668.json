@@ -1,0 +1,108 @@
+{
+  "qid": "Q2905668",
+  "label": "Jack Savoretti",
+  "title": "Jack_Savoretti",
+  "description": "British singer and musician",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jack_wiki.jpg?width=64",
+  "total": 356056,
+  "monthly": [
+    {
+      "period": "2015-08",
+      "views": 11101
+    },
+    {
+      "period": "2016-01",
+      "views": 30897
+    },
+    {
+      "period": "2016-05",
+      "views": 9462
+    },
+    {
+      "period": "2016-11",
+      "views": 11076
+    },
+    {
+      "period": "2016-12",
+      "views": 26733
+    },
+    {
+      "period": "2018-11",
+      "views": 14376
+    },
+    {
+      "period": "2019-02",
+      "views": 11808
+    },
+    {
+      "period": "2019-03",
+      "views": 25587
+    },
+    {
+      "period": "2019-06",
+      "views": 16273
+    },
+    {
+      "period": "2021-06",
+      "views": 44872
+    },
+    {
+      "period": "2021-10",
+      "views": 18975
+    },
+    {
+      "period": "2024-05",
+      "views": 15169
+    },
+    {
+      "period": "2024-09",
+      "views": 13248
+    },
+    {
+      "period": "2026-01",
+      "views": 35323
+    },
+    {
+      "period": "2026-02",
+      "views": 21633
+    },
+    {
+      "period": "2026-04",
+      "views": 35893
+    },
+    {
+      "period": "2026-09",
+      "views": 13630
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 11101
+    },
+    {
+      "period": "2016",
+      "views": 78168
+    },
+    {
+      "period": "2018",
+      "views": 14376
+    },
+    {
+      "period": "2019",
+      "views": 53668
+    },
+    {
+      "period": "2021",
+      "views": 63847
+    },
+    {
+      "period": "2024",
+      "views": 28417
+    },
+    {
+      "period": "2026",
+      "views": 106479
+    }
+  ]
+}
