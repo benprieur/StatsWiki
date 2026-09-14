@@ -4,7 +4,7 @@
   "title": "Jason_Kelce",
   "description": "American football player (born 1987)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/JasonKelce.jpg?width=64",
-  "total": 9329907,
+  "total": 9340668,
   "monthly": [
     {
       "period": "2017-09",
@@ -149,6 +149,10 @@
     {
       "period": "2026-07",
       "views": 47197
+    },
+    {
+      "period": "2026-09",
+      "views": 10761
     }
   ],
   "yearly": [
@@ -190,7 +194,7 @@
     },
     {
       "period": "2026",
-      "views": 47197
+      "views": 57958
     }
   ]
 }

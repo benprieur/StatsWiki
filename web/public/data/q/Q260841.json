@@ -1,0 +1,20 @@
+{
+  "qid": "Q260841",
+  "label": "Charlie Burchill",
+  "title": "Charlie_Burchill",
+  "description": "Scottish musician and composer",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ch_Burchill.jpg?width=64",
+  "total": 10491,
+  "monthly": [
+    {
+      "period": "2026-09",
+      "views": 10491
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 10491
+    }
+  ]
+}

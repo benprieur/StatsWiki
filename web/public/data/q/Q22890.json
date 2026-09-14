@@ -4,7 +4,7 @@
   "title": "Ireland",
   "description": "island in the North Atlantic Ocean",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ireland_%28MODIS%29.jpg?width=64",
-  "total": 5409664,
+  "total": 5420509,
   "monthly": [
     {
       "period": "2015-07",
@@ -312,7 +312,7 @@
     },
     {
       "period": "2026-09",
-      "views": 10028
+      "views": 20873
     }
   ],
   "yearly": [
@@ -362,7 +362,7 @@
     },
     {
       "period": "2026",
-      "views": 69254
+      "views": 80099
     }
   ]
 }

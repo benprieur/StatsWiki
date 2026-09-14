@@ -4,7 +4,7 @@
   "title": "Gianluigi_Donnarumma",
   "description": "Italian association football player (born 1999)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Norway_Italy_-_June_2025_B_33_-_Gianluigi_Donnarumma_%28close-up%29.jpg?width=64",
-  "total": 3152737,
+  "total": 3162060,
   "monthly": [
     {
       "period": "2015-10",
@@ -165,6 +165,10 @@
     {
       "period": "2026-07",
       "views": 8844
+    },
+    {
+      "period": "2026-09",
+      "views": 9323
     }
   ],
   "yearly": [
@@ -206,7 +210,7 @@
     },
     {
       "period": "2026",
-      "views": 96928
+      "views": 106251
     }
   ]
 }

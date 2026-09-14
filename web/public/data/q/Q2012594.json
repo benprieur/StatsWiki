@@ -4,7 +4,7 @@
   "title": "Gianmarco_Tamberi",
   "description": "Italian high jumper",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/532_tamberi_na_de_2m33_%2826069157616%29.jpg?width=64",
-  "total": 328900,
+  "total": 340217,
   "monthly": [
     {
       "period": "2021-08",
@@ -29,6 +29,10 @@
     {
       "period": "2026-08",
       "views": 16789
+    },
+    {
+      "period": "2026-09",
+      "views": 11317
     }
   ],
   "yearly": [
@@ -50,7 +54,7 @@
     },
     {
       "period": "2026",
-      "views": 16789
+      "views": 28106
     }
   ]
 }

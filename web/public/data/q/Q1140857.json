@@ -1,0 +1,20 @@
+{
+  "qid": "Q1140857",
+  "label": "Kewpie doll",
+  "title": "Kewpie",
+  "description": "brand of dolls and figurines",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Celluloid_Kewpie_doll.jpg?width=64",
+  "total": 53937,
+  "monthly": [
+    {
+      "period": "2026-09",
+      "views": 53937
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 53937
+    }
+  ]
+}

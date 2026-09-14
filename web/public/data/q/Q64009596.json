@@ -1,0 +1,144 @@
+{
+  "qid": "Q64009596",
+  "label": "Devin Haney",
+  "title": "Devin_Haney",
+  "description": "American boxer",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Devin_Haney.jpg?width=64",
+  "total": 2209572,
+  "monthly": [
+    {
+      "period": "2019-09",
+      "views": 10574
+    },
+    {
+      "period": "2019-11",
+      "views": 34771
+    },
+    {
+      "period": "2020-02",
+      "views": 35241
+    },
+    {
+      "period": "2020-10",
+      "views": 13771
+    },
+    {
+      "period": "2020-11",
+      "views": 23224
+    },
+    {
+      "period": "2021-01",
+      "views": 38900
+    },
+    {
+      "period": "2021-05",
+      "views": 56663
+    },
+    {
+      "period": "2021-11",
+      "views": 13990
+    },
+    {
+      "period": "2021-12",
+      "views": 68245
+    },
+    {
+      "period": "2022-05",
+      "views": 43351
+    },
+    {
+      "period": "2022-06",
+      "views": 135518
+    },
+    {
+      "period": "2022-10",
+      "views": 83129
+    },
+    {
+      "period": "2023-04",
+      "views": 150458
+    },
+    {
+      "period": "2023-05",
+      "views": 319052
+    },
+    {
+      "period": "2023-12",
+      "views": 80165
+    },
+    {
+      "period": "2024-02",
+      "views": 38971
+    },
+    {
+      "period": "2024-03",
+      "views": 19680
+    },
+    {
+      "period": "2024-04",
+      "views": 690886
+    },
+    {
+      "period": "2024-05",
+      "views": 70736
+    },
+    {
+      "period": "2024-06",
+      "views": 110567
+    },
+    {
+      "period": "2024-12",
+      "views": 31006
+    },
+    {
+      "period": "2025-05",
+      "views": 66898
+    },
+    {
+      "period": "2025-11",
+      "views": 35166
+    },
+    {
+      "period": "2026-02",
+      "views": 13694
+    },
+    {
+      "period": "2026-09",
+      "views": 24916
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2019",
+      "views": 45345
+    },
+    {
+      "period": "2020",
+      "views": 72236
+    },
+    {
+      "period": "2021",
+      "views": 177798
+    },
+    {
+      "period": "2022",
+      "views": 261998
+    },
+    {
+      "period": "2023",
+      "views": 549675
+    },
+    {
+      "period": "2024",
+      "views": 961846
+    },
+    {
+      "period": "2025",
+      "views": 102064
+    },
+    {
+      "period": "2026",
+      "views": 38610
+    }
+  ]
+}

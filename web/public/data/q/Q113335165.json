@@ -1,0 +1,52 @@
+{
+  "qid": "Q113335165",
+  "label": "Tucker Kraft",
+  "title": "Tucker_Kraft",
+  "description": "American football player (born 2000)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tucker_Kraft_%28tight_end%29_at_Fisher_House_in_Milwaukee_during_Green_Bay_Packers_Tailgate_Tour_stop_on_April_9%2C_2025_%28544416796151%29.jpg?width=64",
+  "total": 204968,
+  "monthly": [
+    {
+      "period": "2023-12",
+      "views": 14337
+    },
+    {
+      "period": "2024-11",
+      "views": 17227
+    },
+    {
+      "period": "2024-12",
+      "views": 15962
+    },
+    {
+      "period": "2025-09",
+      "views": 41297
+    },
+    {
+      "period": "2025-10",
+      "views": 105657
+    },
+    {
+      "period": "2026-09",
+      "views": 10488
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2023",
+      "views": 14337
+    },
+    {
+      "period": "2024",
+      "views": 33189
+    },
+    {
+      "period": "2025",
+      "views": 146954
+    },
+    {
+      "period": "2026",
+      "views": 10488
+    }
+  ]
+}

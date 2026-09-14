@@ -4,7 +4,7 @@
   "title": "Scarlett_Johansson",
   "description": "American actress (born 1984)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Scarlett_Johansson-8588.jpg?width=64",
-  "total": 78050053,
+  "total": 78065645,
   "monthly": [
     {
       "period": "2015-07",
@@ -544,7 +544,7 @@
     },
     {
       "period": "2026-09",
-      "views": 158194
+      "views": 173786
     }
   ],
   "yearly": [
@@ -594,7 +594,7 @@
     },
     {
       "period": "2026",
-      "views": 3532308
+      "views": 3547900
     }
   ]
 }

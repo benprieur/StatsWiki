@@ -4,7 +4,7 @@
   "title": "The_Lovely_Bones_(film)",
   "description": "2009 film directed by Peter Jackson",
   "image": "",
-  "total": 926163,
+  "total": 941342,
   "monthly": [
     {
       "period": "2017-12",
@@ -128,7 +128,7 @@
     },
     {
       "period": "2026-09",
-      "views": 8124
+      "views": 23303
     }
   ],
   "yearly": [
@@ -170,7 +170,7 @@
     },
     {
       "period": "2026",
-      "views": 70684
+      "views": 85863
     }
   ]
 }

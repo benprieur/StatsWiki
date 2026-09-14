@@ -1,0 +1,68 @@
+{
+  "qid": "Q101837349",
+  "label": "Manning family",
+  "title": "Manning_family",
+  "description": "prominent family in American football",
+  "image": "",
+  "total": 252361,
+  "monthly": [
+    {
+      "period": "2022-06",
+      "views": 32447
+    },
+    {
+      "period": "2024-01",
+      "views": 12326
+    },
+    {
+      "period": "2024-09",
+      "views": 64983
+    },
+    {
+      "period": "2024-10",
+      "views": 19862
+    },
+    {
+      "period": "2025-01",
+      "views": 11027
+    },
+    {
+      "period": "2025-08",
+      "views": 14610
+    },
+    {
+      "period": "2025-10",
+      "views": 11277
+    },
+    {
+      "period": "2025-11",
+      "views": 35004
+    },
+    {
+      "period": "2025-12",
+      "views": 15113
+    },
+    {
+      "period": "2026-09",
+      "views": 35712
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2022",
+      "views": 32447
+    },
+    {
+      "period": "2024",
+      "views": 97171
+    },
+    {
+      "period": "2025",
+      "views": 87031
+    },
+    {
+      "period": "2026",
+      "views": 35712
+    }
+  ]
+}

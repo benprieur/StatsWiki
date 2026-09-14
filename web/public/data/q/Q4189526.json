@@ -4,7 +4,7 @@
   "title": "Alexander_Zverev_Sr.",
   "description": "Russian tennis player",
   "image": "",
-  "total": 183643,
+  "total": 204080,
   "monthly": [
     {
       "period": "2017-01",
@@ -37,6 +37,10 @@
     {
       "period": "2026-07",
       "views": 25299
+    },
+    {
+      "period": "2026-09",
+      "views": 20437
     }
   ],
   "yearly": [
@@ -58,7 +62,7 @@
     },
     {
       "period": "2026",
-      "views": 80595
+      "views": 101032
     }
   ]
 }

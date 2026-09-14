@@ -4,7 +4,7 @@
   "title": "SV_Elversberg",
   "description": "German association football club, located in Spiesen-Elversberg, Saarland",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/SV_Elversberg_Logo_2021.svg?width=64",
-  "total": 62312,
+  "total": 75000,
   "monthly": [
     {
       "period": "2025-05",
@@ -17,6 +17,10 @@
     {
       "period": "2026-08",
       "views": 13553
+    },
+    {
+      "period": "2026-09",
+      "views": 12688
     }
   ],
   "yearly": [
@@ -26,7 +30,7 @@
     },
     {
       "period": "2026",
-      "views": 42709
+      "views": 55397
     }
   ]
 }

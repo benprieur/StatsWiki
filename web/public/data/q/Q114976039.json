@@ -1,0 +1,76 @@
+{
+  "qid": "Q114976039",
+  "label": "Stephanie Vaquer",
+  "title": "Stephanie_Vaquer",
+  "description": "Chilean professional wrestler",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Stephanie_Vaquer.jpg?width=64",
+  "total": 628649,
+  "monthly": [
+    {
+      "period": "2024-07",
+      "views": 100965
+    },
+    {
+      "period": "2025-02",
+      "views": 41618
+    },
+    {
+      "period": "2025-03",
+      "views": 24200
+    },
+    {
+      "period": "2025-04",
+      "views": 120208
+    },
+    {
+      "period": "2025-05",
+      "views": 35131
+    },
+    {
+      "period": "2025-06",
+      "views": 70678
+    },
+    {
+      "period": "2025-07",
+      "views": 25985
+    },
+    {
+      "period": "2025-09",
+      "views": 94894
+    },
+    {
+      "period": "2025-10",
+      "views": 35554
+    },
+    {
+      "period": "2025-11",
+      "views": 17551
+    },
+    {
+      "period": "2026-01",
+      "views": 9698
+    },
+    {
+      "period": "2026-04",
+      "views": 31490
+    },
+    {
+      "period": "2026-09",
+      "views": 20677
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2024",
+      "views": 100965
+    },
+    {
+      "period": "2025",
+      "views": 465819
+    },
+    {
+      "period": "2026",
+      "views": 61865
+    }
+  ]
+}

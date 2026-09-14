@@ -1,0 +1,36 @@
+{
+  "qid": "Q58885916",
+  "label": "list of WWE SmackDown Women's Champions",
+  "title": "List_of_Women's_World_Champions_(WWE)",
+  "description": "listing of professional wrestling champions for the SmackDown Women's Championship",
+  "image": "",
+  "total": 31097,
+  "monthly": [
+    {
+      "period": "2024-04",
+      "views": 11073
+    },
+    {
+      "period": "2025-08",
+      "views": 9777
+    },
+    {
+      "period": "2026-09",
+      "views": 10247
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2024",
+      "views": 11073
+    },
+    {
+      "period": "2025",
+      "views": 9777
+    },
+    {
+      "period": "2026",
+      "views": 10247
+    }
+  ]
+}

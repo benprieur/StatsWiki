@@ -1,0 +1,148 @@
+{
+  "qid": "Q212654",
+  "label": "Washington Commanders",
+  "title": "Washington_Commanders",
+  "description": "American football team in the National Football League",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Washington_Commanders_Uniforms_%282026%29.png?width=64",
+  "total": 1496394,
+  "monthly": [
+    {
+      "period": "2022-02",
+      "views": 185787
+    },
+    {
+      "period": "2022-03",
+      "views": 21815
+    },
+    {
+      "period": "2022-09",
+      "views": 69686
+    },
+    {
+      "period": "2022-10",
+      "views": 79775
+    },
+    {
+      "period": "2022-11",
+      "views": 15971
+    },
+    {
+      "period": "2022-12",
+      "views": 24410
+    },
+    {
+      "period": "2023-01",
+      "views": 13840
+    },
+    {
+      "period": "2023-02",
+      "views": 16203
+    },
+    {
+      "period": "2023-04",
+      "views": 19115
+    },
+    {
+      "period": "2023-07",
+      "views": 20763
+    },
+    {
+      "period": "2023-09",
+      "views": 56273
+    },
+    {
+      "period": "2023-10",
+      "views": 45835
+    },
+    {
+      "period": "2023-11",
+      "views": 47962
+    },
+    {
+      "period": "2024-01",
+      "views": 13198
+    },
+    {
+      "period": "2024-02",
+      "views": 17596
+    },
+    {
+      "period": "2024-08",
+      "views": 10635
+    },
+    {
+      "period": "2024-09",
+      "views": 53620
+    },
+    {
+      "period": "2024-10",
+      "views": 78231
+    },
+    {
+      "period": "2024-11",
+      "views": 51060
+    },
+    {
+      "period": "2024-12",
+      "views": 49652
+    },
+    {
+      "period": "2025-01",
+      "views": 411068
+    },
+    {
+      "period": "2025-02",
+      "views": 15895
+    },
+    {
+      "period": "2025-04",
+      "views": 9470
+    },
+    {
+      "period": "2025-07",
+      "views": 28531
+    },
+    {
+      "period": "2025-09",
+      "views": 28299
+    },
+    {
+      "period": "2025-10",
+      "views": 24503
+    },
+    {
+      "period": "2025-11",
+      "views": 44130
+    },
+    {
+      "period": "2025-12",
+      "views": 33158
+    },
+    {
+      "period": "2026-09",
+      "views": 9913
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2022",
+      "views": 397444
+    },
+    {
+      "period": "2023",
+      "views": 219991
+    },
+    {
+      "period": "2024",
+      "views": 273992
+    },
+    {
+      "period": "2025",
+      "views": 595054
+    },
+    {
+      "period": "2026",
+      "views": 9913
+    }
+  ]
+}

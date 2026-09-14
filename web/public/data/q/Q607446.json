@@ -1,0 +1,48 @@
+{
+  "qid": "Q607446",
+  "label": "skeuomorph",
+  "title": "Skeuomorph",
+  "description": "design style",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Crystal_Clear_app_gaimphone2.png?width=64",
+  "total": 340822,
+  "monthly": [
+    {
+      "period": "2015-11",
+      "views": 108021
+    },
+    {
+      "period": "2024-04",
+      "views": 90789
+    },
+    {
+      "period": "2025-01",
+      "views": 99488
+    },
+    {
+      "period": "2025-10",
+      "views": 8504
+    },
+    {
+      "period": "2026-09",
+      "views": 34020
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 108021
+    },
+    {
+      "period": "2024",
+      "views": 90789
+    },
+    {
+      "period": "2025",
+      "views": 107992
+    },
+    {
+      "period": "2026",
+      "views": 34020
+    }
+  ]
+}

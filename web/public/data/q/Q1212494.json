@@ -1,0 +1,28 @@
+{
+  "qid": "Q1212494",
+  "label": "The Fly",
+  "title": "The_Fly_(1958_film)",
+  "description": "1958 film by Kurt Neumann",
+  "image": "",
+  "total": 29185,
+  "monthly": [
+    {
+      "period": "2025-10",
+      "views": 16316
+    },
+    {
+      "period": "2026-09",
+      "views": 12869
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 16316
+    },
+    {
+      "period": "2026",
+      "views": 12869
+    }
+  ]
+}

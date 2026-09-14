@@ -4,7 +4,7 @@
   "title": "Buddy_(2026_film)",
   "description": "2026 film directed by Casper Kelly",
   "image": "",
-  "total": 1520731,
+  "total": 1557488,
   "monthly": [
     {
       "period": "2026-07",
@@ -16,13 +16,13 @@
     },
     {
       "period": "2026-09",
-      "views": 774306
+      "views": 811063
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 1520731
+      "views": 1557488
     }
   ]
 }

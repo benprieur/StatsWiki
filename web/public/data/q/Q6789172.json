@@ -1,0 +1,188 @@
+{
+  "qid": "Q6789172",
+  "label": "Matt Patricia",
+  "title": "Matt_Patricia",
+  "description": "American football coach (born 1974)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Matt_Patricia_2018.png?width=64",
+  "total": 1463312,
+  "monthly": [
+    {
+      "period": "2015-10",
+      "views": 9866
+    },
+    {
+      "period": "2015-11",
+      "views": 12653
+    },
+    {
+      "period": "2016-09",
+      "views": 19685
+    },
+    {
+      "period": "2016-12",
+      "views": 29442
+    },
+    {
+      "period": "2017-01",
+      "views": 32450
+    },
+    {
+      "period": "2017-02",
+      "views": 46624
+    },
+    {
+      "period": "2017-09",
+      "views": 30861
+    },
+    {
+      "period": "2017-12",
+      "views": 23340
+    },
+    {
+      "period": "2018-01",
+      "views": 240538
+    },
+    {
+      "period": "2018-02",
+      "views": 251721
+    },
+    {
+      "period": "2018-05",
+      "views": 30037
+    },
+    {
+      "period": "2018-08",
+      "views": 10447
+    },
+    {
+      "period": "2018-09",
+      "views": 177097
+    },
+    {
+      "period": "2018-11",
+      "views": 16216
+    },
+    {
+      "period": "2019-09",
+      "views": 11541
+    },
+    {
+      "period": "2019-10",
+      "views": 17433
+    },
+    {
+      "period": "2019-11",
+      "views": 14490
+    },
+    {
+      "period": "2020-11",
+      "views": 83769
+    },
+    {
+      "period": "2021-01",
+      "views": 15450
+    },
+    {
+      "period": "2021-09",
+      "views": 13575
+    },
+    {
+      "period": "2021-10",
+      "views": 11599
+    },
+    {
+      "period": "2022-10",
+      "views": 18203
+    },
+    {
+      "period": "2022-12",
+      "views": 21363
+    },
+    {
+      "period": "2023-12",
+      "views": 97067
+    },
+    {
+      "period": "2024-01",
+      "views": 58349
+    },
+    {
+      "period": "2025-02",
+      "views": 56039
+    },
+    {
+      "period": "2025-08",
+      "views": 17649
+    },
+    {
+      "period": "2025-09",
+      "views": 28423
+    },
+    {
+      "period": "2025-11",
+      "views": 21289
+    },
+    {
+      "period": "2025-12",
+      "views": 13589
+    },
+    {
+      "period": "2026-01",
+      "views": 20538
+    },
+    {
+      "period": "2026-09",
+      "views": 11969
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 22519
+    },
+    {
+      "period": "2016",
+      "views": 49127
+    },
+    {
+      "period": "2017",
+      "views": 133275
+    },
+    {
+      "period": "2018",
+      "views": 726056
+    },
+    {
+      "period": "2019",
+      "views": 43464
+    },
+    {
+      "period": "2020",
+      "views": 83769
+    },
+    {
+      "period": "2021",
+      "views": 40624
+    },
+    {
+      "period": "2022",
+      "views": 39566
+    },
+    {
+      "period": "2023",
+      "views": 97067
+    },
+    {
+      "period": "2024",
+      "views": 58349
+    },
+    {
+      "period": "2025",
+      "views": 136989
+    },
+    {
+      "period": "2026",
+      "views": 32507
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "qid": "Q1180767",
+  "label": "Deacon Blue",
+  "title": "Deacon_Blue",
+  "description": "British pop-rock band",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Deacon_Blue_performing_live.jpg?width=64",
+  "total": 79298,
+  "monthly": [
+    {
+      "period": "2020-03",
+      "views": 10035
+    },
+    {
+      "period": "2020-12",
+      "views": 12465
+    },
+    {
+      "period": "2021-01",
+      "views": 20488
+    },
+    {
+      "period": "2023-09",
+      "views": 10306
+    },
+    {
+      "period": "2025-06",
+      "views": 14161
+    },
+    {
+      "period": "2026-09",
+      "views": 11843
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2020",
+      "views": 22500
+    },
+    {
+      "period": "2021",
+      "views": 20488
+    },
+    {
+      "period": "2023",
+      "views": 10306
+    },
+    {
+      "period": "2025",
+      "views": 14161
+    },
+    {
+      "period": "2026",
+      "views": 11843
+    }
+  ]
+}

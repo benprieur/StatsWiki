@@ -1,0 +1,36 @@
+{
+  "qid": "Q614675",
+  "label": "Patrick McEnroe",
+  "title": "Patrick_McEnroe",
+  "description": "American tennis player",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Patrick_McEnroe_2009_US_Open_01.jpg?width=64",
+  "total": 38682,
+  "monthly": [
+    {
+      "period": "2019-07",
+      "views": 12779
+    },
+    {
+      "period": "2023-07",
+      "views": 14686
+    },
+    {
+      "period": "2026-09",
+      "views": 11217
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2019",
+      "views": 12779
+    },
+    {
+      "period": "2023",
+      "views": 14686
+    },
+    {
+      "period": "2026",
+      "views": 11217
+    }
+  ]
+}

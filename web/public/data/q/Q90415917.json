@@ -1,0 +1,52 @@
+{
+  "qid": "Q90415917",
+  "label": "Tyler Shough",
+  "title": "Tyler_Shough",
+  "description": "American football player (born 1999)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/TylerShough.png?width=64",
+  "total": 499564,
+  "monthly": [
+    {
+      "period": "2025-04",
+      "views": 186719
+    },
+    {
+      "period": "2025-05",
+      "views": 17520
+    },
+    {
+      "period": "2025-08",
+      "views": 9395
+    },
+    {
+      "period": "2025-10",
+      "views": 39135
+    },
+    {
+      "period": "2025-11",
+      "views": 26473
+    },
+    {
+      "period": "2025-12",
+      "views": 101151
+    },
+    {
+      "period": "2026-01",
+      "views": 59917
+    },
+    {
+      "period": "2026-09",
+      "views": 59254
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 380393
+    },
+    {
+      "period": "2026",
+      "views": 119171
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "qid": "Q1202607",
+  "label": "AMBER Alert",
+  "title": "Amber_alert",
+  "description": "child abduction alert system",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/AMBER_Alert_on_iPhone_screen_%2823249977772%29.jpg?width=64",
+  "total": 349332,
+  "monthly": [
+    {
+      "period": "2019-02",
+      "views": 48788
+    },
+    {
+      "period": "2019-03",
+      "views": 21217
+    },
+    {
+      "period": "2019-05",
+      "views": 10547
+    },
+    {
+      "period": "2019-07",
+      "views": 40524
+    },
+    {
+      "period": "2019-08",
+      "views": 21547
+    },
+    {
+      "period": "2019-09",
+      "views": 23822
+    },
+    {
+      "period": "2019-10",
+      "views": 30614
+    },
+    {
+      "period": "2019-12",
+      "views": 12398
+    },
+    {
+      "period": "2020-01",
+      "views": 33593
+    },
+    {
+      "period": "2020-03",
+      "views": 9168
+    },
+    {
+      "period": "2022-05",
+      "views": 9340
+    },
+    {
+      "period": "2023-01",
+      "views": 36357
+    },
+    {
+      "period": "2023-03",
+      "views": 10657
+    },
+    {
+      "period": "2024-09",
+      "views": 12116
+    },
+    {
+      "period": "2025-04",
+      "views": 11197
+    },
+    {
+      "period": "2026-09",
+      "views": 17447
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2019",
+      "views": 209457
+    },
+    {
+      "period": "2020",
+      "views": 42761
+    },
+    {
+      "period": "2022",
+      "views": 9340
+    },
+    {
+      "period": "2023",
+      "views": 47014
+    },
+    {
+      "period": "2024",
+      "views": 12116
+    },
+    {
+      "period": "2025",
+      "views": 11197
+    },
+    {
+      "period": "2026",
+      "views": 17447
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "qid": "Q173158",
+  "label": "Ben Kingsley",
+  "title": "Ben_Kingsley",
+  "description": "English actor (born 1943)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ben_Kingsley_by_Gage_Skidmore.jpg?width=64",
+  "total": 1615549,
+  "monthly": [
+    {
+      "period": "2015-07",
+      "views": 134383
+    },
+    {
+      "period": "2015-08",
+      "views": 21951
+    },
+    {
+      "period": "2015-09",
+      "views": 21171
+    },
+    {
+      "period": "2015-10",
+      "views": 9296
+    },
+    {
+      "period": "2016-04",
+      "views": 181023
+    },
+    {
+      "period": "2016-07",
+      "views": 9488
+    },
+    {
+      "period": "2016-08",
+      "views": 10149
+    },
+    {
+      "period": "2016-10",
+      "views": 20719
+    },
+    {
+      "period": "2018-03",
+      "views": 12767
+    },
+    {
+      "period": "2018-08",
+      "views": 9287
+    },
+    {
+      "period": "2021-03",
+      "views": 16632
+    },
+    {
+      "period": "2021-09",
+      "views": 141504
+    },
+    {
+      "period": "2021-11",
+      "views": 114148
+    },
+    {
+      "period": "2022-01",
+      "views": 13201
+    },
+    {
+      "period": "2023-01",
+      "views": 11241
+    },
+    {
+      "period": "2023-09",
+      "views": 49644
+    },
+    {
+      "period": "2023-10",
+      "views": 27320
+    },
+    {
+      "period": "2024-01",
+      "views": 25998
+    },
+    {
+      "period": "2024-03",
+      "views": 55310
+    },
+    {
+      "period": "2024-06",
+      "views": 14097
+    },
+    {
+      "period": "2024-10",
+      "views": 73118
+    },
+    {
+      "period": "2024-12",
+      "views": 24730
+    },
+    {
+      "period": "2025-04",
+      "views": 10291
+    },
+    {
+      "period": "2025-08",
+      "views": 136757
+    },
+    {
+      "period": "2025-09",
+      "views": 185474
+    },
+    {
+      "period": "2025-10",
+      "views": 13904
+    },
+    {
+      "period": "2025-11",
+      "views": 27474
+    },
+    {
+      "period": "2026-01",
+      "views": 111445
+    },
+    {
+      "period": "2026-02",
+      "views": 96337
+    },
+    {
+      "period": "2026-04",
+      "views": 8846
+    },
+    {
+      "period": "2026-05",
+      "views": 14198
+    },
+    {
+      "period": "2026-09",
+      "views": 13646
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 186801
+    },
+    {
+      "period": "2016",
+      "views": 221379
+    },
+    {
+      "period": "2018",
+      "views": 22054
+    },
+    {
+      "period": "2021",
+      "views": 272284
+    },
+    {
+      "period": "2022",
+      "views": 13201
+    },
+    {
+      "period": "2023",
+      "views": 88205
+    },
+    {
+      "period": "2024",
+      "views": 193253
+    },
+    {
+      "period": "2025",
+      "views": 373900
+    },
+    {
+      "period": "2026",
+      "views": 244472
+    }
+  ]
+}

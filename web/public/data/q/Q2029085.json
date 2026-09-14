@@ -1,0 +1,72 @@
+{
+  "qid": "Q2029085",
+  "label": "Jai Opetaia",
+  "title": "Jai_Opetaia",
+  "description": "boxer",
+  "image": "",
+  "total": 308609,
+  "monthly": [
+    {
+      "period": "2022-07",
+      "views": 9510
+    },
+    {
+      "period": "2023-12",
+      "views": 18691
+    },
+    {
+      "period": "2024-05",
+      "views": 109487
+    },
+    {
+      "period": "2024-10",
+      "views": 28379
+    },
+    {
+      "period": "2025-01",
+      "views": 50454
+    },
+    {
+      "period": "2025-06",
+      "views": 10145
+    },
+    {
+      "period": "2025-12",
+      "views": 10782
+    },
+    {
+      "period": "2026-03",
+      "views": 18756
+    },
+    {
+      "period": "2026-05",
+      "views": 9473
+    },
+    {
+      "period": "2026-09",
+      "views": 42932
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2022",
+      "views": 9510
+    },
+    {
+      "period": "2023",
+      "views": 18691
+    },
+    {
+      "period": "2024",
+      "views": 137866
+    },
+    {
+      "period": "2025",
+      "views": 71381
+    },
+    {
+      "period": "2026",
+      "views": 71161
+    }
+  ]
+}

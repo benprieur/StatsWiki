@@ -1,0 +1,36 @@
+{
+  "qid": "Q504069",
+  "label": "Sweden Democrats",
+  "title": "Sweden_Democrats",
+  "description": "Swedish political party",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sweden_Democrats_textlogo.svg?width=64",
+  "total": 249798,
+  "monthly": [
+    {
+      "period": "2018-09",
+      "views": 63083
+    },
+    {
+      "period": "2022-09",
+      "views": 162723
+    },
+    {
+      "period": "2026-09",
+      "views": 23992
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2018",
+      "views": 63083
+    },
+    {
+      "period": "2022",
+      "views": 162723
+    },
+    {
+      "period": "2026",
+      "views": 23992
+    }
+  ]
+}

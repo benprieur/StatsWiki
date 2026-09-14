@@ -4,7 +4,7 @@
   "title": "Dolly_parton",
   "description": "American singer-songwriter and actress (1946–2026)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Young-Dolly-Parton.jpg?width=64",
-  "total": 38384109,
+  "total": 38421363,
   "monthly": [
     {
       "period": "2015-12",
@@ -488,7 +488,7 @@
     },
     {
       "period": "2026-09",
-      "views": 971725
+      "views": 1008979
     }
   ],
   "yearly": [
@@ -538,7 +538,7 @@
     },
     {
       "period": "2026",
-      "views": 14172096
+      "views": 14209350
     }
   ]
 }

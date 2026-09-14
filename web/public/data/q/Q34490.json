@@ -4,7 +4,7 @@
   "title": "Al-Qaeda",
   "description": "Salafi jihadist organization founded in 1988",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Main_countries_of_activity_of_Al-Qaeda.png?width=64",
-  "total": 3514003,
+  "total": 3546287,
   "monthly": [
     {
       "period": "2015-09",
@@ -132,7 +132,7 @@
     },
     {
       "period": "2026-09",
-      "views": 163627
+      "views": 195911
     }
   ],
   "yearly": [
@@ -182,7 +182,7 @@
     },
     {
       "period": "2026",
-      "views": 175406
+      "views": 207690
     }
   ]
 }

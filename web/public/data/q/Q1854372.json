@@ -4,7 +4,7 @@
   "title": "Solheim_Cup",
   "description": "women's golf competition between the USA and the European team",
   "image": "",
-  "total": 313051,
+  "total": 333592,
   "monthly": [
     {
       "period": "2015-09",
@@ -32,7 +32,7 @@
     },
     {
       "period": "2026-09",
-      "views": 22153
+      "views": 42694
     }
   ],
   "yearly": [
@@ -62,7 +62,7 @@
     },
     {
       "period": "2026",
-      "views": 22153
+      "views": 42694
     }
   ]
 }

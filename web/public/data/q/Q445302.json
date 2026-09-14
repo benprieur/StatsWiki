@@ -1,0 +1,88 @@
+{
+  "qid": "Q445302",
+  "label": "Judd Nelson",
+  "title": "Judd_Nelson",
+  "description": "American actor",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Judd_Nelson_%28cropped%29.jpg?width=64",
+  "total": 464074,
+  "monthly": [
+    {
+      "period": "2015-07",
+      "views": 14189
+    },
+    {
+      "period": "2015-08",
+      "views": 9910
+    },
+    {
+      "period": "2016-05",
+      "views": 26024
+    },
+    {
+      "period": "2019-01",
+      "views": 24963
+    },
+    {
+      "period": "2019-02",
+      "views": 12165
+    },
+    {
+      "period": "2021-05",
+      "views": 13666
+    },
+    {
+      "period": "2023-11",
+      "views": 13384
+    },
+    {
+      "period": "2024-06",
+      "views": 256105
+    },
+    {
+      "period": "2024-07",
+      "views": 14019
+    },
+    {
+      "period": "2025-04",
+      "views": 65051
+    },
+    {
+      "period": "2026-09",
+      "views": 14598
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 24099
+    },
+    {
+      "period": "2016",
+      "views": 26024
+    },
+    {
+      "period": "2019",
+      "views": 37128
+    },
+    {
+      "period": "2021",
+      "views": 13666
+    },
+    {
+      "period": "2023",
+      "views": 13384
+    },
+    {
+      "period": "2024",
+      "views": 270124
+    },
+    {
+      "period": "2025",
+      "views": 65051
+    },
+    {
+      "period": "2026",
+      "views": 14598
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "qid": "Q1628609",
+  "label": "Irish Open",
+  "title": "Irish_Open_(golf)",
+  "description": "golf tournament",
+  "image": "",
+  "total": 24127,
+  "monthly": [
+    {
+      "period": "2025-09",
+      "views": 13220
+    },
+    {
+      "period": "2026-09",
+      "views": 10907
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 13220
+    },
+    {
+      "period": "2026",
+      "views": 10907
+    }
+  ]
+}

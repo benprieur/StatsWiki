@@ -1,0 +1,244 @@
+{
+  "qid": "Q221626",
+  "label": "Buffalo Bills",
+  "title": "Buffalo_Bills",
+  "description": "National Football League franchise in Orchard Park, New York",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dan_Carpenter_field_goal_vs._Dolphins_2014.jpg?width=64",
+  "total": 2057315,
+  "monthly": [
+    {
+      "period": "2015-09",
+      "views": 25770
+    },
+    {
+      "period": "2015-10",
+      "views": 11267
+    },
+    {
+      "period": "2015-11",
+      "views": 27578
+    },
+    {
+      "period": "2015-12",
+      "views": 35905
+    },
+    {
+      "period": "2016-01",
+      "views": 30877
+    },
+    {
+      "period": "2016-02",
+      "views": 84786
+    },
+    {
+      "period": "2016-09",
+      "views": 29785
+    },
+    {
+      "period": "2016-10",
+      "views": 10389
+    },
+    {
+      "period": "2016-11",
+      "views": 13485
+    },
+    {
+      "period": "2017-02",
+      "views": 14140
+    },
+    {
+      "period": "2017-11",
+      "views": 9815
+    },
+    {
+      "period": "2018-01",
+      "views": 66018
+    },
+    {
+      "period": "2018-02",
+      "views": 12098
+    },
+    {
+      "period": "2018-10",
+      "views": 22535
+    },
+    {
+      "period": "2019-09",
+      "views": 14867
+    },
+    {
+      "period": "2019-11",
+      "views": 36676
+    },
+    {
+      "period": "2019-12",
+      "views": 24264
+    },
+    {
+      "period": "2020-01",
+      "views": 57776
+    },
+    {
+      "period": "2020-10",
+      "views": 11303
+    },
+    {
+      "period": "2020-12",
+      "views": 79643
+    },
+    {
+      "period": "2021-01",
+      "views": 257443
+    },
+    {
+      "period": "2021-10",
+      "views": 33998
+    },
+    {
+      "period": "2021-11",
+      "views": 12203
+    },
+    {
+      "period": "2021-12",
+      "views": 13304
+    },
+    {
+      "period": "2022-01",
+      "views": 94885
+    },
+    {
+      "period": "2022-09",
+      "views": 46192
+    },
+    {
+      "period": "2022-10",
+      "views": 37255
+    },
+    {
+      "period": "2022-11",
+      "views": 12675
+    },
+    {
+      "period": "2022-12",
+      "views": 15884
+    },
+    {
+      "period": "2023-01",
+      "views": 172795
+    },
+    {
+      "period": "2023-09",
+      "views": 19356
+    },
+    {
+      "period": "2023-10",
+      "views": 14144
+    },
+    {
+      "period": "2023-11",
+      "views": 15571
+    },
+    {
+      "period": "2024-01",
+      "views": 152574
+    },
+    {
+      "period": "2024-09",
+      "views": 22385
+    },
+    {
+      "period": "2024-10",
+      "views": 11193
+    },
+    {
+      "period": "2024-11",
+      "views": 13110
+    },
+    {
+      "period": "2024-12",
+      "views": 29049
+    },
+    {
+      "period": "2025-01",
+      "views": 227430
+    },
+    {
+      "period": "2025-02",
+      "views": 12369
+    },
+    {
+      "period": "2025-09",
+      "views": 46366
+    },
+    {
+      "period": "2025-10",
+      "views": 15329
+    },
+    {
+      "period": "2025-11",
+      "views": 10300
+    },
+    {
+      "period": "2025-12",
+      "views": 12526
+    },
+    {
+      "period": "2026-01",
+      "views": 129877
+    },
+    {
+      "period": "2026-09",
+      "views": 10125
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 100520
+    },
+    {
+      "period": "2016",
+      "views": 169322
+    },
+    {
+      "period": "2017",
+      "views": 23955
+    },
+    {
+      "period": "2018",
+      "views": 100651
+    },
+    {
+      "period": "2019",
+      "views": 75807
+    },
+    {
+      "period": "2020",
+      "views": 148722
+    },
+    {
+      "period": "2021",
+      "views": 316948
+    },
+    {
+      "period": "2022",
+      "views": 206891
+    },
+    {
+      "period": "2023",
+      "views": 221866
+    },
+    {
+      "period": "2024",
+      "views": 228311
+    },
+    {
+      "period": "2025",
+      "views": 324320
+    },
+    {
+      "period": "2026",
+      "views": 140002
+    }
+  ]
+}

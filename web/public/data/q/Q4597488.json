@@ -4,7 +4,7 @@
   "title": "Portal:Current_events",
   "description": "Wikimedia portal",
   "image": "",
-  "total": 187306055,
+  "total": 187358182,
   "monthly": [
     {
       "period": "2015-07",
@@ -544,7 +544,7 @@
     },
     {
       "period": "2026-09",
-      "views": 670865
+      "views": 722992
     }
   ],
   "yearly": [
@@ -594,7 +594,7 @@
     },
     {
       "period": "2026",
-      "views": 14973631
+      "views": 15025758
     }
   ]
 }

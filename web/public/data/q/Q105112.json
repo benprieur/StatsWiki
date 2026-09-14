@@ -1,0 +1,36 @@
+{
+  "qid": "Q105112",
+  "label": "Swedish Social Democratic Party",
+  "title": "Swedish_Social_Democratic_Party",
+  "description": "centre-left political party in Sweden",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/2022_Stockholm_City_Council_election_%28cropped%29.svg?width=64",
+  "total": 50779,
+  "monthly": [
+    {
+      "period": "2018-09",
+      "views": 22871
+    },
+    {
+      "period": "2022-09",
+      "views": 12769
+    },
+    {
+      "period": "2026-09",
+      "views": 15139
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2018",
+      "views": 22871
+    },
+    {
+      "period": "2022",
+      "views": 12769
+    },
+    {
+      "period": "2026",
+      "views": 15139
+    }
+  ]
+}

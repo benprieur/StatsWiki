@@ -1,0 +1,28 @@
+{
+  "qid": "Q272930",
+  "label": "Parliament of Sweden",
+  "title": "Riksdag",
+  "description": "supreme legislative body of Sweden",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Riksdagshuset_Stockholm_2011.jpg?width=64",
+  "total": 19448,
+  "monthly": [
+    {
+      "period": "2021-11",
+      "views": 9256
+    },
+    {
+      "period": "2026-09",
+      "views": 10192
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 9256
+    },
+    {
+      "period": "2026",
+      "views": 10192
+    }
+  ]
+}

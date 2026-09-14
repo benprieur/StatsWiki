@@ -1,0 +1,132 @@
+{
+  "qid": "Q670390",
+  "label": "Manchester derby",
+  "title": "Manchester_derby",
+  "description": "football match between Manchester United and Manchester City",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/2011_Community_Shield_Teams.jpg?width=64",
+  "total": 573406,
+  "monthly": [
+    {
+      "period": "2015-10",
+      "views": 14088
+    },
+    {
+      "period": "2016-09",
+      "views": 29991
+    },
+    {
+      "period": "2017-04",
+      "views": 10354
+    },
+    {
+      "period": "2017-12",
+      "views": 15276
+    },
+    {
+      "period": "2018-04",
+      "views": 27448
+    },
+    {
+      "period": "2018-11",
+      "views": 15367
+    },
+    {
+      "period": "2020-12",
+      "views": 12414
+    },
+    {
+      "period": "2021-03",
+      "views": 14303
+    },
+    {
+      "period": "2022-03",
+      "views": 13526
+    },
+    {
+      "period": "2022-10",
+      "views": 66100
+    },
+    {
+      "period": "2023-01",
+      "views": 28345
+    },
+    {
+      "period": "2023-06",
+      "views": 35489
+    },
+    {
+      "period": "2023-10",
+      "views": 10901
+    },
+    {
+      "period": "2024-03",
+      "views": 218943
+    },
+    {
+      "period": "2024-05",
+      "views": 10597
+    },
+    {
+      "period": "2024-12",
+      "views": 14201
+    },
+    {
+      "period": "2025-09",
+      "views": 10426
+    },
+    {
+      "period": "2026-01",
+      "views": 12443
+    },
+    {
+      "period": "2026-09",
+      "views": 13194
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 14088
+    },
+    {
+      "period": "2016",
+      "views": 29991
+    },
+    {
+      "period": "2017",
+      "views": 25630
+    },
+    {
+      "period": "2018",
+      "views": 42815
+    },
+    {
+      "period": "2020",
+      "views": 12414
+    },
+    {
+      "period": "2021",
+      "views": 14303
+    },
+    {
+      "period": "2022",
+      "views": 79626
+    },
+    {
+      "period": "2023",
+      "views": 74735
+    },
+    {
+      "period": "2024",
+      "views": 243741
+    },
+    {
+      "period": "2025",
+      "views": 10426
+    },
+    {
+      "period": "2026",
+      "views": 25637
+    }
+  ]
+}

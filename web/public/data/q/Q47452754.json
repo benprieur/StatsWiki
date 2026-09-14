@@ -4,7 +4,7 @@
   "title": "Ryan_Garcia",
   "description": "American boxer",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/RYAN_GARCIA.jpg?width=64",
-  "total": 5397146,
+  "total": 5641012,
   "monthly": [
     {
       "period": "2018-03",
@@ -140,7 +140,7 @@
     },
     {
       "period": "2026-09",
-      "views": 129158
+      "views": 373024
     }
   ],
   "yearly": [
@@ -174,7 +174,7 @@
     },
     {
       "period": "2026",
-      "views": 470060
+      "views": 713926
     }
   ]
 }

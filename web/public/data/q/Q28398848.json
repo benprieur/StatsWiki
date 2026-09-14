@@ -1,0 +1,48 @@
+{
+  "qid": "Q28398848",
+  "label": "Mark Magsayo",
+  "title": "Mark_Magsayo",
+  "description": "Filipino boxer",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Magsayoceja.jpg?width=64",
+  "total": 111412,
+  "monthly": [
+    {
+      "period": "2021-08",
+      "views": 38028
+    },
+    {
+      "period": "2022-01",
+      "views": 30063
+    },
+    {
+      "period": "2022-07",
+      "views": 19865
+    },
+    {
+      "period": "2023-03",
+      "views": 13272
+    },
+    {
+      "period": "2026-09",
+      "views": 10184
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 38028
+    },
+    {
+      "period": "2022",
+      "views": 49928
+    },
+    {
+      "period": "2023",
+      "views": 13272
+    },
+    {
+      "period": "2026",
+      "views": 10184
+    }
+  ]
+}

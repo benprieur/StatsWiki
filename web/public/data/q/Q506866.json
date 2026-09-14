@@ -4,7 +4,7 @@
   "title": "Mike_McCarthy",
   "description": "American football coach (born 1963)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mike_McCarthy_%28TJG%29.JPG?width=64",
-  "total": 1340713,
+  "total": 1364244,
   "monthly": [
     {
       "period": "2020-09",
@@ -77,6 +77,10 @@
     {
       "period": "2026-08",
       "views": 15698
+    },
+    {
+      "period": "2026-09",
+      "views": 23531
     }
   ],
   "yearly": [
@@ -106,7 +110,7 @@
     },
     {
       "period": "2026",
-      "views": 649755
+      "views": 673286
     }
   ]
 }

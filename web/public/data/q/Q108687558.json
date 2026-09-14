@@ -1,0 +1,28 @@
+{
+  "qid": "Q108687558",
+  "label": "Jaquan Brisker",
+  "title": "Jaquan_Brisker",
+  "description": "American football player (born 1999)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jaquan_Brisker.png?width=64",
+  "total": 37433,
+  "monthly": [
+    {
+      "period": "2026-01",
+      "views": 14661
+    },
+    {
+      "period": "2026-03",
+      "views": 12907
+    },
+    {
+      "period": "2026-09",
+      "views": 9865
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 37433
+    }
+  ]
+}

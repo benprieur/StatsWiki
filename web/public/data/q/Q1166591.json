@@ -1,0 +1,44 @@
+{
+  "qid": "Q1166591",
+  "label": "Darrell K Royal–Texas Memorial Stadium",
+  "title": "Darrell_K_Royal–Texas_Memorial_Stadium",
+  "description": "Stadium at the University of Texas, United States",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Darrell_K_Royal-Texas_Memorial_Stadium_at_Night.jpg?width=64",
+  "total": 45652,
+  "monthly": [
+    {
+      "period": "2022-09",
+      "views": 13802
+    },
+    {
+      "period": "2024-10",
+      "views": 11114
+    },
+    {
+      "period": "2025-11",
+      "views": 10873
+    },
+    {
+      "period": "2026-09",
+      "views": 9863
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2022",
+      "views": 13802
+    },
+    {
+      "period": "2024",
+      "views": 11114
+    },
+    {
+      "period": "2025",
+      "views": 10873
+    },
+    {
+      "period": "2026",
+      "views": 9863
+    }
+  ]
+}

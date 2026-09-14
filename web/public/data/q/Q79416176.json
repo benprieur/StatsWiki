@@ -1,0 +1,132 @@
+{
+  "qid": "Q79416176",
+  "label": "Bryce Young",
+  "title": "Bryce_Young",
+  "description": "American football player (born 2001)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bryce_Young_at_W.P.T._Hill_Field_-_2024_-_02_%28cropped%29.jpg?width=64",
+  "total": 2035673,
+  "monthly": [
+    {
+      "period": "2021-09",
+      "views": 62081
+    },
+    {
+      "period": "2021-10",
+      "views": 10818
+    },
+    {
+      "period": "2021-11",
+      "views": 17513
+    },
+    {
+      "period": "2021-12",
+      "views": 215653
+    },
+    {
+      "period": "2022-01",
+      "views": 123217
+    },
+    {
+      "period": "2022-09",
+      "views": 51307
+    },
+    {
+      "period": "2022-11",
+      "views": 37261
+    },
+    {
+      "period": "2023-01",
+      "views": 30077
+    },
+    {
+      "period": "2023-04",
+      "views": 260317
+    },
+    {
+      "period": "2023-05",
+      "views": 16564
+    },
+    {
+      "period": "2023-08",
+      "views": 17792
+    },
+    {
+      "period": "2023-09",
+      "views": 143907
+    },
+    {
+      "period": "2023-10",
+      "views": 36947
+    },
+    {
+      "period": "2023-11",
+      "views": 151615
+    },
+    {
+      "period": "2024-01",
+      "views": 84665
+    },
+    {
+      "period": "2024-09",
+      "views": 328393
+    },
+    {
+      "period": "2024-11",
+      "views": 40118
+    },
+    {
+      "period": "2024-12",
+      "views": 32962
+    },
+    {
+      "period": "2025-01",
+      "views": 13011
+    },
+    {
+      "period": "2025-10",
+      "views": 22198
+    },
+    {
+      "period": "2025-11",
+      "views": 74210
+    },
+    {
+      "period": "2025-12",
+      "views": 39553
+    },
+    {
+      "period": "2026-01",
+      "views": 211909
+    },
+    {
+      "period": "2026-09",
+      "views": 13585
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 306065
+    },
+    {
+      "period": "2022",
+      "views": 211785
+    },
+    {
+      "period": "2023",
+      "views": 657219
+    },
+    {
+      "period": "2024",
+      "views": 486138
+    },
+    {
+      "period": "2025",
+      "views": 148972
+    },
+    {
+      "period": "2026",
+      "views": 225494
+    }
+  ]
+}

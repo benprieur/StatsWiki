@@ -1,0 +1,20 @@
+{
+  "qid": "Q2331233",
+  "label": "Appleton",
+  "title": "Appleton_(duo)",
+  "description": "Canadian musical duo comprising sisters Natalie and Nicole Appleton",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicole_Appleton_2007.jpg?width=64",
+  "total": 11175,
+  "monthly": [
+    {
+      "period": "2026-09",
+      "views": 11175
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 11175
+    }
+  ]
+}

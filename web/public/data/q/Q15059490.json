@@ -3,8 +3,8 @@
   "label": "Madison Beer",
   "title": "Madison_Beer",
   "description": "American singer (born 1999)",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Madison_Beer_%40_Grammy_Museum_01_17_2024_%2853835126344%29_%28cropped%29.jpg?width=64",
-  "total": 1537267,
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Madison_Beer_%40_Greek_Theatre_L.A._06_13_2024_%2853839434064%29_%28cropped_3x4%29.jpg?width=64",
+  "total": 1571304,
   "monthly": [
     {
       "period": "2018-11",
@@ -117,6 +117,10 @@
     {
       "period": "2026-08",
       "views": 31877
+    },
+    {
+      "period": "2026-09",
+      "views": 34037
     }
   ],
   "yearly": [
@@ -146,7 +150,7 @@
     },
     {
       "period": "2026",
-      "views": 437704
+      "views": 471741
     }
   ]
 }

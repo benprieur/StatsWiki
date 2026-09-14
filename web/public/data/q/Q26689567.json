@@ -1,0 +1,56 @@
+{
+  "qid": "Q26689567",
+  "label": "Women's World Championship (WWE)",
+  "title": "Women's_World_Championship_(WWE)",
+  "description": "championship created and promoted by the American professional wrestling promotion WWE",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Asuka_WWE_SmackDown_Women%27s_Champion_2019.jpg?width=64",
+  "total": 137711,
+  "monthly": [
+    {
+      "period": "2024-04",
+      "views": 40274
+    },
+    {
+      "period": "2024-05",
+      "views": 10899
+    },
+    {
+      "period": "2025-01",
+      "views": 11719
+    },
+    {
+      "period": "2025-03",
+      "views": 14286
+    },
+    {
+      "period": "2025-07",
+      "views": 15365
+    },
+    {
+      "period": "2025-08",
+      "views": 13875
+    },
+    {
+      "period": "2025-09",
+      "views": 14618
+    },
+    {
+      "period": "2026-09",
+      "views": 16675
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2024",
+      "views": 51173
+    },
+    {
+      "period": "2025",
+      "views": 69863
+    },
+    {
+      "period": "2026",
+      "views": 16675
+    }
+  ]
+}

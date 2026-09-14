@@ -1,0 +1,136 @@
+{
+  "qid": "Q18022139",
+  "label": "Jacoby Brissett",
+  "title": "Jacoby_Brissett",
+  "description": "American football player (born 1992)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacoby_Brissett.jpg?width=64",
+  "total": 1412864,
+  "monthly": [
+    {
+      "period": "2016-04",
+      "views": 15654
+    },
+    {
+      "period": "2016-09",
+      "views": 286980
+    },
+    {
+      "period": "2017-09",
+      "views": 51984
+    },
+    {
+      "period": "2017-10",
+      "views": 139449
+    },
+    {
+      "period": "2017-11",
+      "views": 10694
+    },
+    {
+      "period": "2017-12",
+      "views": 14021
+    },
+    {
+      "period": "2018-08",
+      "views": 8835
+    },
+    {
+      "period": "2019-08",
+      "views": 130065
+    },
+    {
+      "period": "2019-09",
+      "views": 48490
+    },
+    {
+      "period": "2019-10",
+      "views": 114909
+    },
+    {
+      "period": "2019-11",
+      "views": 33928
+    },
+    {
+      "period": "2019-12",
+      "views": 17905
+    },
+    {
+      "period": "2021-09",
+      "views": 31361
+    },
+    {
+      "period": "2021-11",
+      "views": 37352
+    },
+    {
+      "period": "2022-09",
+      "views": 94749
+    },
+    {
+      "period": "2022-11",
+      "views": 18445
+    },
+    {
+      "period": "2024-03",
+      "views": 23217
+    },
+    {
+      "period": "2024-08",
+      "views": 22903
+    },
+    {
+      "period": "2024-09",
+      "views": 117964
+    },
+    {
+      "period": "2025-10",
+      "views": 48221
+    },
+    {
+      "period": "2025-11",
+      "views": 127947
+    },
+    {
+      "period": "2026-09",
+      "views": 17791
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 302634
+    },
+    {
+      "period": "2017",
+      "views": 216148
+    },
+    {
+      "period": "2018",
+      "views": 8835
+    },
+    {
+      "period": "2019",
+      "views": 345297
+    },
+    {
+      "period": "2021",
+      "views": 68713
+    },
+    {
+      "period": "2022",
+      "views": 113194
+    },
+    {
+      "period": "2024",
+      "views": 164084
+    },
+    {
+      "period": "2025",
+      "views": 176168
+    },
+    {
+      "period": "2026",
+      "views": 17791
+    }
+  ]
+}

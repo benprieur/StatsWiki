@@ -1,0 +1,28 @@
+{
+  "qid": "Q4329383",
+  "label": "Illegals Program",
+  "title": "Illegals_Program",
+  "description": "Russian espionage program",
+  "image": "",
+  "total": 38126,
+  "monthly": [
+    {
+      "period": "2018-03",
+      "views": 23331
+    },
+    {
+      "period": "2026-09",
+      "views": 14795
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2018",
+      "views": 23331
+    },
+    {
+      "period": "2026",
+      "views": 14795
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "title": "Chaka_Khan",
   "description": "American singer (born 1953)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chaka_Khan_in_Chris_March_01_%28cropped%29.jpg?width=64",
-  "total": 1552901,
+  "total": 1564369,
   "monthly": [
     {
       "period": "2015-09",
@@ -120,7 +120,7 @@
     },
     {
       "period": "2026-09",
-      "views": 35899
+      "views": 47367
     }
   ],
   "yearly": [
@@ -166,7 +166,7 @@
     },
     {
       "period": "2026",
-      "views": 101947
+      "views": 113415
     }
   ]
 }

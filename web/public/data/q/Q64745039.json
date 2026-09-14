@@ -1,0 +1,48 @@
+{
+  "qid": "Q64745039",
+  "label": "Kenny Bednarek",
+  "title": "Kenny_Bednarek",
+  "description": "American sprinter",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/DOH30025_200m_men_heats_%2848910430033%29_%28cropped%29.jpg?width=64",
+  "total": 413099,
+  "monthly": [
+    {
+      "period": "2021-08",
+      "views": 77669
+    },
+    {
+      "period": "2024-06",
+      "views": 15773
+    },
+    {
+      "period": "2024-08",
+      "views": 290851
+    },
+    {
+      "period": "2025-08",
+      "views": 16980
+    },
+    {
+      "period": "2026-09",
+      "views": 11826
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 77669
+    },
+    {
+      "period": "2024",
+      "views": 306624
+    },
+    {
+      "period": "2025",
+      "views": 16980
+    },
+    {
+      "period": "2026",
+      "views": 11826
+    }
+  ]
+}

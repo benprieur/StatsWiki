@@ -4,7 +4,7 @@
   "title": "Steffi_Graf",
   "description": "German tennis player",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Steffi_Graf_in_Hamburg_2010_%28cropped%29.jpg?width=64",
-  "total": 2892296,
+  "total": 2901729,
   "monthly": [
     {
       "period": "2015-07",
@@ -181,6 +181,10 @@
     {
       "period": "2026-08",
       "views": 32219
+    },
+    {
+      "period": "2026-09",
+      "views": 9433
     }
   ],
   "yearly": [
@@ -230,7 +234,7 @@
     },
     {
       "period": "2026",
-      "views": 136194
+      "views": 145627
     }
   ]
 }

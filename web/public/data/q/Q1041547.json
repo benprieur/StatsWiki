@@ -1,0 +1,20 @@
+{
+  "qid": "Q1041547",
+  "label": "Heathcliff",
+  "title": "Heathcliff_(comic_strip)",
+  "description": "comic strip created by George Gately",
+  "image": "",
+  "total": 23002,
+  "monthly": [
+    {
+      "period": "2026-09",
+      "views": 23002
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 23002
+    }
+  ]
+}

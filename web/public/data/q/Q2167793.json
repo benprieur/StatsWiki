@@ -1,0 +1,100 @@
+{
+  "qid": "Q2167793",
+  "label": "Nicole Appleton",
+  "title": "Nicole_Appleton",
+  "description": "Canadian singer (born 1974)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Allsaints4.jpg?width=64",
+  "total": 394450,
+  "monthly": [
+    {
+      "period": "2016-04",
+      "views": 31293
+    },
+    {
+      "period": "2017-06",
+      "views": 12478
+    },
+    {
+      "period": "2018-07",
+      "views": 16644
+    },
+    {
+      "period": "2018-11",
+      "views": 29463
+    },
+    {
+      "period": "2019-03",
+      "views": 11859
+    },
+    {
+      "period": "2023-02",
+      "views": 25264
+    },
+    {
+      "period": "2023-06",
+      "views": 17588
+    },
+    {
+      "period": "2023-11",
+      "views": 41882
+    },
+    {
+      "period": "2024-08",
+      "views": 109350
+    },
+    {
+      "period": "2024-09",
+      "views": 16277
+    },
+    {
+      "period": "2025-07",
+      "views": 22033
+    },
+    {
+      "period": "2025-11",
+      "views": 34872
+    },
+    {
+      "period": "2026-02",
+      "views": 9542
+    },
+    {
+      "period": "2026-09",
+      "views": 15905
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 31293
+    },
+    {
+      "period": "2017",
+      "views": 12478
+    },
+    {
+      "period": "2018",
+      "views": 46107
+    },
+    {
+      "period": "2019",
+      "views": 11859
+    },
+    {
+      "period": "2023",
+      "views": 84734
+    },
+    {
+      "period": "2024",
+      "views": 125627
+    },
+    {
+      "period": "2025",
+      "views": 56905
+    },
+    {
+      "period": "2026",
+      "views": 25447
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "qid": "Q465017",
+  "label": "Chris Kreider",
+  "title": "Chris_Kreider",
+  "description": "American ice hockey player",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chris_Kreider_-_New_York_Rangers.jpg?width=64",
+  "total": 48917,
+  "monthly": [
+    {
+      "period": "2016-02",
+      "views": 26634
+    },
+    {
+      "period": "2022-05",
+      "views": 12406
+    },
+    {
+      "period": "2026-09",
+      "views": 9877
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 26634
+    },
+    {
+      "period": "2022",
+      "views": 12406
+    },
+    {
+      "period": "2026",
+      "views": 9877
+    }
+  ]
+}

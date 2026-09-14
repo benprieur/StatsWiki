@@ -1,0 +1,20 @@
+{
+  "qid": "Q213654",
+  "label": "Christian Democrats",
+  "title": "Christian_Democrats_(Sweden)",
+  "description": "political party in Sweden",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Christian_Democrats_Sweden_logo_2017.svg?width=64",
+  "total": 9770,
+  "monthly": [
+    {
+      "period": "2026-09",
+      "views": 9770
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 9770
+    }
+  ]
+}

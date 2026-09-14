@@ -4,7 +4,7 @@
   "title": "Kirpan",
   "description": "small dagger traditionally carried by Sikhs",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Kirpan_small.JPG?width=64",
-  "total": 345534,
+  "total": 363917,
   "monthly": [
     {
       "period": "2016-05",
@@ -25,6 +25,10 @@
     {
       "period": "2026-06",
       "views": 206526
+    },
+    {
+      "period": "2026-09",
+      "views": 18383
     }
   ],
   "yearly": [
@@ -42,7 +46,7 @@
     },
     {
       "period": "2026",
-      "views": 206526
+      "views": 224909
     }
   ]
 }

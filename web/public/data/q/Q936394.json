@@ -4,7 +4,7 @@
   "title": "Pornhub",
   "description": "pornographic video sharing website owned by Aylo",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pornhub-logo.svg?width=64",
-  "total": 88790805,
+  "total": 88803147,
   "monthly": [
     {
       "period": "2015-07",
@@ -544,7 +544,7 @@
     },
     {
       "period": "2026-09",
-      "views": 175519
+      "views": 187861
     }
   ],
   "yearly": [
@@ -594,7 +594,7 @@
     },
     {
       "period": "2026",
-      "views": 5077404
+      "views": 5089746
     }
   ]
 }

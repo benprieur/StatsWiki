@@ -1,0 +1,84 @@
+{
+  "qid": "Q116516",
+  "label": "Ricky Hatton",
+  "title": "Ricky_Hatton",
+  "description": "British professional boxer (1978–2025)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ricky_Hatton_2009.jpg?width=64",
+  "total": 2057059,
+  "monthly": [
+    {
+      "period": "2017-08",
+      "views": 27832
+    },
+    {
+      "period": "2021-03",
+      "views": 19991
+    },
+    {
+      "period": "2021-09",
+      "views": 12781
+    },
+    {
+      "period": "2022-11",
+      "views": 55128
+    },
+    {
+      "period": "2023-08",
+      "views": 21131
+    },
+    {
+      "period": "2023-09",
+      "views": 29498
+    },
+    {
+      "period": "2024-01",
+      "views": 15351
+    },
+    {
+      "period": "2025-09",
+      "views": 1389920
+    },
+    {
+      "period": "2025-10",
+      "views": 426309
+    },
+    {
+      "period": "2026-04",
+      "views": 48017
+    },
+    {
+      "period": "2026-09",
+      "views": 11101
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2017",
+      "views": 27832
+    },
+    {
+      "period": "2021",
+      "views": 32772
+    },
+    {
+      "period": "2022",
+      "views": 55128
+    },
+    {
+      "period": "2023",
+      "views": 50629
+    },
+    {
+      "period": "2024",
+      "views": 15351
+    },
+    {
+      "period": "2025",
+      "views": 1816229
+    },
+    {
+      "period": "2026",
+      "views": 59118
+    }
+  ]
+}

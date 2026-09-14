@@ -4,7 +4,7 @@
   "title": "Yul_Brynner",
   "description": "russian-born american actor (1920–1985)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Yul_Brynner_Anna_and_the_King_television_1972.JPG?width=64",
-  "total": 1842553,
+  "total": 1854239,
   "monthly": [
     {
       "period": "2015-07",
@@ -217,6 +217,10 @@
     {
       "period": "2026-08",
       "views": 13767
+    },
+    {
+      "period": "2026-09",
+      "views": 11686
     }
   ],
   "yearly": [
@@ -266,7 +270,7 @@
     },
     {
       "period": "2026",
-      "views": 131712
+      "views": 143398
     }
   ]
 }

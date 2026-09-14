@@ -4,17 +4,17 @@
   "title": "Opinion_polling_for_the_2026_Swedish_general_election",
   "description": "collection of opinions from the Swedish people for the 2026 Swedish general election",
   "image": "",
-  "total": 71682,
+  "total": 110709,
   "monthly": [
     {
       "period": "2026-09",
-      "views": 71682
+      "views": 110709
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 71682
+      "views": 110709
     }
   ]
 }

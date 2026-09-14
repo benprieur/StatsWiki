@@ -4,7 +4,7 @@
   "title": "Rescue_and_recovery_effort_after_the_September_11_attacks_on_the_World_Trade_Center",
   "description": "post-9/11 rescue operations",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/September_14_2001_Ground_Zero_01.jpg?width=64",
-  "total": 379169,
+  "total": 395275,
   "monthly": [
     {
       "period": "2016-09",
@@ -36,7 +36,7 @@
     },
     {
       "period": "2026-09",
-      "views": 43580
+      "views": 59686
     }
   ],
   "yearly": [
@@ -70,7 +70,7 @@
     },
     {
       "period": "2026",
-      "views": 43580
+      "views": 59686
     }
   ]
 }

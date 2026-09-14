@@ -4,7 +4,7 @@
   "title": "Robert_Saleh",
   "description": "American football coach",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/2026_Titans_HC_Interview_-_Robert_Saleh_%28cropped%29.png?width=64",
-  "total": 2505531,
+  "total": 2518295,
   "monthly": [
     {
       "period": "2019-10",
@@ -117,6 +117,10 @@
     {
       "period": "2026-08",
       "views": 27203
+    },
+    {
+      "period": "2026-09",
+      "views": 12764
     }
   ],
   "yearly": [
@@ -150,7 +154,7 @@
     },
     {
       "period": "2026",
-      "views": 344012
+      "views": 356776
     }
   ]
 }

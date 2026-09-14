@@ -4,7 +4,7 @@
   "title": "Tasha_Smith",
   "description": "American actress, director and producer",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tasha_Smith_2017.jpg?width=64",
-  "total": 78285,
+  "total": 88023,
   "monthly": [
     {
       "period": "2019-04",
@@ -16,7 +16,7 @@
     },
     {
       "period": "2026-09",
-      "views": 32925
+      "views": 42663
     }
   ],
   "yearly": [
@@ -30,7 +30,7 @@
     },
     {
       "period": "2026",
-      "views": 32925
+      "views": 42663
     }
   ]
 }

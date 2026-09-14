@@ -1,0 +1,60 @@
+{
+  "qid": "Q48977305",
+  "label": "D. J. Moore",
+  "title": "D._J._Moore",
+  "description": "American football player (born 1997)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D._J._Moore_2019.jpg?width=64",
+  "total": 247018,
+  "monthly": [
+    {
+      "period": "2023-10",
+      "views": 66558
+    },
+    {
+      "period": "2023-11",
+      "views": 10199
+    },
+    {
+      "period": "2024-09",
+      "views": 12669
+    },
+    {
+      "period": "2025-09",
+      "views": 10177
+    },
+    {
+      "period": "2025-12",
+      "views": 26950
+    },
+    {
+      "period": "2026-01",
+      "views": 35230
+    },
+    {
+      "period": "2026-03",
+      "views": 69279
+    },
+    {
+      "period": "2026-09",
+      "views": 15956
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2023",
+      "views": 76757
+    },
+    {
+      "period": "2024",
+      "views": 12669
+    },
+    {
+      "period": "2025",
+      "views": 37127
+    },
+    {
+      "period": "2026",
+      "views": 120465
+    }
+  ]
+}

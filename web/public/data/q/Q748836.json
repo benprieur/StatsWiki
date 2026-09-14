@@ -1,0 +1,68 @@
+{
+  "qid": "Q748836",
+  "label": "Simple Minds",
+  "title": "Simple_Minds",
+  "description": "Scottish rock band",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/-NIMES_-170618_Nimes_SM2018_mk2_MG_9308-Edit.jpg?width=64",
+  "total": 150805,
+  "monthly": [
+    {
+      "period": "2016-11",
+      "views": 31678
+    },
+    {
+      "period": "2018-05",
+      "views": 9624
+    },
+    {
+      "period": "2022-10",
+      "views": 14784
+    },
+    {
+      "period": "2024-11",
+      "views": 11508
+    },
+    {
+      "period": "2025-04",
+      "views": 9926
+    },
+    {
+      "period": "2025-07",
+      "views": 17605
+    },
+    {
+      "period": "2025-11",
+      "views": 21360
+    },
+    {
+      "period": "2026-09",
+      "views": 34320
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 31678
+    },
+    {
+      "period": "2018",
+      "views": 9624
+    },
+    {
+      "period": "2022",
+      "views": 14784
+    },
+    {
+      "period": "2024",
+      "views": 11508
+    },
+    {
+      "period": "2025",
+      "views": 48891
+    },
+    {
+      "period": "2026",
+      "views": 34320
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "title": "Jayden_Daniels",
   "description": "American football player (born 2000)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jayden_Daniels_2025.jpg?width=64",
-  "total": 3166616,
+  "total": 3183228,
   "monthly": [
     {
       "period": "2019-11",
@@ -93,6 +93,10 @@
     {
       "period": "2026-08",
       "views": 94508
+    },
+    {
+      "period": "2026-09",
+      "views": 16612
     }
   ],
   "yearly": [
@@ -118,7 +122,7 @@
     },
     {
       "period": "2026",
-      "views": 94508
+      "views": 111120
     }
   ]
 }

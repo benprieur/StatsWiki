@@ -4,7 +4,7 @@
   "title": "John_Harbaugh",
   "description": "American football coach (born 1962)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/JohnHarbaugh2009.jpg?width=64",
-  "total": 3089699,
+  "total": 3100927,
   "monthly": [
     {
       "period": "2015-10",
@@ -152,7 +152,7 @@
     },
     {
       "period": "2026-09",
-      "views": 7902
+      "views": 19130
     }
   ],
   "yearly": [
@@ -202,7 +202,7 @@
     },
     {
       "period": "2026",
-      "views": 1001458
+      "views": 1012686
     }
   ]
 }

@@ -4,7 +4,7 @@
   "title": "Those_Who_Wish_Me_Dead",
   "description": "2021 film directed by Taylor Sheridan",
   "image": "",
-  "total": 1082357,
+  "total": 1093175,
   "monthly": [
     {
       "period": "2021-04",
@@ -28,7 +28,7 @@
     },
     {
       "period": "2026-09",
-      "views": 13597
+      "views": 24415
     }
   ],
   "yearly": [
@@ -42,7 +42,7 @@
     },
     {
       "period": "2026",
-      "views": 13597
+      "views": 24415
     }
   ]
 }

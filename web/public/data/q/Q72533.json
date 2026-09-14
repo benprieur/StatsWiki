@@ -1,0 +1,48 @@
+{
+  "qid": "Q72533",
+  "label": "Garfield",
+  "title": "Garfield",
+  "description": "comic strip created by Jim Davis",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Garfield_logo_3_colors.png?width=64",
+  "total": 62365,
+  "monthly": [
+    {
+      "period": "2016-06",
+      "views": 9956
+    },
+    {
+      "period": "2020-06",
+      "views": 11569
+    },
+    {
+      "period": "2023-06",
+      "views": 12447
+    },
+    {
+      "period": "2023-09",
+      "views": 11320
+    },
+    {
+      "period": "2026-09",
+      "views": 17073
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 9956
+    },
+    {
+      "period": "2020",
+      "views": 11569
+    },
+    {
+      "period": "2023",
+      "views": 23767
+    },
+    {
+      "period": "2026",
+      "views": 17073
+    }
+  ]
+}

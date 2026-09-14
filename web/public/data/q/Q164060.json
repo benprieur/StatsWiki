@@ -4,7 +4,7 @@
   "title": "Brandi_Carlile",
   "description": "American alternative country and folk rock singer-songwriter (born 1981)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Brandi_Carlile_2023_%28cropped%29.jpg?width=64",
-  "total": 4992767,
+  "total": 5004668,
   "monthly": [
     {
       "period": "2018-04",
@@ -221,6 +221,10 @@
     {
       "period": "2026-08",
       "views": 21533
+    },
+    {
+      "period": "2026-09",
+      "views": 11901
     }
   ],
   "yearly": [
@@ -258,7 +262,7 @@
     },
     {
       "period": "2026",
-      "views": 600771
+      "views": 612672
     }
   ]
 }

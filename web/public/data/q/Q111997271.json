@@ -1,0 +1,20 @@
+{
+  "qid": "Q111997271",
+  "label": "Russian Pilgrim Residence",
+  "title": "Russian_Pilgrim_Residence_(Jordan)",
+  "description": "hotel in Jordan",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vladimir_Putin_inaugurating_the_Russian_Pilgrim_Residence_in_Al-Maghtas%2C_2012.png?width=64",
+  "total": 9710,
+  "monthly": [
+    {
+      "period": "2026-09",
+      "views": 9710
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 9710
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "qid": "Q60736806",
+  "label": "Jordan Love",
+  "title": "Jordan_Love",
+  "description": "American football quarterback",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jordan_Love_%282019%29.png?width=64",
+  "total": 2805608,
+  "monthly": [
+    {
+      "period": "2020-04",
+      "views": 125922
+    },
+    {
+      "period": "2021-01",
+      "views": 11850
+    },
+    {
+      "period": "2021-04",
+      "views": 18206
+    },
+    {
+      "period": "2021-11",
+      "views": 220379
+    },
+    {
+      "period": "2022-03",
+      "views": 22891
+    },
+    {
+      "period": "2022-11",
+      "views": 61488
+    },
+    {
+      "period": "2023-03",
+      "views": 25709
+    },
+    {
+      "period": "2023-04",
+      "views": 12693
+    },
+    {
+      "period": "2023-08",
+      "views": 11701
+    },
+    {
+      "period": "2023-09",
+      "views": 356171
+    },
+    {
+      "period": "2023-10",
+      "views": 49400
+    },
+    {
+      "period": "2023-11",
+      "views": 91567
+    },
+    {
+      "period": "2023-12",
+      "views": 176138
+    },
+    {
+      "period": "2024-01",
+      "views": 790702
+    },
+    {
+      "period": "2024-07",
+      "views": 27893
+    },
+    {
+      "period": "2024-09",
+      "views": 95587
+    },
+    {
+      "period": "2024-10",
+      "views": 41530
+    },
+    {
+      "period": "2024-11",
+      "views": 59757
+    },
+    {
+      "period": "2024-12",
+      "views": 71971
+    },
+    {
+      "period": "2025-01",
+      "views": 44558
+    },
+    {
+      "period": "2025-09",
+      "views": 145869
+    },
+    {
+      "period": "2025-10",
+      "views": 61298
+    },
+    {
+      "period": "2025-11",
+      "views": 95586
+    },
+    {
+      "period": "2025-12",
+      "views": 84460
+    },
+    {
+      "period": "2026-01",
+      "views": 87586
+    },
+    {
+      "period": "2026-09",
+      "views": 14696
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2020",
+      "views": 125922
+    },
+    {
+      "period": "2021",
+      "views": 250435
+    },
+    {
+      "period": "2022",
+      "views": 84379
+    },
+    {
+      "period": "2023",
+      "views": 723379
+    },
+    {
+      "period": "2024",
+      "views": 1087440
+    },
+    {
+      "period": "2025",
+      "views": 431771
+    },
+    {
+      "period": "2026",
+      "views": 102282
+    }
+  ]
+}

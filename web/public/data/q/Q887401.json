@@ -1,0 +1,148 @@
+{
+  "qid": "Q887401",
+  "label": "Bo Jackson",
+  "title": "Bo_Jackson",
+  "description": "American football and baseball player (born 1962)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bo_Jackson%2C_2011_NCAA_Honors_Celebration%2C_San_Antonio%2C_TX.jpg?width=64",
+  "total": 622346,
+  "monthly": [
+    {
+      "period": "2015-07",
+      "views": 46930
+    },
+    {
+      "period": "2015-12",
+      "views": 16048
+    },
+    {
+      "period": "2016-01",
+      "views": 59690
+    },
+    {
+      "period": "2016-09",
+      "views": 41877
+    },
+    {
+      "period": "2016-12",
+      "views": 30199
+    },
+    {
+      "period": "2017-01",
+      "views": 24762
+    },
+    {
+      "period": "2017-11",
+      "views": 11629
+    },
+    {
+      "period": "2017-12",
+      "views": 27010
+    },
+    {
+      "period": "2018-11",
+      "views": 9615
+    },
+    {
+      "period": "2019-02",
+      "views": 17581
+    },
+    {
+      "period": "2019-11",
+      "views": 25153
+    },
+    {
+      "period": "2019-12",
+      "views": 16969
+    },
+    {
+      "period": "2020-01",
+      "views": 16698
+    },
+    {
+      "period": "2020-04",
+      "views": 25861
+    },
+    {
+      "period": "2020-08",
+      "views": 9691
+    },
+    {
+      "period": "2022-07",
+      "views": 64369
+    },
+    {
+      "period": "2022-10",
+      "views": 16691
+    },
+    {
+      "period": "2024-06",
+      "views": 10468
+    },
+    {
+      "period": "2025-03",
+      "views": 13479
+    },
+    {
+      "period": "2025-10",
+      "views": 9812
+    },
+    {
+      "period": "2025-11",
+      "views": 33148
+    },
+    {
+      "period": "2025-12",
+      "views": 24929
+    },
+    {
+      "period": "2026-01",
+      "views": 56177
+    },
+    {
+      "period": "2026-09",
+      "views": 13560
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 62978
+    },
+    {
+      "period": "2016",
+      "views": 131766
+    },
+    {
+      "period": "2017",
+      "views": 63401
+    },
+    {
+      "period": "2018",
+      "views": 9615
+    },
+    {
+      "period": "2019",
+      "views": 59703
+    },
+    {
+      "period": "2020",
+      "views": 52250
+    },
+    {
+      "period": "2022",
+      "views": 81060
+    },
+    {
+      "period": "2024",
+      "views": 10468
+    },
+    {
+      "period": "2025",
+      "views": 81368
+    },
+    {
+      "period": "2026",
+      "views": 69737
+    }
+  ]
+}

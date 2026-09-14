@@ -4,7 +4,7 @@
   "title": "Lisa_Beamer",
   "description": "American memoirist",
   "image": "",
-  "total": 501938,
+  "total": 515581,
   "monthly": [
     {
       "period": "2016-09",
@@ -40,7 +40,7 @@
     },
     {
       "period": "2026-09",
-      "views": 67106
+      "views": 80749
     }
   ],
   "yearly": [
@@ -78,7 +78,7 @@
     },
     {
       "period": "2026",
-      "views": 67106
+      "views": 80749
     }
   ]
 }

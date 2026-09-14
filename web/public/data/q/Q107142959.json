@@ -1,0 +1,40 @@
+{
+  "qid": "Q107142959",
+  "label": "Jesse Minter",
+  "title": "Jesse_Minter",
+  "description": "American football player and coach (born 1983)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/2024-0106-Jesse_Minter.jpg?width=64",
+  "total": 465868,
+  "monthly": [
+    {
+      "period": "2024-01",
+      "views": 13455
+    },
+    {
+      "period": "2025-12",
+      "views": 15247
+    },
+    {
+      "period": "2026-01",
+      "views": 416955
+    },
+    {
+      "period": "2026-09",
+      "views": 20211
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2024",
+      "views": 13455
+    },
+    {
+      "period": "2025",
+      "views": 15247
+    },
+    {
+      "period": "2026",
+      "views": 437166
+    }
+  ]
+}

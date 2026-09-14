@@ -4,7 +4,7 @@
   "title": "Bruno_Guimarães",
   "description": "Brazilian footballer (born 1997)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bruno_Guimaraes_Brazil_V_Morocco_13_June_2026-78_%28cropped%29.jpg?width=64",
-  "total": 654324,
+  "total": 668680,
   "monthly": [
     {
       "period": "2022-01",
@@ -52,7 +52,7 @@
     },
     {
       "period": "2026-09",
-      "views": 13572
+      "views": 27928
     }
   ],
   "yearly": [
@@ -70,7 +70,7 @@
     },
     {
       "period": "2026",
-      "views": 350996
+      "views": 365352
     }
   ]
 }

@@ -4,7 +4,7 @@
   "title": "Hailee_Steinfeld",
   "description": "American actress and singer-songwriter (born 1996)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hailee_Steinfeld_by_Gage_Skidmore.jpg?width=64",
-  "total": 25835170,
+  "total": 25856255,
   "monthly": [
     {
       "period": "2015-07",
@@ -452,7 +452,7 @@
     },
     {
       "period": "2026-09",
-      "views": 25519
+      "views": 46604
     }
   ],
   "yearly": [
@@ -502,7 +502,7 @@
     },
     {
       "period": "2026",
-      "views": 2533978
+      "views": 2555063
     }
   ]
 }

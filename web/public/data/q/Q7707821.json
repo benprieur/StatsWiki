@@ -1,0 +1,80 @@
+{
+  "qid": "Q7707821",
+  "label": "Texas Longhorns football",
+  "title": "Texas_Longhorns_football",
+  "description": "football team of the University of Texas",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Darrell_K_Royal-Texas_Memorial_Stadium_at_Night.jpg?width=64",
+  "total": 163077,
+  "monthly": [
+    {
+      "period": "2016-09",
+      "views": 19641
+    },
+    {
+      "period": "2019-01",
+      "views": 15009
+    },
+    {
+      "period": "2022-09",
+      "views": 16859
+    },
+    {
+      "period": "2023-09",
+      "views": 15369
+    },
+    {
+      "period": "2024-01",
+      "views": 23110
+    },
+    {
+      "period": "2024-09",
+      "views": 11067
+    },
+    {
+      "period": "2024-10",
+      "views": 12293
+    },
+    {
+      "period": "2025-01",
+      "views": 18493
+    },
+    {
+      "period": "2025-11",
+      "views": 13665
+    },
+    {
+      "period": "2026-09",
+      "views": 17571
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 19641
+    },
+    {
+      "period": "2019",
+      "views": 15009
+    },
+    {
+      "period": "2022",
+      "views": 16859
+    },
+    {
+      "period": "2023",
+      "views": 15369
+    },
+    {
+      "period": "2024",
+      "views": 46470
+    },
+    {
+      "period": "2025",
+      "views": 32158
+    },
+    {
+      "period": "2026",
+      "views": 17571
+    }
+  ]
+}

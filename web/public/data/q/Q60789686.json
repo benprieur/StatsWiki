@@ -1,0 +1,80 @@
+{
+  "qid": "Q60789686",
+  "label": "Arthur Smith",
+  "title": "Arthur_Smith_(American_football,_born_1982)",
+  "description": "American football coach (born 1982)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Arthur_Smith%2C_January_2021_%28cropped%29.jpg?width=64",
+  "total": 484640,
+  "monthly": [
+    {
+      "period": "2021-10",
+      "views": 11098
+    },
+    {
+      "period": "2021-11",
+      "views": 11586
+    },
+    {
+      "period": "2022-08",
+      "views": 59279
+    },
+    {
+      "period": "2022-11",
+      "views": 20407
+    },
+    {
+      "period": "2023-09",
+      "views": 15753
+    },
+    {
+      "period": "2023-10",
+      "views": 34313
+    },
+    {
+      "period": "2023-11",
+      "views": 34055
+    },
+    {
+      "period": "2024-01",
+      "views": 205726
+    },
+    {
+      "period": "2025-06",
+      "views": 15571
+    },
+    {
+      "period": "2026-01",
+      "views": 58629
+    },
+    {
+      "period": "2026-09",
+      "views": 18223
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 22684
+    },
+    {
+      "period": "2022",
+      "views": 79686
+    },
+    {
+      "period": "2023",
+      "views": 84121
+    },
+    {
+      "period": "2024",
+      "views": 205726
+    },
+    {
+      "period": "2025",
+      "views": 15571
+    },
+    {
+      "period": "2026",
+      "views": 76852
+    }
+  ]
+}

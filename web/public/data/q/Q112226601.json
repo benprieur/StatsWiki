@@ -1,0 +1,40 @@
+{
+  "qid": "Q112226601",
+  "label": "Purple Hearts",
+  "title": "Purple_Hearts_(2022_film)",
+  "description": "2022 film directed by Elizabeth Allen Rosenbaum",
+  "image": "",
+  "total": 347844,
+  "monthly": [
+    {
+      "period": "2022-07",
+      "views": 44592
+    },
+    {
+      "period": "2022-08",
+      "views": 238422
+    },
+    {
+      "period": "2024-05",
+      "views": 50278
+    },
+    {
+      "period": "2026-09",
+      "views": 14552
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2022",
+      "views": 283014
+    },
+    {
+      "period": "2024",
+      "views": 50278
+    },
+    {
+      "period": "2026",
+      "views": 14552
+    }
+  ]
+}

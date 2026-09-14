@@ -4,7 +4,7 @@
   "title": "7_World_Trade_Center",
   "description": "building in Lower Manhattan, New York City",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/7_World_Trade_Center.jpg?width=64",
-  "total": 958605,
+  "total": 970880,
   "monthly": [
     {
       "period": "2015-09",
@@ -48,7 +48,7 @@
     },
     {
       "period": "2026-09",
-      "views": 42604
+      "views": 54879
     }
   ],
   "yearly": [
@@ -94,7 +94,7 @@
     },
     {
       "period": "2026",
-      "views": 42604
+      "views": 54879
     }
   ]
 }

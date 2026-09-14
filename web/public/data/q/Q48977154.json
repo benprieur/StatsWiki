@@ -1,0 +1,88 @@
+{
+  "qid": "Q48977154",
+  "label": "David Montgomery",
+  "title": "David_Montgomery_(American_football)",
+  "description": "American football player (born 1997)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/2018-0716-Big12MD-DavidMontgomery.jpg?width=64",
+  "total": 432850,
+  "monthly": [
+    {
+      "period": "2019-04",
+      "views": 13153
+    },
+    {
+      "period": "2019-09",
+      "views": 11118
+    },
+    {
+      "period": "2023-03",
+      "views": 20553
+    },
+    {
+      "period": "2023-09",
+      "views": 73755
+    },
+    {
+      "period": "2024-01",
+      "views": 52706
+    },
+    {
+      "period": "2024-09",
+      "views": 32351
+    },
+    {
+      "period": "2024-10",
+      "views": 38086
+    },
+    {
+      "period": "2024-11",
+      "views": 40600
+    },
+    {
+      "period": "2024-12",
+      "views": 22243
+    },
+    {
+      "period": "2025-10",
+      "views": 49020
+    },
+    {
+      "period": "2025-11",
+      "views": 10379
+    },
+    {
+      "period": "2025-12",
+      "views": 9261
+    },
+    {
+      "period": "2026-03",
+      "views": 39742
+    },
+    {
+      "period": "2026-09",
+      "views": 19883
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2019",
+      "views": 24271
+    },
+    {
+      "period": "2023",
+      "views": 94308
+    },
+    {
+      "period": "2024",
+      "views": 185986
+    },
+    {
+      "period": "2025",
+      "views": 68660
+    },
+    {
+      "period": "2026",
+      "views": 59625
+    }
+  ]
+}

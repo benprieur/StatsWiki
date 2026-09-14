@@ -1,0 +1,64 @@
+{
+  "qid": "Q1235785",
+  "label": "stiff-person syndrome",
+  "title": "Stiff-person_syndrome",
+  "description": "rare neurologic disorder characterized by progressive rigidity and stiffness in truncal muscles, spasms, postural deformities, chronic pain, impaired mobility, and lumbar hyperlordosis",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Stiff_man_human_cerebellum.JPG?width=64",
+  "total": 1414513,
+  "monthly": [
+    {
+      "period": "2022-12",
+      "views": 254750
+    },
+    {
+      "period": "2023-05",
+      "views": 107295
+    },
+    {
+      "period": "2023-08",
+      "views": 34984
+    },
+    {
+      "period": "2023-12",
+      "views": 82993
+    },
+    {
+      "period": "2024-02",
+      "views": 109574
+    },
+    {
+      "period": "2024-05",
+      "views": 11203
+    },
+    {
+      "period": "2024-06",
+      "views": 165224
+    },
+    {
+      "period": "2024-07",
+      "views": 632474
+    },
+    {
+      "period": "2026-09",
+      "views": 16016
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2022",
+      "views": 254750
+    },
+    {
+      "period": "2023",
+      "views": 225272
+    },
+    {
+      "period": "2024",
+      "views": 918475
+    },
+    {
+      "period": "2026",
+      "views": 16016
+    }
+  ]
+}

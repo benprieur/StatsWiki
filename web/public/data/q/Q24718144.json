@@ -1,0 +1,36 @@
+{
+  "qid": "Q24718144",
+  "label": "Kai Schreiber",
+  "title": "Kai_Schreiber",
+  "description": "American actress",
+  "image": "",
+  "total": 82187,
+  "monthly": [
+    {
+      "period": "2025-05",
+      "views": 34607
+    },
+    {
+      "period": "2025-08",
+      "views": 25061
+    },
+    {
+      "period": "2026-03",
+      "views": 10331
+    },
+    {
+      "period": "2026-09",
+      "views": 12188
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 59668
+    },
+    {
+      "period": "2026",
+      "views": 22519
+    }
+  ]
+}

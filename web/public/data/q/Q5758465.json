@@ -1,0 +1,68 @@
+{
+  "qid": "Q5758465",
+  "label": "Highest scoring NFL games",
+  "title": "List_of_highest-scoring_NFL_games",
+  "description": "Wikimedia list article",
+  "image": "",
+  "total": 349803,
+  "monthly": [
+    {
+      "period": "2021-01",
+      "views": 15552
+    },
+    {
+      "period": "2022-12",
+      "views": 12517
+    },
+    {
+      "period": "2023-02",
+      "views": 13548
+    },
+    {
+      "period": "2023-09",
+      "views": 190108
+    },
+    {
+      "period": "2023-12",
+      "views": 44518
+    },
+    {
+      "period": "2025-01",
+      "views": 31486
+    },
+    {
+      "period": "2025-02",
+      "views": 15486
+    },
+    {
+      "period": "2025-12",
+      "views": 10902
+    },
+    {
+      "period": "2026-09",
+      "views": 15686
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 15552
+    },
+    {
+      "period": "2022",
+      "views": 12517
+    },
+    {
+      "period": "2023",
+      "views": 248174
+    },
+    {
+      "period": "2025",
+      "views": 57874
+    },
+    {
+      "period": "2026",
+      "views": 15686
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "title": "Pete_Sampras",
   "description": "American tennis player (born 1971)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pete_Sampras_%282008%29_1%2C_cropped.jpg?width=64",
-  "total": 2374034,
+  "total": 2388102,
   "monthly": [
     {
       "period": "2015-07",
@@ -164,7 +164,7 @@
     },
     {
       "period": "2026-09",
-      "views": 10391
+      "views": 24459
     }
   ],
   "yearly": [
@@ -214,7 +214,7 @@
     },
     {
       "period": "2026",
-      "views": 61553
+      "views": 75621
     }
   ]
 }

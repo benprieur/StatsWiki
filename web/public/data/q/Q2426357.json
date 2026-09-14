@@ -1,0 +1,76 @@
+{
+  "qid": "Q2426357",
+  "label": "Natalie Appleton",
+  "title": "Natalie_Appleton",
+  "description": "Canadian singer",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Natalie_Appleton_2007.jpg?width=64",
+  "total": 196210,
+  "monthly": [
+    {
+      "period": "2016-04",
+      "views": 27601
+    },
+    {
+      "period": "2018-07",
+      "views": 14421
+    },
+    {
+      "period": "2018-11",
+      "views": 17105
+    },
+    {
+      "period": "2019-03",
+      "views": 35199
+    },
+    {
+      "period": "2023-02",
+      "views": 45958
+    },
+    {
+      "period": "2024-02",
+      "views": 16304
+    },
+    {
+      "period": "2025-06",
+      "views": 11564
+    },
+    {
+      "period": "2025-11",
+      "views": 15361
+    },
+    {
+      "period": "2026-09",
+      "views": 12697
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 27601
+    },
+    {
+      "period": "2018",
+      "views": 31526
+    },
+    {
+      "period": "2019",
+      "views": 35199
+    },
+    {
+      "period": "2023",
+      "views": 45958
+    },
+    {
+      "period": "2024",
+      "views": 16304
+    },
+    {
+      "period": "2025",
+      "views": 26925
+    },
+    {
+      "period": "2026",
+      "views": 12697
+    }
+  ]
+}

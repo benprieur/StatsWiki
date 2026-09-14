@@ -1,0 +1,204 @@
+{
+  "qid": "Q5686",
+  "label": "Charles Dickens",
+  "title": "Charles_Dickens",
+  "description": "English novelist and social critic (1812–1870)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dickens_Gurney_head.jpg?width=64",
+  "total": 4352459,
+  "monthly": [
+    {
+      "period": "2015-09",
+      "views": 10698
+    },
+    {
+      "period": "2015-11",
+      "views": 65525
+    },
+    {
+      "period": "2015-12",
+      "views": 253815
+    },
+    {
+      "period": "2016-10",
+      "views": 38233
+    },
+    {
+      "period": "2016-11",
+      "views": 35240
+    },
+    {
+      "period": "2016-12",
+      "views": 187285
+    },
+    {
+      "period": "2017-02",
+      "views": 11328
+    },
+    {
+      "period": "2017-07",
+      "views": 12094
+    },
+    {
+      "period": "2017-11",
+      "views": 108628
+    },
+    {
+      "period": "2017-12",
+      "views": 344186
+    },
+    {
+      "period": "2018-02",
+      "views": 9974
+    },
+    {
+      "period": "2018-05",
+      "views": 139028
+    },
+    {
+      "period": "2018-11",
+      "views": 120719
+    },
+    {
+      "period": "2018-12",
+      "views": 480890
+    },
+    {
+      "period": "2019-02",
+      "views": 10216
+    },
+    {
+      "period": "2019-07",
+      "views": 79548
+    },
+    {
+      "period": "2019-09",
+      "views": 40629
+    },
+    {
+      "period": "2019-11",
+      "views": 10762
+    },
+    {
+      "period": "2019-12",
+      "views": 315166
+    },
+    {
+      "period": "2020-12",
+      "views": 413715
+    },
+    {
+      "period": "2021-06",
+      "views": 11899
+    },
+    {
+      "period": "2021-11",
+      "views": 29135
+    },
+    {
+      "period": "2021-12",
+      "views": 290168
+    },
+    {
+      "period": "2022-08",
+      "views": 9608
+    },
+    {
+      "period": "2022-11",
+      "views": 15013
+    },
+    {
+      "period": "2022-12",
+      "views": 284825
+    },
+    {
+      "period": "2023-11",
+      "views": 30669
+    },
+    {
+      "period": "2023-12",
+      "views": 371734
+    },
+    {
+      "period": "2024-02",
+      "views": 32956
+    },
+    {
+      "period": "2024-12",
+      "views": 186329
+    },
+    {
+      "period": "2025-02",
+      "views": 16767
+    },
+    {
+      "period": "2025-03",
+      "views": 12253
+    },
+    {
+      "period": "2025-09",
+      "views": 11573
+    },
+    {
+      "period": "2025-12",
+      "views": 320688
+    },
+    {
+      "period": "2026-02",
+      "views": 31337
+    },
+    {
+      "period": "2026-09",
+      "views": 9826
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 330038
+    },
+    {
+      "period": "2016",
+      "views": 260758
+    },
+    {
+      "period": "2017",
+      "views": 476236
+    },
+    {
+      "period": "2018",
+      "views": 750611
+    },
+    {
+      "period": "2019",
+      "views": 456321
+    },
+    {
+      "period": "2020",
+      "views": 413715
+    },
+    {
+      "period": "2021",
+      "views": 331202
+    },
+    {
+      "period": "2022",
+      "views": 309446
+    },
+    {
+      "period": "2023",
+      "views": 402403
+    },
+    {
+      "period": "2024",
+      "views": 219285
+    },
+    {
+      "period": "2025",
+      "views": 361281
+    },
+    {
+      "period": "2026",
+      "views": 41163
+    }
+  ]
+}

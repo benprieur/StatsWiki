@@ -1,0 +1,140 @@
+{
+  "qid": "Q7080909",
+  "label": "Ohio State Buckeyes football",
+  "title": "Ohio_State_Buckeyes_football",
+  "description": "football team of the Ohio State University",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ohio_State_Buckeyes_logo.svg?width=64",
+  "total": 554433,
+  "monthly": [
+    {
+      "period": "2015-09",
+      "views": 10482
+    },
+    {
+      "period": "2016-11",
+      "views": 18666
+    },
+    {
+      "period": "2017-01",
+      "views": 16684
+    },
+    {
+      "period": "2017-12",
+      "views": 14251
+    },
+    {
+      "period": "2018-11",
+      "views": 16864
+    },
+    {
+      "period": "2018-12",
+      "views": 25252
+    },
+    {
+      "period": "2019-01",
+      "views": 11954
+    },
+    {
+      "period": "2019-11",
+      "views": 13916
+    },
+    {
+      "period": "2019-12",
+      "views": 39040
+    },
+    {
+      "period": "2021-01",
+      "views": 53546
+    },
+    {
+      "period": "2021-11",
+      "views": 13583
+    },
+    {
+      "period": "2022-11",
+      "views": 15683
+    },
+    {
+      "period": "2023-01",
+      "views": 17924
+    },
+    {
+      "period": "2024-01",
+      "views": 13504
+    },
+    {
+      "period": "2024-11",
+      "views": 13931
+    },
+    {
+      "period": "2024-12",
+      "views": 12702
+    },
+    {
+      "period": "2025-01",
+      "views": 188380
+    },
+    {
+      "period": "2025-11",
+      "views": 17223
+    },
+    {
+      "period": "2025-12",
+      "views": 17041
+    },
+    {
+      "period": "2026-01",
+      "views": 13926
+    },
+    {
+      "period": "2026-09",
+      "views": 9881
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 10482
+    },
+    {
+      "period": "2016",
+      "views": 18666
+    },
+    {
+      "period": "2017",
+      "views": 30935
+    },
+    {
+      "period": "2018",
+      "views": 42116
+    },
+    {
+      "period": "2019",
+      "views": 64910
+    },
+    {
+      "period": "2021",
+      "views": 67129
+    },
+    {
+      "period": "2022",
+      "views": 15683
+    },
+    {
+      "period": "2023",
+      "views": 17924
+    },
+    {
+      "period": "2024",
+      "views": 40137
+    },
+    {
+      "period": "2025",
+      "views": 222644
+    },
+    {
+      "period": "2026",
+      "views": 23807
+    }
+  ]
+}

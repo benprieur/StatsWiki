@@ -4,7 +4,7 @@
   "title": "Anna_Chapman",
   "description": "Russian intelligence agent, media personality, and model",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anna_Chapman_04.jpg?width=64",
-  "total": 148528,
+  "total": 173866,
   "monthly": [
     {
       "period": "2018-03",
@@ -17,6 +17,10 @@
     {
       "period": "2026-08",
       "views": 25299
+    },
+    {
+      "period": "2026-09",
+      "views": 25338
     }
   ],
   "yearly": [
@@ -26,7 +30,7 @@
     },
     {
       "period": "2026",
-      "views": 25299
+      "views": 50637
     }
   ]
 }

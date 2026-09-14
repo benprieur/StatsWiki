@@ -1,0 +1,28 @@
+{
+  "qid": "Q7369680",
+  "label": "Ross Tucker",
+  "title": "Ross_Tucker",
+  "description": "American football player and sports broadcaster (born 1979)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/RTRKS_Edit.jpg?width=64",
+  "total": 23803,
+  "monthly": [
+    {
+      "period": "2024-12",
+      "views": 12052
+    },
+    {
+      "period": "2026-09",
+      "views": 11751
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2024",
+      "views": 12052
+    },
+    {
+      "period": "2026",
+      "views": 11751
+    }
+  ]
+}

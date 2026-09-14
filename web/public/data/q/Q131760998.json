@@ -4,7 +4,7 @@
   "title": "Alpha_(2026_film)",
   "description": "Indian film by Shiv Rawail",
   "image": "",
-  "total": 2164463,
+  "total": 2173854,
   "monthly": [
     {
       "period": "2026-06",
@@ -20,13 +20,13 @@
     },
     {
       "period": "2026-09",
-      "views": 178275
+      "views": 187666
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 2164463
+      "views": 2173854
     }
   ]
 }

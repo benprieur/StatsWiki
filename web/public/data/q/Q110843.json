@@ -1,0 +1,40 @@
+{
+  "qid": "Q110843",
+  "label": "Moderate Party",
+  "title": "Moderate_Party",
+  "description": "political party in Sweden",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/M_v1.svg?width=64",
+  "total": 71663,
+  "monthly": [
+    {
+      "period": "2018-09",
+      "views": 22304
+    },
+    {
+      "period": "2022-09",
+      "views": 26038
+    },
+    {
+      "period": "2022-10",
+      "views": 9316
+    },
+    {
+      "period": "2026-09",
+      "views": 14005
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2018",
+      "views": 22304
+    },
+    {
+      "period": "2022",
+      "views": 35354
+    },
+    {
+      "period": "2026",
+      "views": 14005
+    }
+  ]
+}

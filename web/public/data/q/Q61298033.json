@@ -1,0 +1,28 @@
+{
+  "qid": "Q61298033",
+  "label": "Virginia Fonseca",
+  "title": "Virginia_Fonseca",
+  "description": "Brazilian-American digital influencer (born 1999)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Virginia_Fonseca_na_CPI_das_BETS.jpg?width=64",
+  "total": 33338,
+  "monthly": [
+    {
+      "period": "2025-10",
+      "views": 23865
+    },
+    {
+      "period": "2026-09",
+      "views": 9473
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 23865
+    },
+    {
+      "period": "2026",
+      "views": 9473
+    }
+  ]
+}

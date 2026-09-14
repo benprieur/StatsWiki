@@ -1,0 +1,72 @@
+{
+  "qid": "Q272438",
+  "label": "Diane von Fürstenberg",
+  "title": "Diane_von_Fürstenberg",
+  "description": "Belgian-born American fashion designer (born 1946)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Diane_von_Furstenberg_2011_Shankbone.JPG?width=64",
+  "total": 250770,
+  "monthly": [
+    {
+      "period": "2015-09",
+      "views": 10175
+    },
+    {
+      "period": "2019-06",
+      "views": 13320
+    },
+    {
+      "period": "2020-10",
+      "views": 18519
+    },
+    {
+      "period": "2023-04",
+      "views": 14161
+    },
+    {
+      "period": "2024-06",
+      "views": 51321
+    },
+    {
+      "period": "2025-05",
+      "views": 114368
+    },
+    {
+      "period": "2025-09",
+      "views": 12232
+    },
+    {
+      "period": "2026-09",
+      "views": 16674
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 10175
+    },
+    {
+      "period": "2019",
+      "views": 13320
+    },
+    {
+      "period": "2020",
+      "views": 18519
+    },
+    {
+      "period": "2023",
+      "views": 14161
+    },
+    {
+      "period": "2024",
+      "views": 51321
+    },
+    {
+      "period": "2025",
+      "views": 126600
+    },
+    {
+      "period": "2026",
+      "views": 16674
+    }
+  ]
+}

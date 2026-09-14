@@ -1,0 +1,140 @@
+{
+  "qid": "Q69807017",
+  "label": "Justin Jefferson",
+  "title": "Justin_Jefferson",
+  "description": "American football player (born 1999)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jefferson_2022.jpg?width=64",
+  "total": 587741,
+  "monthly": [
+    {
+      "period": "2019-12",
+      "views": 17596
+    },
+    {
+      "period": "2020-01",
+      "views": 16178
+    },
+    {
+      "period": "2020-04",
+      "views": 39395
+    },
+    {
+      "period": "2020-11",
+      "views": 13808
+    },
+    {
+      "period": "2021-11",
+      "views": 10727
+    },
+    {
+      "period": "2021-12",
+      "views": 22100
+    },
+    {
+      "period": "2022-09",
+      "views": 56295
+    },
+    {
+      "period": "2022-11",
+      "views": 55107
+    },
+    {
+      "period": "2022-12",
+      "views": 41241
+    },
+    {
+      "period": "2023-01",
+      "views": 17713
+    },
+    {
+      "period": "2023-02",
+      "views": 16288
+    },
+    {
+      "period": "2023-09",
+      "views": 42252
+    },
+    {
+      "period": "2023-12",
+      "views": 13063
+    },
+    {
+      "period": "2024-01",
+      "views": 14928
+    },
+    {
+      "period": "2024-06",
+      "views": 11083
+    },
+    {
+      "period": "2024-07",
+      "views": 52068
+    },
+    {
+      "period": "2024-09",
+      "views": 12878
+    },
+    {
+      "period": "2024-10",
+      "views": 17550
+    },
+    {
+      "period": "2024-11",
+      "views": 22243
+    },
+    {
+      "period": "2025-01",
+      "views": 39536
+    },
+    {
+      "period": "2025-09",
+      "views": 25206
+    },
+    {
+      "period": "2025-10",
+      "views": 8652
+    },
+    {
+      "period": "2025-12",
+      "views": 11216
+    },
+    {
+      "period": "2026-09",
+      "views": 10618
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2019",
+      "views": 17596
+    },
+    {
+      "period": "2020",
+      "views": 69381
+    },
+    {
+      "period": "2021",
+      "views": 32827
+    },
+    {
+      "period": "2022",
+      "views": 152643
+    },
+    {
+      "period": "2023",
+      "views": 89316
+    },
+    {
+      "period": "2024",
+      "views": 130750
+    },
+    {
+      "period": "2025",
+      "views": 84610
+    },
+    {
+      "period": "2026",
+      "views": 10618
+    }
+  ]
+}

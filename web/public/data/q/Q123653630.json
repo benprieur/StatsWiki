@@ -1,0 +1,44 @@
+{
+  "qid": "Q123653630",
+  "label": "Cameron Skattebo",
+  "title": "Cam_Skattebo",
+  "description": "American football player (born 2002)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cam_Skattebo_Super_Bowl_LX_2026.png?width=64",
+  "total": 1473214,
+  "monthly": [
+    {
+      "period": "2025-01",
+      "views": 253589
+    },
+    {
+      "period": "2025-04",
+      "views": 101617
+    },
+    {
+      "period": "2025-09",
+      "views": 284386
+    },
+    {
+      "period": "2025-10",
+      "views": 803234
+    },
+    {
+      "period": "2025-11",
+      "views": 18308
+    },
+    {
+      "period": "2026-09",
+      "views": 12080
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 1461134
+    },
+    {
+      "period": "2026",
+      "views": 12080
+    }
+  ]
+}

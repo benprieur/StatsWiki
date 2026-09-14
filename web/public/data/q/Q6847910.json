@@ -1,0 +1,120 @@
+{
+  "qid": "Q6847910",
+  "label": "Mike McDaniel",
+  "title": "Mike_McDaniel",
+  "description": "American football coach",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mike_McDaniel_2023.png?width=64",
+  "total": 5566382,
+  "monthly": [
+    {
+      "period": "2022-01",
+      "views": 160393
+    },
+    {
+      "period": "2022-02",
+      "views": 359882
+    },
+    {
+      "period": "2022-03",
+      "views": 11418
+    },
+    {
+      "period": "2022-09",
+      "views": 496352
+    },
+    {
+      "period": "2022-10",
+      "views": 148927
+    },
+    {
+      "period": "2022-11",
+      "views": 38023
+    },
+    {
+      "period": "2022-12",
+      "views": 454404
+    },
+    {
+      "period": "2023-01",
+      "views": 349312
+    },
+    {
+      "period": "2023-09",
+      "views": 635995
+    },
+    {
+      "period": "2023-10",
+      "views": 426767
+    },
+    {
+      "period": "2023-11",
+      "views": 374091
+    },
+    {
+      "period": "2023-12",
+      "views": 381279
+    },
+    {
+      "period": "2024-01",
+      "views": 356178
+    },
+    {
+      "period": "2024-09",
+      "views": 189393
+    },
+    {
+      "period": "2024-10",
+      "views": 28120
+    },
+    {
+      "period": "2024-11",
+      "views": 162021
+    },
+    {
+      "period": "2025-09",
+      "views": 189085
+    },
+    {
+      "period": "2025-10",
+      "views": 165768
+    },
+    {
+      "period": "2025-11",
+      "views": 57761
+    },
+    {
+      "period": "2025-12",
+      "views": 23699
+    },
+    {
+      "period": "2026-01",
+      "views": 545003
+    },
+    {
+      "period": "2026-09",
+      "views": 12511
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2022",
+      "views": 1669399
+    },
+    {
+      "period": "2023",
+      "views": 2167444
+    },
+    {
+      "period": "2024",
+      "views": 735712
+    },
+    {
+      "period": "2025",
+      "views": 436313
+    },
+    {
+      "period": "2026",
+      "views": 557514
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "qid": "Q101247586",
+  "label": "Malik Willis",
+  "title": "Malik_Willis",
+  "description": "American football quarterback",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Malik_Willis_interview.jpg?width=64",
+  "total": 983640,
+  "monthly": [
+    {
+      "period": "2022-03",
+      "views": 41618
+    },
+    {
+      "period": "2022-04",
+      "views": 88746
+    },
+    {
+      "period": "2022-05",
+      "views": 12265
+    },
+    {
+      "period": "2022-08",
+      "views": 14484
+    },
+    {
+      "period": "2022-11",
+      "views": 60823
+    },
+    {
+      "period": "2023-04",
+      "views": 26062
+    },
+    {
+      "period": "2024-08",
+      "views": 49449
+    },
+    {
+      "period": "2024-09",
+      "views": 194888
+    },
+    {
+      "period": "2025-03",
+      "views": 44498
+    },
+    {
+      "period": "2025-11",
+      "views": 11040
+    },
+    {
+      "period": "2025-12",
+      "views": 311359
+    },
+    {
+      "period": "2026-03",
+      "views": 102334
+    },
+    {
+      "period": "2026-09",
+      "views": 26074
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2022",
+      "views": 217936
+    },
+    {
+      "period": "2023",
+      "views": 26062
+    },
+    {
+      "period": "2024",
+      "views": 244337
+    },
+    {
+      "period": "2025",
+      "views": 366897
+    },
+    {
+      "period": "2026",
+      "views": 128408
+    }
+  ]
+}

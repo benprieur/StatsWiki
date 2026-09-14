@@ -1,0 +1,32 @@
+{
+  "qid": "Q135938003",
+  "label": "Zuffa Boxing",
+  "title": "Zuffa_Boxing",
+  "description": "American boxing promotional company",
+  "image": "",
+  "total": 37763,
+  "monthly": [
+    {
+      "period": "2025-09",
+      "views": 10852
+    },
+    {
+      "period": "2026-02",
+      "views": 15366
+    },
+    {
+      "period": "2026-09",
+      "views": 11545
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 10852
+    },
+    {
+      "period": "2026",
+      "views": 26911
+    }
+  ]
+}

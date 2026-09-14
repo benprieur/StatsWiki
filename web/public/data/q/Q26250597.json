@@ -4,7 +4,7 @@
   "title": "Teofimo_Lopez",
   "description": "American boxer",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Teofimo_Lopez.jpg?width=64",
-  "total": 550707,
+  "total": 599496,
   "monthly": [
     {
       "period": "2023-06",
@@ -33,6 +33,10 @@
     {
       "period": "2026-08",
       "views": 69737
+    },
+    {
+      "period": "2026-09",
+      "views": 48789
     }
   ],
   "yearly": [
@@ -50,7 +54,7 @@
     },
     {
       "period": "2026",
-      "views": 234468
+      "views": 283257
     }
   ]
 }

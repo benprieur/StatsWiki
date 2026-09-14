@@ -4,7 +4,7 @@
   "title": "Audrey_Hepburn",
   "description": "British actress (1929–1993)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Audrey_Hepburn_in_1966.jpg?width=64",
-  "total": 26366659,
+  "total": 26376295,
   "monthly": [
     {
       "period": "2015-07",
@@ -533,6 +533,10 @@
     {
       "period": "2026-08",
       "views": 171143
+    },
+    {
+      "period": "2026-09",
+      "views": 9636
     }
   ],
   "yearly": [
@@ -582,7 +586,7 @@
     },
     {
       "period": "2026",
-      "views": 596797
+      "views": 606433
     }
   ]
 }

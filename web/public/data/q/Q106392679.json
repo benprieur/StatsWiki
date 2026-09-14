@@ -4,7 +4,7 @@
   "title": "Coyote_vs._Acme",
   "description": "2026 American film directed by Dave Green",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Acme_%282026%29.svg?width=64",
-  "total": 2348867,
+  "total": 2401706,
   "monthly": [
     {
       "period": "2023-11",
@@ -44,7 +44,7 @@
     },
     {
       "period": "2026-09",
-      "views": 870050
+      "views": 922889
     }
   ],
   "yearly": [
@@ -62,7 +62,7 @@
     },
     {
       "period": "2026",
-      "views": 2048451
+      "views": 2101290
     }
   ]
 }

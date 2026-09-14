@@ -1,0 +1,40 @@
+{
+  "qid": "Q4935873",
+  "label": "Magdalena Andersson",
+  "title": "Magdalena_Andersson",
+  "description": "Prime Minister of Sweden from 2021 to 2022, Swedish politician and economist",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Budgetpropositionen_f%C3%B6r_2022_%281_av_8%29_%28cropped%29_%281%29.jpg?width=64",
+  "total": 225446,
+  "monthly": [
+    {
+      "period": "2021-11",
+      "views": 128733
+    },
+    {
+      "period": "2021-12",
+      "views": 56810
+    },
+    {
+      "period": "2022-09",
+      "views": 25894
+    },
+    {
+      "period": "2026-09",
+      "views": 14009
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 185543
+    },
+    {
+      "period": "2022",
+      "views": 25894
+    },
+    {
+      "period": "2026",
+      "views": 14009
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "title": "WTA_Tour_records",
   "description": "Wikipedia list article",
   "image": "",
-  "total": 413584,
+  "total": 433662,
   "monthly": [
     {
       "period": "2017-01",
@@ -68,7 +68,7 @@
     },
     {
       "period": "2026-09",
-      "views": 39907
+      "views": 59985
     }
   ],
   "yearly": [
@@ -102,7 +102,7 @@
     },
     {
       "period": "2026",
-      "views": 91181
+      "views": 111259
     }
   ]
 }

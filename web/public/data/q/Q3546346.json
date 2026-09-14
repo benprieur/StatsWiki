@@ -4,7 +4,7 @@
   "title": "Tyreek_Hill",
   "description": "American football player (born 1994)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tyreek_Hill_2019.jpg?width=64",
-  "total": 4947091,
+  "total": 4957082,
   "monthly": [
     {
       "period": "2016-10",
@@ -241,6 +241,10 @@
     {
       "period": "2026-07",
       "views": 9011
+    },
+    {
+      "period": "2026-09",
+      "views": 9991
     }
   ],
   "yearly": [
@@ -286,7 +290,7 @@
     },
     {
       "period": "2026",
-      "views": 72581
+      "views": 82572
     }
   ]
 }
