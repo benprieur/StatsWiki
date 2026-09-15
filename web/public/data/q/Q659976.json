@@ -4,7 +4,7 @@
   "title": "Ramzi_bin_al-Shibh",
   "description": "9/11 organizer",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ramzi_bin_al-Shibh_circa_2023.jpg?width=64",
-  "total": 146302,
+  "total": 156824,
   "monthly": [
     {
       "period": "2021-09",
@@ -16,7 +16,7 @@
     },
     {
       "period": "2026-09",
-      "views": 61194
+      "views": 71716
     }
   ],
   "yearly": [
@@ -30,7 +30,7 @@
     },
     {
       "period": "2026",
-      "views": 61194
+      "views": 71716
     }
   ]
 }

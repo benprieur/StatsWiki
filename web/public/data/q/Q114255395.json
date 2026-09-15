@@ -1,0 +1,40 @@
+{
+  "qid": "Q114255395",
+  "label": "Malik Nabers",
+  "title": "Malik_Nabers",
+  "description": "American football player",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Malik_Nabers_2024_Florida.jpg?width=64",
+  "total": 161729,
+  "monthly": [
+    {
+      "period": "2024-04",
+      "views": 10695
+    },
+    {
+      "period": "2024-09",
+      "views": 99241
+    },
+    {
+      "period": "2025-09",
+      "views": 32761
+    },
+    {
+      "period": "2026-09",
+      "views": 19032
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2024",
+      "views": 109936
+    },
+    {
+      "period": "2025",
+      "views": 32761
+    },
+    {
+      "period": "2026",
+      "views": 19032
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "qid": "Q328993",
+  "label": "Definitely Maybe",
+  "title": "Definitely_Maybe",
+  "description": "1994 studio album by Oasis",
+  "image": "",
+  "total": 296216,
+  "monthly": [
+    {
+      "period": "2019-08",
+      "views": 10796
+    },
+    {
+      "period": "2023-10",
+      "views": 11678
+    },
+    {
+      "period": "2024-08",
+      "views": 195876
+    },
+    {
+      "period": "2024-09",
+      "views": 56103
+    },
+    {
+      "period": "2025-07",
+      "views": 12767
+    },
+    {
+      "period": "2026-09",
+      "views": 8996
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2019",
+      "views": 10796
+    },
+    {
+      "period": "2023",
+      "views": 11678
+    },
+    {
+      "period": "2024",
+      "views": 251979
+    },
+    {
+      "period": "2025",
+      "views": 12767
+    },
+    {
+      "period": "2026",
+      "views": 8996
+    }
+  ]
+}

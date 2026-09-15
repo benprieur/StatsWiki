@@ -1,0 +1,44 @@
+{
+  "qid": "Q729782",
+  "label": "The Parent Trap",
+  "title": "The_Parent_Trap_(1998_film)",
+  "description": "1998 film directed by Nancy Meyers",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Parent_Trap.svg?width=64",
+  "total": 84748,
+  "monthly": [
+    {
+      "period": "2024-01",
+      "views": 17259
+    },
+    {
+      "period": "2025-08",
+      "views": 28328
+    },
+    {
+      "period": "2025-10",
+      "views": 11151
+    },
+    {
+      "period": "2025-11",
+      "views": 8510
+    },
+    {
+      "period": "2026-09",
+      "views": 19500
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2024",
+      "views": 17259
+    },
+    {
+      "period": "2025",
+      "views": 47989
+    },
+    {
+      "period": "2026",
+      "views": 19500
+    }
+  ]
+}

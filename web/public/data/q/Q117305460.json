@@ -4,7 +4,7 @@
   "title": "2026_NFL_draft",
   "description": "2026 American football draft",
   "image": "",
-  "total": 1147714,
+  "total": 1160394,
   "monthly": [
     {
       "period": "2025-04",
@@ -28,7 +28,7 @@
     },
     {
       "period": "2026-09",
-      "views": 10303
+      "views": 22983
     }
   ],
   "yearly": [
@@ -38,7 +38,7 @@
     },
     {
       "period": "2026",
-      "views": 1121988
+      "views": 1134668
     }
   ]
 }

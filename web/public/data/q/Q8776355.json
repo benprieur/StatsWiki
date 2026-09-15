@@ -4,7 +4,7 @@
   "title": "Maladaptive_daydreaming",
   "description": "mental disorder",
   "image": "",
-  "total": 84880,
+  "total": 98390,
   "monthly": [
     {
       "period": "2020-05",
@@ -16,7 +16,7 @@
     },
     {
       "period": "2026-09",
-      "views": 26238
+      "views": 39748
     }
   ],
   "yearly": [
@@ -30,7 +30,7 @@
     },
     {
       "period": "2026",
-      "views": 26238
+      "views": 39748
     }
   ]
 }

@@ -4,7 +4,7 @@
   "title": "Paul_Wesley",
   "description": "American actor (born 1982)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul_Wesley_by_Gage_Skidmore_5.jpg?width=64",
-  "total": 298297,
+  "total": 307631,
   "monthly": [
     {
       "period": "2017-03",
@@ -37,6 +37,10 @@
     {
       "period": "2026-07",
       "views": 75214
+    },
+    {
+      "period": "2026-09",
+      "views": 9334
     }
   ],
   "yearly": [
@@ -66,7 +70,7 @@
     },
     {
       "period": "2026",
-      "views": 75214
+      "views": 84548
     }
   ]
 }

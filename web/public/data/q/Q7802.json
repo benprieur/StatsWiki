@@ -1,0 +1,36 @@
+{
+  "qid": "Q7802",
+  "label": "bread",
+  "title": "Bread",
+  "description": "baked food made of flour, water and other ingredients",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Assorted_bread.jpg?width=64",
+  "total": 400812,
+  "monthly": [
+    {
+      "period": "2015-08",
+      "views": 32206
+    },
+    {
+      "period": "2019-08",
+      "views": 360346
+    },
+    {
+      "period": "2026-09",
+      "views": 8260
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 32206
+    },
+    {
+      "period": "2019",
+      "views": 360346
+    },
+    {
+      "period": "2026",
+      "views": 8260
+    }
+  ]
+}

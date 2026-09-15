@@ -1,0 +1,260 @@
+{
+  "qid": "Q1280022",
+  "label": "Jerry Jones",
+  "title": "Jerry_Jones",
+  "description": "American businessman and owner of the Dallas Cowboys",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jerry_Jones_owner_dallas_cowboys_2008.jpg?width=64",
+  "total": 2805828,
+  "monthly": [
+    {
+      "period": "2015-09",
+      "views": 33224
+    },
+    {
+      "period": "2015-10",
+      "views": 11915
+    },
+    {
+      "period": "2015-11",
+      "views": 29893
+    },
+    {
+      "period": "2016-09",
+      "views": 18966
+    },
+    {
+      "period": "2016-10",
+      "views": 20757
+    },
+    {
+      "period": "2016-11",
+      "views": 20678
+    },
+    {
+      "period": "2016-12",
+      "views": 56458
+    },
+    {
+      "period": "2017-01",
+      "views": 41607
+    },
+    {
+      "period": "2017-02",
+      "views": 40795
+    },
+    {
+      "period": "2017-07",
+      "views": 9938
+    },
+    {
+      "period": "2017-08",
+      "views": 133507
+    },
+    {
+      "period": "2017-09",
+      "views": 125098
+    },
+    {
+      "period": "2017-10",
+      "views": 45148
+    },
+    {
+      "period": "2017-11",
+      "views": 69620
+    },
+    {
+      "period": "2017-12",
+      "views": 13704
+    },
+    {
+      "period": "2018-10",
+      "views": 11990
+    },
+    {
+      "period": "2018-11",
+      "views": 54527
+    },
+    {
+      "period": "2019-01",
+      "views": 85014
+    },
+    {
+      "period": "2019-09",
+      "views": 24442
+    },
+    {
+      "period": "2019-10",
+      "views": 58490
+    },
+    {
+      "period": "2019-11",
+      "views": 117964
+    },
+    {
+      "period": "2019-12",
+      "views": 87622
+    },
+    {
+      "period": "2020-01",
+      "views": 48525
+    },
+    {
+      "period": "2020-04",
+      "views": 67015
+    },
+    {
+      "period": "2020-09",
+      "views": 16296
+    },
+    {
+      "period": "2020-10",
+      "views": 10824
+    },
+    {
+      "period": "2020-11",
+      "views": 14681
+    },
+    {
+      "period": "2021-08",
+      "views": 9966
+    },
+    {
+      "period": "2021-09",
+      "views": 33098
+    },
+    {
+      "period": "2021-11",
+      "views": 14680
+    },
+    {
+      "period": "2022-01",
+      "views": 47495
+    },
+    {
+      "period": "2022-03",
+      "views": 16654
+    },
+    {
+      "period": "2022-09",
+      "views": 19894
+    },
+    {
+      "period": "2022-11",
+      "views": 32808
+    },
+    {
+      "period": "2022-12",
+      "views": 82182
+    },
+    {
+      "period": "2023-01",
+      "views": 91904
+    },
+    {
+      "period": "2023-11",
+      "views": 57206
+    },
+    {
+      "period": "2023-12",
+      "views": 15391
+    },
+    {
+      "period": "2024-01",
+      "views": 74250
+    },
+    {
+      "period": "2024-09",
+      "views": 10961
+    },
+    {
+      "period": "2024-10",
+      "views": 104483
+    },
+    {
+      "period": "2024-11",
+      "views": 81155
+    },
+    {
+      "period": "2024-12",
+      "views": 26916
+    },
+    {
+      "period": "2025-01",
+      "views": 257802
+    },
+    {
+      "period": "2025-02",
+      "views": 16828
+    },
+    {
+      "period": "2025-08",
+      "views": 287506
+    },
+    {
+      "period": "2025-09",
+      "views": 178460
+    },
+    {
+      "period": "2025-11",
+      "views": 55236
+    },
+    {
+      "period": "2025-12",
+      "views": 9713
+    },
+    {
+      "period": "2026-09",
+      "views": 12542
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 75032
+    },
+    {
+      "period": "2016",
+      "views": 116859
+    },
+    {
+      "period": "2017",
+      "views": 479417
+    },
+    {
+      "period": "2018",
+      "views": 66517
+    },
+    {
+      "period": "2019",
+      "views": 373532
+    },
+    {
+      "period": "2020",
+      "views": 157341
+    },
+    {
+      "period": "2021",
+      "views": 57744
+    },
+    {
+      "period": "2022",
+      "views": 199033
+    },
+    {
+      "period": "2023",
+      "views": 164501
+    },
+    {
+      "period": "2024",
+      "views": 297765
+    },
+    {
+      "period": "2025",
+      "views": 805545
+    },
+    {
+      "period": "2026",
+      "views": 12542
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "qid": "Q4965234",
+  "label": "Brian Schottenheimer",
+  "title": "Brian_Schottenheimer",
+  "description": "American football coach",
+  "image": "",
+  "total": 1161057,
+  "monthly": [
+    {
+      "period": "2018-01",
+      "views": 11964
+    },
+    {
+      "period": "2019-01",
+      "views": 11844
+    },
+    {
+      "period": "2021-01",
+      "views": 18020
+    },
+    {
+      "period": "2021-02",
+      "views": 10674
+    },
+    {
+      "period": "2023-02",
+      "views": 44610
+    },
+    {
+      "period": "2025-01",
+      "views": 802571
+    },
+    {
+      "period": "2025-09",
+      "views": 146066
+    },
+    {
+      "period": "2025-11",
+      "views": 69752
+    },
+    {
+      "period": "2025-12",
+      "views": 16426
+    },
+    {
+      "period": "2026-09",
+      "views": 29130
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2018",
+      "views": 11964
+    },
+    {
+      "period": "2019",
+      "views": 11844
+    },
+    {
+      "period": "2021",
+      "views": 28694
+    },
+    {
+      "period": "2023",
+      "views": 44610
+    },
+    {
+      "period": "2025",
+      "views": 1034815
+    },
+    {
+      "period": "2026",
+      "views": 29130
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "title": "Nivin_Pauly",
   "description": "Indian film actor",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nivin_Pauly.jpg?width=64",
-  "total": 170026,
+  "total": 179390,
   "monthly": [
     {
       "period": "2024-09",
@@ -24,7 +24,7 @@
     },
     {
       "period": "2026-09",
-      "views": 25153
+      "views": 34517
     }
   ],
   "yearly": [
@@ -34,7 +34,7 @@
     },
     {
       "period": "2026",
-      "views": 149330
+      "views": 158694
     }
   ]
 }

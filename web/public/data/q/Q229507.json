@@ -2,9 +2,9 @@
   "qid": "Q229507",
   "label": "Jayne Mansfield",
   "title": "Jayne_Mansfield",
-  "description": "American actress and Playboy Playmate (1933–1967)",
+  "description": "American actress (1933–1967)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jayne_Mansfield_%28Kiss_Them_For_Me%29_-_Color.jpg?width=64",
-  "total": 6407352,
+  "total": 6435009,
   "monthly": [
     {
       "period": "2015-10",
@@ -348,7 +348,7 @@
     },
     {
       "period": "2026-09",
-      "views": 63306
+      "views": 90963
     }
   ],
   "yearly": [
@@ -398,7 +398,7 @@
     },
     {
       "period": "2026",
-      "views": 332215
+      "views": 359872
     }
   ]
 }

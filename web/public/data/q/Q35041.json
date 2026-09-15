@@ -4,7 +4,7 @@
   "title": "William_McKinley",
   "description": "president of the United States from 1897 to 1901 (1843-1901)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/William_mckinley.jpg?width=64",
-  "total": 2396970,
+  "total": 2407313,
   "monthly": [
     {
       "period": "2015-08",
@@ -148,7 +148,7 @@
     },
     {
       "period": "2026-09",
-      "views": 16475
+      "views": 26818
     }
   ],
   "yearly": [
@@ -194,7 +194,7 @@
     },
     {
       "period": "2026",
-      "views": 34453
+      "views": 44796
     }
   ]
 }

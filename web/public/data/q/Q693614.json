@@ -1,0 +1,28 @@
+{
+  "qid": "Q693614",
+  "label": "King of Jerusalem",
+  "title": "King_of_Jerusalem",
+  "description": "Ruling monarch of the Kingdom of Jerusalem in the Middle Ages casado con Iris. M",
+  "image": "",
+  "total": 25047,
+  "monthly": [
+    {
+      "period": "2016-05",
+      "views": 14817
+    },
+    {
+      "period": "2026-09",
+      "views": 10230
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 14817
+    },
+    {
+      "period": "2026",
+      "views": 10230
+    }
+  ]
+}

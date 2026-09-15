@@ -1,0 +1,64 @@
+{
+  "qid": "Q1423",
+  "label": "Domitian",
+  "title": "Domitian",
+  "description": "11th Roman Emperor (81–96)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Busto_di_Domiziano_-_Napoli_museo_Archeologico.jpg?width=64",
+  "total": 274811,
+  "monthly": [
+    {
+      "period": "2016-09",
+      "views": 13681
+    },
+    {
+      "period": "2018-09",
+      "views": 8841
+    },
+    {
+      "period": "2022-09",
+      "views": 12599
+    },
+    {
+      "period": "2023-09",
+      "views": 11117
+    },
+    {
+      "period": "2024-07",
+      "views": 195663
+    },
+    {
+      "period": "2024-08",
+      "views": 24065
+    },
+    {
+      "period": "2026-09",
+      "views": 8845
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 13681
+    },
+    {
+      "period": "2018",
+      "views": 8841
+    },
+    {
+      "period": "2022",
+      "views": 12599
+    },
+    {
+      "period": "2023",
+      "views": 11117
+    },
+    {
+      "period": "2024",
+      "views": 219728
+    },
+    {
+      "period": "2026",
+      "views": 8845
+    }
+  ]
+}

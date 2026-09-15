@@ -4,7 +4,7 @@
   "title": "Linda_Perry",
   "description": "American singer-songwriter, musician, and record producer",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Linda_Perry_-_Flickr_-_nick_step_%281%29.jpg?width=64",
-  "total": 544345,
+  "total": 557310,
   "monthly": [
     {
       "period": "2015-10",
@@ -61,6 +61,10 @@
     {
       "period": "2026-08",
       "views": 8688
+    },
+    {
+      "period": "2026-09",
+      "views": 12965
     }
   ],
   "yearly": [
@@ -82,7 +86,7 @@
     },
     {
       "period": "2026",
-      "views": 207650
+      "views": 220615
     }
   ]
 }

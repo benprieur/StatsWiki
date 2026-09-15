@@ -4,7 +4,7 @@
   "title": "National_September_11_Memorial_&_Museum",
   "description": "memorial & museum in New York City commemorating the September 11, 2001 attacks",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/9-11_Memorial_and_Museum_%2828815276064%29.jpg?width=64",
-  "total": 545967,
+  "total": 554769,
   "monthly": [
     {
       "period": "2015-09",
@@ -52,7 +52,7 @@
     },
     {
       "period": "2026-09",
-      "views": 59875
+      "views": 68677
     }
   ],
   "yearly": [
@@ -98,7 +98,7 @@
     },
     {
       "period": "2026",
-      "views": 59875
+      "views": 68677
     }
   ]
 }

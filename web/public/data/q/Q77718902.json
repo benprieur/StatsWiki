@@ -1,0 +1,88 @@
+{
+  "qid": "Q77718902",
+  "label": "George Pickens",
+  "title": "George_Pickens",
+  "description": "American football player (born 2001)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/George_Pickens.png?width=64",
+  "total": 504476,
+  "monthly": [
+    {
+      "period": "2022-04",
+      "views": 21495
+    },
+    {
+      "period": "2022-05",
+      "views": 10789
+    },
+    {
+      "period": "2022-08",
+      "views": 12858
+    },
+    {
+      "period": "2022-09",
+      "views": 17689
+    },
+    {
+      "period": "2023-09",
+      "views": 21331
+    },
+    {
+      "period": "2023-12",
+      "views": 32368
+    },
+    {
+      "period": "2024-10",
+      "views": 28616
+    },
+    {
+      "period": "2024-11",
+      "views": 16235
+    },
+    {
+      "period": "2025-01",
+      "views": 28511
+    },
+    {
+      "period": "2025-05",
+      "views": 118373
+    },
+    {
+      "period": "2025-09",
+      "views": 50706
+    },
+    {
+      "period": "2025-11",
+      "views": 117018
+    },
+    {
+      "period": "2025-12",
+      "views": 18283
+    },
+    {
+      "period": "2026-09",
+      "views": 10204
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2022",
+      "views": 62831
+    },
+    {
+      "period": "2023",
+      "views": 53699
+    },
+    {
+      "period": "2024",
+      "views": 44851
+    },
+    {
+      "period": "2025",
+      "views": 332891
+    },
+    {
+      "period": "2026",
+      "views": 10204
+    }
+  ]
+}

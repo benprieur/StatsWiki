@@ -3,18 +3,18 @@
   "label": "Cheetah Chrome",
   "title": "Cheetah_Chrome",
   "description": "American guitarist",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cheetah_Chrome_01.jpg?width=64",
-  "total": 10455,
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cheetah_Chrome_01_%28cropped%29.jpg?width=64",
+  "total": 40766,
   "monthly": [
     {
       "period": "2026-09",
-      "views": 10455
+      "views": 40766
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 10455
+      "views": 40766
     }
   ]
 }

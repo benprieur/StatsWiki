@@ -4,7 +4,7 @@
   "title": "Slow_Horses",
   "description": "British spy thriller television series",
   "image": "",
-  "total": 10210798,
+  "total": 10234710,
   "monthly": [
     {
       "period": "2022-04",
@@ -116,7 +116,7 @@
     },
     {
       "period": "2026-09",
-      "views": 201135
+      "views": 225047
     }
   ],
   "yearly": [
@@ -138,7 +138,7 @@
     },
     {
       "period": "2026",
-      "views": 904121
+      "views": 928033
     }
   ]
 }

@@ -4,7 +4,7 @@
   "title": "Manhunters_(DC_Comics)",
   "description": "fictional race of robots",
   "image": "",
-  "total": 275666,
+  "total": 302948,
   "monthly": [
     {
       "period": "2026-07",
@@ -16,13 +16,13 @@
     },
     {
       "period": "2026-09",
-      "views": 71510
+      "views": 98792
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 275666
+      "views": 302948
     }
   ]
 }

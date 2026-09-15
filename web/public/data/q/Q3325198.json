@@ -4,7 +4,7 @@
   "title": "Motives_for_the_September_11_attacks",
   "description": "Motivations for terror attacks",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/National_Park_Service_9-11_Statue_of_Liberty_and_WTC_fire.jpg?width=64",
-  "total": 200817,
+  "total": 210367,
   "monthly": [
     {
       "period": "2019-09",
@@ -36,7 +36,7 @@
     },
     {
       "period": "2026-09",
-      "views": 73586
+      "views": 83136
     }
   ],
   "yearly": [
@@ -66,7 +66,7 @@
     },
     {
       "period": "2026",
-      "views": 73586
+      "views": 83136
     }
   ]
 }

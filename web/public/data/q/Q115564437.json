@@ -4,7 +4,7 @@
   "title": "ChatGPT",
   "description": "artificial intelligence chatbot developed by OpenAI",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/ChatGPT_5.2_Thinking_Wikipedia_historia_PDF_screenshot.png?width=64",
-  "total": 128228958,
+  "total": 128297551,
   "monthly": [
     {
       "period": "2022-12",
@@ -188,7 +188,7 @@
     },
     {
       "period": "2026-09",
-      "views": 671386
+      "views": 739979
     }
   ],
   "yearly": [
@@ -210,7 +210,7 @@
     },
     {
       "period": "2026",
-      "views": 20301518
+      "views": 20370111
     }
   ]
 }

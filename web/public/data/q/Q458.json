@@ -4,7 +4,7 @@
   "title": "European_Union",
   "description": "political and economic union of 27 European states",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/EU_on_a_globe.svg?width=64",
-  "total": 24796249,
+  "total": 24804774,
   "monthly": [
     {
       "period": "2015-07",
@@ -481,6 +481,10 @@
     {
       "period": "2026-04",
       "views": 19728
+    },
+    {
+      "period": "2026-09",
+      "views": 8525
     }
   ],
   "yearly": [
@@ -530,7 +534,7 @@
     },
     {
       "period": "2026",
-      "views": 205534
+      "views": 214059
     }
   ]
 }

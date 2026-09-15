@@ -4,7 +4,7 @@
   "title": "Hugging_Face",
   "description": "American company",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hf-logo-with-title.svg?width=64",
-  "total": 154775,
+  "total": 165333,
   "monthly": [
     {
       "period": "2026-07",
@@ -16,13 +16,13 @@
     },
     {
       "period": "2026-09",
-      "views": 83708
+      "views": 94266
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 154775
+      "views": 165333
     }
   ]
 }

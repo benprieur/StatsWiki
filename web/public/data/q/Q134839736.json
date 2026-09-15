@@ -4,7 +4,7 @@
   "title": "El_Grande_Americano",
   "description": "topics referred to by the same term",
   "image": "",
-  "total": 80813,
+  "total": 89769,
   "monthly": [
     {
       "period": "2025-04",
@@ -17,6 +17,10 @@
     {
       "period": "2026-06",
       "views": 8805
+    },
+    {
+      "period": "2026-09",
+      "views": 8956
     }
   ],
   "yearly": [
@@ -26,7 +30,7 @@
     },
     {
       "period": "2026",
-      "views": 25284
+      "views": 34240
     }
   ]
 }

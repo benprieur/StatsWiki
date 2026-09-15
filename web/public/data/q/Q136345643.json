@@ -1,0 +1,32 @@
+{
+  "qid": "Q136345643",
+  "label": "Jiang Xueqin",
+  "title": "Jiang_Xueqin",
+  "description": "Chinese-Canadian educator known for geopolitical predictions",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jiang_Xueqin.jpg?width=64",
+  "total": 904789,
+  "monthly": [
+    {
+      "period": "2026-03",
+      "views": 759219
+    },
+    {
+      "period": "2026-04",
+      "views": 75863
+    },
+    {
+      "period": "2026-05",
+      "views": 61122
+    },
+    {
+      "period": "2026-09",
+      "views": 8585
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 904789
+    }
+  ]
+}

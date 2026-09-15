@@ -1,0 +1,60 @@
+{
+  "qid": "Q6837191",
+  "label": "Michelle O'Neill",
+  "title": "Michelle_O'Neill",
+  "description": "First Minister of Northern Ireland since 2024",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelle_O%27Neill%2C_Feb_2024_02_%28cropped%29.jpg?width=64",
+  "total": 283928,
+  "monthly": [
+    {
+      "period": "2017-01",
+      "views": 35609
+    },
+    {
+      "period": "2017-03",
+      "views": 11717
+    },
+    {
+      "period": "2017-06",
+      "views": 9457
+    },
+    {
+      "period": "2021-04",
+      "views": 10518
+    },
+    {
+      "period": "2022-05",
+      "views": 121853
+    },
+    {
+      "period": "2024-02",
+      "views": 86369
+    },
+    {
+      "period": "2026-09",
+      "views": 8405
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2017",
+      "views": 56783
+    },
+    {
+      "period": "2021",
+      "views": 10518
+    },
+    {
+      "period": "2022",
+      "views": 121853
+    },
+    {
+      "period": "2024",
+      "views": 86369
+    },
+    {
+      "period": "2026",
+      "views": 8405
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "title": "George_Chuvalo",
   "description": "Canadian heavyweight boxer",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/George_Chuvalo.jpg?width=64",
-  "total": 109585,
+  "total": 136074,
   "monthly": [
     {
       "period": "2016-03",
@@ -16,7 +16,7 @@
     },
     {
       "period": "2026-09",
-      "views": 69612
+      "views": 96101
     }
   ],
   "yearly": [
@@ -26,7 +26,7 @@
     },
     {
       "period": "2026",
-      "views": 69612
+      "views": 96101
     }
   ]
 }

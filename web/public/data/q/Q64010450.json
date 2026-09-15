@@ -1,0 +1,132 @@
+{
+  "qid": "Q64010450",
+  "label": "Bo Nix",
+  "title": "Bo_Nix",
+  "description": "American football player (born 2000)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bo_Nix_%288120631%29_%28cropped%29.jpg?width=64",
+  "total": 3018233,
+  "monthly": [
+    {
+      "period": "2019-09",
+      "views": 62482
+    },
+    {
+      "period": "2019-11",
+      "views": 11328
+    },
+    {
+      "period": "2019-12",
+      "views": 15816
+    },
+    {
+      "period": "2022-09",
+      "views": 48649
+    },
+    {
+      "period": "2022-11",
+      "views": 12835
+    },
+    {
+      "period": "2022-12",
+      "views": 18423
+    },
+    {
+      "period": "2023-09",
+      "views": 334962
+    },
+    {
+      "period": "2023-10",
+      "views": 86355
+    },
+    {
+      "period": "2023-11",
+      "views": 47962
+    },
+    {
+      "period": "2023-12",
+      "views": 139937
+    },
+    {
+      "period": "2024-01",
+      "views": 86983
+    },
+    {
+      "period": "2024-04",
+      "views": 81180
+    },
+    {
+      "period": "2024-08",
+      "views": 69711
+    },
+    {
+      "period": "2024-09",
+      "views": 116560
+    },
+    {
+      "period": "2024-10",
+      "views": 132299
+    },
+    {
+      "period": "2024-11",
+      "views": 100656
+    },
+    {
+      "period": "2024-12",
+      "views": 262306
+    },
+    {
+      "period": "2025-01",
+      "views": 198680
+    },
+    {
+      "period": "2025-09",
+      "views": 75844
+    },
+    {
+      "period": "2025-10",
+      "views": 180900
+    },
+    {
+      "period": "2025-11",
+      "views": 155810
+    },
+    {
+      "period": "2025-12",
+      "views": 227345
+    },
+    {
+      "period": "2026-01",
+      "views": 540334
+    },
+    {
+      "period": "2026-09",
+      "views": 10876
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2019",
+      "views": 89626
+    },
+    {
+      "period": "2022",
+      "views": 79907
+    },
+    {
+      "period": "2023",
+      "views": 609216
+    },
+    {
+      "period": "2024",
+      "views": 849695
+    },
+    {
+      "period": "2025",
+      "views": 838579
+    },
+    {
+      "period": "2026",
+      "views": 551210
+    }
+  ]
+}

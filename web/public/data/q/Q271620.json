@@ -1,0 +1,56 @@
+{
+  "qid": "Q271620",
+  "label": "Elaine Hendrix",
+  "title": "Elaine_Hendrix",
+  "description": "American actress",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Elaine_Hendrix_by_Gage_Skidmore.jpg?width=64",
+  "total": 777747,
+  "monthly": [
+    {
+      "period": "2019-10",
+      "views": 20938
+    },
+    {
+      "period": "2023-02",
+      "views": 26518
+    },
+    {
+      "period": "2025-08",
+      "views": 15289
+    },
+    {
+      "period": "2025-09",
+      "views": 197536
+    },
+    {
+      "period": "2025-10",
+      "views": 219392
+    },
+    {
+      "period": "2025-11",
+      "views": 288688
+    },
+    {
+      "period": "2026-09",
+      "views": 9386
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2019",
+      "views": 20938
+    },
+    {
+      "period": "2023",
+      "views": 26518
+    },
+    {
+      "period": "2025",
+      "views": 720905
+    },
+    {
+      "period": "2026",
+      "views": 9386
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "title": "Simple_Minds",
   "description": "Scottish rock band",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/-NIMES_-170618_Nimes_SM2018_mk2_MG_9308-Edit.jpg?width=64",
-  "total": 150805,
+  "total": 159941,
   "monthly": [
     {
       "period": "2016-11",
@@ -36,7 +36,7 @@
     },
     {
       "period": "2026-09",
-      "views": 34320
+      "views": 43456
     }
   ],
   "yearly": [
@@ -62,7 +62,7 @@
     },
     {
       "period": "2026",
-      "views": 34320
+      "views": 43456
     }
   ]
 }

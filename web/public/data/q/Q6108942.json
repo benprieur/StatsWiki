@@ -4,7 +4,7 @@
   "title": "JSON-LD",
   "description": "method of encoding Linked Data using JSON",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/JSON-LD.svg?width=64",
-  "total": 6839039,
+  "total": 6874951,
   "monthly": [
     {
       "period": "2019-04",
@@ -116,7 +116,7 @@
     },
     {
       "period": "2026-09",
-      "views": 329079
+      "views": 364991
     }
   ],
   "yearly": [
@@ -142,7 +142,7 @@
     },
     {
       "period": "2026",
-      "views": 3093411
+      "views": 3129323
     }
   ]
 }

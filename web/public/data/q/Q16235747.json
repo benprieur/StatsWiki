@@ -1,0 +1,272 @@
+{
+  "qid": "Q16235747",
+  "label": "Dak Prescott",
+  "title": "Dak_Prescott",
+  "description": "American football player (born 1993)",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dak_Prescott_20151105.png?width=64",
+  "total": 6021021,
+  "monthly": [
+    {
+      "period": "2016-04",
+      "views": 24154
+    },
+    {
+      "period": "2016-08",
+      "views": 404585
+    },
+    {
+      "period": "2016-09",
+      "views": 455610
+    },
+    {
+      "period": "2016-10",
+      "views": 482761
+    },
+    {
+      "period": "2016-11",
+      "views": 831390
+    },
+    {
+      "period": "2016-12",
+      "views": 367200
+    },
+    {
+      "period": "2017-01",
+      "views": 348074
+    },
+    {
+      "period": "2017-02",
+      "views": 16190
+    },
+    {
+      "period": "2017-04",
+      "views": 16197
+    },
+    {
+      "period": "2017-09",
+      "views": 93414
+    },
+    {
+      "period": "2017-10",
+      "views": 53847
+    },
+    {
+      "period": "2017-11",
+      "views": 102433
+    },
+    {
+      "period": "2017-12",
+      "views": 40757
+    },
+    {
+      "period": "2018-09",
+      "views": 33648
+    },
+    {
+      "period": "2018-10",
+      "views": 26918
+    },
+    {
+      "period": "2018-11",
+      "views": 88851
+    },
+    {
+      "period": "2018-12",
+      "views": 25144
+    },
+    {
+      "period": "2019-01",
+      "views": 106605
+    },
+    {
+      "period": "2019-08",
+      "views": 10896
+    },
+    {
+      "period": "2019-09",
+      "views": 85955
+    },
+    {
+      "period": "2019-10",
+      "views": 48504
+    },
+    {
+      "period": "2019-11",
+      "views": 96705
+    },
+    {
+      "period": "2019-12",
+      "views": 12176
+    },
+    {
+      "period": "2020-04",
+      "views": 44827
+    },
+    {
+      "period": "2020-05",
+      "views": 23520
+    },
+    {
+      "period": "2020-09",
+      "views": 65551
+    },
+    {
+      "period": "2020-10",
+      "views": 242930
+    },
+    {
+      "period": "2021-03",
+      "views": 47085
+    },
+    {
+      "period": "2021-05",
+      "views": 13065
+    },
+    {
+      "period": "2021-07",
+      "views": 11314
+    },
+    {
+      "period": "2021-09",
+      "views": 105278
+    },
+    {
+      "period": "2021-10",
+      "views": 42943
+    },
+    {
+      "period": "2021-11",
+      "views": 50221
+    },
+    {
+      "period": "2022-01",
+      "views": 94871
+    },
+    {
+      "period": "2022-09",
+      "views": 40241
+    },
+    {
+      "period": "2022-10",
+      "views": 11986
+    },
+    {
+      "period": "2022-11",
+      "views": 12048
+    },
+    {
+      "period": "2022-12",
+      "views": 63683
+    },
+    {
+      "period": "2023-01",
+      "views": 281201
+    },
+    {
+      "period": "2023-02",
+      "views": 43414
+    },
+    {
+      "period": "2023-09",
+      "views": 60676
+    },
+    {
+      "period": "2023-10",
+      "views": 87241
+    },
+    {
+      "period": "2023-11",
+      "views": 97671
+    },
+    {
+      "period": "2023-12",
+      "views": 106911
+    },
+    {
+      "period": "2024-01",
+      "views": 91895
+    },
+    {
+      "period": "2024-09",
+      "views": 106196
+    },
+    {
+      "period": "2024-10",
+      "views": 81976
+    },
+    {
+      "period": "2024-11",
+      "views": 13429
+    },
+    {
+      "period": "2025-09",
+      "views": 148068
+    },
+    {
+      "period": "2025-10",
+      "views": 25847
+    },
+    {
+      "period": "2025-11",
+      "views": 126366
+    },
+    {
+      "period": "2025-12",
+      "views": 55550
+    },
+    {
+      "period": "2026-03",
+      "views": 22630
+    },
+    {
+      "period": "2026-09",
+      "views": 30373
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 2565700
+    },
+    {
+      "period": "2017",
+      "views": 670912
+    },
+    {
+      "period": "2018",
+      "views": 174561
+    },
+    {
+      "period": "2019",
+      "views": 360841
+    },
+    {
+      "period": "2020",
+      "views": 376828
+    },
+    {
+      "period": "2021",
+      "views": 269906
+    },
+    {
+      "period": "2022",
+      "views": 222829
+    },
+    {
+      "period": "2023",
+      "views": 677114
+    },
+    {
+      "period": "2024",
+      "views": 293496
+    },
+    {
+      "period": "2025",
+      "views": 355831
+    },
+    {
+      "period": "2026",
+      "views": 53003
+    }
+  ]
+}

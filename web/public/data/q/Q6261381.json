@@ -4,7 +4,7 @@
   "title": "John_Tuggle",
   "description": "Player of American football (1961-1986)",
   "image": "",
-  "total": 197649,
+  "total": 531725,
   "monthly": [
     {
       "period": "2026-04",
@@ -12,13 +12,13 @@
     },
     {
       "period": "2026-09",
-      "views": 175760
+      "views": 509836
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 197649
+      "views": 531725
     }
   ]
 }

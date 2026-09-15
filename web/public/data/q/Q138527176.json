@@ -4,7 +4,7 @@
   "title": "Hanuman_Ansh",
   "description": "2026 film by Vishal Chaturvedi",
   "image": "",
-  "total": 2080355,
+  "total": 2191379,
   "monthly": [
     {
       "period": "2026-08",
@@ -12,13 +12,13 @@
     },
     {
       "period": "2026-09",
-      "views": 1718588
+      "views": 1829612
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 2080355
+      "views": 2191379
     }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "qid": "Q1180791",
+  "label": "The Dead Boys",
+  "title": "Dead_Boys",
+  "description": "American punk rock band",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dead_Boys_1977_press_photo.jpg?width=64",
+  "total": 11924,
+  "monthly": [
+    {
+      "period": "2026-09",
+      "views": 11924
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2026",
+      "views": 11924
+    }
+  ]
+}

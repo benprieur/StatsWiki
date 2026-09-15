@@ -1,0 +1,84 @@
+{
+  "qid": "Q106993197",
+  "label": "Jaxson Dart",
+  "title": "Jaxson_Dart",
+  "description": "American football quarterback",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jaxson_Dart_1_31_2025.jpg?width=64",
+  "total": 1826778,
+  "monthly": [
+    {
+      "period": "2023-12",
+      "views": 24971
+    },
+    {
+      "period": "2024-10",
+      "views": 10842
+    },
+    {
+      "period": "2024-11",
+      "views": 27353
+    },
+    {
+      "period": "2025-01",
+      "views": 22546
+    },
+    {
+      "period": "2025-04",
+      "views": 281176
+    },
+    {
+      "period": "2025-08",
+      "views": 93104
+    },
+    {
+      "period": "2025-09",
+      "views": 261505
+    },
+    {
+      "period": "2025-10",
+      "views": 620603
+    },
+    {
+      "period": "2025-11",
+      "views": 66289
+    },
+    {
+      "period": "2025-12",
+      "views": 102640
+    },
+    {
+      "period": "2026-01",
+      "views": 16302
+    },
+    {
+      "period": "2026-02",
+      "views": 10936
+    },
+    {
+      "period": "2026-05",
+      "views": 158145
+    },
+    {
+      "period": "2026-09",
+      "views": 130366
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2023",
+      "views": 24971
+    },
+    {
+      "period": "2024",
+      "views": 38195
+    },
+    {
+      "period": "2025",
+      "views": 1447863
+    },
+    {
+      "period": "2026",
+      "views": 315749
+    }
+  ]
+}

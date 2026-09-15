@@ -1,0 +1,124 @@
+{
+  "qid": "Q76382",
+  "label": "Sinn Féin",
+  "title": "Sinn_Féin",
+  "description": "left-wing nationalist political party in Ireland",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sinn_F%C3%A9in_wordmark.svg?width=64",
+  "total": 1405210,
+  "monthly": [
+    {
+      "period": "2016-02",
+      "views": 20415
+    },
+    {
+      "period": "2016-06",
+      "views": 42088
+    },
+    {
+      "period": "2017-03",
+      "views": 89914
+    },
+    {
+      "period": "2017-06",
+      "views": 281860
+    },
+    {
+      "period": "2019-10",
+      "views": 8952
+    },
+    {
+      "period": "2019-12",
+      "views": 77176
+    },
+    {
+      "period": "2020-02",
+      "views": 302287
+    },
+    {
+      "period": "2021-04",
+      "views": 11056
+    },
+    {
+      "period": "2022-05",
+      "views": 282721
+    },
+    {
+      "period": "2022-09",
+      "views": 14297
+    },
+    {
+      "period": "2023-05",
+      "views": 27601
+    },
+    {
+      "period": "2024-02",
+      "views": 16799
+    },
+    {
+      "period": "2024-03",
+      "views": 14147
+    },
+    {
+      "period": "2024-07",
+      "views": 82914
+    },
+    {
+      "period": "2024-11",
+      "views": 65036
+    },
+    {
+      "period": "2024-12",
+      "views": 31806
+    },
+    {
+      "period": "2025-10",
+      "views": 25806
+    },
+    {
+      "period": "2026-09",
+      "views": 10335
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2016",
+      "views": 62503
+    },
+    {
+      "period": "2017",
+      "views": 371774
+    },
+    {
+      "period": "2019",
+      "views": 86128
+    },
+    {
+      "period": "2020",
+      "views": 302287
+    },
+    {
+      "period": "2021",
+      "views": 11056
+    },
+    {
+      "period": "2022",
+      "views": 297018
+    },
+    {
+      "period": "2023",
+      "views": 27601
+    },
+    {
+      "period": "2024",
+      "views": 210702
+    },
+    {
+      "period": "2025",
+      "views": 25806
+    },
+    {
+      "period": "2026",
+      "views": 10335
+    }
+  ]
+}

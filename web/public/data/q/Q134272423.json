@@ -1,20 +1,20 @@
 {
   "qid": "Q134272423",
   "label": "Mr. Irrelevant: The John Tuggle Story",
-  "title": "Mr._Irrelevant_(film)",
+  "title": "Mr._Irrelevant:_The_John_Tuggle_Story",
   "description": "upcoming film directed by Jonathan Levine",
   "image": "",
-  "total": 50480,
+  "total": 124986,
   "monthly": [
     {
       "period": "2026-09",
-      "views": 50480
+      "views": 124986
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 50480
+      "views": 124986
     }
   ]
 }

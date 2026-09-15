@@ -4,7 +4,7 @@
   "title": "Zoe_Slater",
   "description": "fictional character in BBC soap opera",
   "image": "",
-  "total": 130513,
+  "total": 140594,
   "monthly": [
     {
       "period": "2025-06",
@@ -16,7 +16,7 @@
     },
     {
       "period": "2026-09",
-      "views": 19891
+      "views": 29972
     }
   ],
   "yearly": [
@@ -26,7 +26,7 @@
     },
     {
       "period": "2026",
-      "views": 19891
+      "views": 29972
     }
   ]
 }

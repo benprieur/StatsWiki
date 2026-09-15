@@ -4,7 +4,7 @@
   "title": "World_Trade_Center_site",
   "description": "grounds of the World Trade Center in New York City",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Wtc-photo.jpg?width=64",
-  "total": 312756,
+  "total": 322679,
   "monthly": [
     {
       "period": "2015-09",
@@ -44,7 +44,7 @@
     },
     {
       "period": "2026-09",
-      "views": 59268
+      "views": 69191
     }
   ],
   "yearly": [
@@ -82,7 +82,7 @@
     },
     {
       "period": "2026",
-      "views": 59268
+      "views": 69191
     }
   ]
 }

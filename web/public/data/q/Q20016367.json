@@ -1,0 +1,36 @@
+{
+  "qid": "Q20016367",
+  "label": "Stuart Martin",
+  "title": "Stuart_Martin",
+  "description": "British film actor, television actor and dub actor",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Stuart_martin_2022_1.jpg?width=64",
+  "total": 88186,
+  "monthly": [
+    {
+      "period": "2021-01",
+      "views": 12235
+    },
+    {
+      "period": "2021-10",
+      "views": 38809
+    },
+    {
+      "period": "2021-11",
+      "views": 27086
+    },
+    {
+      "period": "2026-09",
+      "views": 10056
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 78130
+    },
+    {
+      "period": "2026",
+      "views": 10056
+    }
+  ]
+}

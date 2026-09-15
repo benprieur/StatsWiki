@@ -4,7 +4,7 @@
   "title": "Beef_(TV_series)",
   "description": "2023 American comedy-drama television miniseries",
   "image": "",
-  "total": 6737307,
+  "total": 6746964,
   "monthly": [
     {
       "period": "2023-04",
@@ -53,6 +53,10 @@
     {
       "period": "2026-08",
       "views": 224352
+    },
+    {
+      "period": "2026-09",
+      "views": 9657
     }
   ],
   "yearly": [
@@ -66,7 +70,7 @@
     },
     {
       "period": "2026",
-      "views": 2497996
+      "views": 2507653
     }
   ]
 }

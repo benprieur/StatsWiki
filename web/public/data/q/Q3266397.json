@@ -1,0 +1,48 @@
+{
+  "qid": "Q3266397",
+  "label": "Fra Fee",
+  "title": "Fra_Fee",
+  "description": "Irish actor and singer",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fra_Fee_in_2009.jpg?width=64",
+  "total": 313203,
+  "monthly": [
+    {
+      "period": "2021-11",
+      "views": 9238
+    },
+    {
+      "period": "2021-12",
+      "views": 19962
+    },
+    {
+      "period": "2023-12",
+      "views": 65791
+    },
+    {
+      "period": "2026-04",
+      "views": 162305
+    },
+    {
+      "period": "2026-05",
+      "views": 46726
+    },
+    {
+      "period": "2026-09",
+      "views": 9181
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2021",
+      "views": 29200
+    },
+    {
+      "period": "2023",
+      "views": 65791
+    },
+    {
+      "period": "2026",
+      "views": 218212
+    }
+  ]
+}

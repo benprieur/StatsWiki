@@ -4,7 +4,7 @@
   "title": "Up_(film_series)",
   "description": "documentary film series",
   "image": "",
-  "total": 170468,
+  "total": 183769,
   "monthly": [
     {
       "period": "2019-06",
@@ -24,7 +24,7 @@
     },
     {
       "period": "2026-09",
-      "views": 59871
+      "views": 73172
     }
   ],
   "yearly": [
@@ -42,7 +42,7 @@
     },
     {
       "period": "2026",
-      "views": 80154
+      "views": 93455
     }
   ]
 }

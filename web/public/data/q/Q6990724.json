@@ -4,7 +4,7 @@
   "title": "Nelson_Sardelli",
   "description": "American actor",
   "image": "",
-  "total": 758858,
+  "total": 767875,
   "monthly": [
     {
       "period": "2025-05",
@@ -25,6 +25,10 @@
     {
       "period": "2026-06",
       "views": 9695
+    },
+    {
+      "period": "2026-09",
+      "views": 9017
     }
   ],
   "yearly": [
@@ -34,7 +38,7 @@
     },
     {
       "period": "2026",
-      "views": 27939
+      "views": 36956
     }
   ]
 }

@@ -1,0 +1,44 @@
+{
+  "qid": "Q464320",
+  "label": "Stephen Root",
+  "title": "Stephen_Root",
+  "description": "American actor",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Stephen_Root_2024.jpg?width=64",
+  "total": 51060,
+  "monthly": [
+    {
+      "period": "2017-02",
+      "views": 10936
+    },
+    {
+      "period": "2019-08",
+      "views": 9544
+    },
+    {
+      "period": "2022-01",
+      "views": 11273
+    },
+    {
+      "period": "2026-09",
+      "views": 19307
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2017",
+      "views": 10936
+    },
+    {
+      "period": "2019",
+      "views": 9544
+    },
+    {
+      "period": "2022",
+      "views": 11273
+    },
+    {
+      "period": "2026",
+      "views": 19307
+    }
+  ]
+}

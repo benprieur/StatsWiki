@@ -1,0 +1,48 @@
+{
+  "qid": "Q7744946",
+  "label": "The Kraft Group",
+  "title": "Kraft_Group",
+  "description": "American group of large corporations",
+  "image": "",
+  "total": 242975,
+  "monthly": [
+    {
+      "period": "2018-02",
+      "views": 44961
+    },
+    {
+      "period": "2019-01",
+      "views": 14897
+    },
+    {
+      "period": "2019-02",
+      "views": 127334
+    },
+    {
+      "period": "2026-01",
+      "views": 24160
+    },
+    {
+      "period": "2026-02",
+      "views": 14850
+    },
+    {
+      "period": "2026-09",
+      "views": 16773
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2018",
+      "views": 44961
+    },
+    {
+      "period": "2019",
+      "views": 142231
+    },
+    {
+      "period": "2026",
+      "views": 55783
+    }
+  ]
+}

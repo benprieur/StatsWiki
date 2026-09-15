@@ -4,7 +4,7 @@
   "title": "Jimmy_Connors",
   "description": "American tennis player (born 1952)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jimmy_Conners_1994.jpg?width=64",
-  "total": 695569,
+  "total": 704841,
   "monthly": [
     {
       "period": "2015-07",
@@ -96,7 +96,7 @@
     },
     {
       "period": "2026-09",
-      "views": 38413
+      "views": 47685
     }
   ],
   "yearly": [
@@ -146,7 +146,7 @@
     },
     {
       "period": "2026",
-      "views": 48463
+      "views": 57735
     }
   ]
 }

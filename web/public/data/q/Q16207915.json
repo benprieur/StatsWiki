@@ -4,7 +4,7 @@
   "title": "Nathan_Fielder",
   "description": "Canadian writer and comedian",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nathan_Fielder.jpg?width=64",
-  "total": 1786685,
+  "total": 1807186,
   "monthly": [
     {
       "period": "2022-07",
@@ -40,7 +40,7 @@
     },
     {
       "period": "2026-09",
-      "views": 485811
+      "views": 506312
     }
   ],
   "yearly": [
@@ -58,7 +58,7 @@
     },
     {
       "period": "2026",
-      "views": 485811
+      "views": 506312
     }
   ]
 }

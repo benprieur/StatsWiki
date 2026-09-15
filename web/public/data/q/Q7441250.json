@@ -4,7 +4,7 @@
   "title": "Sean_McVay",
   "description": "American football coach (born 1986)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sean_McVay_2019_%28cropped2%29.jpg?width=64",
-  "total": 5594864,
+  "total": 5618549,
   "monthly": [
     {
       "period": "2017-01",
@@ -204,7 +204,7 @@
     },
     {
       "period": "2026-09",
-      "views": 17444
+      "views": 41129
     }
   ],
   "yearly": [
@@ -246,7 +246,7 @@
     },
     {
       "period": "2026",
-      "views": 362917
+      "views": 386602
     }
   ]
 }

@@ -4,7 +4,7 @@
   "title": "New_York_Giants",
   "description": "professional American football team",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giants_Stadium.jpg?width=64",
-  "total": 912562,
+  "total": 937616,
   "monthly": [
     {
       "period": "2015-09",
@@ -193,6 +193,10 @@
     {
       "period": "2026-07",
       "views": 10552
+    },
+    {
+      "period": "2026-09",
+      "views": 25054
     }
   ],
   "yearly": [
@@ -242,7 +246,7 @@
     },
     {
       "period": "2026",
-      "views": 36139
+      "views": 61193
     }
   ]
 }

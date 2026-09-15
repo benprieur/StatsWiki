@@ -4,7 +4,7 @@
   "title": "Tom_Aspinall",
   "description": "English mixed martial arts (MMA) fighter",
   "image": "",
-  "total": 2217970,
+  "total": 2230816,
   "monthly": [
     {
       "period": "2021-02",
@@ -77,6 +77,10 @@
     {
       "period": "2026-06",
       "views": 47925
+    },
+    {
+      "period": "2026-09",
+      "views": 12846
     }
   ],
   "yearly": [
@@ -102,7 +106,7 @@
     },
     {
       "period": "2026",
-      "views": 47925
+      "views": 60771
     }
   ]
 }

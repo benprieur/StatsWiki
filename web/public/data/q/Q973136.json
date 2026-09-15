@@ -1,0 +1,40 @@
+{
+  "qid": "Q973136",
+  "label": "Oasis discography",
+  "title": "Oasis_discography",
+  "description": "Wikimedia band discography",
+  "image": "",
+  "total": 187037,
+  "monthly": [
+    {
+      "period": "2024-08",
+      "views": 119654
+    },
+    {
+      "period": "2024-09",
+      "views": 23225
+    },
+    {
+      "period": "2025-07",
+      "views": 9852
+    },
+    {
+      "period": "2026-09",
+      "views": 34306
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2024",
+      "views": 142879
+    },
+    {
+      "period": "2025",
+      "views": 9852
+    },
+    {
+      "period": "2026",
+      "views": 34306
+    }
+  ]
+}

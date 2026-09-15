@@ -4,7 +4,7 @@
   "title": "Primetime_(2026_film)",
   "description": "2026 upcoming film directed by Lance Oppenheim",
   "image": "",
-  "total": 1110285,
+  "total": 1127069,
   "monthly": [
     {
       "period": "2026-05",
@@ -24,13 +24,13 @@
     },
     {
       "period": "2026-09",
-      "views": 234020
+      "views": 250804
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 1110285
+      "views": 1127069
     }
   ]
 }

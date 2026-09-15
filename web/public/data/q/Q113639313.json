@@ -4,17 +4,17 @@
   "title": "2026_Swedish_general_election",
   "description": "2026 election for the Swedish parliament",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ballots_at_the_Swedish_general_election_2026%2C_Brastad_-_Riksdag.jpg?width=64",
-  "total": 265567,
+  "total": 496074,
   "monthly": [
     {
       "period": "2026-09",
-      "views": 265567
+      "views": 496074
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 265567
+      "views": 496074
     }
   ]
 }

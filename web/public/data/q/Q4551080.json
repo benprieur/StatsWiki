@@ -1,0 +1,28 @@
+{
+  "qid": "Q4551080",
+  "label": "16-inch softball",
+  "title": "16-inch_softball",
+  "description": "variant of softball",
+  "image": "",
+  "total": 24540,
+  "monthly": [
+    {
+      "period": "2025-09",
+      "views": 15499
+    },
+    {
+      "period": "2026-09",
+      "views": 9041
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 15499
+    },
+    {
+      "period": "2026",
+      "views": 9041
+    }
+  ]
+}

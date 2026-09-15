@@ -1,0 +1,40 @@
+{
+  "qid": "Q114237493",
+  "label": "Abdul Carter",
+  "title": "Abdul_Carter",
+  "description": "American football player (born 2004)",
+  "image": "",
+  "total": 237725,
+  "monthly": [
+    {
+      "period": "2025-01",
+      "views": 20659
+    },
+    {
+      "period": "2025-04",
+      "views": 144603
+    },
+    {
+      "period": "2025-12",
+      "views": 15840
+    },
+    {
+      "period": "2026-05",
+      "views": 47048
+    },
+    {
+      "period": "2026-09",
+      "views": 9575
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 181102
+    },
+    {
+      "period": "2026",
+      "views": 56623
+    }
+  ]
+}

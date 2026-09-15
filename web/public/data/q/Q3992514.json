@@ -4,7 +4,7 @@
   "title": "Tom_Pelphrey",
   "description": "American actor",
   "image": "",
-  "total": 2817298,
+  "total": 2828658,
   "monthly": [
     {
       "period": "2017-03",
@@ -97,6 +97,10 @@
     {
       "period": "2026-06",
       "views": 22602
+    },
+    {
+      "period": "2026-09",
+      "views": 11360
     }
   ],
   "yearly": [
@@ -126,7 +130,7 @@
     },
     {
       "period": "2026",
-      "views": 165382
+      "views": 176742
     }
   ]
 }

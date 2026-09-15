@@ -1,0 +1,72 @@
+{
+  "qid": "Q6777544",
+  "label": "Marty Schottenheimer",
+  "title": "Marty_Schottenheimer",
+  "description": "American football player and coach",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/MartySchottenheimer8-15-2013.jpg?width=64",
+  "total": 713571,
+  "monthly": [
+    {
+      "period": "2017-10",
+      "views": 30923
+    },
+    {
+      "period": "2018-12",
+      "views": 14024
+    },
+    {
+      "period": "2020-01",
+      "views": 12604
+    },
+    {
+      "period": "2021-02",
+      "views": 252470
+    },
+    {
+      "period": "2025-01",
+      "views": 200225
+    },
+    {
+      "period": "2025-09",
+      "views": 115008
+    },
+    {
+      "period": "2025-11",
+      "views": 63035
+    },
+    {
+      "period": "2025-12",
+      "views": 13715
+    },
+    {
+      "period": "2026-09",
+      "views": 11567
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2017",
+      "views": 30923
+    },
+    {
+      "period": "2018",
+      "views": 14024
+    },
+    {
+      "period": "2020",
+      "views": 12604
+    },
+    {
+      "period": "2021",
+      "views": 252470
+    },
+    {
+      "period": "2025",
+      "views": 391983
+    },
+    {
+      "period": "2026",
+      "views": 11567
+    }
+  ]
+}

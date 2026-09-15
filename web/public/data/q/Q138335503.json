@@ -4,7 +4,7 @@
   "title": "Forgotten_Island",
   "description": "upcoming animated film directed by Joel Crawford and Januel Mercado",
   "image": "",
-  "total": 152568,
+  "total": 163634,
   "monthly": [
     {
       "period": "2026-03",
@@ -16,13 +16,13 @@
     },
     {
       "period": "2026-09",
-      "views": 34468
+      "views": 45534
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 152568
+      "views": 163634
     }
   ]
 }

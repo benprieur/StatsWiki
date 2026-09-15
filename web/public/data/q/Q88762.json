@@ -4,7 +4,7 @@
   "title": "Dominic_Thiem",
   "description": "Austrian male tennis player",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Thiem_RG18_%2825%29_%2842260263644%29.jpg?width=64",
-  "total": 3354347,
+  "total": 3364606,
   "monthly": [
     {
       "period": "2016-05",
@@ -172,7 +172,7 @@
     },
     {
       "period": "2026-09",
-      "views": 12130
+      "views": 22389
     }
   ],
   "yearly": [
@@ -218,7 +218,7 @@
     },
     {
       "period": "2026",
-      "views": 64999
+      "views": 75258
     }
   ]
 }

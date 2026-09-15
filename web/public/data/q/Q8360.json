@@ -1,0 +1,48 @@
+{
+  "qid": "Q8360",
+  "label": "(What's the Story) Morning Glory?",
+  "title": "(What's_the_Story)_Morning_Glory?",
+  "description": "1995 studio album by Oasis",
+  "image": "",
+  "total": 305319,
+  "monthly": [
+    {
+      "period": "2020-10",
+      "views": 18406
+    },
+    {
+      "period": "2024-08",
+      "views": 167209
+    },
+    {
+      "period": "2024-09",
+      "views": 64082
+    },
+    {
+      "period": "2025-07",
+      "views": 22880
+    },
+    {
+      "period": "2026-09",
+      "views": 32742
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2020",
+      "views": 18406
+    },
+    {
+      "period": "2024",
+      "views": 231291
+    },
+    {
+      "period": "2025",
+      "views": 22880
+    },
+    {
+      "period": "2026",
+      "views": 32742
+    }
+  ]
+}

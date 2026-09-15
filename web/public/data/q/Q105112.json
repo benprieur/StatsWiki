@@ -4,7 +4,7 @@
   "title": "Swedish_Social_Democratic_Party",
   "description": "centre-left political party in Sweden",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/2022_Stockholm_City_Council_election_%28cropped%29.svg?width=64",
-  "total": 50779,
+  "total": 67110,
   "monthly": [
     {
       "period": "2018-09",
@@ -16,7 +16,7 @@
     },
     {
       "period": "2026-09",
-      "views": 15139
+      "views": 31470
     }
   ],
   "yearly": [
@@ -30,7 +30,7 @@
     },
     {
       "period": "2026",
-      "views": 15139
+      "views": 31470
     }
   ]
 }

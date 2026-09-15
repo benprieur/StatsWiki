@@ -4,7 +4,7 @@
   "title": "Shane_Lowry",
   "description": "Irish professional golfer",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Shane_Lowry_KLM_Open_2010.JPG?width=64",
-  "total": 704891,
+  "total": 717170,
   "monthly": [
     {
       "period": "2023-10",
@@ -52,7 +52,7 @@
     },
     {
       "period": "2026-09",
-      "views": 32268
+      "views": 44547
     }
   ],
   "yearly": [
@@ -70,7 +70,7 @@
     },
     {
       "period": "2026",
-      "views": 157332
+      "views": 169611
     }
   ]
 }

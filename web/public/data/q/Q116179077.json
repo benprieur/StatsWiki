@@ -4,7 +4,7 @@
   "title": "Opinion_polling_for_the_2026_Israeli_legislative_election",
   "description": "",
   "image": "",
-  "total": 68231,
+  "total": 76479,
   "monthly": [
     {
       "period": "2026-04",
@@ -12,13 +12,13 @@
     },
     {
       "period": "2026-09",
-      "views": 57992
+      "views": 66240
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 68231
+      "views": 76479
     }
   ]
 }

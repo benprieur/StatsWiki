@@ -1,0 +1,40 @@
+{
+  "qid": "Q3600405",
+  "label": "AAA Mega Championship",
+  "title": "AAA_Mega_Championship",
+  "description": "professional wrestling championship",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El_Hijo_del_Vikingo_in_February_2024.jpg?width=64",
+  "total": 50247,
+  "monthly": [
+    {
+      "period": "2015-10",
+      "views": 10382
+    },
+    {
+      "period": "2025-08",
+      "views": 9721
+    },
+    {
+      "period": "2025-09",
+      "views": 18637
+    },
+    {
+      "period": "2026-09",
+      "views": 11507
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2015",
+      "views": 10382
+    },
+    {
+      "period": "2025",
+      "views": 28358
+    },
+    {
+      "period": "2026",
+      "views": 11507
+    }
+  ]
+}

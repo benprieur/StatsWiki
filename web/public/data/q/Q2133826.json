@@ -1,0 +1,36 @@
+{
+  "qid": "Q2133826",
+  "label": "Ray Aghayan",
+  "title": "Ray_Aghayan",
+  "description": "Iranian fashion designer (1928-2011)",
+  "image": "",
+  "total": 102937,
+  "monthly": [
+    {
+      "period": "2017-12",
+      "views": 18683
+    },
+    {
+      "period": "2023-04",
+      "views": 27914
+    },
+    {
+      "period": "2026-09",
+      "views": 56340
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2017",
+      "views": 18683
+    },
+    {
+      "period": "2023",
+      "views": 27914
+    },
+    {
+      "period": "2026",
+      "views": 56340
+    }
+  ]
+}

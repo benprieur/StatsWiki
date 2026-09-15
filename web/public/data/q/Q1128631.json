@@ -4,7 +4,7 @@
   "title": "Leeds_United_F.C.",
   "description": "association football club in Leeds, England",
   "image": "",
-  "total": 2637755,
+  "total": 2647422,
   "monthly": [
     {
       "period": "2016-11",
@@ -209,6 +209,10 @@
     {
       "period": "2026-08",
       "views": 17696
+    },
+    {
+      "period": "2026-09",
+      "views": 9667
     }
   ],
   "yearly": [
@@ -254,7 +258,7 @@
     },
     {
       "period": "2026",
-      "views": 61779
+      "views": 71446
     }
   ]
 }

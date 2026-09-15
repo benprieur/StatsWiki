@@ -4,7 +4,7 @@
   "title": "2026_Wimbledon_Championships_–_Men's_singles",
   "description": "tennis championship",
   "image": "",
-  "total": 748499,
+  "total": 765376,
   "monthly": [
     {
       "period": "2026-06",
@@ -16,13 +16,13 @@
     },
     {
       "period": "2026-09",
-      "views": 18528
+      "views": 35405
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 748499
+      "views": 765376
     }
   ]
 }

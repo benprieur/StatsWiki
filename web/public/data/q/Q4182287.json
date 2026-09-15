@@ -4,7 +4,7 @@
   "title": "Search_engine",
   "description": "software system that is designed to search for information on the World Wide Web",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Search-engine-diagram-en.svg?width=64",
-  "total": 163794,
+  "total": 174690,
   "monthly": [
     {
       "period": "2020-02",
@@ -13,6 +13,10 @@
     {
       "period": "2026-08",
       "views": 88731
+    },
+    {
+      "period": "2026-09",
+      "views": 10896
     }
   ],
   "yearly": [
@@ -22,7 +26,7 @@
     },
     {
       "period": "2026",
-      "views": 88731
+      "views": 99627
     }
   ]
 }

@@ -3,8 +3,8 @@
   "label": "Bettina Anderson",
   "title": "Bettina_Anderson",
   "description": "Donald Trump Jr.'s wife (born 1986)",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bettina_Anderson_2025.jpeg?width=64",
-  "total": 720300,
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/2026_Bettina_Anderson_%28cropped%29.jpg?width=64",
+  "total": 763440,
   "monthly": [
     {
       "period": "2026-03",
@@ -21,12 +21,16 @@
     {
       "period": "2026-06",
       "views": 9482
+    },
+    {
+      "period": "2026-09",
+      "views": 43140
     }
   ],
   "yearly": [
     {
       "period": "2026",
-      "views": 720300
+      "views": 763440
     }
   ]
 }

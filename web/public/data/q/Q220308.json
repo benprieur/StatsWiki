@@ -4,7 +4,7 @@
   "title": "Seth_Rogen",
   "description": "Canadian actor, comedian, and filmmaker (born 1982)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seth_Rogen_-_Good_Fortune_LA_Premiere.jpg?width=64",
-  "total": 3656982,
+  "total": 3665859,
   "monthly": [
     {
       "period": "2015-10",
@@ -260,7 +260,7 @@
     },
     {
       "period": "2026-09",
-      "views": 18309
+      "views": 27186
     }
   ],
   "yearly": [
@@ -310,7 +310,7 @@
     },
     {
       "period": "2026",
-      "views": 227625
+      "views": 236502
     }
   ]
 }

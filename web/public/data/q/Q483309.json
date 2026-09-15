@@ -4,7 +4,7 @@
   "title": "Sergio_Ramos",
   "description": "Spanish association football player and singer",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sergio_Ramos_Interview_2021_%28cropped%29.jpg?width=64",
-  "total": 5066170,
+  "total": 5074475,
   "monthly": [
     {
       "period": "2015-08",
@@ -277,6 +277,10 @@
     {
       "period": "2026-07",
       "views": 546191
+    },
+    {
+      "period": "2026-09",
+      "views": 8305
     }
   ],
   "yearly": [
@@ -326,7 +330,7 @@
     },
     {
       "period": "2026",
-      "views": 579317
+      "views": 587622
     }
   ]
 }

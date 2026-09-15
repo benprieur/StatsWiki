@@ -1,0 +1,44 @@
+{
+  "qid": "Q730713",
+  "label": "Lucha Libre AAA Worldwide",
+  "title": "Lucha_Libre_AAA_Worldwide",
+  "description": "Mexican professional wrestling promotion",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucha_Libre_AAA_Worldwide_logo.png?width=64",
+  "total": 207405,
+  "monthly": [
+    {
+      "period": "2025-04",
+      "views": 124126
+    },
+    {
+      "period": "2025-06",
+      "views": 25811
+    },
+    {
+      "period": "2025-08",
+      "views": 21194
+    },
+    {
+      "period": "2025-09",
+      "views": 10900
+    },
+    {
+      "period": "2026-05",
+      "views": 15920
+    },
+    {
+      "period": "2026-09",
+      "views": 9454
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2025",
+      "views": 182031
+    },
+    {
+      "period": "2026",
+      "views": 25374
+    }
+  ]
+}

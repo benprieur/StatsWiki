@@ -4,7 +4,7 @@
   "title": "Jon_Bernthal",
   "description": "American actor",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/JonBernthal-byPhilipRomano2.jpg?width=64",
-  "total": 8695740,
+  "total": 8705570,
   "monthly": [
     {
       "period": "2016-02",
@@ -244,7 +244,7 @@
     },
     {
       "period": "2026-09",
-      "views": 154490
+      "views": 164320
     }
   ],
   "yearly": [
@@ -290,7 +290,7 @@
     },
     {
       "period": "2026",
-      "views": 3574858
+      "views": 3584688
     }
   ]
 }

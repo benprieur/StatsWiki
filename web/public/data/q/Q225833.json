@@ -4,7 +4,7 @@
   "title": "Sex",
   "description": "Wikimedia disambiguation page",
   "image": "",
-  "total": 79475427,
+  "total": 79498684,
   "monthly": [
     {
       "period": "2015-07",
@@ -460,7 +460,7 @@
     },
     {
       "period": "2026-09",
-      "views": 295558
+      "views": 318815
     }
   ],
   "yearly": [
@@ -506,7 +506,7 @@
     },
     {
       "period": "2026",
-      "views": 4516695
+      "views": 4539952
     }
   ]
 }

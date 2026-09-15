@@ -1,0 +1,88 @@
+{
+  "qid": "Q58100203",
+  "label": "Jacob Wohl",
+  "title": "Jacob_Wohl",
+  "description": "American far-right conspiracy theorist and fraudster",
+  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacob_Wohl_%28cropped%29.jpg?width=64",
+  "total": 296440,
+  "monthly": [
+    {
+      "period": "2018-11",
+      "views": 20960
+    },
+    {
+      "period": "2019-01",
+      "views": 14022
+    },
+    {
+      "period": "2019-02",
+      "views": 19205
+    },
+    {
+      "period": "2019-03",
+      "views": 10706
+    },
+    {
+      "period": "2019-04",
+      "views": 26773
+    },
+    {
+      "period": "2019-08",
+      "views": 14005
+    },
+    {
+      "period": "2019-09",
+      "views": 10639
+    },
+    {
+      "period": "2019-10",
+      "views": 28030
+    },
+    {
+      "period": "2020-05",
+      "views": 22748
+    },
+    {
+      "period": "2020-10",
+      "views": 25681
+    },
+    {
+      "period": "2021-08",
+      "views": 12412
+    },
+    {
+      "period": "2021-09",
+      "views": 69945
+    },
+    {
+      "period": "2021-11",
+      "views": 10696
+    },
+    {
+      "period": "2026-09",
+      "views": 10618
+    }
+  ],
+  "yearly": [
+    {
+      "period": "2018",
+      "views": 20960
+    },
+    {
+      "period": "2019",
+      "views": 123380
+    },
+    {
+      "period": "2020",
+      "views": 48429
+    },
+    {
+      "period": "2021",
+      "views": 93053
+    },
+    {
+      "period": "2026",
+      "views": 10618
+    }
+  ]
+}

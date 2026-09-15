@@ -4,7 +4,7 @@
   "title": "Megan_Fox",
   "description": "American actress and model (born 1986)",
   "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Megan_Fox_-_Jennifer%27s_Body.jpg?width=64",
-  "total": 20050397,
+  "total": 20058783,
   "monthly": [
     {
       "period": "2015-07",
@@ -488,7 +488,7 @@
     },
     {
       "period": "2026-09",
-      "views": 10217
+      "views": 18603
     }
   ],
   "yearly": [
@@ -538,7 +538,7 @@
     },
     {
       "period": "2026",
-      "views": 713538
+      "views": 721924
     }
   ]
 }
